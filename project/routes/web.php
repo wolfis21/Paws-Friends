@@ -2,6 +2,8 @@
 
 
 use App\Http\Controllers\HomeServicesController;
+use App\Http\Controllers\HousingsController;
+use App\Http\Controllers\VeterinarianController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,9 +18,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', HomeServicesController::class);
+// Route::get('/housings')
+//vistas de Vets
+Route::get('/vets', [VeterinarianController::class, 'index'])->name('vets');
+//rutas de housings
+Route::get('/housings', [HousingsController::class, 'index'])->name('housing');
+// to do: dog_groomer
+//ver como integrar los comments
 
-Auth::routes();
+// Auth::routes();
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -19,10 +19,10 @@
                 <a class="nav-link"  href="#">Principal</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Cuidados</a>
+                <a class="nav-link" href="{{route ('housing')}}">Cuidados</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Veterinarios</a>
+                <a class="nav-link" href="{{route ('vets')}}">Veterinarios</a>
               </li>
             </ul>
               <button class="btn btn-outline-danger" type="submit">Salir</button>
