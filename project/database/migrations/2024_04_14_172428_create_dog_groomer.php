@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('dog_groomer', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('adress');
+            $table->string('address');
             $table->string('phone');
             $table->string('link_ref');
             $table->string('img_ref');
