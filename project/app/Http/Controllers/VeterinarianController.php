@@ -16,6 +16,11 @@ class VeterinarianController extends Controller
         return view('vets.index');
     }
 
+    public function vetuser()
+    {
+        return view('vets.vetuser');
+    }
+
     /**
      * Show the form for creating a new resource.
      */

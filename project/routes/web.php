@@ -20,7 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomeServicesController::class);
 // Route::get('/housings')
 //vistas de Vets
-Route::get('/vets', [VeterinarianController::class, 'index'])->name('vets');
+Route::get('/vets', [VeterinarianController::class, 'vetuser'])->name('vets');
+Route::get('/admin/vets', [VeterinarianController::class, 'index'])->name('vetsadmin');
 //rutas de housings
 Route::get('/housings', [HousingsController::class, 'index'])->name('housing');
 // to do: dog_groomer

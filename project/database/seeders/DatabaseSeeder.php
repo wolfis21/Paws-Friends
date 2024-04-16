@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     {
 
         $permissions= DB::table('permissions')->insertGetId([
-            'name' => 'global',
+            'name' => 'vetsadmin',
             'created_at' => now(), 
             'updated_at' => now(), 
         ]);
@@ -56,5 +56,7 @@ class DatabaseSeeder extends Seeder
             'created_at' => now(), 
             'updated_at' => now(), 
         ]);
+
+        $this->call(RolsSeeder::class);
     }
 }

@@ -22,7 +22,7 @@
                 <a class="nav-link" href="{{route ('housing')}}">Cuidados</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{route ('vets')}}">Veterinarios</a>
+                <a class="nav-link" href="{{route ('vetsadmin')}}">Veterinarios</a>
               </li>
             </ul>
               <button class="btn btn-outline-danger" type="submit">Salir</button>
