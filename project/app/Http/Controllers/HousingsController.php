@@ -16,6 +16,11 @@ class HousingsController extends Controller
         return view('housings.index');
     }
 
+    public function housinguser()
+    {
+        return view('housings.housinguser');
+    }
+
     /**
      * Show the form for creating a new resource.
      */

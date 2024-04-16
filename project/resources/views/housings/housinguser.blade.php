@@ -1,5 +1,5 @@
 @extends('layouts.example')
 
 @section('content')
-    <p>Housings admin </p>
+    <p>Housings disponibles '(solo users)'</p>
 @endsection

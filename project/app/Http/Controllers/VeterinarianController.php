@@ -12,13 +12,15 @@ class VeterinarianController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        return view('vets.index');
+
+    {   
+        $veterinarios = Veterinarian::all();
+        return view('vets.index')->with('veterinarios',$veterinarios);
     }
 
     public function vetuser()
     {
-        return view('vets.vetuser');
+        return view('vets.vetsuser');
     }
 
     /**
@@ -26,7 +28,7 @@ class VeterinarianController extends Controller
      */
     public function create()
     {
-        return 'este es el create';
+        return view('vets.create');
     }
 
     /**
@@ -34,7 +36,19 @@ class VeterinarianController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $veterinarios = new Veterinarian();
+
+        $veterinarios->name = $request->get('name');
+        $veterinarios->address = $request->get('address');
+        $veterinarios->phone = $request->get('phone');
+        $veterinarios->email = $request->get('email');
+        $veterinarios->link_ref = $request->get('link_ref');
+        $veterinarios->img_ref = $request->get('img_ref');
+        $veterinarios->specialist_animals = $request->get('specialist_animals');
+
+        $veterinarios->save();
+        return redirect()->route('vets.index');
+
     }
 
     /**

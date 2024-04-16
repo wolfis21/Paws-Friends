@@ -20,10 +20,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomeServicesController::class);
 // Route::get('/housings')
 //vistas de Vets
-Route::get('/vets', [VeterinarianController::class, 'vetuser'])->name('vets');
-Route::get('/admin/vets', [VeterinarianController::class, 'index'])->name('vetsadmin');
+Route::get('/user/vets', [VeterinarianController::class, 'vetuser'])->name('vetsuser');
+Route::resource('/admin/vets', VeterinarianController::class);
 //rutas de housings
-Route::get('/housings', [HousingsController::class, 'index'])->name('housing');
+Route::get('/user/housings', [HousingsController::class, 'housinguser'])->name('housinguser');
+Route::get('/admin/housings', [HousingsController::class, 'index'])->name('housingadmin');
 // to do: dog_groomer
 //ver como integrar los comments
 

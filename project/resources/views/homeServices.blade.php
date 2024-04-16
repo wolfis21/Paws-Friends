@@ -7,6 +7,10 @@
     <title>Paws-Friends || Services</title>
 </head>
 <body>
+  {{-- //traerme el user --}}
+  <?php  
+    $isAdmin = true;
+  ?>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Logo</a>
@@ -19,10 +23,10 @@
                 <a class="nav-link"  href="#">Principal</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{route ('housing')}}">Cuidados</a>
+                <a class="nav-link" href="{{ ($isAdmin) ? route('housingadmin') : route('housinguser') }}">Cuidados</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{route ('vetsadmin')}}">Veterinarios</a>
+                <a class="nav-link" href="{{ ($isAdmin) ? route('vets.index') : route('vetsuser') }}">Veterinarios</a>
               </li>
             </ul>
               <button class="btn btn-outline-danger" type="submit">Salir</button>
@@ -35,13 +39,13 @@
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="1000">
             {{-- en src pueden poner el link de la imagen --}}
-            <img src="..." class="d-block w-100" alt="...">
+            <img src="http://placekitten.com/200/300" class="d-block " alt="...">
           </div>
           <div class="carousel-item" data-bs-interval="200">
-            <img src="..." class="d-block w-100" alt="...">
+            <img src="http://placekitten.com/200/300" class="d-block " alt="...">
           </div>
           <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
+            <img src="http://placekitten.com/200/300" class="d-block " alt="...">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -56,3 +60,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
+  
+  
+  
+  
+    
