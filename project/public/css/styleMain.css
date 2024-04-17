@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'league spartan';
+    src: url('/fuentes/League_Spartan/static/LeagueSpartan-Regular.ttf');
+    font-weight: bold;
+    font-style: bold;
+}
+
+nav{
+    background-color: azure;
+    padding: auto;
+}
+
+ul li a {
+    font-family: 'league spartan';
+}
+
+#MainNavBar{
+    overflow: hidden;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+#MainNavBar ul{
+    margin: 0px;
+}
+
+#MainNavBar .logo{
+    float: left;
+}
+
+#MainNavBar li {
+    float: left;
+    margin: 2%;
+}
+
+
+#MainNavBar li a{
+    display: block;
+    padding: 10px;
+}
+
+h1{
+    margin: 5px;
+}
+
+img{
+    width: 65px;
+    height: 75px;
+    margin: 0px;
+    
+}
+
+#registro{
+    text-decoration: underline;
+    border-left: 1px solid black;
+    margin-right: 0px;
+    margin-left: 300px;
+    padding: 10px;
+}
+
+#ingreso {
+    padding: 10px;
+    color: white;
+    background-color: #6e569f;
+    border-radius: 6%;
+}
+
+#ShowcaseMain{
+    background: url('/imagenes/FRAMES/FRAME A/Frame A1 - Bienvenidos.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.container{
+    margin: auto;
+    padding: auto;
+    max-width: 100%;
+    overflow: auto;
+}
+
+a.btn-main{
+    position: fixed;
+    left: 70%;
+    top: 70%;
+    font-family: 'league spartan';
+    text-decoration: none;
+    background-color: #54e9f4;
+    padding: 10px 40px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px black;
+}
+
+a.btn-main:hover{
+    background-color: #f7a724;
+}
