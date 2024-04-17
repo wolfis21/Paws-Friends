@@ -2,8 +2,8 @@
 
 @section('content')
     <h1>Editar Vets</h1>
-    <form method="POST" action="{{ route('vets.update',  $veterinarian->id) }}"  role="form" enctype="multipart/form-data">
-        {{ method_field('PATCH') }}
+    <form method="POST" action="{{ route('update',  $veterinarian->id) }}"  role="form" enctype="multipart/form-data">
+        {{ method_field('PUT') }}
         @csrf
 
         <div class="mb-3">

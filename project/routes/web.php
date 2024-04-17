@@ -22,6 +22,7 @@ Route::get('/', HomeServicesController::class);
 //vistas de Vets
 Route::get('/user/vets', [VeterinarianController::class, 'vetuser'])->name('vetsuser');
 Route::resource('/admin/vets', VeterinarianController::class);
+Route::put('/user/vets/update/{id}', [App\Http\Controllers\VeterinarianController::class, 'update'])->name('update');
 //rutas de housings
 Route::get('/user/housings', [HousingsController::class, 'housinguser'])->name('housinguser');
 Route::get('/admin/housings', [HousingsController::class, 'index'])->name('housingadmin');
