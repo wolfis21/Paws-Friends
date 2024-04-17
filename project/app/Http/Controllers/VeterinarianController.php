@@ -38,8 +38,6 @@ class VeterinarianController extends Controller
      */
     public function store(Request $request)
     {
-        
-
         $request->validate([
             'name' => 'required|string|min:3',
             'address' => 'string',
@@ -58,15 +56,16 @@ class VeterinarianController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Veterinarian $veterinarian)
+    public function show(string $id)
     {
-        //
+        $veterinarian = Veterinarian::find($id);
+        return $veterinarian;
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Veterinarian $veterinarian)
+    public function edit(string $id)
     {
         //
     }
@@ -74,16 +73,26 @@ class VeterinarianController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Veterinarian $veterinarian)
+    public function update(Request $request, string $id)
     {
-        //
+        $veterinarian = Veterinarian::findOrAll($request->id);
+        $veterinarian->name = $request->name;
+        $veterinarian->address = $request->address;
+        $veterinarian->phone = $request->phone;
+        $veterinarian->email = $request->email;
+        $veterinarian->link_ref = $request->link_ref;
+        $veterinarian->img_ref = $request->img_ref;
+        $veterinarian->specialist_animals = $request->specialist_animals;
+        $veterinarian->save();
+        return $veterinarian;
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Veterinarian $veterinarian)
+    public function destroy(string $id)
     {
-        //
+        $veterinarian = Veterinarian::destroy($id);
+        return redirect()->route('vets.index');
     }
 }
