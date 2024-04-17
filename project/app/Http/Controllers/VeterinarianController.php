@@ -27,7 +27,9 @@ class VeterinarianController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
+
     {
+        $veterinario = new Veterinarian();
         return view('vets.create');
     }
 
@@ -36,17 +38,19 @@ class VeterinarianController extends Controller
      */
     public function store(Request $request)
     {
-        $veterinarios = new Veterinarian();
+        
 
-        $veterinarios->name = $request->get('name');
-        $veterinarios->address = $request->get('address');
-        $veterinarios->phone = $request->get('phone');
-        $veterinarios->email = $request->get('email');
-        $veterinarios->link_ref = $request->get('link_ref');
-        $veterinarios->img_ref = $request->get('img_ref');
-        $veterinarios->specialist_animals = $request->get('specialist_animals');
+        $request->validate([
+            'name' => 'required|string|min:3',
+            'address' => 'string',
+            'phone' => 'required|unique:veterinarians|alpha_num|min_digits:11',
+            'email' => 'required|unique:veterinarians|email',
+            'link_ref' => 'nullable',
+            'img_ref' => 'required|string',
+            'specialist_animals' => 'required|string',
+        ]);
 
-        $veterinarios->save();
+        $veterinario = Veterinarian::create($request->all());
         return redirect()->route('vets.index');
 
     }

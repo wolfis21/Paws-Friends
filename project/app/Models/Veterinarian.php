@@ -11,7 +11,8 @@ class Veterinarian extends Model
 
     protected $fillable = [
         'name',
-        'adress',
+        'address',
+        'phone',
         'email',
         'link_ref',
         'img_ref',
