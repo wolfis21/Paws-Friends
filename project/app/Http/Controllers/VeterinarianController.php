@@ -14,8 +14,8 @@ class VeterinarianController extends Controller
     public function index()
 
     {   
-        $veterinarios = Veterinarian::all();
-        return view('vets.index')->with('veterinarios',$veterinarios);
+        $veterinarians = Veterinarian::all();
+        return view('vets.index')->with('veterinarians',$veterinarians);
     }
 
     public function vetuser()
@@ -29,7 +29,7 @@ class VeterinarianController extends Controller
     public function create()
 
     {
-        $veterinario = new Veterinarian();
+        $veterinarian = new Veterinarian();
         return view('vets.create');
     }
 
@@ -38,8 +38,6 @@ class VeterinarianController extends Controller
      */
     public function store(Request $request)
     {
-        
-
         $request->validate([
             'name' => 'required|string|min:3',
             'address' => 'string',
@@ -50,7 +48,7 @@ class VeterinarianController extends Controller
             'specialist_animals' => 'required|string',
         ]);
 
-        $veterinario = Veterinarian::create($request->all());
+        $veterinarian = Veterinarian::create($request->all());
         return redirect()->route('vets.index');
 
     }
@@ -66,9 +64,10 @@ class VeterinarianController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Veterinarian $veterinarian)
+    public function edit($id_vet)
     {
-        //
+        $veterinarian = Veterinarian::find($id_vet);
+        return view('vets.edit')->with('veterinarian',$veterinarian);
     }
 
     /**
@@ -76,14 +75,27 @@ class VeterinarianController extends Controller
      */
     public function update(Request $request, Veterinarian $veterinarian)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|min:3',
+            'address' => 'string',
+            'phone' => 'required||alpha_num|min_digits:11',
+            'email' => 'required|email',
+            'link_ref' => 'nullable',
+            'img_ref' => 'required|string',
+            'specialist_animals' => 'required|string',
+        ]);
+
+        $veterinarian->update($request->all());
+        return redirect()->route('vets.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Veterinarian $veterinarian)
+    public function destroy($id_vet)
     {
-        //
+        $veterinarian = Veterinarian::find($id_vet)->delete();
+        return redirect()->route('vets.index');
+
     }
 }

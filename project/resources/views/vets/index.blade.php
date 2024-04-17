@@ -15,17 +15,22 @@
             <th scope="col">Acciones</th>
         </thead>
         <tbody>
-            @foreach ($veterinarios as $veterinario)
+            @foreach ($veterinarians as $veterinarian)
                 <tr>
-                    <td>{{$veterinario->name}}</td>
-                    <td>{{$veterinario->address}}</td>
-                    <td>{{$veterinario->email}}</td>
-                    <td>{{$veterinario->link_ref}}</td>
-                    <td>{{$veterinario->img_ref}}</td>
-                    <td>{{$veterinario->specialist_animals}}</td>
+                    <td>{{$veterinarian->name}}</td>
+                    <td>{{$veterinarian->address}}</td>
+                    <td>{{$veterinarian->email}}</td>
+                    <td>{{$veterinarian->link_ref}}</td>
+                    <td>{{$veterinarian->img_ref}}</td>
+                    <td>{{$veterinarian->specialist_animals}}</td>
                     <td>
-                        <a class="btn btn-primary">Editar</a>
-                        <a class="btn btn-danger">Eliminar</a>
+                        <form action="{{route('vets.destroy',$veterinarian->id) }}" method="POST">
+                            <a class="btn btn-primary" href="{{ route('vets.edit', $veterinarian->id ) }}">Editar</a>
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+
                     </td>
                 </tr>
             @endforeach
