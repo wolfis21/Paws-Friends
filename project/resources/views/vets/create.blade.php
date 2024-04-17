@@ -4,9 +4,12 @@
 <h1>Crear Vets</h1>
     <form method="POST" action="{{ route('vets.store') }}">  
         @csrf
-            
-        @include('vets.form')
+        @php
 
+            $isEdit = false;
+        @endphp
+        
+        @include('vets.form')
 
     </form>
 @endsection
