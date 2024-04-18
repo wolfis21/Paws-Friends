@@ -23,10 +23,13 @@
                 <a class="nav-link"  href="#">Principal</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ ($isAdmin) ? route('housingadmin') : route('housinguser') }}">Cuidados</a>
+                <a class="nav-link" href="{{ ($isAdmin) ? route('housingAdmin') : route('housingUser') }}">Cuidados</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ ($isAdmin) ? route('vets.index') : route('vetsuser') }}">Veterinarios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ ($isAdmin) ? route('dogGroomerAdmin') : route('dogGrommer') }}">Peluqueria</a>
               </li>
             </ul>
               <button class="btn btn-outline-danger" type="submit">Salir</button>

@@ -42,10 +42,8 @@ class VeterinarianController extends Controller
             'name' => 'required|string|min:3',
             'address' => 'string',
             'phone' => 'required|unique:veterinarians|alpha_num|min_digits:11',
-            'email' => 'required|unique:veterinarians|email',
             'link_ref' => 'nullable',
             'img_ref' => 'required|string',
-            'specialist_animals' => 'required|string',
         ]);
 
         $veterinarian = Veterinarian::create($request->all());
@@ -56,9 +54,10 @@ class VeterinarianController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Veterinarian $veterinarian)
+    public function show(string $id)
     {
-        //
+        $veterinarian = Veterinarian::find($id);
+        return $veterinarian;
     }
 
     /**
@@ -75,27 +74,17 @@ class VeterinarianController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // $request->validate([
-        //     'name' => 'required|string|min:3',
-        //     'address' => 'string',
-        //     'phone' => 'required||alpha_num|min_digits:11',
-        //     'email' => 'required|email',
-        //     'link_ref' => 'nullable',
-        //     'img_ref' => 'required|string',
-        //     'specialist_animals' => 'required|string',
-        // ]);
-
-        // $veterinarian->update($request->all());
-        // return redirect()->route('vets.index');
-        $veterinarian = Veterinarian::findOrFail($request->id);
-        $veterinarian->name = $request->name;
-        $veterinarian->address = $request->address;
-        $veterinarian->phone = $request->phone;
-        $veterinarian->email = $request->email;
-        $veterinarian->link_ref = $request->link_ref;
-        $veterinarian->img_ref = $request->img_ref;
-        $veterinarian->specialist_animals = $request->specialist_animals;
-        $veterinarian->save();
+        $request->validate([
+            'name' => 'required|string|min:3',
+            'address' => 'string',
+            'phone' => 'required||alpha_num|min_digits:11',
+            'email' => 'required|email',
+            'link_ref' => 'nullable',
+            'img_ref' => 'required|string',
+            'specialist_animals' => 'required|string',
+        ]);
+        $veterinarian = Veterinarian::findOrFail($id);
+        $veterinarian->update($request->all());
         return redirect()->route('vets.index');
     }
 

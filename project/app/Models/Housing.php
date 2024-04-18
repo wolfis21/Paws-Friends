@@ -9,5 +9,14 @@ class Housing extends Model
 {
     protected $table = 'housings';
 
+    protected $fillable = [
+        'address' ,
+        'phone' ,
+        'description_location' ,
+        'type_animals' ,
+        'food_offer' ,
+        'img_ref' 
+    ];
+
     use HasFactory;
 }

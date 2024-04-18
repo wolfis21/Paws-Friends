@@ -1,5 +1,5 @@
 @extends('layouts.example')
-
+@section('title', 'Edit Veterinarian')
 @section('content')
     <h1>Editar Vets</h1>
     <form method="POST" action="{{ route('update',  $veterinarian->id) }}"  role="form" enctype="multipart/form-data">

@@ -1,9 +1,9 @@
 @extends('layouts.example')
-
+@section('title', 'Veterinarian')
 @section('content')
 
     <a href="vets/create" class="btn btn-primary">Crear</a>
-    <p>Veterinarios admin</p>
+    <h1>Veterinarios admin</h1>
     <table class=" table table-dark">
         <thead>
             <th scope="col">Nombre</th>
