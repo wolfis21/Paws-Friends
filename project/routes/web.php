@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+//CONTROLADOR 
+use App\Http\Controllers\DemandAnimalController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +25,10 @@ Auth::routes();
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::middleware(['auth:sanctum','verified'])->group(function () {
+    Route::resource('/rescate', DemandAnimalController::class);
+    Route::get('/home', function () {
+        return view('home');
+    })->name('home');
+});
