@@ -1,0 +1,49 @@
+/* app general de nav */
+
+/* 
+Paletas de colores
+#54E9F4
+#6E569F
+#F7A724
+#9FCB40 */
+
+
+#app .container.custom{
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-brand img{
+    width: 75px;
+    height: 75px;
+    margin: 0px;
+    
+}
+
+.card-header-prom{
+    font-size: 22px;
+    font-weight: bold;
+    background: #54E9F4;
+    align-self: center;
+    padding: 10px;
+    border: 1px solid #54E9F4;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+
+.card-header.register{
+    align-self: center;
+    font-size: 20px;
+    background: #6E569F;
+    color: white;
+    border: 1px solid #6E569F;
+    border-radius: 10px;
+}
+
+.card.add-colors{
+    border: 1px solid #F7A724;
+    height: 40rem;
+}
