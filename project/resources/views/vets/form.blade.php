@@ -25,8 +25,8 @@
 </div>
 <div class="mb-3">
     <label for="Img" class="form-label">Img_ref</label>
-    <input type="text" class="form-control @error('img_ref') is-invalid @enderror" id="img_ref" name="img_ref"
-        placeholder="Jose Garcia" value="{{ old('img_ref') }}">
+    <input type="file" class="form-control @error('img_ref') is-invalid @enderror" id="img_ref" name="img_ref"
+        value="{{ old('img_ref') }}" accept="image/*">
 </div>
 <div class="mb-3">
     <label for="Especialidad" class="form-label">Especialidad</label>

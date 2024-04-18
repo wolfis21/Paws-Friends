@@ -36,4 +36,10 @@
             @endforeach
         </tbody>
     </table>
+    {{-- codigo para mostrar imagenes --}}
+    {{-- @foreach ($veterinarians as $veterinarian)
+        <div class="container">
+            <img src="images/vets/{{($veterinarian->img_ref)}}" alt="a">
+        </div>
+    @endforeach --}}
 @endsection

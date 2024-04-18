@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Veterinarian extends Model
 {
@@ -18,4 +19,6 @@ class Veterinarian extends Model
         'img_ref',
         'specialist_animals'
     ];
+
+
 };

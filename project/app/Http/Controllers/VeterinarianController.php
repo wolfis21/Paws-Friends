@@ -43,10 +43,18 @@ class VeterinarianController extends Controller
             'address' => 'string',
             'phone' => 'required|unique:veterinarians|alpha_num|min_digits:11',
             'link_ref' => 'nullable',
-            'img_ref' => 'required|string',
+            'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
-        $veterinarian = Veterinarian::create($request->all());
+        $veterinarian = $request->all();
+
+        if ($image = $request->file('img_ref')) {
+            $path = 'admin/images/vets';
+            $imageName = date('YmdHis')."_".$image->getClientOriginalName();
+            $image->move($path, $imageName );
+            $veterinarian['img_ref'] = "$imageName";
+        }
+        Veterinarian::create($veterinarian);
         return redirect()->route('vets.index');
 
     }
