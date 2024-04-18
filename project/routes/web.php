@@ -24,13 +24,26 @@ Route::get('/main', function () {
     return view('main');
 });
 
-Auth::routes();
+//RUTAS SERVICIOS MODULO 2
+
+Route::get('/servicios', function () {
+    return view('servicios');
+});
+Route::get('registrodemanda', function () {
+    return view('registrodemanda');
+});
+
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::middleware(['auth:sanctum','verified'])->group(function () {
-    Route::resource('/rescate', DemandAnimalController::class);
-    Route::get('/home', function () {
-        return view('home');
-    })->name('home');
-});
+
+Route::get('/servicios', [App\Http\Controllers\ServiciosController::class, 'index'])->name('servicios');
+Route::get('/registrodemanda', [App\Http\Controllers\RegistroDemandaController::class, 'index'])->name('registrodemanda');
+
+Route::post('/guardar-denuncia', '[TuControlador]@guardarDenuncia')->name('guardar_denuncia');
+
+
+
+//colocar rutas arriba de esto para notener problemas 
+Auth::routes();
