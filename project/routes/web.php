@@ -1,9 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-//CONTROLADOR 
-use App\Http\Controllers\DemandAnimalController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::get('/main', function () {
+    return view('main');
+});
 
 Auth::routes();
 
