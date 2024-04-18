@@ -10,6 +10,11 @@ nav{
     padding: auto;
 }
 
+.nav-main-home{
+    position: relative;
+    bottom: 1rem;
+}
+
 ul li a {
     font-family: 'league spartan';
 }
@@ -32,6 +37,7 @@ ul li a {
 #MainNavBar li {
     float: left;
     margin: 2%;
+    margin-bottom: -2%;
 }
 
 
@@ -45,7 +51,7 @@ h1{
 }
 
 img{
-    width: 65px;
+    width: 75px;
     height: 75px;
     margin: 0px;
     
@@ -70,14 +76,14 @@ img{
     background: url('/imagenes/FRAMES/FRAME A/Frame A1 - Bienvenidos.png');
     background-repeat: no-repeat;
     background-size: cover;
-
+    margin: 0px;
 }
 
 .container{
     margin: auto;
     padding: auto;
     max-width: 100%;
-    overflow: auto;
+    overflow: overlay;
 }
 
 a.btn-main{
