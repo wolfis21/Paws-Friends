@@ -54,7 +54,6 @@ class RegisterController extends Controller
             'dni' => ['required', 'string', 'max:20'],
             'phone' => ['required', 'string', 'max:12'] ,
             'address' => ['required', 'string', 'max:255'],
-            'photo_user' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -67,17 +66,30 @@ class RegisterController extends Controller
      * @return \App\Models\User
      */
     protected function create(array $data)
-    {
+    {   
+        $imgPhoto = $data['photo_user'];
+    
+        // Guardar la imagen de la cedula
+        $imgPhotoPath = $imgPhoto->store('docs', 'public');
+
         return User::create([
             'name' => $data['name'],
             'last_name' => $data['last_name'],
             'dni' => $data['dni'],
             'phone' => $data['phone'],
             'address' => $data['address'],
-            'photo_user' => $data['photo_user'],
+            'photo_user' => $imgPhotoPath,
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'rols_id' => '2', //falta implementar para registros de admistradores pensar a futuro
+            'rols_id' => '2',
         ]);
+    }
+
+    protected function show($id){
+        $user = User::find($id);
+        
+        $img = base64_encode(file_get_contents(public_path('storage/' . $user->photo_user)));
+
+        return view('profile.index', compact('user', 'img'));
     }
 }

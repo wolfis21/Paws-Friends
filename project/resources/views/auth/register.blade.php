@@ -1,4 +1,6 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app') --}}
+
+@extends('layouts.headerNav')
 
 @section('content')
 <div class="container">
@@ -11,7 +13,7 @@
                 <div class="card-header register">Registro</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="row mb-3">
@@ -83,7 +85,7 @@
                             <label for="photo_user" class="col-md-4 col-form-label text-md-end">{{ __('Ajuste Foto') }}</label>
 
                             <div class="col-md-6">
-                                <input id="photo_user" type="text" class="form-control @error('photo_user') is-invalid @enderror" name="photo_user" value="{{ old('photo_user') }}" required autocomplete="photo_user" autofocus>
+                                <input id="photo_user" type="file" class="form-control @error('photo_user') is-invalid @enderror" name="photo_user" value="{{ old('photo_user') }}" required autocomplete="photo_user" autofocus>
 
                                 @error('photo_user')
                                     <span class="invalid-feedback" role="alert">
