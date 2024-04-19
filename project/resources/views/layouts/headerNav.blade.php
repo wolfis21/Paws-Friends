@@ -10,7 +10,7 @@
     <nav class="nav-main-home">
         <div class="container">
             <ul id="MainNavBar">
-                <h1><img src="{{ URL::asset ('imagenes/Variaciones logo.png')}}" alt="logo"/></h1>
+                <h1><img id="logoNav" src="{{ URL::asset ('imagenes/Variaciones logo.png')}}" alt="logo"/></h1>
 
                 <li><a>Inicio</a></li>
                 <li><a>Nosotros</a></li>

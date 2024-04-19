@@ -54,7 +54,7 @@ h1{
     margin: 5px;
 }
 
-img{
+#logoNav{
     width: 75px;
     height: 75px;
     margin: 0px;
@@ -85,6 +85,24 @@ img{
     width: 100%;
 }
 
+#ShowcaseServicios{
+    background: url('../imagenes/FRAMES/FRAME B/Frame B1 - Servicios.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    height: 100vh;
+    width: 100%;
+}
+
+#ShowcaseQuienes{
+    background: url('../imagenes/FRAMES/FRAME C/Frame C1 - Somos.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    height: 100vh;
+    width: 100%;
+}
+
 .container{
     margin: auto;
     padding: auto;
@@ -106,4 +124,38 @@ a.btn-main{
 
 a.btn-main:hover{
     background-color: #f7a724;
+}
+
+.modulo-box{
+    float: left;
+    margin: 4%;
+    width: 258px;
+    height: 294px;
+}
+
+.iconosModulos{
+    position: absolute;
+    top: 150%;
+    width: 258px;
+    height: 294px;
+    
+}
+#cuidado{
+    background-color: #54e9f4;
+    border-radius: 10%;
+}
+
+#donaciones{
+    background-color: #6e569f;
+    border-radius: 10%;
+}
+
+#rescates{
+    background-color: #f7a724;
+    border-radius: 10%;
+}
+
+#tienda{
+    background-color: #9fcb40;
+    border-radius: 10%;
 }
