@@ -103,6 +103,15 @@ h1{
     width: 100%;
 }
 
+#ShowcaseEquipo{
+    background: url('../imagenes/FRAMES/FRAME D/Frame D1 - Equipo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    height: 100vh;
+    width: 100%;
+}
+
 .container{
     margin: auto;
     padding: auto;
@@ -140,6 +149,18 @@ a.btn-main:hover{
     height: 294px;
     
 }
+/*slider*/
+.carousel-inner{
+    display: flex;
+    float: left;
+    width: 50%;
+    align-items: center;
+}
+
+.carousel-inner img{
+    height: 100vh;
+}
+
 #cuidado{
     background-color: #54e9f4;
     border-radius: 10%;
@@ -159,4 +180,13 @@ a.btn-main:hover{
 #tienda{
     background-color: #9fcb40;
     border-radius: 10%;
+}
+
+#txt-quienes{
+    position: absolute;
+    top: 250%;
+    font-family: 'league spartan';
+    font-size: x-large;
+    text-align: justify;
+    padding: 40px 180px;
 }
