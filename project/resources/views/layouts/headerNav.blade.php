@@ -84,7 +84,18 @@
     </div>
 
     <footer>
-        <p>aaaaaaaaaaaaaaaaaa</p>
+        <div class="container-footer">
+            <div class="img-footer">
+                <img class="logo-footer" src="{{ URL::asset('imagenes/Variaciones logo.png') }}" alt="logo" />
+            </div>
+            <div class="text-legals">
+                <div>©2024 Company Name. All rights reserved UGMA</div>
+                <div class="terms-policy">
+                    <div> Privacy & Policy</div>
+                    <div>Terms & Condition</div>
+                </div>
+            </div>
+        </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">

@@ -199,3 +199,22 @@ a.btn-main:hover{
     text-align: justify;
     padding: 40px 220px;
 }
+
+/* footer */
+
+.img-footer{
+    display: flex;
+    justify-content: center;
+}
+
+.logo-footer{
+    width: 200px;
+    height: 200px;
+}
+
+.text-legals{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    border-top: 2px solid #486284;
+}
