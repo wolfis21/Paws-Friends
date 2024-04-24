@@ -55,6 +55,8 @@ Route::controller(DogGroomerController::class)->group(function(){
 });
 //ver como integrar los comments
 
-// Auth::routes();
+Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Route::get('/Dog-Gromer', [App\Http\Controllers\DogGromerController::class,'dogGroomerUser'])->name('dogGroomerUser');
