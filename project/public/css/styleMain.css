@@ -10,6 +10,10 @@
     margin: 0;
 }
 
+a {
+    text-decoration: none!important;
+}
+
 nav{
     background-color: azure;
     padding: auto;
@@ -22,6 +26,9 @@ nav{
 ul li a {
     font-family: 'league spartan';
 }
+ul{
+    margin-bottom: 0px!important;
+}
 
 #MainNavBar{
     overflow: hidden;
@@ -29,6 +36,7 @@ ul li a {
     display: flex;
     justify-content: space-between;
 }
+
 
 #MainNavBar ul{
     margin: 0px;
@@ -40,25 +48,23 @@ ul li a {
 
 #MainNavBar li {
     float: left;
-    margin: 2%;
-    margin-bottom: -2%;
+    margin: 30px 20px;
 }
-
 
 #MainNavBar li a{
     display: block;
     padding: 10px;
+    font-size: 18px!important;
 }
 
 h1{
     margin: 5px;
 }
 
-#logoNav{
-    width: 75px;
-    height: 75px;
+#logoNav {
+    width: 100px;
+    height: 100px;
     margin: 0px;
-    
 }
 
 #registro{
@@ -122,43 +128,46 @@ h1{
 a.btn-main{
     position: absolute;
     left: 70%;
-    top: 88%;
+    top: 84%;
     font-family: 'league spartan';
     text-decoration: none;
     background-color: #54e9f4;
     padding: 10px 40px;
     border-radius: 8px;
     box-shadow: 0px 5px 10px black;
+    font-size: 18px;
 }
 
 a.btn-main:hover{
     background-color: #f7a724;
 }
 
-.modulo-box{
-    float: left;
-    margin: 4%;
-    width: 258px;
-    height: 294px;
+.services-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: stretch;
+    padding-right: 15rem;
 }
 
-.iconosModulos{
+.iconosModulos {
     position: absolute;
-    top: 150%;
-    width: 258px;
-    height: 294px;
-    
+    top: 153%;
+    width: 15rem;
+    height: 15rem;
 }
 /*slider*/
-.carousel-inner{
+.carousel-inner.custom{
     display: flex;
     float: left;
-    width: 50%;
+    width: 35%!important;
     align-items: center;
+    margin-left:250px;
+    margin-top:100px;
 }
 
 .carousel-inner img{
-    height: 100vh;
+    height: 80vh;
 }
 
 #cuidado{
@@ -182,11 +191,11 @@ a.btn-main:hover{
     border-radius: 10%;
 }
 
-#txt-quienes{
+#txt-quienes {
     position: absolute;
     top: 250%;
     font-family: 'league spartan';
     font-size: x-large;
     text-align: justify;
-    padding: 40px 180px;
+    padding: 40px 220px;
 }
