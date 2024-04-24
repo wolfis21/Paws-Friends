@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class VeterinarianController extends Controller
 {
+    //todo Admin
     /**
      * Display a listing of the resource.
      */
@@ -15,12 +16,12 @@ class VeterinarianController extends Controller
 
     {   
         $veterinarians = Veterinarian::all();
-        return view('vets.index')->with('veterinarians',$veterinarians);
+        return view('veterinarian.admin.index')->with('veterinarians',$veterinarians);
     }
 
     public function vetuser()
     {
-        return view('vets.vetsuser');
+        return view('veterinarian.admin.vetsuser');
     }
 
     /**
@@ -30,7 +31,7 @@ class VeterinarianController extends Controller
 
     {
         $veterinarian = new Veterinarian();
-        return view('vets.create');
+        return view('veterinarian.admin.create');
     }
 
     /**
@@ -55,7 +56,7 @@ class VeterinarianController extends Controller
             $veterinarian['img_ref'] = "$imageName";
         }
         Veterinarian::create($veterinarian);
-        return redirect()->route('vets.index');
+        return redirect()->route('veterinarian.admin.index');
 
     }
 
@@ -74,7 +75,7 @@ class VeterinarianController extends Controller
     public function edit($id_vet)
     {
         $veterinarian = Veterinarian::find($id_vet);
-        return view('vets.edit')->with('veterinarian',$veterinarian);
+        return view('veterinarian.admin.edit')->with('veterinarian',$veterinarian);
     }
 
     /**
@@ -102,7 +103,12 @@ class VeterinarianController extends Controller
     public function destroy($id_vet)
     {
         $veterinarian = Veterinarian::find($id_vet)->delete();
-        return redirect()->route('vets.index');
+        return redirect()->route('veterinarian.admin.index');
 
+    }
+
+    //todo User
+    public function veterinarioUser(){
+        return view('veterinarian.user.vetsuser');
     }
 }

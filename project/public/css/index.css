@@ -100,3 +100,7 @@ img {
     -o-transition: opacity 0.5s ease-in-out;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}

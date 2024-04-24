@@ -24,6 +24,16 @@ Route::get('/user/vets', [VeterinarianController::class, 'vetuser'])->name('vets
 Route::resource('/admin/vets', VeterinarianController::class);
 Route::put('/user/vets/update/{id}', [App\Http\Controllers\VeterinarianController::class, 'update'])->name('update');
 
+//! Ruta,nombre de la funcion en el controlador, nombre dado en el html
+Route::controller(VeterinarianController::class)->group(function(){
+    //todo rutas admin
+
+
+
+    //todo rutas user
+    Route::get('/Veterinario','veterinarioUser')->name('Veterinario');
+});
+
 //todo rutas de housings
 Route::controller(HousingsController::class)->group(function(){
     //todo rutas admin
@@ -34,6 +44,7 @@ Route::controller(HousingsController::class)->group(function(){
     Route::get('/admin/editHousing/{id}', 'editHousing')->name('editHousing');
     Route::put('/admin/updateHousing/{id}', 'updateHousing')->name('updateHousing');
     Route::delete('/admin/destroyHousing/{id}', 'destroyHousing')->name('destroyHousing');
+    
     //todo rutas user
     Route::resource('/user/housings', HousingsController::class);
     Route::get('/user/housings', 'housingUser')->name('housingUser');
@@ -58,5 +69,3 @@ Route::controller(DogGroomerController::class)->group(function(){
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-// Route::get('/Dog-Gromer', [App\Http\Controllers\DogGromerController::class,'dogGroomerUser'])->name('dogGroomerUser');
