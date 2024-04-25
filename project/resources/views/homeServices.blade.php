@@ -10,8 +10,8 @@
 <body>
   {{-- //traerme el user --}}
   <?php  
-    // $isAdmin = true;
-    $isAdmin = false;
+    $isAdmin = true;
+    // $isAdmin = false;
   ?>
 
 
@@ -28,7 +28,7 @@
                 <a class="nav-link"  href="#">Principal</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ ($isAdmin) ? route('housingAdmin') : route('housingUser') }}">Cuidados</a>
+                <a class="nav-link" href="{{ ($isAdmin) ? route('housingAdmin') : route('housingUser') }}">Alojamiento</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ ($isAdmin) ? route('vets.index') : route('vetsuser') }}">Veterinarios</a>

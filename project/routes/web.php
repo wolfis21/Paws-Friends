@@ -18,18 +18,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', HomeServicesController::class);
-// Route::get('/housings')
-//vistas de Vets
 Route::get('/user/vets', [VeterinarianController::class, 'vetuser'])->name('vetsuser');
+
 Route::resource('/admin/vets', VeterinarianController::class);
+
 Route::put('/user/vets/update/{id}', [App\Http\Controllers\VeterinarianController::class, 'update'])->name('update');
 
 //! Ruta,nombre de la funcion en el controlador, nombre dado en el html
+//todo rutas Veterinarians
 Route::controller(VeterinarianController::class)->group(function(){
     //todo rutas admin
-
-
-
+    Route::get('/admin/Veterinarians', 'index')->name('index');
+    Route::get('/admin/CreateVeterianarians','create')->name('create');
+    Route::put('/admin/storeVeterinarias','store')->name('store');
+    Route::get('/admin/editVeterinarians/{id}','edit')->name('edit');
+    Route::put('/admin/updateVeterinarians/{id}', 'update')->name('update');
+    Route::delete('/admin/destroyVeterinarians/{id}', 'destroy')->name('destroy');
     //todo rutas user
     Route::get('/Veterinario','veterinarioUser')->name('Veterinario');
 });

@@ -13,16 +13,15 @@ class VeterinarianController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-
     {   
         $veterinarians = Veterinarian::all();
         return view('veterinarian.admin.index')->with('veterinarians',$veterinarians);
     }
 
-    public function vetuser()
-    {
-        return view('veterinarian.admin.vetsuser');
-    }
+    // public function vetuser()
+    // {
+    //     return view('veterinarian.admin.vetsuser');
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -30,7 +29,7 @@ class VeterinarianController extends Controller
     public function create()
 
     {
-        $veterinarian = new Veterinarian();
+        $veterinarians = new Veterinarian();
         return view('veterinarian.admin.create');
     }
 
@@ -56,7 +55,7 @@ class VeterinarianController extends Controller
             $veterinarian['img_ref'] = "$imageName";
         }
         Veterinarian::create($veterinarian);
-        return redirect()->route('veterinarian.admin.index');
+        return redirect()->route('index');
 
     }
 
@@ -94,7 +93,7 @@ class VeterinarianController extends Controller
         ]);
         $veterinarian = Veterinarian::findOrFail($id);
         $veterinarian->update($request->all());
-        return redirect()->route('vets.index');
+        return redirect()->route('index');
     }
 
     /**
@@ -103,7 +102,7 @@ class VeterinarianController extends Controller
     public function destroy($id_vet)
     {
         $veterinarian = Veterinarian::find($id_vet)->delete();
-        return redirect()->route('veterinarian.admin.index');
+        return redirect()->route('index');
 
     }
 

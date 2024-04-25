@@ -2,7 +2,7 @@
 @section('title', 'Veterinarian')
 @section('content')
 
-    <a href="vets/create" class="btn btn-primary">Crear</a>
+    <a href="{{route('create')}}" class="btn btn-primary">Crear</a>
     <h1>Veterinarios admin</h1>
     <table class=" table table-dark">
         <thead>
@@ -24,8 +24,8 @@
                     <td>{{$veterinarian->img_ref}}</td>
                     <td>{{$veterinarian->specialist_animals}}</td>
                     <td>
-                        <form action="{{route('vets.destroy',$veterinarian->id) }}" method="POST">
-                            <a class="btn btn-primary" href="{{ route('vets.edit', $veterinarian->id ) }}">Editar</a>
+                        <form action="{{route('destroy',$veterinarian->id) }}" method="POST">
+                            <a class="btn btn-primary" href="{{ route('edit', $veterinarian->id ) }}">Editar</a>
                             @method('DELETE')
                             @csrf
                             <button type="submit" class="btn btn-danger">Eliminar</button>
