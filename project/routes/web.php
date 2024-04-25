@@ -23,6 +23,7 @@ Route::get('/main', function () {
     return view('main');
 });
 
+/* perfil no desarrollado */
 Route::get('user/profile', [UserController::class, 'show'])->name('user.profile');
 
 
