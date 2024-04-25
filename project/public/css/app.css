@@ -7,6 +7,18 @@ Paletas de colores
 #F7A724
 #9FCB40 */
 
+.container-register{
+    background: url('../imagenes/background-register.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 115vh;
+}
+
+.box-ajust{
+    width: 40% !important;
+    padding: 9rem 4rem;
+}
+
 
 #app .container.custom{
     display: flex;
@@ -23,27 +35,60 @@ Paletas de colores
 }
 
 .card-header-prom{
-    font-size: 22px;
+    font-size: 18px;
     font-weight: bold;
-    background: #54E9F4;
     align-self: center;
     padding: 10px;
-    border: 1px solid #54E9F4;
-    border-radius: 10px;
     margin: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    right: 14rem;
 }
 
 
 .card-header.register{
-    align-self: center;
-    font-size: 20px;
-    background: #6E569F;
-    color: white;
-    border: 1px solid #6E569F;
-    border-radius: 10px;
+    align-self: initial;
+    margin-top: -50px;
+    margin-left: 30px;
+    font-size: 55px;
+    color: black;
+    background: transparent;
+    border: 0;
+    font-weight: 600;
 }
 
-.card.add-colors{
-    border: 1px solid #F7A724;
-    height: 40rem;
+/* .card.add-colors{
+
+} */
+
+.superior-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-left: 8%;
+}
+
+.width-temp{
+    width: 50%;
+}
+.width-temp-2{
+    width: 89%!important;
+}
+
+.width-temp-2 input{
+    height: 50px;
+}
+
+.logo-register{
+    width: 80px;
+    height: 80px;
+}
+
+.inferior-container{
+    margin-left: 14%;
 }
