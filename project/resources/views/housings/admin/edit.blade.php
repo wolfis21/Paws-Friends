@@ -1,4 +1,4 @@
-@extends('layouts.example')
+@extends('dashboard')
 @section('title', 'Edit Housing')
 @section('content')
 <h1>Crear ciudadano</h1>

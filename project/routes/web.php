@@ -41,7 +41,7 @@ Route::controller(VeterinarianController::class)->group(function(){
 //todo rutas de housings
 Route::controller(HousingsController::class)->group(function(){
     //todo rutas admin
-    Route::resource('/admin/housings', HousingsController::class);
+    
     Route::get('/admin/housingsAdmin', 'housingAdmin')->name('housingAdmin');
     Route::get('/admin/createHousing', 'createHousing')->name('createHousing');
     Route::put('/admin/storeHousings', 'storeHousing')->name('storeHousing');
@@ -57,7 +57,6 @@ Route::controller(HousingsController::class)->group(function(){
 // todo: rutas de dog_groomer
 Route::controller(DogGroomerController::class)->group(function(){
     //todo rutas admin
-    Route::resource('/admin/DogGroomers', DogGroomerController::class);
     Route::get('/admin/DogGroomersAdmin', 'dogGroomerAdmin')->name('dogGroomerAdmin');
     Route::get('/admin/createDogGroomer', 'createDogGroomer')->name('createDogGroomer');
     Route::put('/admin/storeDogGroomers', 'storeDogGroomer')->name('storeDogGroomer');

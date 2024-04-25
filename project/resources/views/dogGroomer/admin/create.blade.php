@@ -1,4 +1,4 @@
-@extends('layouts.example')
+@extends('dashboard')
 @section('title', 'Create Dog Groomer')
 @section('content')
     <h1>Crear Dog Groomer</h1>

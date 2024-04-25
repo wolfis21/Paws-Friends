@@ -1,4 +1,4 @@
-@extends('layouts.example')
+@extends('dashboard')
 @section('title', 'Dog Groomer')
 @section('content')
     <a href="{{route('createDogGroomer')}}" class="btn btn-primary">Crear Dog Groomer</a>
