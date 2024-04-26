@@ -1,4 +1,4 @@
-@extends('dashboard')
+@extends('moduloServicios.dashboard')
 @section('title', 'Alojamiento')
 @section('content')
     <a href="{{route('createHousing')}}" class="btn btn-primary">Añadir Alojamiento</a>

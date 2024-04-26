@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\moduloServicios;
 
-use App\Models\Housing;
+use App\Models\moduloServicios\Housing;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -15,14 +15,14 @@ class HousingsController extends Controller
 
     public function housingAdmin(){
         $housings = Housing::all();
-        return view('housings.admin.index')->with('housings', $housings);
+        return view('moduloServicios.housings.admin.index')->with('housings', $housings);
     }
     /**
      * Show the form for creating a new resource.
      */
     public function createHousing(){
         $housing = new Housing();
-        return view('housings.admin.create');
+        return view('moduloServicios.housings.admin.create');
     }
     /**
      * Store a newly created resource in storage.
@@ -45,14 +45,14 @@ class HousingsController extends Controller
      */
     public function showHousing(string $id){
         $housing = Housing::find($id);
-        return view('housings.admin.show')->with('housing', $housing);
+        return view('moduloServicios.housings.admin.show')->with('housing', $housing);
     }
     /**
      * Show the form for editing the specified resource.
      */
     public function editHousing(string $id){
         $housing = Housing::find($id);
-        return view('housings.admin.edit')->with('housing', $housing);
+        return view('moduloServicios.housings.admin.edit')->with('housing', $housing);
     }
     /**
      * Update the specified resource in storage.
@@ -80,6 +80,6 @@ class HousingsController extends Controller
     //todo funciones user
     public function housingUser()
     {
-        return view('housings.user.index');
+        return view('moduloServicios.housings.user.index');
     }
 }

@@ -1,22 +1,19 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\moduloServicios;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Housing extends Model
+class Dog_groomer extends Model
 {
-    protected $table = 'housings';
-
+    protected $table = 'dog_groomer';
     protected $fillable = [
+        'name' ,
         'address' ,
         'phone' ,
-        'description_location' ,
-        'type_animals' ,
-        'food_offer' ,
+        'link_ref' ,
         'img_ref' 
     ];
-
     use HasFactory;
 }

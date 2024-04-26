@@ -1,4 +1,4 @@
-@extends('dashboard')
+@extends('moduloServicios.dashboard')
 @section('title', 'Editar Peluqueria')
 @section('content')
 <h1>Editar Peluqueria</h1>

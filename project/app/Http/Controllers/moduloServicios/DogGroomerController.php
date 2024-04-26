@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\moduloServicios;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Dog_groomer;
+use App\Models\moduloServicios\Dog_groomer;
 
 class DogGroomerController extends Controller
 {
@@ -14,14 +14,14 @@ class DogGroomerController extends Controller
     //todo funciones admin
     public function dogGroomerAdmin(){
         $dogGroomers = Dog_Groomer::all();
-        return view('dogGroomer.admin.index')->with('dogGroomers', $dogGroomers);
+        return view('moduloServicios.dogGroomer.admin.index')->with('dogGroomers', $dogGroomers);
     }
     /**
      * Show the form for creating a new resource.
      */
     public function createDogGroomer(){
         $dogGroomer = new Dog_Groomer();
-        return view('dogGroomer.admin.create');
+        return view('moduloServicios.dogGroomer.admin.create');
     }
     /**
      * Store a newly created resource in storage.
@@ -43,14 +43,14 @@ class DogGroomerController extends Controller
      */
     public function showDogGroomer(string $id){
         $dogGroomer = Dog_Groomer::find($id);
-        return view('dogGroomer.admin.show')->with('dogGroomer', $dogGroomer);
+        return view('moduloServicios.dogGroomer.admin.show')->with('dogGroomer', $dogGroomer);
     }
     /**
      * Show the form for editing the specified resource.
      */
     public function editDogGroomer(string $id){
         $dogGroomer = Dog_Groomer::find($id);
-        return view('dogGroomer.admin.edit')->with('dogGroomer', $dogGroomer);
+        return view('moduloServicios.dogGroomer.admin.edit')->with('dogGroomer', $dogGroomer);
     }
     /**
      * Update the specified resource in storage.
@@ -77,6 +77,6 @@ class DogGroomerController extends Controller
     //todo funciones user
     public function dogGroomerUser()
     {
-        return view('dogGroomer.user.index');
+        return view('moduloServicios.dogGroomer.user.index');
     }
 }

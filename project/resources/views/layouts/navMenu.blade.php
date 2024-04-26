@@ -85,10 +85,7 @@
             </ul>
         </div>
     </nav>
-    <div class="containerMainNav">
-        @yield('content')
-    </div>
-
+    @yield('content')
     <footer>
         <div class="container-footer">
             <div class="img-footer">

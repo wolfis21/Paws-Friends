@@ -57,6 +57,19 @@ class DatabaseSeeder extends Seeder
             'updated_at' => now(), 
         ]);
 
+        DB::table('users')->insert([
+            'name' => 'user',
+            'email'=> 'admin@admin.com',
+            'email_verified_at' => now(),
+            'password' => bcrypt('admin'), // Cifrado la contraseña usando Bcrypt
+            'rols_id' => $rols,
+            'datas_users_id' => $data,
+            'remember_token' => Str::random(10),
+            'created_at' => now(), 
+            'updated_at' => now(), 
+        ]);
+
+
         $this->call(RolsSeeder::class);
     }
 }

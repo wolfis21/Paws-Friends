@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
-
-use App\Models\Veterinarian;
+namespace App\Http\Controllers\moduloServicios;
+ 
+use App\Models\moduloServicios\Veterinarian;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\moduloServicios;
 use Illuminate\Http\Request;
 
 class VeterinarianController extends Controller
@@ -15,7 +16,7 @@ class VeterinarianController extends Controller
     public function index()
     {   
         $veterinarians = Veterinarian::all();
-        return view('veterinarian.admin.index')->with('veterinarians',$veterinarians);
+        return view('moduloServicios.veterinarian.admin.index')->with('veterinarians',$veterinarians);
     }
 
     // public function vetuser()
@@ -30,7 +31,7 @@ class VeterinarianController extends Controller
 
     {
         $veterinarians = new Veterinarian();
-        return view('veterinarian.admin.create');
+        return view('moduloServicios.veterinarian.admin.create');
     }
 
     /**
@@ -74,7 +75,7 @@ class VeterinarianController extends Controller
     public function edit($id_vet)
     {
         $veterinarian = Veterinarian::find($id_vet);
-        return view('veterinarian.admin.edit')->with('veterinarian',$veterinarian);
+        return view('moduloServicios.veterinarian.admin.edit')->with('veterinarian',$veterinarian);
     }
 
     /**
@@ -108,6 +109,6 @@ class VeterinarianController extends Controller
 
     //todo User
     public function veterinarioUser(){
-        return view('veterinarian.user.vetsuser');
+        return view('moduloServicios.veterinarian.user.vetsuser');
     }
 }

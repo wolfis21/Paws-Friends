@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\DogGroomerController;
+use App\Http\Controllers\moduloServicios\DogGroomerController;
 use App\Http\Controllers\HomeServicesController;
-use App\Http\Controllers\HousingsController;
-use App\Http\Controllers\VeterinarianController;
+use App\Http\Controllers\moduloServicios\HousingsController;
+use App\Http\Controllers\moduloServicios\VeterinarianController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,11 +19,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeServicesController::class)->name('homeService');
 
+
+//? RUTAS MODULO 1
 Route::controller(HomeServicesController::class)->group(function(){
     Route::get('/ServiceModel','serviceModel')->name('serviceModel');
 });
-
-//? RUTAS MODULO 1
 //! Ruta,nombre de la funcion en el controlador, nombre dado en el html
 //todo rutas Veterinarians
 Route::controller(VeterinarianController::class)->group(function(){

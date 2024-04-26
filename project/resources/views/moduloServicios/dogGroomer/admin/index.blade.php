@@ -1,4 +1,4 @@
-@extends('dashboard')
+@extends('moduloServicios.dashboard')
 @section('title', 'Peluqueria')
 @section('content')
     <a href="{{route('createDogGroomer')}}" class="btn btn-primary">Añadir Peluqueria</a>

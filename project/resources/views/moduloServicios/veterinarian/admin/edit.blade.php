@@ -1,5 +1,5 @@
 {{-- @extends('layouts.example') --}}
-@extends('dashboard')
+@extends('moduloServicios.dashboard')
 @section('title', 'Editar Veterinario')
 @section('content')
     <h1>Editar Veteterinario</h1>
