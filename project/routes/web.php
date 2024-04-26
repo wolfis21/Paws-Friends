@@ -17,22 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-<<<<<<< Updated upstream
 Route::get('/', HomeServicesController::class)->name('homeService');
-=======
-<<<<<<< HEAD
-//todo RUTAS PRINCIPALES DEL MAIN
 
-Route::get('/', HomeServicesController::class);
 Route::controller(HomeServicesController::class)->group(function(){
-    Route::get('/home', 'homeService')->name('homeService');
     Route::get('/ServiceModel','serviceModel')->name('serviceModel');
 });
-=======
-Route::get('/', HomeServicesController::class)->name('homeService');
->>>>>>> f999fd37eb4be29527e48f7097822f03f8092796
->>>>>>> Stashed changes
-
 
 //? RUTAS MODULO 1
 //! Ruta,nombre de la funcion en el controlador, nombre dado en el html

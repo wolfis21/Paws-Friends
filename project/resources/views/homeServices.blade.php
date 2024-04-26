@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 @extends('layouts.navMenu')
 @section('title', 'Principal')
   
