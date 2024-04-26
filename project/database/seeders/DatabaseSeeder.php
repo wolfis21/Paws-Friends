@@ -51,7 +51,6 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => bcrypt('admin12345'), // Cifrado la contraseña usando Bcrypt
             'rols_id' => $rols,
-            'datas_users_id' => $data,
             'remember_token' => Str::random(10),
             'created_at' => now(), 
             'updated_at' => now(), 
@@ -63,7 +62,6 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => bcrypt('admin'), // Cifrado la contraseña usando Bcrypt
             'rols_id' => $rols,
-            'datas_users_id' => $data,
             'remember_token' => Str::random(10),
             'created_at' => now(), 
             'updated_at' => now(), 
