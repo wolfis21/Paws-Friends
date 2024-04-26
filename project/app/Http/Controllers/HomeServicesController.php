@@ -9,7 +9,7 @@ class HomeServicesController extends Controller
 {
     public function __invoke(){
         //todo 0 = acceder a la vista del usuario, 1 = acceder a vista administrador
-        $rol = 0;
+        $rol = 1;
         if ($rol === 1) {
             return view('moduloServicios.dashboard');
         }
