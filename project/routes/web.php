@@ -17,8 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', HomeServicesController::class);
-Route::get('/user/vets', [VeterinarianController::class, 'vetuser'])->name('vetsuser');
+Route::get('/', HomeServicesController::class)->name('homeService');
 
 Route::resource('/admin/vets', VeterinarianController::class);
 
@@ -50,8 +49,8 @@ Route::controller(HousingsController::class)->group(function(){
     Route::delete('/admin/destroyHousing/{id}', 'destroyHousing')->name('destroyHousing');
     
     //todo rutas user
-    Route::resource('/user/housings', HousingsController::class);
-    Route::get('/user/housings', 'housingUser')->name('housingUser');
+    Route::resource('/housings', HousingsController::class);
+    Route::get('/housings', 'housingUser')->name('housingUser');
 });
 //----------------------------------------------------------------
 // todo: rutas de dog_groomer
@@ -64,8 +63,8 @@ Route::controller(DogGroomerController::class)->group(function(){
     Route::put('/admin/updateDogGroomer/{id}', 'updateDogGroomer')->name('updateDogGroomer');
     Route::delete('/admin/destroyDogGroomer/{id}', 'destroyDogGroomer')->name('destroyDogGroomer');
     //todo rutas user
-    Route::resource('/user/dogGroomers', DogGroomerController::class);
-    Route::get('/user/dogGroomers', 'dogGroomerUser')->name('dogGroomerUser');
+    Route::resource('/dogGroomers', DogGroomerController::class);
+    Route::get('/dogGroomers', 'dogGroomerUser')->name('dogGroomerUser');
 });
 //ver como integrar los comments
 
