@@ -45,7 +45,7 @@
     </select>
 </div>
 <div class="mb-3">
-    <a class="btn btn-danger" href="{{ route('vets.index') }}">Cancelar</a>
+    <a class="btn btn-danger" href="{{ route('index') }}">Cancelar</a>
     <button class="btn btn-primary">Guardar</button>
 </div>
 

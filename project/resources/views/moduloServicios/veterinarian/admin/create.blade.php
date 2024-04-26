@@ -10,7 +10,7 @@
             $isEdit = false;
         @endphp
         
-        @include('veterinarian.admin.form')
+        @include('moduloServicios.veterinarian.admin.form')
 
     </form>
 @endsection
