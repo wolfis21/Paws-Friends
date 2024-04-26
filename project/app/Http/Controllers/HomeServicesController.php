@@ -11,9 +11,17 @@ class HomeServicesController extends Controller
         //todo 0 = acceder a la vista del usuario, 1 = acceder a vista administrador
         $rol = 0;
         if ($rol === 1) {
-            return view('dashboard');
+            return view('moduloServicios.dashboard');
         }
         return view('homeServices');
+    }
 
+    public function homeService(){
+        return view('homeServices');
+    }
+    
+    //todo RUTA A MODULO 1
+    public function serviceModel(){
+        return view('moduloServicios.serviceModel');
     }
 }

@@ -1,7 +1,7 @@
 @extends('dashboard')
-@section('title', 'Create Dog Groomer')
+@section('title', 'Crear Peluqueria')
 @section('content')
-    <h1>Crear Dog Groomer</h1>
+    <h1>Añadir Peluqueria</h1>
     <form method="POST" action="{{ route('storeDogGroomer') }}" role="form" enctype="multipart/form-data">
         {{ method_field('PUT') }}
         @csrf

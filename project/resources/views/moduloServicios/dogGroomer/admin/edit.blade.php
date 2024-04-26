@@ -1,7 +1,7 @@
 @extends('dashboard')
-@section('title', 'Edit Dog Groomer')
+@section('title', 'Editar Peluqueria')
 @section('content')
-<h1>Editar Dog Groomer</h1>
+<h1>Editar Peluqueria</h1>
     <form method="POST" action="{{ route('updateDogGroomer', $dogGroomer->id) }}" role="form" enctype="multipart/form-data">  
         {{ method_field('PUT') }}
         @csrf

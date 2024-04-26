@@ -1,8 +1,8 @@
 {{-- @extends('layouts.example') --}}
 @extends('dashboard')
-@section('title', 'Edit Veterinarian')
+@section('title', 'Editar Veterinario')
 @section('content')
-    <h1>Editar Vets</h1>
+    <h1>Editar Veteterinario</h1>
     <form method="POST" action="{{ route('update',  $veterinarian->id) }}"  role="form" enctype="multipart/form-data">
         {{ method_field('PUT') }}
         @csrf

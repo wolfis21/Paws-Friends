@@ -17,12 +17,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+<<<<<<< Updated upstream
 Route::get('/', HomeServicesController::class)->name('homeService');
+=======
+<<<<<<< HEAD
+//todo RUTAS PRINCIPALES DEL MAIN
 
-Route::resource('/admin/vets', VeterinarianController::class);
+Route::get('/', HomeServicesController::class);
+Route::controller(HomeServicesController::class)->group(function(){
+    Route::get('/home', 'homeService')->name('homeService');
+    Route::get('/ServiceModel','serviceModel')->name('serviceModel');
+});
+=======
+Route::get('/', HomeServicesController::class)->name('homeService');
+>>>>>>> f999fd37eb4be29527e48f7097822f03f8092796
+>>>>>>> Stashed changes
 
-Route::put('/user/vets/update/{id}', [App\Http\Controllers\VeterinarianController::class, 'update'])->name('update');
 
+//? RUTAS MODULO 1
 //! Ruta,nombre de la funcion en el controlador, nombre dado en el html
 //todo rutas Veterinarians
 Route::controller(VeterinarianController::class)->group(function(){
@@ -68,6 +80,6 @@ Route::controller(DogGroomerController::class)->group(function(){
 });
 //ver como integrar los comments
 
+//? FIN RUTAS MODULO 1
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

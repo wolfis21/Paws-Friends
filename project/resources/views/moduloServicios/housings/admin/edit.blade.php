@@ -1,7 +1,7 @@
 @extends('dashboard')
-@section('title', 'Edit Housing')
+@section('title', 'Editar Alojamiento')
 @section('content')
-<h1>Crear ciudadano</h1>
+<h1>Editar Alojamiento</h1>
     <form method="POST" action="{{ route('updateHousing', $housing->id) }}" role="form" enctype="multipart/form-data">  
         {{ method_field('PUT') }}
         @csrf

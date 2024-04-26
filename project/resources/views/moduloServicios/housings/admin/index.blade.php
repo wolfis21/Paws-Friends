@@ -1,8 +1,8 @@
 @extends('dashboard')
-@section('title', 'Housing')
+@section('title', 'Alojamiento')
 @section('content')
-    <a href="{{route('createHousing')}}" class="btn btn-primary">Crear Housing</a>
-    <h1>Housing Admin</h1>
+    <a href="{{route('createHousing')}}" class="btn btn-primary">Añadir Alojamiento</a>
+    <h1>Alojamiento Admin</h1>
     <table class=" table table-dark">
         <thead>
             <th scope="col">Direccion</th>

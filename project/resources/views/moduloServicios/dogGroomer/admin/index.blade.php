@@ -1,8 +1,8 @@
 @extends('dashboard')
-@section('title', 'Dog Groomer')
+@section('title', 'Peluqueria')
 @section('content')
-    <a href="{{route('createDogGroomer')}}" class="btn btn-primary">Crear Dog Groomer</a>
-    <h1>Dog Groomer Admin</h1>
+    <a href="{{route('createDogGroomer')}}" class="btn btn-primary">Añadir Peluqueria</a>
+    <h1>Peluqueria Admin</h1>
     <table class=" table table-dark">
         <thead>
             <th scope="col">Nombre</th>

@@ -1,9 +1,9 @@
 {{-- @extends('layouts.example') --}}
 @extends('dashboard')
-@section('title', 'Veterinarian')
+@section('title', 'Veterinario')
 @section('content')
 
-    <a href="{{route('create')}}" class="btn btn-primary">Crear</a>
+    <a href="{{route('create')}}" class="btn btn-primary">Añadir Veterinario</a>
     <h1>Veterinarios admin</h1>
     <table class=" table table-dark">
         <thead>
