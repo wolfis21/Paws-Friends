@@ -102,7 +102,7 @@ class VeterinarianController extends Controller
      */
     public function destroy($id_vet)
     {
-        $veterinarian = Veterinarian::find($id_vet)->delete();
+        Veterinarian::find($id_vet)->delete();
         return redirect()->route('index');
 
     }

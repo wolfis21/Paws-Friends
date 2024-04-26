@@ -9,6 +9,11 @@ class Comments extends Model
 {
     protected $table = 'comments';
 
+    protected $fillable = [
+        'data_text',
+        'date'
+    ];
+
     public function user(){
         return $this->belongsTo(User::class, 'users_id', 'id');
     }
