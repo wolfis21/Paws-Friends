@@ -34,19 +34,13 @@ class DatabaseSeeder extends Seeder
                 'updated_at' => now(), 
             ]);
 
-        $data = DB::table('datas_users')->insertGetId([
-            'name' => 'admin',
-            'last_name' => 'global',
-            'dni' => '12345',
-            'phone' => '12345',
-            'address' => 'Sin direccion',
-            'photo_user' => 'null',
-            'created_at' => now(), 
-            'updated_at' => now(), 
-        ]);
-
         DB::table('users')->insert([
             'name' => 'admin',
+            'last_name' => 'amin',
+            'dni' => 'amin',
+            'phone' => 'amin',
+            'address' => 'amin',
+            'photo_user' => 'amin',
             'email'=> 'admin@admin.com',
             'email_verified_at' => now(),
             'password' => bcrypt('admin12345'), // Cifrado la contraseña usando Bcrypt
@@ -58,7 +52,12 @@ class DatabaseSeeder extends Seeder
 
         DB::table('users')->insert([
             'name' => 'user',
-            'email'=> 'admin@admin.com',
+            'last_name' => 'global',
+            'dni' => 'global',
+            'phone' => 'global',
+            'address' => 'global',
+            'photo_user' => 'global',
+            'email'=> 'user@user.com',
             'email_verified_at' => now(),
             'password' => bcrypt('admin'), // Cifrado la contraseña usando Bcrypt
             'rols_id' => $rols,
