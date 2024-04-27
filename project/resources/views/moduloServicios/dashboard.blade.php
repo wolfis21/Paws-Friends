@@ -105,7 +105,7 @@
                     "previous": "Anterior"
                 }
             }
-        })
+        });
 
         new DataTable('#AlojamientoComments',{
             responsive: true,
@@ -131,7 +131,7 @@
                     "previous": "Anterior"
                 }
             }
-        })
+        });
 
         new DataTable('#Peluqueria',{
             responsive: true,
@@ -157,7 +157,7 @@
                     "previous": "Anterior"
                 }
             }
-        })
+        });
 
         new DataTable('#PeluqueriaComments',{
             responsive: true,
@@ -183,6 +183,6 @@
                     "previous": "Anterior"
                 }
             }
-        })
+        });
     </script>
 @stop
