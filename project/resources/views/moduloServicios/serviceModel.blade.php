@@ -1,6 +1,6 @@
 @extends('layouts.navMenu')
 @section('title', 'Modulo de servicio')
-@vite(['resources/css/moduloServicios/index.css'])
+@vite(['resources/css/moduloServicios/user/index.css'])
 @section('content')
     <div class="contenedor">
         <h1>Modulo de servicios</h1>

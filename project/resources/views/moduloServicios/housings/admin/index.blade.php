@@ -41,7 +41,9 @@
 
     <div class="card">
         <div class="card-body">
-            {{-- ?Comentarios --}}
+            <table id="AlojamientoComments" class="table table-dark" style="width:100%">
+                    {{-- ?lo que prosigue de la tabla Comentario --}}
+            </table>
         </div>
     </div>
 @endsection
