@@ -46,7 +46,7 @@
     <div class="card">
         <div class="card-body">
 
-            <table id="Comentarios" class="table table-dark" style="width:100%">
+            <table id="ComentariosVets" class="table table-dark" style="width:100%">
                 <thead>
                     <th scope="col">User Name</th>
                     <th scope="col">Comentario</th>
