@@ -19,25 +19,25 @@
                     <th scope="col">Acciones</th>
                 </thead>
                 <tbody>
-                    @foreach ($veterinarians as $veterinarian)
-                        <tr>
-                            <td>{{ $veterinarian->name }}</td>
-                            <td>{{ $veterinarian->address }}</td>
-                            <td>{{ $veterinarian->email }}</td>
-                            <td>{{ $veterinarian->link_ref }}</td>
-                            <td>{{ $veterinarian->img_ref }}</td>
-                            <td>{{ $veterinarian->specialist_animals }}</td>
-                            <td>
-                                <form action="{{ route('destroy', $veterinarian->id) }}" method="POST">
-                                    <a class="btn btn-success" href="{{ route('edit', $veterinarian->id) }}">Editar</a>
-                                    @method('DELETE')
-                                    @csrf
-                                    <button type="submit" class="btn btn-danger">Eliminar</button>
-                                </form>
-        
-                            </td>
-                        </tr>
-                    @endforeach
+                        @foreach ($veterinarians as $veterinarian)
+                            <tr>
+                                <td>{{ $veterinarian->name }}</td>
+                                <td>{{ $veterinarian->address }}</td>
+                                <td>{{ $veterinarian->email }}</td>
+                                <td>{{ $veterinarian->link_ref }}</td>
+                                <td>{{ $veterinarian->img_ref }}</td>
+                                <td>{{ $veterinarian->specialist_animals }}</td>
+                                <td>
+                                    <form action="{{ route('destroy', $veterinarian->id) }}" method="POST">
+                                        <a class="btn btn-success" href="{{ route('edit', $veterinarian->id) }}">Editar</a>
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                                    </form>
+
+                                </td>
+                            </tr>
+                        @endforeach
                 </tbody>
             </table>
         </div>
@@ -55,13 +55,14 @@
                 </thead>
                 <tbody>
                     @foreach ($veterinariansComments as $veterinarianComment)
-                    <tr>
-                            @if ($veterinarianComment->comments->accepted === null)
+                        @if ($veterinarianComment->comments->accepted === null)
+                            <tr>
                                 <td>{{ $veterinarianComment->comments->users->name }}</td>
                                 <td>{{ $veterinarianComment->comments->data_text }}</td>
                                 <td>{{ $veterinarian->name }}</td>
                                 <td>
-                                    <form action="{{ route('destroyVetsComment', $veterinarianComment->id) }}" method="POST">
+                                    <form action="{{ route('destroyVetsComment', $veterinarianComment->id) }}"
+                                        method="POST">
                                         @method('PUT')
                                         <a class="btn btn-primary"
                                             href="{{ route('acceptCommentVeterinarians', $veterinarianComment->id) }}">Confirmar</a>
@@ -70,8 +71,8 @@
                                         <button type="submit" class="btn btn-danger">Denegar</button>
                                     </form>
                                 </td>
-                            @endif
-                        </tr>
+                            </tr>
+                        @endif
                     @endforeach
                 </tbody>
             </table>
