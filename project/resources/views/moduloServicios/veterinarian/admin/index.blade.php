@@ -3,7 +3,7 @@
 @section('title', 'Veterinario')
 @section('content')
 
-    <a href="{{ route('create') }}" class="btn btn-primary">Añadir Veterinario</a>
+    <a href="{{ route('create') }}" class="btn btn-success">Añadir Veterinario</a>
     <h1>Veterinarios admin</h1>
     <div class="card">
         <div class="card-body">
@@ -29,7 +29,7 @@
                             <td>{{ $veterinarian->specialist_animals }}</td>
                             <td>
                                 <form action="{{ route('destroy', $veterinarian->id) }}" method="POST">
-                                    <a class="btn btn-primary" href="{{ route('edit', $veterinarian->id) }}">Editar</a>
+                                    <a class="btn btn-success" href="{{ route('edit', $veterinarian->id) }}">Editar</a>
                                     @method('DELETE')
                                     @csrf
                                     <button type="submit" class="btn btn-danger">Eliminar</button>

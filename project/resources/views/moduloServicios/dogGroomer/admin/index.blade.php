@@ -1,7 +1,7 @@
 @extends('moduloServicios.dashboard')
 @section('title', 'Peluqueria')
 @section('content')
-    <a href="{{route('createDogGroomer')}}" class="btn btn-primary">Añadir Peluqueria</a>
+    <a href="{{route('createDogGroomer')}}" class="btn btn-success">Añadir Peluqueria</a>
     <h1>Peluqueria Admin</h1>
     <div class="card">
         <div class="card-body">
@@ -24,7 +24,7 @@
                             <td>{{$dogGroomer->img_ref}}</td>
                             <td>
                                 <form action="{{route('destroyDogGroomer',$dogGroomer->id) }}" method="POST">
-                                    <a class="btn btn-primary" href="{{ route('editDogGroomer', $dogGroomer->id ) }}">Editar</a>
+                                    <a class="btn btn-success" href="{{ route('editDogGroomer', $dogGroomer->id ) }}">Editar</a>
                                     @method('DELETE')
                                     @csrf
                                     <button type="submit" class="btn btn-danger">Eliminar</button>

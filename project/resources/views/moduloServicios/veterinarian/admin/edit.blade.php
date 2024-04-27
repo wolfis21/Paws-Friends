@@ -49,7 +49,7 @@
           </div>
           <div class="mb-3">
             <a class="btn btn-danger" href="{{route('index')}}">Cancelar</a>
-            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-success">Guardar</button>
           </div>  
           
           @error('phone')

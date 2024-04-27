@@ -35,7 +35,7 @@
         </div>
         <div class="mb-3">
             <a class="btn btn-danger" href="{{route('dogGroomerAdmin')}}">Cancelar</a>
-            <button class="btn btn-primary">Guardar</button>
+            <button class="btn btn-success">Guardar</button>
           </div>  
           
           @error('phone')

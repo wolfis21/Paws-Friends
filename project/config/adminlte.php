@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'use_ico_only' => false,
+    'use_ico_only' => true,
     'use_full_favicon' => false,
 
     /*
@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Admin</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -196,7 +196,7 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-dark-success elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
@@ -319,17 +319,17 @@ return [
         [
             'text' =>'Veterinario',
             'url' => '/admin/Veterinarians',
-            'ico' =>'manage-servicios',
+            'ico' =>'fa-solid fa-shield-dog',
         ],
         [
             'text' => 'Alojamiento',
             'url' => '/admin/housingsAdmin',
-            'ico' =>'manage-categorias',
+            'ico' =>'fa-solid fa-house',
         ],
         [
             'text' => 'Peluqueria',
             'url' => '/admin/DogGroomersAdmin',
-            'ico' =>'manage-productos',
+            'ico' =>'fa-solid fa-paw',
         ],
         ['header' => 'account_settings'],
         [

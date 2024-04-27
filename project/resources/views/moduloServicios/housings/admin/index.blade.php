@@ -1,7 +1,7 @@
 @extends('moduloServicios.dashboard')
 @section('title', 'Alojamiento')
 @section('content')
-    <a href="{{route('createHousing')}}" class="btn btn-primary">Añadir Alojamiento</a>
+    <a href="{{route('createHousing')}}" class="btn btn-success">Añadir Alojamiento</a>
     <h1>Alojamiento Admin</h1>
     <div class="card">
         <div class="card-body">
@@ -26,7 +26,7 @@
                             <td>{{$housing->img_ref}}</td>
                             <td>
                                 <form action="{{route('destroyHousing',$housing->id) }}" method="POST">
-                                    <a class="btn btn-primary" href="{{ route('editHousing', $housing->id ) }}">Editar</a>
+                                    <a class="btn btn-success" href="{{ route('editHousing', $housing->id ) }}">Editar</a>
                                     @method('DELETE')
                                     @csrf
                                     <button type="submit" class="btn btn-danger">Eliminar</button>

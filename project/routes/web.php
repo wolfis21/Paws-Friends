@@ -20,62 +20,55 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeServicesController::class)->name('homeService');
 
-//? RUTAS MODULO 1
+//? RUTAS MODULO 1===============================================================================================
 Route::controller(HomeServicesController::class)->group(function () {
     Route::get('/ServiceModel', 'serviceModel')->name('serviceModel');
 });
 //! Ruta,nombre de la funcion en el controlador, nombre dado en el html
-//todo rutas Veterinarians
+//todo rutas Veterinarians===============================================================================================
 Route::controller(VeterinarianController::class)->group(function () {
-    //todo rutas admin
+    //todo rutas admin===============================================================================================
     Route::get('/admin/Veterinarians', 'index')->name('index');
     Route::get('/admin/CreateVeterianarians', 'create')->name('create');
     Route::put('/admin/storeVeterinarias', 'store')->name('store');
     Route::get('/admin/editVeterinarians/{id}', 'edit')->name('edit');
     Route::put('/admin/updateVeterinarians/{id}', 'update')->name('update');
     Route::delete('/admin/destroyVeterinarians/{id}', 'destroy')->name('destroy');
-
-    //todo comentarios veterinarios
-
-    //todo rutas user
+    //todo rutas user===============================================================================================
     Route::get('/Veterinario', 'veterinarioUser')->name('Veterinario');
 });
 Route::controller(CommentsController::class)->group(function () {
-    //todo comentarios de veterinarios
+    //todo comentarios de veterinarios===============================================================================================
     Route::get('/admin/CommentVetsAccepted/{id}', 'acceptCommentVeterinarians')->name('acceptCommentVeterinarians');
     Route::delete('/admin/CommentVetsDestroy/{id}', 'destroyVetsComment')->name('destroyVetsComment');
 });
 
-//todo rutas de housings
+//todo rutas de housings===============================================================================================
 Route::controller(HousingsController::class)->group(function () {
-    //todo rutas admin
-
+    //todo rutas admin===============================================================================================
     Route::get('/admin/housingsAdmin', 'housingAdmin')->name('housingAdmin');
     Route::get('/admin/createHousing', 'createHousing')->name('createHousing');
     Route::put('/admin/storeHousings', 'storeHousing')->name('storeHousing');
     Route::get('/admin/editHousing/{id}', 'editHousing')->name('editHousing');
     Route::put('/admin/updateHousing/{id}', 'updateHousing')->name('updateHousing');
     Route::delete('/admin/destroyHousing/{id}', 'destroyHousing')->name('destroyHousing');
-
-    //todo rutas user
+    //todo rutas user===============================================================================================
     Route::resource('/housings', HousingsController::class);
     Route::get('/housings', 'housingUser')->name('housingUser');
 });
 //----------------------------------------------------------------
-// todo: rutas de dog_groomer
+// todo: rutas de dog_groomer===============================================================================================
 Route::controller(DogGroomerController::class)->group(function () {
-    //todo rutas admin
+    //todo rutas admin===============================================================================================
     Route::get('/admin/DogGroomersAdmin', 'dogGroomerAdmin')->name('dogGroomerAdmin');
     Route::get('/admin/createDogGroomer', 'createDogGroomer')->name('createDogGroomer');
     Route::put('/admin/storeDogGroomers', 'storeDogGroomer')->name('storeDogGroomer');
     Route::get('/admin/editDogGroomer/{id}', 'editDogGroomer')->name('editDogGroomer');
     Route::put('/admin/updateDogGroomer/{id}', 'updateDogGroomer')->name('updateDogGroomer');
     Route::delete('/admin/destroyDogGroomer/{id}', 'destroyDogGroomer')->name('destroyDogGroomer');
-    //todo rutas user
+    //todo rutas user===============================================================================================
     Route::resource('/dogGroomers', DogGroomerController::class);
     Route::get('/dogGroomers', 'dogGroomerUser')->name('dogGroomerUser');
 });
-//ver como integrar los comments
-
-//? FIN RUTAS MODULO 1
+//? FIN RUTAS MODULO 1===============================================================================================
 // Auth::routes();
