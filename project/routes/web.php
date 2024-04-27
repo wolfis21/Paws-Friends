@@ -24,7 +24,7 @@ Route::get('/main', function () {
     return view('main');
 });
 
-Route::get('/', HomeServicesController::class)->name('homeService');
+Route::get('/adminPWFS', HomeServicesController::class)->name('homeService');
 
 //? RUTAS MODULO 1
 Route::controller(HomeServicesController::class)->group(function(){

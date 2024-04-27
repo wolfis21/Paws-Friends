@@ -22,8 +22,8 @@
                     <td>{{ $veterinarian->address }}</td>
                     <td>{{ $veterinarian->email }}</td>
                     <td>{{ $veterinarian->link_ref }}</td>
-                    <td>{{-- {{ $veterinarian->img_ref }} --}}
-                        <img style="width: 5%;" src="{{ asset('storage/' . $veterinarian->img_ref) }}" >
+                    <td>{{-- {{ $veterinarian->img_ref }} --}} 
+                        <img style="width: 5%;" src="{{ asset('storage/' . $veterinarian->img_ref) }}" > {{-- provisional mejorar esto --}}
                     </td>
                     <td>{{ $veterinarian->specialist_animals }}</td>
                     <td>
