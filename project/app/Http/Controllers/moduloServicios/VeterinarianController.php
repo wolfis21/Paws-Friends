@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class VeterinarianController extends Controller
 {
     //todo Admin
-    /**
+    /** 
      * Display a listing of the resource.
      */
     public function index()

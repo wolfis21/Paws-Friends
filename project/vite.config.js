@@ -12,6 +12,10 @@ export default defineConfig({
                 //todo css de mainView
                 'resources/css/moduloServicios/index.css',
 
+                //todo dataTables
+                //?CSS
+                // 'resources/css/moduloServicios/admin/dataTables/bootstrap.min.css',
+                // 'resources/css/moduloServicios/admin/dataTables/dataTables.bootstrap5.min.css',
                 
                 //todo js
                 'resources/js/app.js',

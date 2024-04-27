@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class CommentsController extends Controller
 {
-    public function configComment(Request $request, string $id){
+    public function acceptCommentVeterinarians(Request $request, string $id){
         $comment = Comment::findOrFail($id);
         $comment->accepted = true;
         $comment->update($request->all());
