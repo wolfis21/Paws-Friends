@@ -20,14 +20,18 @@ use App\Http\Controllers\UserController;
 |
 */
 
+Route::get('/main', function () {
+    return view('main');
+});
+
 Route::get('/', HomeServicesController::class)->name('homeService');
 
 //? RUTAS MODULO 1
 Route::controller(HomeServicesController::class)->group(function(){
     Route::get('/ServiceModel','serviceModel')->name('serviceModel');
 });
-//! Ruta,nombre de la funcion en el controlador, nombre dado en el html
-//todo rutas Veterinarians
+// Ruta,nombre de la funcion en el controlador, nombre dado en el html
+// todo rutas Veterinarians
 Route::controller(VeterinarianController::class)->group(function(){
     //todo rutas admin
     Route::get('/admin/Veterinarians', 'index')->name('index');
@@ -47,10 +51,6 @@ Route::controller(CommentsController::class)->group(function(){
     Route::delete('/admin/CommentVetsDestroy/{id}','destroyVetsComment')->name('destroyVetsComment');
 });
 
-<<<<<<< HEAD
-Route::get('/main', function () {
-    return view('main');
-});
 
 /* perfil no desarrollado */
 Route::get('user/profile', [UserController::class, 'show'])->name('user.profile');
@@ -59,7 +59,6 @@ Route::get('user/profile', [UserController::class, 'show'])->name('user.profile'
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
-=======
 //todo rutas de housings
 Route::controller(HousingsController::class)->group(function(){
     //todo rutas admin
@@ -94,4 +93,3 @@ Route::controller(DogGroomerController::class)->group(function(){
 //? FIN RUTAS MODULO 1
 // Auth::routes();
 
->>>>>>> origin/module-1
