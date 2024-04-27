@@ -47,7 +47,7 @@
         </thead>
         <tbody>
             @foreach ($veterinariansComments as $veterinarianComment)
-                <tr>
+            <tr>
                     @if ($veterinarianComment->comments->accepted === null)
                         <td>{{ $veterinarianComment->comments->users->name }}</td>
                         <td>{{ $veterinarianComment->comments->data_text }}</td>
@@ -67,10 +67,6 @@
             @endforeach
         </tbody>
     </table>
-
-    {{-- @foreach ($veterinariansComments as $veterinarianComment)
-        <p>{{$veterinarianComment->comments->users->name}}</p>  <p>{{$veterinarianComment->comments->data_text}}</p> <p>{{$veterinarianComment->comments->date}}</p>
-    @endforeach --}}
     {{-- codigo para mostrar imagenes --}}
     {{-- @foreach ($veterinarians as $veterinarian)
         <div class="container">

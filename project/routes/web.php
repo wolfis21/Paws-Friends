@@ -41,8 +41,8 @@ Route::controller(VeterinarianController::class)->group(function(){
     Route::get('/Veterinario','veterinarioUser')->name('Veterinario');
 });
 Route::controller(CommentsController::class)->group(function(){
-    Route::get('/admin/CommentVets/{id}','configComment')->name('configComment');
-    Route::delete('/admin/CommentVetsDestroy/{id}','destroy')->name('destroyVetsComment');
+    Route::get('/admin/CommentVetsAccepted/{id}','configComment')->name('configComment');
+    Route::delete('/admin/CommentVetsDestroy/{id}','destroyVetsComment')->name('destroyVetsComment');
 });
 
 //todo rutas de housings
@@ -77,5 +77,5 @@ Route::controller(DogGroomerController::class)->group(function(){
 //ver como integrar los comments
 
 //? FIN RUTAS MODULO 1
-Auth::routes();
+// Auth::routes();
 

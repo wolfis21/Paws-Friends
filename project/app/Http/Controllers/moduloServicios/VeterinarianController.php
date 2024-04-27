@@ -115,8 +115,4 @@ class VeterinarianController extends Controller
     public function veterinarioUser(){
         return view('moduloServicios.veterinarian.user.vetsuser');
     }
-
-    public function comments($id){
-
-    }
 }

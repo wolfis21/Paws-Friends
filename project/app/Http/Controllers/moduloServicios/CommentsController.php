@@ -14,9 +14,9 @@ class CommentsController extends Controller
         $comment->update($request->all());
         return redirect()->route('index');
     }
-    public function destroy($id_vet)
+    public function destroyVetsComment($id)
     {
-        Comment::find($id_vet)->delete();
+        Comment::find($id)->delete();
         return redirect()->route('index');
 
     }
