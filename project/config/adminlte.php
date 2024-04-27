@@ -171,12 +171,12 @@ return [
     |
     */
 
-    'classes_auth_card' => 'card-outline card-primary',
+    'classes_auth_card' => 'card-outline card-success',
     'classes_auth_header' => '',
     'classes_auth_body' => '',
     'classes_auth_footer' => '',
     'classes_auth_icon' => '',
-    'classes_auth_btn' => 'btn-flat btn-primary',
+    'classes_auth_btn' => 'btn-flat btn-success',
 
     /*
     |--------------------------------------------------------------------------
@@ -191,11 +191,11 @@ return [
     */
 
     'classes_body' => '',
-    'classes_brand' => '',
+    'classes_brand' => 'bg-green',
     'classes_brand_text' => '',
-    'classes_content_wrapper' => '',
-    'classes_content_header' => '',
-    'classes_content' => '',
+    'classes_content_wrapper' => 'content-wrapper-dark',
+    'classes_content_header' => 'content-header-dark',
+    'classes_content' => 'content-dark',
     'classes_sidebar' => 'sidebar-dark-success elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
@@ -222,7 +222,7 @@ return [
     'sidebar_scrollbar_theme' => 'os-theme-light',
     'sidebar_scrollbar_auto_hide' => 'l',
     'sidebar_nav_accordion' => true,
-    'sidebar_nav_animation_speed' => 300,
+    'sidebar_nav_animation_speed' => 500,
 
     /*
     |--------------------------------------------------------------------------
@@ -319,17 +319,17 @@ return [
         [
             'text' =>'Veterinario',
             'url' => '/admin/Veterinarians',
-            'ico' =>'fa-solid fa-shield-dog',
+            'icon' =>'fas fa-fw fa-dog',
         ],
         [
             'text' => 'Alojamiento',
             'url' => '/admin/housingsAdmin',
-            'ico' =>'fa-solid fa-house',
+            'icon' =>'fas fa-fw fa-home',
         ],
         [
             'text' => 'Peluqueria',
             'url' => '/admin/DogGroomersAdmin',
-            'ico' =>'fa-solid fa-paw',
+            'icon' =>'fas fa-fw fa-paw',
         ],
         ['header' => 'account_settings'],
         [
