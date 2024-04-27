@@ -5,6 +5,7 @@ namespace App\Http\Controllers\moduloServicios;
 use App\Models\moduloServicios\Veterinarian;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\moduloServicios;
+use App\Models\moduloServicios\Veterinarians_has_comments;
 use Illuminate\Http\Request;
 
 class VeterinarianController extends Controller
@@ -16,7 +17,10 @@ class VeterinarianController extends Controller
     public function index()
     {   
         $veterinarians = Veterinarian::all();
-        return view('moduloServicios.veterinarian.admin.index')->with('veterinarians',$veterinarians);
+        $veterinariansComments = Veterinarians_has_comments::all();
+        return view('moduloServicios.veterinarian.admin.index')    
+        ->with('veterinarians', $veterinarians)
+        ->with('veterinariansComments', $veterinariansComments);
     }
 
     // public function vetuser()
@@ -110,5 +114,9 @@ class VeterinarianController extends Controller
     //todo User
     public function veterinarioUser(){
         return view('moduloServicios.veterinarian.user.vetsuser');
+    }
+
+    public function comments($id){
+
     }
 }

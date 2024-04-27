@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('data_text');
             $table->string('date');
+            $table->boolean('accepted')->nullable();
             $table->unsignedBigInteger('users_id');
             $table->foreign('users_id')
             ->cascadeOnDelete()

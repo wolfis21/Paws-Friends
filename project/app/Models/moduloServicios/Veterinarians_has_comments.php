@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Models\moduloServicios;
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,7 +12,8 @@ class Veterinarians_has_comments extends Model
         return $this->belongsTo(Veterinarian::class,'veterinarians_id','id');
     }
     public function comments(){
-        return $this->belongsTo(Comments::class, 'comments_id', 'id');
+        // return $this->belongsTo(Comment::class, 'comments_id', 'id');
+        return $this->belongsTo(Comment::class, 'comments_id', 'id');
     }
     use HasFactory;
 }

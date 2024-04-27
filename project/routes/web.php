@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\moduloServicios\DogGroomerController;
 use App\Http\Controllers\HomeServicesController;
+use App\Http\Controllers\moduloServicios\CommentsController;
 use App\Http\Controllers\moduloServicios\HousingsController;
 use App\Http\Controllers\moduloServicios\VeterinarianController;
 use Illuminate\Support\Facades\Route;
@@ -19,7 +20,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeServicesController::class)->name('homeService');
 
-
 //? RUTAS MODULO 1
 Route::controller(HomeServicesController::class)->group(function(){
     Route::get('/ServiceModel','serviceModel')->name('serviceModel');
@@ -34,8 +34,15 @@ Route::controller(VeterinarianController::class)->group(function(){
     Route::get('/admin/editVeterinarians/{id}','edit')->name('edit');
     Route::put('/admin/updateVeterinarians/{id}', 'update')->name('update');
     Route::delete('/admin/destroyVeterinarians/{id}', 'destroy')->name('destroy');
+
+    //todo comentarios veterinarios
+    
     //todo rutas user
     Route::get('/Veterinario','veterinarioUser')->name('Veterinario');
+});
+Route::controller(CommentsController::class)->group(function(){
+    Route::get('/admin/CommentVets/{id}','configComment')->name('configComment');
+    Route::delete('/admin/CommentVetsDestroy/{id}','destroy')->name('destroyVetsComment');
 });
 
 //todo rutas de housings

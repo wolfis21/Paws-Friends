@@ -14,7 +14,7 @@ class Housings_has_comments extends Model
     }
 
     public function comments(){
-        return $this->belongsTo(Comments::class, 'comments_id', 'id');
+        return $this->belongsTo(Comment::class, 'comments_id', 'id');
     }
 
     use HasFactory;
