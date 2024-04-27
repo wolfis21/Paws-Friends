@@ -36,7 +36,7 @@ ul{
     overflow: hidden;
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 
@@ -65,6 +65,8 @@ ul{
 }
 #MainNavBar li:hover > ul{
     display: block;
+    background-color: #fff;
+    z-index: 100;
 }
 .link-modulos{
     padding: 0px;
