@@ -32,8 +32,8 @@
                 value="{{ $dogGroomer->img_ref }}" accept="image/*">
         </div>
         <div class="mb-3">
-            <a class="btn btn-danger" href="{{route('dogGroomerAdmin')}}">Cancelar</a>
-            <button class="btn btn-success">Guardar</button>
+            <a class="btn bg-red" href="{{route('dogGroomerAdmin')}}">Cancelar</a>
+            <button class="btn bg-green">Guardar</button>
           </div>  
           
           @error('phone')

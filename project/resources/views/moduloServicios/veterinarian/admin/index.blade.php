@@ -3,9 +3,9 @@
 @section('title', 'Veterinario')
 @section('content')
 
-    <a href="{{ route('create') }}" class="btn btn-success">Añadir Veterinario</a>
+    <a href="{{ route('create') }}" class="btn bg-green">Añadir Veterinario</a>
     <h1>Veterinarios admin</h1>
-    <div class="card">
+    <div class="card bg-dark">
         <div class="card-body">
 
             <table id="Veterinarios" class="table table-dark" style="width:100%">
@@ -29,10 +29,10 @@
                                 <td>{{ $veterinarian->specialist_animals }}</td>
                                 <td>
                                     <form action="{{ route('destroy', $veterinarian->id) }}" method="POST">
-                                        <a class="btn btn-success" href="{{ route('edit', $veterinarian->id) }}">Editar</a>
+                                        <a class="btn bg-green" href="{{ route('edit', $veterinarian->id) }}">Editar</a>
                                         @method('DELETE')
                                         @csrf
-                                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                                        <button type="submit" class="btn bg-red">Eliminar</button>
                                     </form>
 
                                 </td>
@@ -43,7 +43,7 @@
         </div>
     </div>
     <h1>Comentarios Veterinarios admin</h1>
-    <div class="card">
+    <div class="card bg-dark">
         <div class="card-body">
 
             <table id="ComentariosVets" class="table table-dark" style="width:100%">
@@ -64,11 +64,11 @@
                                     <form action="{{ route('destroyVetsComment', $veterinarianComment->id) }}"
                                         method="POST">
                                         @method('PUT')
-                                        <a class="btn btn-primary"
+                                        <a class="btn bg-green"
                                             href="{{ route('acceptCommentVeterinarians', $veterinarianComment->id) }}">Confirmar</a>
                                         @method('DELETE')
                                         @csrf
-                                        <button type="submit" class="btn btn-danger">Denegar</button>
+                                        <button type="submit" class="btn bg-red">Denegar</button>
                                     </form>
                                 </td>
                             </tr>

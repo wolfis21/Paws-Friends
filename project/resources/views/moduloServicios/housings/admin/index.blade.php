@@ -1,9 +1,9 @@
 @extends('moduloServicios.dashboard')
 @section('title', 'Alojamiento')
 @section('content')
-    <a href="{{route('createHousing')}}" class="btn btn-success">Añadir Alojamiento</a>
+    <a href="{{route('createHousing')}}" class="btn bg-green">Añadir Alojamiento</a>
     <h1>Alojamiento Admin</h1>
-    <div class="card">
+    <div class="card bg-dark">
         <div class="card-body">
             <table id="Alojamiento" class="table table-responsive-md table-dark" style="width:100%">
                 <thead>
@@ -26,10 +26,10 @@
                             <td><img src="images/housings/{{($housing->img_ref)}}"  alt="a" ></td>
                             <td>
                                 <form action="{{route('destroyHousing',$housing->id) }}" method="POST">
-                                    <a class="btn btn-success" href="{{ route('editHousing', $housing->id ) }}">Editar</a>
+                                    <a class="btn bg-green" href="{{ route('editHousing', $housing->id ) }}">Editar</a>
                                     @method('DELETE')
                                     @csrf
-                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                    <button type="submit" class="btn bg-red">Eliminar</button>
                                 </form>
                             </td>
                         </tr>
@@ -60,11 +60,11 @@
                                     <form action="{{ route('destroyHousingsComment', $housingComment->id) }}"
                                         method="POST">
                                         @method('PUT')
-                                        <a class="btn btn-primary"
+                                        <a class="btn bg-green"
                                             href="{{ route('acceptHousingsComment', $housingComment->id) }}">Confirmar</a>
                                         @method('DELETE')
                                         @csrf
-                                        <button type="submit" class="btn btn-danger">Denegar</button>
+                                        <button type="submit" class="btn bg-red">Denegar</button>
                                     </form>
                                 </td>
                             </tr>

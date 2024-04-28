@@ -1,9 +1,9 @@
 @extends('moduloServicios.dashboard')
 @section('title', 'Peluqueria')
 @section('content')
-    <a href="{{route('createDogGroomer')}}" class="btn btn-success">Añadir Peluqueria</a>
+    <a href="{{route('createDogGroomer')}}" class="btn bg-green">Añadir Peluqueria</a>
     <h1>Peluqueria Admin</h1>
-    <div class="card">
+    <div class="card bg-dark">
         <div class="card-body">
             <table id="Peluqueria" class="table table-dark" style="width:100%">
                 <thead>
@@ -24,10 +24,10 @@
                             <td><img src="images/dogGroomers/{{($dogGroomer->img_ref)}}" alt="a"></td>
                             <td>
                                 <form action="{{route('destroyDogGroomer',$dogGroomer->id) }}" method="POST">
-                                    <a class="btn btn-success" href="{{ route('editDogGroomer', $dogGroomer->id ) }}">Editar</a>
+                                    <a class="btn bg-green" href="{{ route('editDogGroomer', $dogGroomer->id ) }}">Editar</a>
                                     @method('DELETE')
                                     @csrf
-                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                    <button type="submit" class="btn bg-red">Eliminar</button>
                                 </form>
                             </td>
                         </tr>
@@ -37,7 +37,7 @@
         </div>
     </div>
     <h1>Comentarios Peluqueria admin</h1>
-    <div class="card">
+    <div class="card bg-dark">
         <div class="card-body">
 
             <table id="PeluqueriaComments" class="table table-dark" style="width:100%">
@@ -58,11 +58,11 @@
                                     <form action="{{ route('destroyDogGroomersComment', $dogGroomerComment->id) }}"
                                         method="POST">
                                         @method('PUT')
-                                        <a class="btn btn-primary"
+                                        <a class="btn bg-green"
                                             href="{{ route('acceptDogGroomersComment', $dogGroomerComment->id) }}">Confirmar</a>
                                         @method('DELETE')
                                         @csrf
-                                        <button type="submit" class="btn btn-danger">Denegar</button>
+                                        <button type="submit" class="btn bg-red">Denegar</button>
                                     </form>
                                 </td>
                             </tr>

@@ -39,8 +39,8 @@
              <img  src="images/housings/{{$housing->img_ref}}">
         </div>
         <div class="mb-3">
-            <a class="btn btn-danger" href="{{route('housingAdmin')}}">Cancelar</a>
-            <button class="btn btn-success">Guardar</button>
+            <a class="btn btn-red" href="{{route('housingAdmin')}}">Cancelar</a>
+            <button class="btn bg-green">Guardar</button>
           </div>  
           
           @error('phone')
