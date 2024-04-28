@@ -5,7 +5,7 @@
     <h1>Peluqueria Admin</h1>
     <div class="card bg-dark">
         <div class="card-body">
-            <table id="Peluqueria" class="table table-dark" style="width:100%">
+            <table id="Peluqueria" class="table table-dark table-responsive-md" style="width:100%">
                 <thead>
                     <th scope="col">Nombre</th>
                     <th scope="col">Direccion</th>

@@ -8,7 +8,7 @@
     <div class="card bg-dark">
         <div class="card-body">
 
-            <table id="Veterinarios" class="table table-dark" style="width:100%">
+            <table id="Veterinarios" class="table table-dark table-responsive-md" style="width:100%">
                 <thead>
                     <th scope="col">Nombre</th>
                     <th scope="col">Direccion</th>
