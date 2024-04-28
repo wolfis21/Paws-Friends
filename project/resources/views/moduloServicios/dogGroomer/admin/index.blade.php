@@ -21,7 +21,7 @@
                             <td>{{$dogGroomer->address}}</td>
                             <td>{{$dogGroomer->phone}}</td>
                             <td>{{$dogGroomer->link_ref}}</td>
-                            <td>{{$dogGroomer->img_ref}}</td>
+                            <td><img src="images/dogGroomers/{{($dogGroomer->img_ref)}}" alt="a"></td>
                             <td>
                                 <form action="{{route('destroyDogGroomer',$dogGroomer->id) }}" method="POST">
                                     <a class="btn btn-success" href="{{ route('editDogGroomer', $dogGroomer->id ) }}">Editar</a>
@@ -72,4 +72,11 @@
             </table>
         </div>
     </div>
+ 
+{{-- 
+    @foreach ($dogGroomers as $dogGroomers)
+        <div class="container">
+            <img src="images/dogGroomers/{{($dogGroomer->img_ref)}}" alt="a">
+        </div>
+    @endforeach --}}
 @endsection

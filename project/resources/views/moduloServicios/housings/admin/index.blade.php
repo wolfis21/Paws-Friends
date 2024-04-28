@@ -5,7 +5,7 @@
     <h1>Alojamiento Admin</h1>
     <div class="card">
         <div class="card-body">
-            <table id="Alojamiento" class="table table-dark" style="width:100%">
+            <table id="Alojamiento" class="table table-responsive-md table-dark" style="width:100%">
                 <thead>
                     <th scope="col">Direccion</th>
                     <th scope="col">Telefono</th>
@@ -23,7 +23,7 @@
                             <td>{{$housing->description_location}}</td>
                             <td>{{$housing->type_animals}}</td>
                             <td>{{$housing->food_offer}}</td>
-                            <td>{{$housing->img_ref}}</td>
+                            <td><img src="images/housings/{{($housing->img_ref)}}"  alt="a" ></td>
                             <td>
                                 <form action="{{route('destroyHousing',$housing->id) }}" method="POST">
                                     <a class="btn btn-success" href="{{ route('editHousing', $housing->id ) }}">Editar</a>
