@@ -96,7 +96,10 @@ class HousingsController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroyHousing(string $id){
-        $housing = Housing::find($id)->delete();
+        $housing = Housing::find($id);
+        $path = public_path().'/admin/images/housings/'.$housing->img_ref;
+        unlink($path);
+        $housing->delete();
         return redirect()->route('housingAdmin');
     }
     //todo funciones user

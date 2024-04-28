@@ -90,7 +90,10 @@ class DogGroomerController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroyDogGroomer(string $id){
-        $dogGroomer = Dog_Groomer::find($id)->delete();
+        $dogGroomer = Dog_Groomer::find($id);
+        $path = public_path().'/admin/images/dogGroomers/'.$dogGroomer->img_ref;
+        unlink($path);
+        $dogGroomer->delete();
         return redirect()->route('dogGroomerAdmin');
     }
     //todo funciones user
