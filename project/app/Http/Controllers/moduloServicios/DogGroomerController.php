@@ -5,6 +5,7 @@ namespace App\Http\Controllers\moduloServicios;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\moduloServicios\Dog_groomer;
+use App\Models\moduloServicios\Dog_groomer_has_comments;
 
 class DogGroomerController extends Controller
 {
@@ -14,7 +15,10 @@ class DogGroomerController extends Controller
     //todo funciones admin
     public function dogGroomerAdmin(){
         $dogGroomers = Dog_Groomer::all();
-        return view('moduloServicios.dogGroomer.admin.index')->with('dogGroomers', $dogGroomers);
+        $dogGroomersComments = Dog_groomer_has_comments::all();
+        return view('moduloServicios.dogGroomer.admin.index')
+        ->with('dogGroomers', $dogGroomers)
+        ->with('dogGroomersComments', $dogGroomersComments);
     }
     /**
      * Show the form for creating a new resource.
@@ -32,10 +36,17 @@ class DogGroomerController extends Controller
             'address' => 'string',
             'phone' => 'required|unique:veterinarians|alpha_num|min_digits:11',
             'link_ref' => 'nullable',
-            'img_ref' => 'required|string',
+            'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
-
-        $dogGroomer = Dog_Groomer::create($request->all());
+        
+        $dogGroomer = $request->all();
+        if ($image = $request->file('img_ref')) {
+            $path = 'admin/images/dogGroomers';
+            $imageName = date('YmdHis')."_".$image->getClientOriginalExtension();
+            $image->move($path, $imageName );
+            $dogGroomer['img_ref'] = "$imageName";
+        }
+        Dog_Groomer::create($dogGroomer);
         return redirect()->route('dogGroomerAdmin');
     }
         /**
@@ -64,8 +75,14 @@ class DogGroomerController extends Controller
             'img_ref' => 'required|string',
         ]);
         $dogGroomer = Dog_groomer::findOrFail($id);
-        $doggrom = $request->all();
-        $dogGroomer->update($doggrom);
+        $dogGroomerReq = $request->all();
+        if ($image = $request->file('img_ref')) {
+            $path = 'admin/images/dogGroomers';
+            $imageName = date('YmdHis')."_".$image->getClientOriginalExtension();
+            $image->move($path, $imageName );
+            $dogGroomerReq['img_ref'] = "$imageName";
+        }
+        $dogGroomer->update($dogGroomerReq);
 
         return redirect()->route('dogGroomerAdmin');
     }

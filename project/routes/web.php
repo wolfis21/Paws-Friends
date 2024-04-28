@@ -41,6 +41,12 @@ Route::controller(CommentsController::class)->group(function () {
     //todo comentarios de veterinarios===============================================================================================
     Route::get('/admin/CommentVetsAccepted/{id}', 'acceptCommentVeterinarians')->name('acceptCommentVeterinarians');
     Route::delete('/admin/CommentVetsDestroy/{id}', 'destroyVetsComment')->name('destroyVetsComment');
+    //todo comentarios de housings===============================================================================================
+    Route::get('/admin/CommentHousingsAccepted/{id}', 'acceptHousingsComment')->name('acceptHousingsComment');
+    Route::delete('/admin/CommentHousingsDestroy/{id}', 'destroyHousingsComment')->name('destroyHousingsComment');
+    //todo comentarios de groomers===============================================================================================
+    Route::get('/admin/CommentDogGroomersAccepted/{id}', 'acceptDogGroomersComment')->name('acceptDogGroomersComment');
+    Route::delete('/admin/CommentDogGroomersDestroy/{id}', 'destroyDogGroomersComment')->name('destroyDogGroomersComment');
 });
 
 //todo rutas de housings===============================================================================================

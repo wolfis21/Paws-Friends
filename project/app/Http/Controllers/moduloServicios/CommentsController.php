@@ -20,4 +20,30 @@ class CommentsController extends Controller
         return redirect()->route('index');
 
     }
+
+    public function acceptHousingsComment(Request $request, string $id){
+        $comment = Comment::findOrFail($id);
+        $comment->accepted = true;
+        $comment->update($request->all());
+        return redirect()->route('housingAdmin');
+    }
+    public function destroyHousingsComment($id)
+    {
+        Comment::find($id)->delete();
+        return redirect()->route('housingAdmin');
+
+    }
+    
+    public function acceptDogGroomersComment(Request $request, string $id){
+        $comment = Comment::findOrFail($id);
+        $comment->accepted = true;
+        $comment->update($request->all());
+        return redirect()->route('dogGroomerAdmin');
+    }
+    public function destroyDogGroomersComment($id)
+    {
+        Comment::find($id)->delete();
+        return redirect()->route('dogGroomerAdmin');
+
+    }
 }

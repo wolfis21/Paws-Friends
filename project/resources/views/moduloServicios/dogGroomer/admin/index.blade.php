@@ -36,11 +36,39 @@
             </table>
         </div>
     </div>
-
+    <h1>Comentarios Peluqueria admin</h1>
     <div class="card">
         <div class="card-body">
+
             <table id="PeluqueriaComments" class="table table-dark" style="width:100%">
-                {{-- ?lo que prosigue de la tabla Comentario --}}
+                <thead>
+                    <th scope="col">UserName</th>
+                    <th scope="col">Comentario</th>
+                    <th scope="col">Peluqueria</th>
+                    <th scope="col">Acciones</th>
+                </thead>
+                <tbody>
+                    @foreach ($dogGroomersComments as $dogGroomerComment)
+                        @if ($dogGroomerComment->comments->accepted === null)
+                            <tr>
+                                <td>{{ $dogGroomerComment->comments->users->name }}</td>
+                                <td>{{ $dogGroomerComment->comments->data_text }}</td>
+                                <td>{{ $dogGroomer->name }}</td>
+                                <td>
+                                    <form action="{{ route('destroyDogGroomersComment', $dogGroomerComment->id) }}"
+                                        method="POST">
+                                        @method('PUT')
+                                        <a class="btn btn-primary"
+                                            href="{{ route('acceptDogGroomersComment', $dogGroomerComment->id) }}">Confirmar</a>
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger">Denegar</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endif
+                    @endforeach
+                </tbody>
             </table>
         </div>
     </div>

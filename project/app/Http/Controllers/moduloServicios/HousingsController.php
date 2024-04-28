@@ -4,6 +4,7 @@ namespace App\Http\Controllers\moduloServicios;
 
 use App\Models\moduloServicios\Housing;
 use App\Http\Controllers\Controller;
+use App\Models\moduloServicios\Housings_has_comments;
 use Illuminate\Http\Request;
 
 class HousingsController extends Controller
@@ -15,7 +16,10 @@ class HousingsController extends Controller
 
     public function housingAdmin(){
         $housings = Housing::all();
-        return view('moduloServicios.housings.admin.index')->with('housings', $housings);
+        $housingsComments = Housings_has_comments::all();
+        return view('moduloServicios.housings.admin.index')
+        ->with('housings', $housings)
+        ->with('housingsComments', $housingsComments);
     }
     /**
      * Show the form for creating a new resource.
@@ -40,8 +44,8 @@ class HousingsController extends Controller
         $housing = $request->all();
 
         if ($image = $request->file('img_ref')) {
-            $path = 'admin/images/housing';
-            $imageName = date('YmdHis')."_".$image->getClientOriginalName();
+            $path = 'admin/images/housings';
+            $imageName = date('YmdHis')."_".$image->getClientOriginalExtension();
             $image->move($path, $imageName );
             $housing['img_ref'] = "$imageName";
         }
@@ -75,7 +79,17 @@ class HousingsController extends Controller
             'img_ref' => 'nullable',
         ]);
         $housing = Housing::findOrFail($id);
-        $housing->update($request->all());
+        $housingReq = $request->all();
+        if ($image = $request->file('img_ref')) {
+            $path = 'admin/images/housings';
+            $imageName = date('YmdHis')."_".$image->getClientOriginalExtension();
+            $image->move($path, $imageName );
+            $housingReq['img_ref'] = "$imageName";
+        }else{
+            unset($housingReq['img_ref']);
+        }
+
+        $housing->update($housingReq);
         return redirect()->route('housingAdmin');
     }
     /**
