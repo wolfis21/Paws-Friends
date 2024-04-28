@@ -81,6 +81,7 @@
 }
 .card-img2:hover > a > div {
     color: #c4c4c4;
+    /* color:rgba(33,235,26,1); */
 }
 
 img {
