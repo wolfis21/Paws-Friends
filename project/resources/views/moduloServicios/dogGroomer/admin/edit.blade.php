@@ -5,9 +5,7 @@
     <form method="POST" action="{{ route('updateDogGroomer', $dogGroomer->id) }}" role="form" enctype="multipart/form-data">  
         {{ method_field('PUT') }}
         @csrf
-        @php
-            $isEdit = false;
-        @endphp
+
         <div class="mb-3">
             <label for="Nombre" class="form-label">Nombre</label>
             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
@@ -21,7 +19,7 @@
         <div class="mb-3">
             <label for="phone" class="form-label">Telefono</label>
             <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone"
-                placeholder="Ingrese el telefono" {{ $dogGroomer->phone }}>
+                placeholder="Ingrese el telefono" value="{{ $dogGroomer->phone }}">
         </div>
         <div class="mb-3">
             <label for="link_ref" class="form-label">link_ref</label>

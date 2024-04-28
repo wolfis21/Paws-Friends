@@ -6,22 +6,22 @@
 <div class="mb-3">
     <label for="Direccion" class="form-label">Direccion</label>
     <input type="text" class="form-control @error('address') is-invalid @enderror " id="address" name="address"
-        placeholder="Jose Garcia" value="{{ old('address') }}">
+        placeholder="Ciudad Guayana, Los Olivos" value="{{ old('address') }}">
 </div>
 <div class="mb-3">
     <label for="Telefono" class="form-label">Telefono</label>
     <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone"
-        placeholder="Jose Garcia" value="{{ old('phone') }}">
+        placeholder="04141912013" value="{{ old('phone') }}">
 </div>
 <div class="mb-3">
     <label for="email" class="form-label">Email</label>
     <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email"
-        placeholder="example@tumama" value="{{ old('email') }}">
+        placeholder="example@gmail.com" value="{{ old('email') }}">
 </div>
 <div class="mb-3">
     <label for="link_ref" class="form-label">link_ref</label>
     <input type="text" class="form-control @error('link_ref') is-invalid @enderror" id="link_ref" name="link_ref"
-        placeholder="Jose Garcia" value="{{ old('link_ref') }}">
+        placeholder="https://instagram.com" value="{{ old('link_ref') }}">
 </div>
 <div class="mb-3">
     <label for="Img" class="form-label">Img_ref</label>

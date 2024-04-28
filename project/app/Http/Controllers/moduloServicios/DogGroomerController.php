@@ -63,8 +63,10 @@ class DogGroomerController extends Controller
             'link_ref' => 'nullable',
             'img_ref' => 'required|string',
         ]);
-        $dogGroomer = Dog_Groomer::findOrFail($id);
-        $dogGroomer->update($request->all());
+        $dogGroomer = Dog_groomer::findOrFail($id);
+        $doggrom = $request->all();
+        $dogGroomer->update($doggrom);
+
         return redirect()->route('dogGroomerAdmin');
     }
     /**

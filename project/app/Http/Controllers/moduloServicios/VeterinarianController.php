@@ -55,7 +55,7 @@ class VeterinarianController extends Controller
 
         if ($image = $request->file('img_ref')) {
             $path = 'admin/images/vets';
-            $imageName = date('YmdHis')."_".$image->getClientOriginalName();
+            $imageName = date('YmdHis')."_".$image->getClientOriginalExtension();
             $image->move($path, $imageName );
             $veterinarian['img_ref'] = "$imageName";
         }
@@ -93,11 +93,22 @@ class VeterinarianController extends Controller
             'phone' => 'required||alpha_num|min_digits:11',
             'email' => 'required|email',
             'link_ref' => 'nullable',
-            'img_ref' => 'required|string',
+            'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'specialist_animals' => 'required|string',
         ]);
         $veterinarian = Veterinarian::findOrFail($id);
-        $veterinarian->update($request->all());
+        $vet = $request->all();
+
+        if ($image = $request->file('img_ref')) {
+            $path = 'admin/images/vets';
+            $imageName = date('YmdHis')."_".$image->getClientOriginalExtension();
+            $image->move($path, $imageName );
+            $vet['img_ref'] = "$imageName";
+        }else{
+            unset($vet['img_ref']);
+        }
+
+        $veterinarian->update($vet);
         return redirect()->route('index');
     }
 

@@ -34,10 +34,18 @@ class HousingsController extends Controller
             'description_location' => 'required|string|min:6',
             'type_animals' => 'required',
             'food_offer' => 'required',
-            'img_ref' => 'nullable',
+            'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
+        
+        $housing = $request->all();
 
-        $housing = Housing::create($request->all());
+        if ($image = $request->file('img_ref')) {
+            $path = 'admin/images/housing';
+            $imageName = date('YmdHis')."_".$image->getClientOriginalName();
+            $image->move($path, $imageName );
+            $housing['img_ref'] = "$imageName";
+        }
+        Housing::create($housing);
         return redirect()->route('housingAdmin');
     }
         /**
