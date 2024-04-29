@@ -15,14 +15,25 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        $permissions= DB::table('permissions')->insertGetId([
+<<<<<<< HEAD
+        $permissions= DB::table('permissions')->insertGetId([ //falta gestionar luego permisos 
             'name' => 'global',
+=======
+        $permissions= DB::table('permissions')->insertGetId([
+            'name' => 'vetsadmin',
+>>>>>>> origin/module-1
             'created_at' => now(), 
             'updated_at' => now(), 
         ]);
 
         $rols= DB::table('rols')->insertGetId([
             'name' => 'admin',
+            'created_at' => now(), 
+            'updated_at' => now(), 
+        ]);
+        
+        DB::table('rols')->insertGetId([ //por defect customer creado 
+            'name' => 'customer',
             'created_at' => now(), 
             'updated_at' => now(), 
         ]);
@@ -34,27 +45,48 @@ class DatabaseSeeder extends Seeder
                 'updated_at' => now(), 
             ]);
 
-        $data = DB::table('datas_users')->insertGetId([
+        DB::table('users')->insert([
             'name' => 'admin',
+<<<<<<< HEAD
             'last_name' => 'global',
             'dni' => '12345',
             'phone' => '12345',
             'address' => 'Sin direccion',
             'photo_user' => 'null',
+            'email'=> 'admin@admin.com',
+=======
+            'last_name' => 'amin',
+            'dni' => 'amin',
+            'phone' => 'amin',
+            'address' => 'amin',
+            'photo_user' => 'amin',
+            'email'=> 'admin@admin.com',
+            'email_verified_at' => now(),
+            'password' => bcrypt('admin12345'), // Cifrado la contraseña usando Bcrypt
+            'rols_id' => $rols,
+            'remember_token' => Str::random(10),
             'created_at' => now(), 
             'updated_at' => now(), 
         ]);
 
         DB::table('users')->insert([
-            'name' => 'admin',
-            'email'=> 'admin@admin.com',
+            'name' => 'user',
+            'last_name' => 'global',
+            'dni' => 'global',
+            'phone' => 'global',
+            'address' => 'global',
+            'photo_user' => 'global',
+            'email'=> 'user@user.com',
+>>>>>>> origin/module-1
             'email_verified_at' => now(),
-            'password' => bcrypt('admin12345'), // Cifrado la contraseña usando Bcrypt
+            'password' => bcrypt('admin'), // Cifrado la contraseña usando Bcrypt
             'rols_id' => $rols,
-            'datas_users_id' => $data,
             'remember_token' => Str::random(10),
             'created_at' => now(), 
             'updated_at' => now(), 
         ]);
+
+
+        $this->call(RolsSeeder::class);
     }
 }

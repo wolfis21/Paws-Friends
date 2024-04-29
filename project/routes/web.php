@@ -7,6 +7,8 @@ use App\Http\Controllers\FormularioAdopcionesController;
 use App\Http\Controllers\FormularioDonacionesController;
 use App\Http\Controllers\welcomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +22,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
+});
+
+Route::get('/adminPWFS', HomeServicesController::class)->name('homeService');
+
+//? RUTAS MODULO 1
+Route::controller(HomeServicesController::class)->group(function(){
+    Route::get('/ServiceModel','serviceModel')->name('serviceModel');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
