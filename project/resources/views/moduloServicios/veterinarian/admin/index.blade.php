@@ -19,29 +19,28 @@
                     <th scope="col">Acciones</th>
                 </thead>
                 <tbody>
-                        @foreach ($veterinarians as $veterinarian)
-                            <tr>
-                                <td>{{ $veterinarian->name }}</td>
-                                <td>{{ $veterinarian->address }}</td>
-                                <td>{{ $veterinarian->email }}</td>
-                                <td>{{ $veterinarian->link_ref }}</td>
-                                <td ><img src="images/vets/{{($veterinarian->img_ref)}}" alt="a" ></td>
-                                <td>{{ $veterinarian->specialist_animals }}</td>
-                                <td>
-                                    <form action="{{ route('destroy', $veterinarian->id) }}" method="POST">
-                                        <a class="btn bg-green" href="{{ route('edit', $veterinarian->id) }}">Editar</a>
-                                        @method('DELETE')
-                                        @csrf
-                                        <button type="submit" class="btn bg-red">Eliminar</button>
-                                    </form>
-
-                                </td>
-                            </tr>
-                        @endforeach
+                    @foreach ($veterinarians as $veterinarian)
+                        <tr>
+                            <td>{{ $veterinarian->name }}</td>
+                            <td>{{ $veterinarian->address }}</td>
+                            <td>{{ $veterinarian->email }}</td>
+                            <td>{{ $veterinarian->link_ref }}</td>
+                            <td><img src="images/vets/{{ $veterinarian->img_ref }}" alt="a"></td>
+                            <td>{{ $veterinarian->specialist_animals }}</td>
+                            <td>
+                                <button type="button" class="btn bg-green" data-bs-toggle="modal" data-bs-target="#viewProfile{{$veterinarian->id}}">Ver perfil</button>
+                                <button type="button" class="btn bg-red" data-bs-toggle="modal" data-bs-target="#deleteProfile{{$veterinarian->id}}">Eliminar</button>
+                            </td>
+                        </tr>
+                        @include('moduloServicios.veterinarian.admin.ModalViewProfile')
+                        @include('moduloServicios.veterinarian.admin.ModalDeleteProfile')
+                    @endforeach
                 </tbody>
             </table>
         </div>
     </div>
+
+    {{-- TODO MODAL --}}
     <h1>Comentarios Veterinarios admin</h1>
     <div class="card bg-dark">
         <div class="card-body">
