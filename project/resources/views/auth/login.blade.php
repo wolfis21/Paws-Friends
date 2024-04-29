@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-{{-- @extends('layouts.app') --}}
-@extends('layouts.headerNav')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -73,6 +71,3 @@
     </div>
 </div>
 @endsection
-=======
-@extends('adminlte::auth.login')
->>>>>>> origin/module-1
