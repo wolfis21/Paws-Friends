@@ -9,7 +9,8 @@ use App\Models\User;
 class UserController extends Controller
 {
     protected function show(){
-        $user = Auth::user();
+        /* $user = Auth::user(); */
+        $user = User::find(1);
         
         $img = base64_encode(file_get_contents(public_path('storage/' . $user->photo_user)));
 

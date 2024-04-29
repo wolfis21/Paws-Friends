@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {{-- @extends('layouts.app') --}}
 
 @extends('layouts.headerNav')
@@ -176,3 +177,6 @@
         </div>
     </div>
 @endsection
+=======
+@extends('adminlte::auth.register')
+>>>>>>> origin/module-1
