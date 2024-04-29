@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(../img/Fondo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flexbox;
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: #ffffff;
+    color: #6e569f;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 100px;
+    max-width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 50px;
+}
+
+nav ul li a {
+    color: #6e569f;
+    text-decoration: none;
+}
+
+button {
+    font-weight: 700;
+    color: #fafafa;
+    padding: 10px 20px;
+    background-color: #6e569f;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Estilos para el formulario de adopción */
+.formulario-adopcion {
+    text-align: center;
+    padding-top: 40px;
+}
+
+form {
+    max-width: 400px;
+    margin: auto; /* Para centrar el formulario */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    color: #6e569f;
+}
+
+input {
+    width: 90%; /* Para que el input ocupe todo el espacio */
+    padding: 10px;
+    border: 1px solid #6e569f;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:hover,
+input:focus {
+    border-color: #5a4d86; /* Cambiar el borde al pasar el ratón */
+}
+
+button {
+    background-color: #6e569f;
+    color: #fafafa;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #5a4d86; /* Cambiar el color al pasar el ratón */
+}
+
+/* Estilos del pie de página */
+footer {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,150 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(../img/Fondo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flexbox;
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: #ffffff;
+    color: #6e569f;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 100px;
+    max-width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 50px;
+}
+
+nav ul li a {
+    color: #6e569f;
+    text-decoration: none;
+}
+
+button {
+    font-weight: 700;
+    color: #fafafa;
+    padding: 10px 20px;
+    background-color: #6e569f;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+/* Estilos específicos para la sección de botn de busca */
+
+h1 {
+    margin: 20px;
+    font-size: 45px;
+    text-align: center;
+}
+
+input {
+    outline: none;
+    box-sizing: content-box;
+    height: 60px;
+    width: 18cm;
+    padding: 0px;
+    color: #000;
+    border-radius: 30px;
+    font-size: 25px;
+    border: 1px solid #6e569f;
+    transition: all 0.7s ease;
+}
+
+::placeholder {
+    color: #6e569f;
+}
+
+.buscar {
+    position: absolute;
+    right: 120px;
+    top: 20px;
+    width: 80px;
+    height: 80px;
+    background: #6e569f;
+    line-height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.buscar i {
+    font-size: 50px;
+    color: white;
+    line-height: 80px;
+    transition: all 0.7s ease;
+}
+
+.container {
+    position: absolute;
+    left: 45%;
+    top: 77%;
+    transform: translate(-45%, -45%);
+    padding: 15px;
+}
+
+.container:hover i {
+    transform: rotate(+360deg);
+}
+
+/* Estilos específicos para la sección de adopciones */
+main {
+    padding: 20px;
+}
+section {
+    margin: 20px;
+}
+
+.animales {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.animal {
+    margin: 10px;
+    padding: 10px;
+    color: #000000;
+    border: 1px solid #6e569f;
+    border-radius: 5px;
+    width: 250px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.animal img {
+    width: 30%;
+    height: auto;
+    border-radius: 5px;
+}
+
+footer {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

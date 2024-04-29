@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(../img/Fondo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flexbox;
+}
+
+/* Estilos para el encabezado */
+/* Estilos para el encabezado */
+header {
+    background-color: #ffffff;
+    color: #6e569f;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 50px;
+}
+
+nav ul li a {
+    color: #6e569f;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 100px;
+    max-width: 100%;
+}
+
+button {
+    margin-top: 20px;
+    font-weight: 700;
+    color: #fafafa;
+    padding: 10px 20px;
+    background-color: #6e569f;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Estilos para el formulario de donaciones */
+.formulario-donaciones {
+    text-align: center;
+    padding-top: 40px;
+}
+
+.subir-fotos {
+    border: 2px solid #6e569f;
+    background-color: #e0c1f5; /* Color morado claro */
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: auto;
+}
+
+.subir-fotos input {
+    display: none; /* Para ocultar el input de archivo */
+}
+
+.subir-fotos label {
+    display: block;
+    cursor: pointer;
+    font-weight: 700;
+    color: #6e569f;
+    padding: 10px;
+    text-align: center;
+    background-color: #e0c1f5;
+}
+
+.destino-donacion {
+    margin-top: 20px;
+}
+
+.destino-donacion p {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.destino-donacion select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #6e569f;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e0326f; /* Cambia el color al pasar el ratón */
+}
+
+/* Estilos del pie de página */
+footer {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

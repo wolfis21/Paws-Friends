@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(../img/Fondo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flexbox;
+}
+
+.logo img {
+    height: 100px;
+    max-width: 100%;
+}
+/* Estilos para el encabezado */
+header {
+    background-color: #ffffff;
+    color: #6e569f;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 50px;
+}
+
+nav ul li a {
+    color: #6e569f;
+    text-decoration: none;
+}
+
+button {
+    font-weight: 700;
+    color: #fafafa;
+    padding: 10px 20px;
+    background-color: #6e569f;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #5a4d86; /* Más oscuro al pasar el ratón */
+}
+
+/* Estilos para el formulario de adopción */
+.formulario-adopcion {
+    text-align: center;
+    padding-top: 40px;
+}
+
+.contenedor-formulario {
+    display: flex;
+    justify-content: center; /* Centra los cuadros */
+    align-items: center; /* Alinea verticalmente */
+    gap: 20px; /* Espacio entre los cuadros */
+    margin: 20px 40px;
+}
+
+.cuadro-imagen {
+    width: 200px; /* Ajusta el tamaño según sea necesario */
+    text-align: center;
+}
+
+.cuadro-info {
+    width: 200px; /* Ajusta el tamaño según sea necesario */
+}
+
+.boton-adopcion {
+    text-align: center;
+}
+
+.boton-adopcion button {
+    background-color: #f7c0c0; /* Rosado claro */
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.boton-adopcion button:hover {
+    background-color: #f9a1a1; /* Un poco más oscuro al pasar el cursor */
+}
+
+/* Estilos del pie de página */
+footer {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
