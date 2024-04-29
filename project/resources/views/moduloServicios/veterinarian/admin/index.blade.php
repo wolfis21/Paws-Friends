@@ -1,10 +1,9 @@
-{{-- @extends('layouts.example') --}}
 @extends('moduloServicios.dashboard')
 @section('title', 'Veterinario')
 @section('content')
 
     <a href="{{ route('create') }}" class="btn bg-green">Añadir Veterinario</a>
-    <h1>Veterinarios admin</h1>
+    <h4>Veterinarios admin</h4>
     <div class="card bg-dark">
         <div class="card-body">
 
@@ -39,9 +38,8 @@
             </table>
         </div>
     </div>
-
-    {{-- TODO MODAL --}}
-    <h1>Comentarios Veterinarios admin</h1>
+    {{-- TODO COMENTARIOS --}}
+    <h4>Comentarios Veterinarios admin</h4>
     <div class="card bg-dark">
         <div class="card-body">
 

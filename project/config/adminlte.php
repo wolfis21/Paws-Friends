@@ -315,6 +315,12 @@ return [
         //     'text' => 'search',
         // ],
         [
+            'text' =>'Dashboard',
+            'url' => '/',
+            'icon' =>'fas fa-fw fa-home',
+        ],
+
+        [
             'text' => 'blog',
             'url' => 'admin/blog',
             'can' => 'manage-blog',
