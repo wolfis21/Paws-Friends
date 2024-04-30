@@ -12,8 +12,6 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">Direccion</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Link</th>
-                    <th scope="col">Img</th>
                     <th scope="col">Especialidad</th>
                     <th scope="col">Acciones</th>
                 </thead>
@@ -23,8 +21,6 @@
                             <td>{{ $veterinarian->name }}</td>
                             <td>{{ $veterinarian->address }}</td>
                             <td>{{ $veterinarian->email }}</td>
-                            <td>{{ $veterinarian->link_ref }}</td>
-                            <td><img src="images/vets/{{ $veterinarian->img_ref }}" alt="a"></td>
                             <td>{{ $veterinarian->specialist_animals }}</td>
                             <td>
                                 <button type="button" class="btn bg-cyan" data-bs-toggle="modal" data-bs-target="#viewProfile{{$veterinarian->id}}">Ver perfil</button>

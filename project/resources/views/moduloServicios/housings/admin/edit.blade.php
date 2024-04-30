@@ -39,7 +39,7 @@
              <img  src="images/housings/{{$housing->img_ref}}">
         </div>
         <div class="mb-3">
-            <a class="btn btn-red" href="{{route('housingAdmin')}}">Cancelar</a>
+            <a class="btn bg-red" href="{{route('housingAdmin')}}">Cancelar</a>
             <button class="btn bg-cyan">Guardar</button>
           </div>  
           

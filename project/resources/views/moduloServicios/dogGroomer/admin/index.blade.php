@@ -10,8 +10,6 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">Direccion</th>
                     <th scope="col">Telefono</th>
-                    <th scope="col">Link</th>
-                    <th scope="col">Img</th>
                     <th scope="col">Acciones</th>
                 </thead>
                 <tbody>
@@ -20,17 +18,14 @@
                             <td>{{$dogGroomer->name}}</td>
                             <td>{{$dogGroomer->address}}</td>
                             <td>{{$dogGroomer->phone}}</td>
-                            <td>{{$dogGroomer->link_ref}}</td>
-                            <td><img src="images/dogGroomers/{{($dogGroomer->img_ref)}}" alt="a"></td>
+                            {{-- <td><img src="images/dogGroomers/{{($dogGroomer->img_ref)}}" alt="a"></td> --}}
                             <td>
-                                <form action="{{route('destroyDogGroomer',$dogGroomer->id) }}" method="POST">
-                                    <a class="btn bg-cyan" href="{{ route('editDogGroomer', $dogGroomer->id ) }}">Editar</a>
-                                    @method('DELETE')
-                                    @csrf
-                                    <button type="submit" class="btn bg-red">Eliminar</button>
-                                </form>
+                                <button type="button" class="btn bg-cyan" data-bs-toggle="modal" data-bs-target="#viewProfile{{$dogGroomer->id}}">Ver perfil</button>
+                                <button type="button" class="btn bg-red" data-bs-toggle="modal" data-bs-target="#deleteProfile{{$dogGroomer->id}}">Eliminar</button>
                             </td>
                         </tr>
+                        @include('moduloServicios.dogGroomer.admin.ModalViewProfile')
+                        @include('moduloServicios.dogGroomer.admin.ModalDeleteProfile')
                     @endforeach
                 </tbody>
             </table>

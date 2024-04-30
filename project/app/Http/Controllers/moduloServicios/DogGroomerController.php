@@ -36,7 +36,7 @@ class DogGroomerController extends Controller
             'address' => 'string',
             'phone' => 'required|unique:veterinarians|alpha_num|min_digits:11',
             'link_ref' => 'nullable',
-            'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'img_ref' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
         
         $dogGroomer = $request->all();
@@ -72,7 +72,7 @@ class DogGroomerController extends Controller
             'address' => 'string',
             'phone' => 'required|unique:veterinarians|alpha_num|min_digits:11',
             'link_ref' => 'nullable',
-            'img_ref' => 'required|string',
+            'img_ref' => 'nullable|string',
         ]);
         $dogGroomer = Dog_groomer::findOrFail($id);
         $dogGroomerReq = $request->all();

@@ -38,7 +38,8 @@ class HousingsController extends Controller
             'description_location' => 'required|string|min:6',
             'type_animals' => 'required',
             'food_offer' => 'required',
-            'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'link_ref' => 'nullable',
+            'img_ref' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
         
         $housing = $request->all();
@@ -76,7 +77,8 @@ class HousingsController extends Controller
             'description_location' => 'required|string|min:6',
             'type_animals' => 'required',
             'food_offer' => 'required',
-            'img_ref' => 'nullable',
+            'link_ref' => 'nullable',
+            'img_ref' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
         $housing = Housing::findOrFail($id);
         $housingReq = $request->all();

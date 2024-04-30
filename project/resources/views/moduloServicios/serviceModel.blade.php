@@ -3,7 +3,7 @@
 @vite(['resources/css/moduloServicios/user/index.css'])
 @section('content')
     <div class="contenedor">
-        <h1 class="title-page">Modulo de servicios</h1>
+        <h1 class="title-page">Modulo de cuidados</h1>
         <h2 class="texto">Nuestros servicios</h2>
         <div class="cards">
             <div class="card-img2">

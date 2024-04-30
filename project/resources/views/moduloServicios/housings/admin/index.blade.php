@@ -11,8 +11,6 @@
                     <th scope="col">Telefono</th>
                     <th scope="col">Localizacion</th>
                     <th scope="col">Tipo animal</th>
-                    <th scope="col">food_offer</th>
-                    <th scope="col">Img</th>
                     <th scope="col">Acciones</th>
                 </thead>
                 <tbody>
@@ -22,17 +20,14 @@
                             <td>{{$housing->phone}}</td>
                             <td>{{$housing->description_location}}</td>
                             <td>{{$housing->type_animals}}</td>
-                            <td>{{$housing->food_offer}}</td>
-                            <td><img src="images/housings/{{($housing->img_ref)}}"  alt="a" ></td>
+                            {{-- <td><img src="images/housings/{{($housing->img_ref)}}"  alt="a" ></td> --}}
                             <td>
-                                <form action="{{route('destroyHousing',$housing->id) }}" method="POST">
-                                    <a class="btn bg-cyan" href="{{ route('editHousing', $housing->id ) }}">Editar</a>
-                                    @method('DELETE')
-                                    @csrf
-                                    <button type="submit" class="btn bg-red">Eliminar</button>
-                                </form>
+                                <button type="button" class="btn bg-cyan" data-bs-toggle="modal" data-bs-target="#viewProfile{{$housing->id}}">Ver perfil</button>
+                                <button type="button" class="btn bg-red" data-bs-toggle="modal" data-bs-target="#deleteProfile{{$housing->id}}">Eliminar</button>
                             </td>
                         </tr>
+                        @include('moduloServicios.housings.admin.ModalViewProfile')
+                        @include('moduloServicios.housings.admin.ModalDeleteProfile')
                     @endforeach
                 </tbody>
             </table>
