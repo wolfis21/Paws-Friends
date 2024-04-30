@@ -2,7 +2,7 @@
 @section('title', 'Veterinario')
 @section('content')
 
-    <a href="{{ route('create') }}" class="btn bg-green">Añadir Veterinario</a>
+    <a href="{{ route('create') }}" class="btn bg-cyan">Añadir Veterinario</a>
     <h4>Veterinarios admin</h4>
     <div class="card bg-dark">
         <div class="card-body">
@@ -27,7 +27,7 @@
                             <td><img src="images/vets/{{ $veterinarian->img_ref }}" alt="a"></td>
                             <td>{{ $veterinarian->specialist_animals }}</td>
                             <td>
-                                <button type="button" class="btn bg-green" data-bs-toggle="modal" data-bs-target="#viewProfile{{$veterinarian->id}}">Ver perfil</button>
+                                <button type="button" class="btn bg-cyan" data-bs-toggle="modal" data-bs-target="#viewProfile{{$veterinarian->id}}">Ver perfil</button>
                                 <button type="button" class="btn bg-red" data-bs-toggle="modal" data-bs-target="#deleteProfile{{$veterinarian->id}}">Eliminar</button>
                             </td>
                         </tr>
@@ -61,7 +61,7 @@
                                     <form action="{{ route('destroyVetsComment', $veterinarianComment->id) }}"
                                         method="POST">
                                         @method('PUT')
-                                        <a class="btn bg-green"
+                                        <a class="btn bg-cyan"
                                             href="{{ route('acceptCommentVeterinarians', $veterinarianComment->id) }}">Confirmar</a>
                                         @method('DELETE')
                                         @csrf

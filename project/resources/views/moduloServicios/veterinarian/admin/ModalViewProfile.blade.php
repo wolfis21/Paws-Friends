@@ -37,7 +37,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <a href="{{route('edit',$veterinarian->id)}}" class="btn bg-green">Editar</a>
+                <a href="{{route('edit',$veterinarian->id)}}" class="btn bg-cyan">Editar</a>
             </div>
         </div>
     </div>

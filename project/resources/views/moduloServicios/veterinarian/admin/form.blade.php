@@ -46,7 +46,7 @@
 </div>
 <div class="mb-3">
     <a class="btn bg-red" href="{{ route('index') }}">Cancelar</a>
-    <button class="btn bg-green">Guardar</button>
+    <button class="btn bg-cyan">Guardar</button>
 </div>
 
 @error('phone')

@@ -108,7 +108,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.5/css/dataTables.bootstrap5.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.2/css/responsive.bootstrap5.css">
-    {{-- @vite('resources/css/moduloServicios/admin/dataTables/bootstrap.min.css', 'resources/css/moduloServicios/admin/dataTables/dataTables.bootstrap5.min.css') --}}
 @stop
 
 @section('js')
@@ -118,9 +117,5 @@
     <script src="https://cdn.datatables.net/2.0.5/js/dataTables.bootstrap5.js"></script>
     <script src="https://cdn.datatables.net/responsive/3.0.2/js/dataTables.responsive.js"></script>
     <script src="https://cdn.datatables.net/responsive/3.0.2/js/responsive.bootstrap5.js"></script>
-    @vite(['moduloServicios/js/admin/dataTables/scriptDatatables.js'])
-    {{-- <script src="{{asset('moduloServicios/js/admin/dataTables/jquery-3.7.1.js')}}"></script>
-    <script src="{{asset('moduloServicios/js/admin/dataTables/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('moduloServicios/js/admin/dataTables/dataTables.js')}}"></script>
-    <script src="{{asset('moduloServicios/js/admin/dataTables/dataTables.bootstrap5.js')}}"></script> --}}
+    <script src="{{asset('moduloServicios/js/admin/dataTables/scriptDatatables.js')}}"></script>
 @stop
