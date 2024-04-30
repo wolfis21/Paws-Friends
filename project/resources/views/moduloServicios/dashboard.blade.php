@@ -16,23 +16,6 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-4 col-xl-4">
-
-                                    <div class="card bg-c-blue order-card">
-                                        <div class="card-block">
-                                            <h5>Usuarios</h5>
-                                            @php
-                                                use App\Models\User;
-                                                $cant_usuarios = User::count();
-                                            @endphp
-                                            <h2 class="text-right"><i
-                                                    class="fa fa-users f-left"></i><span>{{ $cant_usuarios }}</span></h2>
-                                            <p class="m-b-0 text-right"><a href="/usuarios" class="text-white">Ver más</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4 col-xl-4">
                                     <div class="card bg-c-green order-card">
                                         <div class="card-block">
                                             <h5>Veterinarios</h5>
@@ -80,6 +63,20 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-xl-4">
+
+                                    <div class="card bg-c-blue order-card">
+                                        <div class="card-block">
+                                            <h5>Usuarios</h5>
+                                            @php
+                                                use App\Models\User;
+                                                $cant_usuarios = User::count();
+                                            @endphp
+                                            <h2 class="text-right"><i
+                                                    class="fa fa-users f-left"></i><span>{{ $cant_usuarios }}</span></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-xl-4">
                                     <div class="card bg-c-purple order-card">
                                         <div class="card-block">
                                             <h5>Comentarios</h5>
@@ -90,7 +87,6 @@
                                             <h2 class="text-right"><i
                                                     class="fa fa-comment f-left"></i><span>{{ $cant_Comentarios }}</span>
                                             </h2>
-                                            <p class="m-b-0 text-right"><ico class="text-black"></ico></p>
                                         </div>
                                     </div>
                                 </div>

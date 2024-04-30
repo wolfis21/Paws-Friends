@@ -50,3 +50,7 @@
 .f-right {
     float: right;
 }
+
+.active>.page-link{
+    background-color: #0dcaf0!important;
+}
