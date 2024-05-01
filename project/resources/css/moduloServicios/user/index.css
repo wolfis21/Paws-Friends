@@ -3,6 +3,9 @@
     src: url('/font/LeagueSpartan-VariableFont_wght.ttf');
     font-style: normal;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -11,30 +14,86 @@
 
 .contenedor {
     width: 100%;
-    height: 85vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    background-image: url('ImagenRegister.png');
-    background-size: cover;
-    /* Add this property */
-    background-position: center;
     /* Add this property */
     background-color: #54e9f437;
 }
 
-.title-page{
+.title-page {
     font-weight: bold;
     font-family: 'Nunito';
+    font-size: 50px;
+    padding: 0;
+    margin: 0;
 }
 
-.texto{
+
+/*todo  primera vista bienvenida */
+.welcome {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    background-image: url('friends.png');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Inter';
+}
+
+.img,
+.main-view {
+    width: 500px;
+}
+
+.main-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-grow: 0.45;
+    border-radius: 25px;
+    margin-top: 8rem;
+    /* -webkit-box-shadow: 0px 0px 18px 1px rgba(153,153,153,1);
+    -moz-box-shadow: 0px 0px 18px 1px rgba(153,153,153,1);
+    box-shadow: 0px 0px 18px 1px rgba(153,153,153,1); */
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+}
+
+.texto-bienvenida{
+    padding: 25px;
+    font-size: 25px;
+}
+/*todo  segunda vista opciones */
+.module{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url('ImagenRegister.png');
+    background-size: cover;
+    /* Add this property */
+    background-position: center;
+}
+.texto {
+    padding: 0px;
+    margin: 0px;
     font-weight: 400;
     font-family: 'Nunito';
+    font-size: 50px;
 }
-
 .cards {
     display: flex;
     justify-content: space-evenly;
@@ -62,8 +121,8 @@
 }
 
 .card-img2:hover {
-    -webkit-box-shadow: 0px 0px 35px 3px rgba(84,233,244,1);
-    -moz-box-shadow: 0px 0px 35px 3px rgba(84,233,244,1);
+    -webkit-box-shadow: 0px 0px 35px 3px rgba(84, 233, 244, 1);
+    -moz-box-shadow: 0px 0px 35px 3px rgba(84, 233, 244, 1);
     box-shadow: 0px 0px 35px 3px #54e9f4;
     transition: all .5s;
     -webkit-transition: all .5s;
@@ -72,16 +131,16 @@
     -o-transition: all .5s;
 }
 
-.card-img2 > a > div {
+.card-img2>a>div {
     transition: all .5s;
     -webkit-transition: all .5s;
     -moz-transition: all .5s;
     -ms-transition: all .5s;
     -o-transition: all .5s;
 }
-.card-img2:hover > a > div {
+
+.card-img2:hover>a>div {
     color: #c4c4c4;
-    /* color:rgba(33,235,26,1); */
 }
 
 img {
@@ -90,6 +149,7 @@ img {
     object-fit: cover;
     border-radius: 20px;
 }
+
 .pservicio {
     font-size: 20px;
     padding: 15px;
@@ -126,4 +186,51 @@ a {
     color: white;
     width: 100%;
     height: 100%;
+}
+
+/*TODO Desarrolladores */
+.developer{
+    background: #e9eaeb;  /* fallback for old browsers */
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    height: 315px;
+}
+.cartas{
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+}
+
+.carta{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:100px;
+    margin: 20px;
+    border-radius: 20px;
+    transition: all .5s;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.img-dev{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.contenido-texto-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.texto-program{
+    margin: 10px 0px;
 }
