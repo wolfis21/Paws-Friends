@@ -27,10 +27,10 @@
                 <li><a href="{{route('homeService')}}">Inicio</a></li>
                 <li><a class="link-none">Modulos</a>
                     <ul class="mostrar-secciones">
-                        <li class="verde"><a href="{{route('serviceModel')}}" class="link-modulos">Modulo de cuidados</a></li>
+                        <li class="azul"><a href="{{route('serviceModel')}}" class="link-modulos">Modulo de cuidados</a></li>
                         <li class="rojo"><a href="/" class="link-modulos">Modulo de adopcion y donacion</a></li>
                         <li class="naranja"><a href="/" class="link-modulos">Modulo de rescate</a></li>
-                        <li class="azul"><a href="/" class="link-modulos">Tienda</a></li>
+                        <li class="verde"><a href="/" class="link-modulos">Tienda</a></li>
                     </ul>
                 </li>
                 <li><a href="#ShowcaseQuienes">Nosotros</a></li>
