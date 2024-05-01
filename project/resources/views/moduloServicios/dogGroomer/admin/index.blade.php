@@ -1,8 +1,8 @@
 @extends('moduloServicios.dashboard')
 @section('title', 'Peluqueria')
 @section('content')
-    <a href="{{route('createDogGroomer')}}" class="btn bg-cyan" style="margin-top: 15px;">Añadir Peluqueria</a>
-    <h1>Peluqueria Admin</h1>
+    <h4 style="margin-top: 15px">Peluqueria Admin</h4>
+    <a style="margin-bottom: 15px;" href="{{route('createDogGroomer')}}" class="btn bg-cyan" style="margin-top: 15px;">Añadir Peluqueria</a>
     <div class="card bg-dark">
         <div class="card-body">
             <table id="Peluqueria" class="table table-dark table-responsive-md" style="width:100%">
@@ -31,7 +31,7 @@
             </table>
         </div>
     </div>
-    <h1>Comentarios Peluqueria admin</h1>
+    <h4>Comentarios Peluqueria admin</h4>
     <div class="card bg-dark">
         <div class="card-body">
 

@@ -2,8 +2,8 @@
 @section('title', 'Veterinario')
 @section('content')
 
-    <a href="{{ route('create') }}" class="btn bg-cyan" style="margin-top: 15px;">Añadir Veterinario</a>
-    <h4>Veterinarios admin</h4>
+    <h4 style="margin-top: 15px">Veterinarios admin</h4>
+    <a href="{{ route('create') }}" class="btn bg-cyan" style="margin-bottom: 15px;">Añadir Veterinario</a>
     <div class="card bg-dark">
         <div class="card-body">
 

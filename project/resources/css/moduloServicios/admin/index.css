@@ -1,3 +1,6 @@
+body{
+    background-color: #f4f6f9!important;
+}
 .img-crud-container{
     width: 50px;
     height: 100px;
@@ -29,12 +32,14 @@
     background: linear-gradient(45deg, #ff61ff, #ab03ab);
 }
 
-
+h4{
+    margin-bottom: 15px !important;
+}
 .card {    
     -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
     box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
     border: none;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
@@ -53,4 +58,8 @@
 
 .active>.page-link{
     background-color: #0dcaf0!important;
+}
+
+.content{
+    margin-top: 15px;
 }

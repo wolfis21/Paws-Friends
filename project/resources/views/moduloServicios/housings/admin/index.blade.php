@@ -1,8 +1,8 @@
 @extends('moduloServicios.dashboard')
 @section('title', 'Alojamiento')
 @section('content')
-    <a href="{{route('createHousing')}}" class="btn bg-cyan" style="margin-top: 15px;">Añadir Alojamiento</a>
-    <h1>Alojamiento Admin</h1>
+    <h4 style="margin-top: 15px;">Alojamiento Admin</h4>
+    <a style="margin-bottom: 15px;" href="{{route('createHousing')}}" class="btn bg-cyan" style="margin-top: 15px;">Añadir Alojamiento</a>
     <div class="card bg-dark">
         <div class="card-body">
             <table id="Alojamiento" class="table table-responsive-md table-dark" style="width:100%">
@@ -33,8 +33,8 @@
             </table>
         </div>
     </div>
-    <h1>Comentarios Alojamientos admin</h1>
-    <div class="card">
+    <h4>Comentarios Alojamientos admin</h4>
+    <div class="card bg-dark">
         <div class="card-body">
 
             <table id="AlojamientoComments" class="table table-dark" style="width:100%">
