@@ -4,7 +4,7 @@
 
 
 @section('content_header')
-    <h3 class="page__heading">Dashboard</h3>
+
 @stop
 
 @section('content')

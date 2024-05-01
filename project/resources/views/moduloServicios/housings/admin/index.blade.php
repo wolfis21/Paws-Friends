@@ -1,7 +1,7 @@
 @extends('moduloServicios.dashboard')
 @section('title', 'Alojamiento')
 @section('content')
-    <a href="{{route('createHousing')}}" class="btn bg-cyan">Añadir Alojamiento</a>
+    <a href="{{route('createHousing')}}" class="btn bg-cyan" style="margin-top: 15px;">Añadir Alojamiento</a>
     <h1>Alojamiento Admin</h1>
     <div class="card bg-dark">
         <div class="card-body">
