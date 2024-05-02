@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeServicesController;
 use App\Http\Controllers\moduloServicios\CommentsController;
 use App\Http\Controllers\moduloServicios\HousingsController;
 use App\Http\Controllers\moduloServicios\VeterinarianController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -77,4 +78,4 @@ Route::controller(DogGroomerController::class)->group(function () {
     Route::get('/dogGroomers', 'dogGroomerUser')->name('dogGroomerUser');
 });
 //? FIN RUTAS MODULO 1===============================================================================================
-// Auth::routes();
+Auth::routes();

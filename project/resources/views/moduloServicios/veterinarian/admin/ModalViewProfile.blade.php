@@ -8,7 +8,7 @@
             </div>
             <div class="modal-body">
                 <div class="mb-3">
-                    <p>{{ $veterinarian->img_ref }}</p>
+                    <img class="img-vets" src="images/vets/{{ $veterinarian->img_ref }}" alt="imagen.vet" />
                 </div>
                 <div class="mb-3">
                     <label for="Nombre" class="form-label">Nombre: </label>
@@ -37,7 +37,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <a href="{{route('edit',$veterinarian->id)}}" class="btn bg-cyan">Editar</a>
+                <a href="{{ route('edit', $veterinarian->id) }}" class="btn bg-cyan">Editar</a>
             </div>
         </div>
     </div>

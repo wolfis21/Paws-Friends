@@ -10,7 +10,7 @@
             </div>
             <div class="main-view">
 
-                <h1 class="title-page">Modulo de servicios</h1>
+                <h1 class="title-page">Módulo de servicios</h1>
                 <div class="texto-bienvenida">
                     <p>En este módulo de cuidados, se brinda una amplia gama de servicios para mascotas, que incluyen
                         cuidados, alojamiento, atención veterinaria y servicios de peluquería. Cada uno de estos servicios
@@ -53,28 +53,28 @@
                     <img class="img-dev" src="{{ asset('css/moduloServicios/user/lopez.jpg') }}" alt="">
                     <div class="contenido-texto-card">
                         <h4>Anibal Lopez</h4>
-                        <p><b>BACKEND</b></p>
+                        <p><b>BACK-END</b></p>
                     </div>
                 </div>
                 <div class="carta">
                     <img class="img-dev" src="{{ asset('css/moduloServicios/user/tussi.png') }}" alt="">
                     <div class="contenido-texto-card">
                         <h4>Jesus Toussaint</h4>
-                        <p><B>BACKEND</B></p>
+                        <p><b>BACK-END</b></p>
                     </div>
                 </div>
                 <div class="carta">
                     <img class="img-dev" src="{{ asset('css/moduloServicios/user/romero.jpg') }}" alt="">
                     <div class="contenido-texto-card">
                         <h4>Daniel Romero</h4>
-                        <p><B>FRONTEND</B></p>
+                        <p><b>FRONT-END</b></p>
                     </div>
                 </div>
                 <div class="carta">
                     <img class="img-dev" src="{{ asset('css/moduloServicios/user/rebe.jpg') }}" alt="">
                     <div class="contenido-texto-card">
                         <h4>Yannella Saud</h4>
-                        <p><B>FRONTEND</B></p>
+                        <p><b>FRONT-END</b></p>
                     </div>
                 </div>
 
