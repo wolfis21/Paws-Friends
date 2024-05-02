@@ -43,8 +43,9 @@
             name="fotos-donacion"
             accept="image/*"
             multiple
+            required
           />
-          <label for="fotos-donacion">Subir fotos de la donación</label>
+          <label for="fotos-donacion" >Subir fotos de la donación </label>
         </div>
 
         <!-- Campo desplegable para seleccionar el destino de la donación -->
@@ -53,7 +54,16 @@
           <select id="destino" name="destino">
             <option value="refugio">Refugio de animales</option>
             <option value="centro-adopcion">Centro de adopción</option>
-            <option value="otro">Otro</option>
+            <option value="otro">Otros</option>
+          </select>
+        </div>
+
+          <div class="destino-donacion">
+          <p>Tipo de Donaciones</p>
+          <select id="tipos" name="tipos">
+            <option value="alimentos">Donaciones de alimentos y suministros</option>
+            <option value="Medicina">Donaciones de medicamentos:</option>
+            <option value="otro">Otros</option>
           </select>
         </div>
 

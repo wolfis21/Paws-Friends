@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id('id');
             $table->string('fotos-donacion');
             $table->string('destino');
+            $table->string('tipos');
             $table->timestamps();
         });
     }

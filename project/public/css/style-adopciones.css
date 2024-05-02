@@ -7,6 +7,35 @@ body {
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    flex-shrink: 0;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.content-header {
     display: flexbox;
 }
 
@@ -14,7 +43,7 @@ body {
 header {
     background-color: #ffffff;
     color: #6e569f;
-    padding: 10px;
+    padding: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,6 +56,7 @@ header {
 
 nav ul {
     list-style-type: none;
+    display: flex;
     margin: 0;
     padding: 0;
 }
@@ -43,6 +73,7 @@ nav ul li a {
 
 button {
     font-weight: 700;
+    font-size: 16px;
     color: #fafafa;
     padding: 10px 20px;
     background-color: #6e569f;
@@ -55,19 +86,34 @@ button {
 
 h1 {
     margin: 20px;
+    color: #6e569f;
+    font-weight: 700;
     font-size: 45px;
     text-align: center;
 }
 
+h2 {
+    margin: 20px;
+    color: #6e569f;
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+}
+
 input {
+    /* Estilos para el contenedor del input de búsqueda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 34cm;
+    /* Estilos para el input de búsqueda */
+    font-size: 20px;
+    font-weight: 700;
     outline: none;
-    box-sizing: content-box;
-    height: 60px;
-    width: 18cm;
-    padding: 0px;
-    color: #000;
+    margin: 20px;
+    padding: 10px;
     border-radius: 30px;
-    font-size: 25px;
     border: 1px solid #6e569f;
     transition: all 0.7s ease;
 }
@@ -77,32 +123,40 @@ input {
 }
 
 .buscar {
+    /* Estilos para el botón de búsqueda */
     position: absolute;
-    right: 120px;
-    top: 20px;
+    /* Posición del botón de búsqueda */
+    right: 11.5cm;
+    bottom: 11.5cm;
     width: 80px;
     height: 80px;
+    /* Estilos para el contenedor del botón de búsqueda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Estilos para el botón de búsqueda */
     background: #6e569f;
-    line-height: 80px;
     border-radius: 50%;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.5s;
-}
-
-.buscar i {
-    font-size: 50px;
-    color: white;
-    line-height: 80px;
+    border: 1px solid #6e569f;
     transition: all 0.7s ease;
 }
 
-.container {
-    position: absolute;
-    left: 45%;
-    top: 77%;
-    transform: translate(-45%, -45%);
-    padding: 15px;
+.container:hover .buscar {
+    /* Estilos para el botón de búsqueda */
+    transform: scale(1.1);
+    border-radius: 50%;
+    /* Estilos para el contenedor del botón de búsqueda */
+    border: 1px solid #6e569f;
+    transition: all 0.7s ease;
+}
+
+.buscar i {
+    /* Estilos para el texto del botón de búsqueda */
+    font-size: 50px;
+    line-height: 80px;
+    /* Estilos para el icono del botón de búsqueda */
+    color: #ffffff;
+    transition: all 0.7s ease;
 }
 
 .container:hover i {
@@ -110,12 +164,6 @@ input {
 }
 
 /* Estilos específicos para la sección de adopciones */
-main {
-    padding: 20px;
-}
-section {
-    margin: 20px;
-}
 
 .animales {
     display: flex;
@@ -124,10 +172,13 @@ section {
 }
 
 .animal {
+    /* Estilos para cada animal */
     margin: 10px;
     padding: 10px;
+    /* Estilos para el contenedor de cada animal */
     color: #000000;
     border: 1px solid #6e569f;
+    /* Estilos para el texto de cada animal */
     border-radius: 5px;
     width: 250px;
     text-align: center;
@@ -135,16 +186,23 @@ section {
 }
 
 .animal img {
-    width: 30%;
-    height: auto;
+    /* Estilos para la imagen de cada animal */
     border-radius: 5px;
+    width: 250px;
+    /* Para que la imagen se adapte al tamaño del contenedor */
+    height: 100px;
+    max-width: 100%;
+    /* Para que la imagen se adapte al tamaño del contenedor */
+    object-fit: cover;
+    /* Para que la imagen se adapte al tamaño del contenedor */
+    object-position: center;
 }
 
 footer {
-    color: rgb(0, 0, 0);
+    /* Estilos para el pie de página */
+    background-color: #6e569f;
+    /* Estilos para el texto del pie de página */
+    color: #ffffff;
     text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    padding: 10px;
 }

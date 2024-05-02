@@ -25,6 +25,7 @@
           <li><a href="./welcome">Pagina Principal</a></li>
           <li><a href="./Adopciones">Adopciones</a></li>
           <li><a href="./Donaciones">Donaciones</a></li>
+          <li><a href="./Nosotros">Nosotros</a></li>
         </ul>
       </nav>
       <a href="#iniciar" class="btn"><button>Foto</button></a>
@@ -41,23 +42,23 @@
       <main>
         <section class="animales">
             <div class="animal" id="Max">
-                <img src="/donaciones/img/perro1.jpeg" alt="Perro">
+                <img src="{{ asset ( 'img/Animales/perro1.jpeg')}}" alt="Perro">
                 <h2>Max</h2>
                 <p>Raza: Labrador</p>
                 <p>Edad: 3 años</p>
                 <a href="/AdopcionesVermas" class="btn"><button>Ver mas</button></a>
             </div>
+
             <div class="animal">
-                <img src="/donaciones/img/gato1.jpeg" alt="Gato">
+                <img src="{{ asset ( 'img/Animales/gato1.jpeg')}}" alt="Gato">
                 <h2>Luna</h2>
                 <p>Raza: Siames</p>
                 <p>Edad: 2 años</p>
                 <a href="/AdopcionesVermas" class="btn"><button>Ver mas</button></a>
-
             </div>
 
             <div class="animal">
-                <img src="/donaciones/img/perro2.jpeg" alt="Perro">
+                <img src="{{ asset ( 'img/Animales/perro2.jpeg')}}" alt="Perro">
                 <h2>Toby</h2>
                 <p>Raza: Labrador</p>
                 <p>Edad: 3 años</p>
@@ -65,7 +66,7 @@
             </div>
 
             <div class="animal">
-                <img src="/donaciones/img/gato2.jpeg" alt="Gato">
+                <img src="{{ asset ( 'img/Animales/gato2.jpeg')}}" alt="Gato">
                 <h2>Rocky</h2>
                 <p>Raza: Siames</p>
                 <p>Edad: 2 años</p>

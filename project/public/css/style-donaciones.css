@@ -1,4 +1,3 @@
-/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,6 +7,35 @@ body {
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    flex-shrink: 0;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.content-header {
     display: flexbox;
 }
 
@@ -15,14 +43,20 @@ body {
 header {
     background-color: #ffffff;
     color: #6e569f;
-    padding: 10px;
+    padding: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.logo img {
+    height: 100px;
+    max-width: 100%;
+}
+
 nav ul {
     list-style-type: none;
+    display: flex;
     margin: 0;
     padding: 0;
 }
@@ -37,13 +71,9 @@ nav ul li a {
     text-decoration: none;
 }
 
-.logo img {
-    height: 100px;
-    max-width: 100%;
-}
-
 button {
     font-weight: 700;
+    font-size: 16px;
     color: #fafafa;
     padding: 10px 20px;
     background-color: #6e569f;
@@ -52,25 +82,41 @@ button {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
 /* Estilos específicos para la sección de botn de busca */
 
 h1 {
+    /*font-family: "More Sugar", More sugar;*/
     margin: 20px;
+    color: #6e569f;
+    font-weight: 700;
     font-size: 45px;
     text-align: center;
 }
 
-input[type="text"] {
+h2 {
+    margin: 20px;
+    color: #6e569f;
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+}
+
+input {
+    /* Estilos para el contenedor del input de búsqueda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 34cm;
+    /* Estilos para el input de búsqueda */
+    font-size: 20px;
+    font-weight: 700;
     outline: none;
-    box-sizing: content-box;
-    height: 60px;
-    width: 18cm;
-    padding: 0px;
-    color: #000;
+    margin: 20px;
+    padding: 10px;
     border-radius: 30px;
-    font-size: 25px;
     border: 1px solid #6e569f;
+    transition: all 0.7s ease;
 }
 
 ::placeholder {
@@ -78,32 +124,40 @@ input[type="text"] {
 }
 
 .buscar {
+    /* Estilos para el botón de búsqueda */
     position: absolute;
-    right: 120px;
-    top: 20px;
+    /* Posición del botón de búsqueda */
+    right: 11.5cm;
+    bottom: 11.5cm;
     width: 80px;
     height: 80px;
-    background: #f4a92e;
-    line-height: 80px;
+    /* Estilos para el contenedor del botón de búsqueda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Estilos para el botón de búsqueda */
+    background: #f3a92f;
     border-radius: 50%;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.5s;
-}
-
-.buscar i {
-    font-size: 50px;
-    color: white;
-    line-height: 80px;
+    border: 1px solid #f3a92f;
     transition: all 0.7s ease;
 }
 
-.container {
-    position: absolute;
-    left: 45%;
-    top: 78%;
-    transform: translate(-45%, -45%);
-    padding: 15px;
+.container:hover .buscar {
+    /* Estilos para el botón de búsqueda */
+    transform: scale(1.1);
+    border-radius: 50%;
+    /* Estilos para el contenedor del botón de búsqueda */
+    border: 1px solid #f3a92f;
+    transition: all 0.7s ease;
+}
+
+.buscar i {
+    /* Estilos para el texto del botón de búsqueda */
+    font-size: 50px;
+    line-height: 80px;
+    /* Estilos para el icono del botón de búsqueda */
+    color: #ffffff;
+    transition: all 0.7s ease;
 }
 
 .container:hover i {
@@ -113,49 +167,98 @@ input[type="text"] {
 /* Estilos específicos para la sección de donadores */
 main {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
     padding: 20px;
 }
 
 input[type="email"] {
     padding: 10px;
     border: 1px solid #6e569f;
-    margin-bottom: 15px;
+    background-color: #ffffffc7;
+    border-radius: 10px;
+    width: 600px;
+    height: 40px;
+    margin: 10px;
+    font-size: 16px;
 }
 
 .boletin-informativo {
-    justify-content: center;
-    flex: 1;
-    padding: 20px;
     border: 1px solid #6e569f;
-    background-color: #ffffff;
+    background-color: #ffffffc7;
+    justify-content: center;
+    padding: 36px;
+    background-color: #ffffff9a;
+    border-radius: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boletin-informativo img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.boletin-informativo .boton {
+    display: flex;
+    justify-content: center;
+    button {
+        margin: 10px;
+    }
 }
 
 .donadores {
-    justify-content: center;
+    padding: 34px;
     flex: 1;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
 }
 
 .donador {
+    width: 300px;
     margin: 10px;
-    padding: 10px;
-    color: #000000;
-    border-radius: 5px;
-    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    color: #6e569f;
     border: 1px solid #6e569f;
     background-color: #ffffff;
 }
 
 .donador img {
-    width: 30%;
-    height: auto;
-    border-radius: 5px;
+    width: 40%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    border-radius: 50px;
 }
 
-.boletin-informativo h2,
-.donadores h2 {
-    margin-bottom: 20px;
+.boletin-informativo h2 {
+    /*font-family: "More suger" Regular;*/
+    margin-bottom: 0px;
+    font-size: 70px;
+    font-weight: bolder;
+    text-align: center;
+    color: #fafafa;
+    background-color: #6d559f;
+    border: 1px solid #6e569f;
 }
 
 .boletin-informativo p {
@@ -167,6 +270,11 @@ input[type="email"] {
     padding: 0;
 }
 
-section {
-    margin-bottom: 20px;
+footer {
+    /* Estilos para el pie de página */
+    background-color: #6e569f;
+    /* Estilos para el texto del pie de página */
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
 }

@@ -31,13 +31,16 @@
       <div class="contenedor-formulario">
         <!-- Cuadro izquierdo: Imagen de la mascota -->
         <div class="cuadro-imagen">
-          <img src="perro1.jpeg" alt="Imagen de la mascota" />
+          <img src="{{ asset ( 'img/Animales/perro1.jpeg')}}" alt="Imagen de la mascota" />
         </div>
         <!-- Cuadro derecho: Información de la mascota -->
         <div class="cuadro-info">
           <p><strong>Nombre:</strong> Max</p>
           <p><strong>Especie:</strong> Perro</p>
           <p><strong>Raza:</strong> Labrador</p>
+          <p><strong>Sexo:</strong> Masculino</p>
+          <p><strong>Edad:</strong> 3 año</p>
+          <p><strong>localizado</strong> Centro de rescate</p>
           <p><strong>Descripción:</strong> Un perro amigable y cariñoso.</p>
         </div>
       </div>

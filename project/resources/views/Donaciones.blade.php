@@ -40,8 +40,8 @@
         <!-- bolentin  -->
     <main>
       <section class="boletin-informativo">
-        <h2>Boletín informativo</h2>
-        <img src="/donaciones/img/perro1.jpeg" alt="Perro">
+        <h2>Boletín informativo !</h2>
+        <img src="{{URL::asset('imagenes/FRAMES/FRAME A/Frame A1 - Bienvenidos.png') }}" alt="Perro">
         <p>
           Suscríbete a nuestro boletín informativo para recibir las últimas
           noticias sobre Paws & Friends, nuestras mascotas disponibles para
@@ -49,20 +49,19 @@
         </p>
         <form action="/FormularioDonaciones">
           <input type="email" placeholder="Correo electrónico" />
-          <a href="/FormularioDonaciones" class="btn"><button>CLICK PARA DONAR</button></a>
+          <a href="/FormularioDonaciones" class="boton"><button>CLICK PARA DONAR</button></a>
         </form>
       </section>
 
         <!-- Donadores  -->
 
       <section class="donadores">
-        <h2>Donadores</h2>
         <div class="donador">
           <ul>
             <li>
-              <img src="/donaciones/img/perro1.jpeg" alt="Perro">
+              <img src="{{ asset ( 'img/Perfiles/foto perfil 1.jpeg')}}" alt="Perro">
               <p>Anónimo</p>
-              <span>Ha hecho una donación</span>
+              <span>Ha hecho una donación !</span>
             </li>
           </ul>
         </div>
@@ -70,9 +69,9 @@
         <div class="donador">
           <ul>
             <li>
-              <img src="/donaciones/img/perro1.jpeg" alt="Perro">
+              <img src="{{ asset ( 'img/Perfiles/foto perfil 2.jpeg')}}" alt="Perro">
               <p>WAYNE Wayne Enterprises S.A</p>
-              <span>Ha hecho una donación</span>
+              <span>Ha hecho una donación !</span>
             </li>
           </ul>
         </div>
@@ -80,12 +79,23 @@
         <div class="donador">
           <ul>
             <li>
-              <img src="/donaciones/img/perro1.jpeg" alt="Perro">
+              <img src="{{ asset ( 'img/Perfiles/foto perfil 3.jpeg')}}" alt="Perro">
               <p>Paquita</p>
-              <span>Ha hecho una donación</span>
+              <span>Ha hecho una donación !</span>
             </li>
           </ul>
         </div>
+                <div class="donador">
+          <ul>
+            <li>
+              <img src="{{ asset ( 'img/Perfiles/foto perfil 4.jpeg')}}" alt="Perro">
+              <p>Paquita</p>
+              <span>Ha hecho una donación !</span>
+            </li>
+          </ul>
+        </div>
+
+
 
       </section>
     </main>

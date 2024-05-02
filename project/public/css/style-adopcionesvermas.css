@@ -7,25 +7,56 @@ body {
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    flex-shrink: 0;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.content-header {
     display: flexbox;
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: #ffffff;
+    color: #6e569f;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo img {
     height: 100px;
     max-width: 100%;
 }
-/* Estilos para el encabezado */
-header {
-    background-color: #ffffff;
-    color: #6e569f;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 nav ul {
     list-style-type: none;
+    display: flex;
     margin: 0;
     padding: 0;
 }
@@ -42,67 +73,113 @@ nav ul li a {
 
 button {
     font-weight: 700;
+    font-size: 16px;
     color: #fafafa;
     padding: 10px 20px;
     background-color: #6e569f;
-    border: none;
     border-radius: 20px;
+    border: none;
     cursor: pointer;
     transition: all 0.3s ease;
 }
+/* Estilos específicos para la sección de botn de busca */
 
-button:hover {
-    background-color: #5a4d86; /* Más oscuro al pasar el ratón */
+h1 {
+    margin: 20px;
+    color: #6e569f;
+    font-weight: 700;
+    font-size: 45px;
+    text-align: center;
 }
 
-/* Estilos para el formulario de adopción */
-.formulario-adopcion {
+h2 {
+    margin: 20px;
+    color: #6e569f;
+    font-weight: 700;
+    font-size: 30px;
     text-align: center;
-    padding-top: 40px;
+}
+
+.formulario-adopcion {
+    /* Estilos para el contenedor del formulario */
+    margin: 20px;
+    /* Centra el formulario */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Estilos para los cuadros del formulario */
+    background-color: #f5f5f598;
+    border: 1px solid #6e569f;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 .contenedor-formulario {
     display: flex;
-    justify-content: center; /* Centra los cuadros */
-    align-items: center; /* Alinea verticalmente */
-    gap: 20px; /* Espacio entre los cuadros */
-    margin: 20px 40px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* Centrar el formulario */
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
 }
 
 .cuadro-imagen {
-    width: 200px; /* Ajusta el tamaño según sea necesario */
-    text-align: center;
+    width: 500px;
+    background-color: #6e569f00;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* Centrar la imagen */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cuadro-info {
-    width: 200px; /* Ajusta el tamaño según sea necesario */
+    width: 500px;
+
+    background-color: #6e569f;
+    color: #fafafa;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* Centrar el formulario */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .boton-adopcion {
-    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* Centrar el botón */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .boton-adopcion button {
-    background-color: #f7c0c0; /* Rosado claro */
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    width: 100%;
 }
 
 .boton-adopcion button:hover {
-    background-color: #f9a1a1; /* Un poco más oscuro al pasar el cursor */
+    background-color: #f9a1a1;
 }
 
 /* Estilos del pie de página */
 footer {
-    color: rgb(0, 0, 0);
+    /* Estilos para el pie de página */
+    background-color: #6e569f;
+    /* Estilos para el texto del pie de página */
+    color: #ffffff;
     text-align: center;
     padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
 }

@@ -57,19 +57,7 @@
               required
             />
           </div>
-
-          <!-- Campo para el DNI (o CI) -->
-          <div class="form-group">
-            <label for="dni">DNI (C.I.)</label>
-            <input
-              type="file"
-              id="dni"
-              name="dni"
-              placeholder="Ingrese su DNI"
-              required
-            />
-          </div>
-
+          
           <!-- Campo para el número de teléfono -->
           <div class="form-group">
             <label for="telefono">Número de teléfono</label>
@@ -82,18 +70,40 @@
             />
           </div>
 
+          <!-- Campo para el DNI -->
+          <div class="form-group">
+            <label for="dni">Rif (C.I)</label>
+            <input
+              type="file"
+              id="dni"
+              name="dni"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="dni">Foto</label>
+            <input
+              type="file"
+              id="dni"
+              name="dni"
+              required
+            />
+          </div>
+
+
+
           <!-- Botón de envío -->
           <div class="form-group">
             <button type="submit">Enviar</button>
           </div>
+          
         </form>
       </section>
     </main>
-
-    <footer>
+    <script src="/adopciones/asset/js/scriptfom.js"></script>
+        <footer>
       <p>&copy; 2024 Adopciones de Mascotas. Todos los derechos reservados.</p>
     </footer>
-
-    <script src="/adopciones/asset/js/scriptfom.js"></script>
   </body>
 </html>
