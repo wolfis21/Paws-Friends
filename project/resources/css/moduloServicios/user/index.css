@@ -1,10 +1,9 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap'); */
 @font-face {
     font-family: 'League Spartan';
     src: url('/font/LeagueSpartan-VariableFont_wght.ttf');
     font-style: normal;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 * {
     padding: 0;
