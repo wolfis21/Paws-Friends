@@ -91,5 +91,32 @@ Route::controller(DogGroomerController::class)->group(function(){
 //ver como integrar los comments
 
 //? FIN RUTAS MODULO 1
+
+//RUTAS SERVICIOS MODULO 2
+
+Route::get('/servicios', function () {
+    return "Si sirve sta broma";//view('servicios');
+});
+Route::get('/registrodemanda', function () {
+    return view('registrodemanda');
+});
+Route::get('/fundation', function () {
+    return view('fundation');
+});
+Route::get('/historialcliente', function () {
+    return view('historialcliente');
+});
+
+
+Route::get('/servicios', [App\Http\Controllers\ServiciosController::class, 'index'])->name('servicios');
+
+Route::get('/registrodemanda', [App\Http\Controllers\RegistroDemandaController::class, 'index'])->name('registrodemanda');
+
+Route::post('/guardar-denuncia', '[TuControlador]@guardarDenuncia')->name('guardar_denuncia');
+
+Route::get('/fundation', [App\Http\Controllers\FundationController::class, 'index'])->name('fundation');
+
+Route::get('/historialcliente', [App\Http\Controllers\HistorialclienteController::class, 'index'])->name('historialcliente');
+
 // Auth::routes();
 
