@@ -8,21 +8,12 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/styleMain.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css" />
-
-    <link rel="stylesheet" href="{{ asset('css/servicio.css') }}" type="text/css" />
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
-
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
-    <!--SCRIPTS FORMULARIO MODULO 2-->
-    @vite(['resources/js/formulario.js'])
-
     <title>Paws & Friends</title>
 </head>
 
@@ -39,7 +30,6 @@
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#ShowcaseServicios">Servicios</a></li>
                 <li><a href="#ShowcaseQuienes">Nosotros</a></li>
-                <li><a href="#">Promociones</a></li>
 
                 {{--  <li><a href="{{ route('register') }}" id="registro">Registrate</a></li>
                 <li><a href="{{ route('login') }}" id="ingreso">Iniciar Sesion</a></li> --}}
@@ -109,12 +99,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
-
-
-<!--MODULO 2-->
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-
 </body>
 
 </html>

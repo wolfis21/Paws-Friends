@@ -1,74 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset ('css/styleMain.css')}}"  type="text/css"/> 
-    <title>Paws & Friends</title>
-</head>
-<body id="ShowcaseMain">
-    <nav class="nav-main-home">
-        <div class="container">
-            <ul id="MainNavBar">
-                <h1><img src="{{ URL::asset ('imagenes/Variaciones logo.png')}}" alt="logo"/></h1>
-
-                <li><a>Inicio</a></li>
-                <li><a>Nosotros</a></li>
-                <li><a>Servicios</a></li>
-                <li><a>Promociones</a></li>
-                <li><a href="{{ route('register') }}" id="registro">Registrate</a></li>
-                <li><a href="{{ route('login') }}" id="ingreso">Iniciar Sesion</a></li>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto"> {{-- Falta maquetar mejor, correciones para luego --}}
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </ul>
+@extends('layouts.headerNav')
+@section('content')
+    <div id="ShowcaseMain">
+        <div>
+            <a class="btn-main" href="#">Mas Informacion</a>
         </div>
-    </nav>
-
-    
-
-    <div>
-        <a class="btn-main" href="#">Mas Informacion</a>
     </div>
-        
-</body>
-</html>
+
+    <div id="ShowcaseServicios" class="services-box">
+
+        <div class="contenedorModulos">
+            <a href="#">
+                <img class="iconosModulos" id="cuidado" src="{{ URL::asset('imagenes/FRAMES/FRAME B/1.png') }}"
+                    alt="Cuidados">
+            </a>
+        </div>
+
+        <div class="contenedorModulos">
+            <a href="#">
+                <img class="iconosModulos" id="donaciones" src="{{ URL::asset('imagenes/FRAMES/FRAME B/2.png') }}"
+                    alt="Donaciones y Adopciones">
+            </a>
+        </div>
+
+        <div class="contenedorModulos">
+            <a href="#">
+                <img class="iconosModulos" id="rescates" src="{{ URL::asset('imagenes/FRAMES/FRAME B/3.png') }}"
+                    alt="Rescates">
+            </a>
+        </div>
+
+        <div class="contenedorModulos">
+            <a href="#">
+                <img class="iconosModulos" id="tienda" src="{{ URL::asset('imagenes/FRAMES/FRAME B/4.png') }}"
+                    alt="Catalogo">
+            </a>
+        </div>
+
+
+    </div>
+
+    <div id="ShowcaseQuienes">
+        <p id="txt-quienes">Paws & Friends es una organizacion comprometida con el bienestar de las mascotas, ofreciendo una
+            amplia gama de servicos para satisfacer
+            todas las necesidades de tus peludos.
+        </p>
+    </div>
+
+    <div id="ShowcaseEquipo">
+
+        <div id="txt-vet">
+            <p>
+                Nuestro equipo de profesionales altamente capacitados y amantes de los animales se dedica a proporcionar atencion medica 
+                veterinaria de calidad y alojamiento seguro.
+            </p>
+        </div>
+       
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-bs-slide-to="0"></li>
+                <li data-target="#carouselExampleIndicators" data-bs-slide-to="1" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-bs-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner custom">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="{{ URL::asset('imagenes/FRAMES/FRAME D/vet 1.png') }}"
+                        alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{{ URL::asset('imagenes/FRAMES/FRAME D/vet 2.png') }}"
+                        alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{{ URL::asset('imagenes/FRAMES/FRAME D/vet 3.png') }}"
+                        alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{{ URL::asset('imagenes/FRAMES/FRAME D/vet 4.png') }}"
+                        alt="Third slide">
+                </div>
+
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only"></span> {{-- yo esto lo quitaria --}}
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only"></span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+@endsection
