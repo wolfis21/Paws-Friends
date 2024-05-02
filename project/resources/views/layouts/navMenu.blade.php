@@ -36,8 +36,8 @@
                 <li><a href="#ShowcaseQuienes">Nosotros</a></li>
                 <li><a href="#">Promociones</a></li>
 
-                 <li><a href="" id="registro">Registrate</a></li>
-                <li><a href="" id="ingreso">Iniciar Sesion</a></li>
+                 {{-- <li><a href="" id="registro">Registrate</a></li>
+                <li><a href="" id="ingreso">Iniciar Sesion</a></li> --}}
 
                 @guest
                     @if (Route::has('login'))

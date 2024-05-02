@@ -4,7 +4,7 @@
 
 
 @section('content_header')
-    
+
 @stop
 
 @section('content')
@@ -58,7 +58,8 @@
                                             <h2 class="text-right"><i
                                                     class="fas fa-fw fa-paw f-left"></i><span>{{ $cant_Peluqueria }}</span>
                                             </h2>
-                                            <p class="m-b-0 text-right"><a href="/admin/DogGroomersAdmin" class="text-white">Ver más</a></p>
+                                            <p class="m-b-0 text-right"><a href="/admin/DogGroomersAdmin"
+                                                    class="text-white">Ver más</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -107,11 +108,14 @@
 @stop
 
 @section('js')
+
+    <link rel="stylesheet" href="https://cdn.flaticon.com/flaticon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.datatables.net/2.0.5/js/dataTables.js"></script>
     <script src="https://cdn.datatables.net/2.0.5/js/dataTables.bootstrap5.js"></script>
     <script src="https://cdn.datatables.net/responsive/3.0.2/js/dataTables.responsive.js"></script>
     <script src="https://cdn.datatables.net/responsive/3.0.2/js/responsive.bootstrap5.js"></script>
-    <script src="{{asset('moduloServicios/js/admin/dataTables/scriptDatatables.js')}}"></script>
+    <script src="{{ asset('moduloServicios/js/admin/dataTables/scriptDatatables.js') }}"></script>
 @stop
