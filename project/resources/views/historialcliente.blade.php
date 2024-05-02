@@ -1,31 +1,26 @@
 @extends('layouts.headerNav')
 @section('content')
 
-<!DOCTYPE html>
-<html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Historial</title>
-    <link rel="stylesheet" type="text/css" href="/public/css/stylehc.css">
-</head>
+<div class="body">
 
-<body>
+    <!--BOTON VOLVER A PAGINA PRINCIPAL SERVICIOS VISTA CLIENTE-->
+
+    <a class="vv-" href="{{route('servicios')}}">VOLVER</a>
+
     <main class="table" id="HISTORIAL">
         <section class="table__header">
             <h1>HISTORIAL</h1>
             <div class="input-group">
                 <input type="search" placeholder="Search Data...">
-                <img src="/public/imagenes/imghc/search.png" alt="">
+                <img src="{{ URL::asset ('../imagenes/imghc/search.png')}}" alt="">
             </div>
             <div class="export__file">
                 <label for="export-file" class="export__file-btn" title="Export File"></label>
                 <input type="checkbox" id="export-file">
                 <div class="export__file-options">
                     <label>Export As &nbsp; &#10140;</label>
-                    <label for="export-file" id="toPDF">PDF <img src="/public/imagenes/imghc/pdf.png" alt=""></label>
+                    <label for="export-file" id="toPDF">PDF <img src="{{ URL::asset ('../imagenes/imghc/pdf.png')}}" alt=""></label>
                 </div>
             </div>
         </section>
@@ -47,7 +42,7 @@
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td><img src="/public/imagenes/imghc/Zinzu Chan Lee.jpg" alt="">Lee Chan</td>
+                        <td><img src="{{ URL::asset ('../imagenes/imghc/Zinzu Chan Lee.jpg')}}" alt="">Lee Chan</td>
                         <td>Descripción de la demanda 1</td>
                         <td>Raza 1</td>
                         <td>Macho</td>
@@ -58,7 +53,7 @@
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td><img src="/public/imagenes/imghc/Alson GC.jpg" alt="">Alson G</td>
+                        <td><img src="{{ URL::asset ('../imagenes/imghc/Alson GC.jpg')}}" alt="">Alson G</td>
                         <td>Descripción de la demanda 2</td>
                         <td>Raza 2</td>
                         <td>Hembra</td>
@@ -69,7 +64,7 @@
                     </tr>
                     <tr>
                         <td>3</td>
-                        <td><img src="/public/imagenes/imghc/Alex Gonley.jpg" alt="">Alex G</td>
+                        <td><img src="{{ URL::asset ('../imagenes/imghc/Alex Gonley.jpg')}}" alt="">Alex G</td>
                         <td>Descripción de la demanda 3</td>
                         <td>Raza 3</td>
                         <td>Macho</td>
@@ -82,10 +77,5 @@
             </table>
         </section>
     </main>
-    <script src="/resources/js/script.js"></script>
-
-</body>
-
-</html>
-    
+</div>
 @endsection

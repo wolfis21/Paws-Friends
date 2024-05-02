@@ -34,12 +34,10 @@
     background: url('../imagenes/fondo3.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
-    margin: 0px;
-    height: 100vh;
     width: 100%;
   
   }
-  /*FONDO REGISTRO DEMANDA*/
+  /*FONDO SECCION DOS ACERCA DE NOSOTROS*/
   .ba{
     background: url('../imagenes/fondo.jpeg');
     background-repeat: no-repeat;
@@ -50,7 +48,6 @@
   
   }
 
-  
   p.letras{
     color: white;
     font-size: 44px; /* Tamaño grande */
@@ -74,10 +71,12 @@
     -webkit-background-clip: text;
 
     margin-top: 20%;
+    letter-spacing: -0.9px;
+
   }
   .informa{
     font-family: 'league spartan';
-    font-size: 30px;
+    font-size: 25px;
   }
   
   .boton{
@@ -94,20 +93,55 @@
     font-size: 20px;
     margin-right: 150px;
   }
-  /*REGISTRAR DEMANDA*/
-  .vv{
-  
+  .boton-ir{ /*BOTON MAS INFO EN PAG PRINCIPAL SERVICIOS VISTA CLIENTE*/
+    background-color: #7e00d8;
+    color: white;
     font-family: 'league spartan';
     font-weight: bold;
-    padding: 10px 40px;
     border-radius: 8px;
     box-shadow: 0px 5px 10px black;
     font-size: 20px;
-    margin-left: 5%;
-    margin-top: 4%;
-    margin-bottom: 4%;
+    margin-left: 2%;
+    padding: 20px 30px;
 
   }
+  .vv-{ /*BOTON DE VOLVER A PAG PRINCIPAL DE HISTORIAL CLIENTE*/
+
+    background-color: #7e00d8;
+    color: white;
+  
+    font-family: 'league spartan';
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px rgb(0, 0, 0);
+    font-size: 15px;
+    margin-left: 5%;
+    padding: 10px 30px ;
+
+
+  }
+  /*--------------------------------------REGISTRAR DEMANDA------------------------------------------*/
+  .ba-{
+    background: url('../imagenes/fondo.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+  }
+
+  .vv{ /*BOTON DE VOLVER A PAG PRINCIPAL DE REGISTRAR DEMANDA*/
+    background-color: #7e00d8;
+    color: white;
+    font-family: 'league spartan';
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px rgb(0, 0, 0);
+    font-size: 15px;
+    margin-top: 7%;
+    margin-left: 5%;
+    padding: 10px 30px;
+    
+  }
+
 .tx-registro{
   color: grey;
   margin-left: 2%;
@@ -118,9 +152,7 @@
   font-weight: normal;
   margin-left: 2%;
 }
-.demanda{
- width: 100%;
-}
+
 #msform{
   text-align: center;
   position: relative;
@@ -313,7 +345,7 @@
   width: 100%;
   object-fit: cover
 }
-/*FUNDACION*/
+/*--------------------------------------------------FUNDACION--------------------------------*/
 .fun{
   background: url('../imagenes/fondo.jpeg');
   background-repeat: no-repeat;
@@ -321,8 +353,8 @@
   margin: 0px;
   height: 100vh;
   width: 100%;
-  padding-top: 60px;
 }
+
 .container-form{
   display: flex;
   width: 100%;
@@ -336,15 +368,24 @@
   border-radius: .8rem;
   padding: 15px;
   
-  margin: 0 auto;
+  margin-top: 4%;
+  margin-left: 8%;
   
 }
-.container-form h2{
+
+.container-form h2{ /*TITULO REGISTRO FUNDACIÓN */
+  font-family: 'league spartan';
+  letter-spacing: -0.9px;
+  line-height: 1.5;
+  background: linear-gradient(90deg, rgba(41, 26, 0, 0.809), #7e00d8);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
   margin-bottom: 15px;
   font-size: 35px
 }
 .container-form p{
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.6;
   margin-bottom: 30px;
 }
@@ -381,7 +422,7 @@
   font-size: 15px;
   border: none;
   outline: 0px;
-  background: orange;
+  background: #673ab7;
   color: white;
   border-radius: 3px;
   cursor: pointer;

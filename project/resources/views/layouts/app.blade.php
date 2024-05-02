@@ -14,21 +14,15 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
-    <!--TAILwindCSS
-    <script src="https://cdn.tailwindcss.com"></script>-->
-
-    <!--BOOTSTRAP CSS/JS-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+            <div class="container custom">
+                <a class="navbar-brand" href="{{ url('/main') }}">
+                    <img src="{{ URL::asset ('imagenes/Variaciones logo.png')}}" alt="logo"/>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -42,12 +36,6 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-
-                        <!--PRUEBA LINK RESCATE-->
-                        <a class="navbar-brand" href="{{ url('/rescate') }}">
-                                    {{ config('rescate.index_res', 'Rescate') }}
-                                </a>
-    
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -63,7 +51,6 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <!--USUARIO-->
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
@@ -72,7 +59,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Salir') }}
+                                        {{ __('Logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -90,7 +77,5 @@
             @yield('content')
         </main>
     </div>
-    <!--ALERT SCRIPT-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

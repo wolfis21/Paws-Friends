@@ -1,7 +1,31 @@
 @extends('layouts.headerNav')
 @section('content')
 
-    <div class="b">
+     <!--SECCION ACERCA DE NOSOTROS-->
+
+  <div class="ba">
+        <div class="container-fluid">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-sm-4">
+                    <img src="{{ URL::asset ('../imagenes/rescate.png')}}" class="foto-pequena" alt="rescate"/>
+                    </div>
+                    <div class="col-sm-8">
+                        <h2 class="nosotros">Módulo Brigada Rescate</h2>
+                        <p class="informa">
+                             Rescatamos a los animales en situación de calle, recién abandonados o maltratados. 
+                             Si has visto un animal en una situación similar, nuestra sección registra tus denuncias y las gestiona para encontrar una solución pronta.
+                             ¡Únete a nuestra familia y ayúdanos a proteger a los seres indefensos!
+
+                        </p>
+                        <a class="boton-ir" href="#ir">Más Información</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+  </div>
+    <div class="b" id="ir">
 
         <!-- Contenido de la página principal del modulo 2. Lo que ve el Usuario al presionar el boton del menu: servicios -->
 
@@ -35,32 +59,7 @@
 
             <!--FIN DE CONTAINER FLUID-->
         </div>
-        <!--FIN PRIMERA SECCION-->
+        <!--FIN SECCION-->
     </div>
 
-  <!--SECCION ACERCA DE NOSOTROS-->
-
-  <div class="ba">
-        <div class="container-fluid">
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col-sm-4">
-                    <img src="{{ URL::asset ('../imagenes/rescate.png')}}" class="foto-pequena" alt="rescate"/>
-                    </div>
-                    <div class="col-sm-8">
-                        <h2 class="nosotros">Acerca de nosotros</h2>
-                        <p class="informa">
-
-                            Comprometidos con rescatar a los animales en situación de calle, recien abandonados o maltratados. 
-                            Somos tu mejor opción de ayuda, no dudes en contactarnos. Forma parte de nuestra familia y rescata aquellos 
-                            seres indefensos.
-
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-  </div>
-  
 @endsection
