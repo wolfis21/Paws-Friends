@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class shops extends Model
+class Shop extends Model
 {
     use HasFactory;
 
     /**
-     * Indica que campos pueden ser llenados.
+     * Indica los campos que pueden ser llenados.
      *
      * @var array
      */
@@ -19,14 +19,14 @@ class shops extends Model
     ];
 
     /**
-     * Indica que campos deben ser protegidos contra asignación masiva.
+     * Indica los campos que deben ser protegidos contra asignación masiva.
      *
      * @var array
      */
-    protected $guarded = ['id'];
+    protected $guarded = [];
 
     /**
-     * Método para establecer la referencia del enlace por el administrador.
+     * Establece la referencia del enlace por el administrador.
      *
      * @param  string  $value
      * @return void
@@ -47,3 +47,4 @@ class shops extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 }
+
