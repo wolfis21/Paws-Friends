@@ -90,10 +90,10 @@
                 <img class="logo-footer" src="{{ URL::asset('css/imagesFront/navMenu/Variaciones-logo.png') }}" alt="logo" />
             </div>
             <div class="text-legals">
-                <div>©2024 Company Name. All rights reserved UGMA</div>
+                <div class="text-text-legals">©2024 Company Name. All rights reserved UGMA</div>
                 <div class="terms-policy">
-                    <div> Privacy & Policy</div>
-                    <div>Terms & Condition</div>
+                    <div class="text-text-legals"> Privacy & Policy</div>
+                    <div class="text-text-legals">Terms & Condition</div>
                 </div>
             </div>
         </div>

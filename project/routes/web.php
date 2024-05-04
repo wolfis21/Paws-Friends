@@ -37,6 +37,7 @@ Route::controller(VeterinarianController::class)->group(function () {
     Route::delete('/admin/destroyVeterinarians/{id}', 'destroy')->name('destroy');
     //todo rutas user===============================================================================================
     Route::get('/Veterinario', 'veterinarioUser')->name('Veterinario');
+    Route::get('Veterinario/{id}', 'showVeterinarianUser')->name('showVeterinarian');
 });
 Route::controller(CommentsController::class)->group(function () {
     //todo comentarios de veterinarios===============================================================================================
