@@ -6,16 +6,15 @@
         <div class="container-general">
             @foreach ($veterinarians as $veterinarian)
             <div class="cards">
-                <div class="container-card">
+                <a class="container-card" href="{{route('showVeterinarian' ,$veterinarian->id)}}">
                     <div class="img-container">
                         <img src="admin/images/vets/{{$veterinarian->img_ref}}" alt="Imagen vet" />
                     </div>
                     <div class="info-container">
                         <h2>{{$veterinarian->name}}</h2>
                         <p>{{$veterinarian->specialist_animals}}</p>
-                        <a class="btn btn-cyan" href="{{route('showVeterinarian' ,$veterinarian->id)}}"> Ver mas..</a>
                     </div>
-                </div>
+                </a>
             </div>   
             @endforeach
             
