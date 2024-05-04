@@ -8,6 +8,7 @@
 @stop
 
 @section('content')
+    {{-- TODO MODULO DE SERVICIOS --}}
     <section class="section">
         <div class="section-body">
             <div class="row">
@@ -91,6 +92,13 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-md-4 col-xl-4">
+                                    <div class="card bg-cyan order-card">
+                                        <div class="card-block">
+                                            <h5>Modulo de Servicios</h5>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -98,6 +106,192 @@
             </div>
         </div>
     </section>
+    {{-- TODO FIN MODULO DE SERVICIOS --}}
+    
+    {{-- TODO MODULO DE RESCATE --}}
+    <section class="section">
+        <div class="section-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card bg-dark">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4 col-xl-4">
+                                    <div class="card bg-c-green order-card">
+                                        <div class="card-block">
+                                            <h5>Reubicacion</h5>
+                                            {{-- @php
+                                                use App\Models\moduloServicios\Veterinarian;
+                                                $cant_Vets = Veterinarian::count();
+                                            @endphp
+                                            <h2 class="text-right"><i
+                                                    class="fas fa-fw fa-location f-left"></i><span>{{ $cant_Vets }}</span>
+                                            </h2>
+                                            <p class="m-b-0 text-right"><a href="/admin/Veterinarians"
+                                                    class="text-white">Ver más</a></p> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-xl-4">
+                                    <div class="card bg-c-pink order-card">
+                                        <div class="card-block">
+                                            <h5>Situacion de calle</h5>
+                                            {{-- @php
+                                                use App\Models\moduloServicios\Housing;
+                                                $cant_Housing = Housing::count();
+                                            @endphp
+                                            <h2 class="text-right"><i
+                                                    class="fas fa-fw fa-shield-dog f-left"></i><span>{{ $cant_Housing }}</span>
+                                            </h2>
+                                            <p class="m-b-0 text-right"><a href="/admin/housingsAdmin"
+                                                    class="text-white">Ver más</a></p> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-xl-4">
+                                    <div class="card bg-c-orange order-card">
+                                        <div class="card-block">
+                                            <h5>Abandono</h5>
+                                            {{-- @php
+                                                use App\Models\moduloServicios\Dog_groomer;
+                                                $cant_Peluqueria = Dog_groomer::count();
+                                            @endphp
+                                            <h2 class="text-right"><i
+                                                    class="fas fa-fw fa-x f-left"></i><span>{{ $cant_Peluqueria }}</span>
+                                            </h2>
+                                            <p class="m-b-0 text-right"><a href="/admin/DogGroomersAdmin"
+                                                    class="text-white">Ver más</a></p> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-xl-4">
+                                    <div class="card bg-orange order-card color-white">
+                                        <div class="card-block">
+                                            <h5>Modulo de Rescate</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- TODO FIN MODULO DE RESCATE --}}
+
+    {{-- TODO MODULO DE DONACIONES Y ADOPCIONES --}}
+    <section class="section">
+        <div class="section-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card bg-dark">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4 col-xl-4">
+                                    <div class="card bg-c-green order-card">
+                                        <div class="card-block">
+                                            <h5>Alimentos</h5>
+                                            {{-- @php
+                                                use App\Models\moduloServicios\Veterinarian;
+                                                $cant_Vets = Veterinarian::count();
+                                            @endphp
+                                            <h2 class="text-right"><i
+                                                    class="fas fa-fw fa-bowl-food f-left"></i><span>{{ $cant_Vets }}</span>
+                                            </h2>
+                                            <p class="m-b-0 text-right"><a href="/admin/Veterinarians"
+                                                    class="text-white">Ver más</a></p> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-xl-4">
+                                    <div class="card bg-c-pink order-card">
+                                        <div class="card-block">
+                                            <h5>Juguetes</h5>
+                                            {{-- @php
+                                                use App\Models\moduloServicios\Housing;
+                                                $cant_Housing = Housing::count();
+                                            @endphp
+                                            <h2 class="text-right"><i
+                                                    class="fas fa-fw fa-bone f-left"></i><span>{{ $cant_Housing }}</span>
+                                            </h2>
+                                            <p class="m-b-0 text-right"><a href="/admin/housingsAdmin"
+                                                    class="text-white">Ver más</a></p> --}}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-xl-4">
+
+                                    <div class="card bg-c-blue order-card">
+                                        <div class="card-block">
+                                            <h5>Accesorios</h5>
+                                            {{-- @php
+                                                use App\Models\User;
+                                                $cant_usuarios = User::count();
+                                            @endphp
+                                            <h2 class="text-right"><i
+                                                    class="fas fa-fw fa-ring f-left"></i><span>{{ $cant_usuarios }}</span></h2> --}}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-xl-4">
+                                    <div class="card bg-purple order-card">
+                                        <div class="card-block">
+                                            <h5>Modulo de Adopciones y Donaciones</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- TODO FIN MODULO DE ADOPCIONES --}}
+
+    {{-- TODO MODULO DE TIENDA --}}
+    <section class="section">
+        <div class="section-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card bg-dark">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4 col-xl-4">
+                                    <div class="card bg-c-green order-card">
+                                        <div class="card-block">
+                                            <h5>Productos</h5>
+                                            {{-- @php
+                                                use App\Models\moduloServicios\Veterinarian;
+                                                $cant_Vets = Veterinarian::count();
+                                            @endphp
+                                            <h2 class="text-right"><i
+                                                    class="fas fa-fw fa-pump-soap f-left"></i><span>{{ $cant_Vets }}</span>
+                                            </h2>
+                                            <p class="m-b-0 text-right"><a href="/admin/Veterinarians"
+                                                    class="text-white">Ver más</a></p> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-xl-4">
+                                    <div class="card bg-green order-card">
+                                        <div class="card-block">
+                                            <h5>Modulo de Tienda</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- TODO FIN MODULO DE TIENDA --}}
+
 @stop
 
 @section('css')
