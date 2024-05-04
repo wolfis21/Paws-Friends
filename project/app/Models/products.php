@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class products extends Model
+class Product extends Model
 {
     use HasFactory;
 
     /**
-     * Indica que campos pueden ser llenados.
+     * Indica qué campos pueden ser llenados.
      *
      * @var array
      */
@@ -20,17 +20,22 @@ class products extends Model
 
     /**
      * Obtiene la categoría a la que pertenece el producto.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function categories()
+    public function category(): BelongsTo
     {
-        return $this->belongsTo(categories::class);
+        return $this->belongsTo(Category::class);
     }
 
     /**
      * Obtiene el usuario que creó el producto.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function user()
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 }
+

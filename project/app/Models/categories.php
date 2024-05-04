@@ -4,20 +4,29 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class categories extends Model
+class Category extends Model
 {
     protected $fillable = ['name', 'description', 'img_ref', 'user_id'];
 
-    // Relación con el usuario administrador que creó la categoría
-    public function admin()
+    /**
+     * Obtiene el usuario administrador que creó la categoría.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function admin(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    // Relación con los productos pertenecientes a esta categoría
-    public function products()
+    /**
+     * Obtiene los productos pertenecientes a esta categoría.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function product(): HasMany
     {
-        return $this->hasMany(products::class);
+        return $this->hasMany(Product::class);
     }
 }
+
 
