@@ -6,9 +6,13 @@ use App\Http\Controllers\moduloServicios\CommentsController;
 use App\Http\Controllers\moduloServicios\HousingsController;
 use App\Http\Controllers\moduloServicios\VeterinarianController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\AdopcionesController;
+use App\Http\Controllers\AdopcionesVermasController;
+use App\Http\Controllers\DonacionesController;
+use App\Http\Controllers\FormularioAdopcionesController;
+use App\Http\Controllers\FormularioDonacionesController;
+use App\Http\Controllers\welcomeController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +26,7 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('main');
+    return view('welcome');
 });
 
 Route::get('/adminPWFS', HomeServicesController::class)->name('homeService');
@@ -121,5 +125,17 @@ Route::get('/historialcliente', [App\Http\Controllers\HistorialclienteController
 Route::get('/adminrescate', [App\Http\Controllers\AdminRescateController::class, 'index'])->name('adminrescate');
 
 //? FIN RUTAS MODULO 2
- Auth::routes();
 
+//? RUTAS MODULO 3 ===============================================================================================
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/welcome', welcomeController::class);
+Route::resource('/Donaciones', DonacionesController::class);
+Route::resource('/Adopciones', AdopcionesController::class);
+Route::resource('/FormularioAdopciones', FormularioAdopcionesController::class);
+Route::resource('/FormularioDonaciones', FormularioDonacionesController::class);
+Route::resource('/AdopcionesVermas', AdopcionesVermasController::class);
+
+//? FIN RUTAS MODULO 3
+
+/* Auth::routes(); */

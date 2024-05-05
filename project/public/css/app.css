@@ -7,34 +7,32 @@ Paletas de colores
 #F7A724
 #9FCB40 */
 
-.container-register{
-    background: url('../imagenes/background-register.png');
+.container-register {
+    background: url("../imagenes/background-register.png");
     background-repeat: no-repeat;
     background-size: cover;
     height: 115vh;
 }
 
-.box-ajust{
+.box-ajust {
     width: 40% !important;
     padding: 9rem 4rem;
 }
 
-
-#app .container.custom{
+#app .container.custom {
     display: flex;
     flex-wrap: inherit;
     align-items: center;
     justify-content: center;
 }
 
-.navbar-brand img{
+.navbar-brand img {
     width: 75px;
     height: 75px;
     margin: 0px;
-    
 }
 
-.card-header-prom{
+.card-header-prom {
     font-size: 18px;
     font-weight: bold;
     align-self: center;
@@ -49,8 +47,7 @@ Paletas de colores
     right: 14rem;
 }
 
-
-.card-header.register{
+.card-header.register {
     align-self: initial;
     margin-top: -50px;
     margin-left: 30px;
@@ -65,7 +62,7 @@ Paletas de colores
 
 } */
 
-.superior-container{
+.superior-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -73,22 +70,22 @@ Paletas de colores
     margin-left: 8%;
 }
 
-.width-temp{
+.width-temp {
     width: 50%;
 }
-.width-temp-2{
-    width: 89%!important;
+.width-temp-2 {
+    width: 89% !important;
 }
 
-.width-temp-2 input{
+.width-temp-2 input {
     height: 50px;
 }
 
-.logo-register{
+.logo-register {
     width: 80px;
     height: 80px;
 }
 
-.inferior-container{
+.inferior-container {
     margin-left: 14%;
 }

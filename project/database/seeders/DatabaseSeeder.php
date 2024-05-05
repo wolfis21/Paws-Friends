@@ -78,7 +78,6 @@ class DatabaseSeeder extends Seeder
             'updated_at' => now(), 
         ]);
 
-
        /*  $this->call(RolsSeeder::class); */
     }
 }

@@ -45,6 +45,7 @@
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#ShowcaseServicios">Servicios</a></li>
                 <li><a href="#ShowcaseQuienes">Nosotros</a></li>
+                <li><a href="#">Promociones</a></li>
 
                 {{--  <li><a href="{{ route('register') }}" id="registro">Registrate</a></li>
                 <li><a href="{{ route('login') }}" id="ingreso">Iniciar Sesion</a></li> --}}
