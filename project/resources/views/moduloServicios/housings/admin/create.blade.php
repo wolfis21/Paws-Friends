@@ -1,4 +1,4 @@
-@extends('moduloServicios.dashboard')
+@extends('layouts.dashboard')
 @section('title', 'Crear Alojamiento')
 @section('content')
     <h1>Añadir Alojamiento</h1>

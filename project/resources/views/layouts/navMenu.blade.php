@@ -27,7 +27,7 @@
                 <li><a href="{{route('homeService')}}">Inicio</a></li>
                 <li><a class="link-none">Modulos</a>
                     <ul class="mostrar-secciones">
-                        <li class="azul"><a href="{{route('serviceModel')}}" eclass="link-modulos">Modulo de servicios</a></li>
+                        <li class="azul"><a href="{{route('serviceModel')}}" class="link-modulos">Modulo de servicios</a></li>
                         <li class="rojo"><a href="/" class="link-modulos">Modulo de adopcion y donacion</a></li>
                         <li class="naranja"><a href="/" class="link-modulos">Modulo de rescate</a></li>
                         <li class="verde"><a href="/" class="link-modulos">Tienda</a></li>

@@ -1,4 +1,4 @@
-@extends('moduloServicios.dashboard')
+@extends('layouts.dashboard')
 @section('title', 'Alojamiento')
 @section('content')
     <h4 style="margin-top: 15px;">Alojamiento Admin</h4>
