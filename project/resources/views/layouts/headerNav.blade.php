@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    @vite(['resources/css/navMenu/styleMain.css', 'resources/css/navMenu/app.css'])
     <link rel="stylesheet" href="{{ asset('css/styleMain.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css" />
 
@@ -37,13 +38,20 @@
         <div class="container">
             <ul id="MainNavBar">
                 <h1>
-                    <a href="/main">
+                    <a href="/">
                         <img id="logoNav" src="{{ URL::asset('imagenes/Variaciones logo.png') }}" alt="logo" />
                     </a>
                 </h1>
 
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#ShowcaseServicios">Servicios</a></li>
+                <li><a href="/">Inicio</a></li>
+                <li><a class="link-none">Modulos</a>
+                    <ul class="mostrar-secciones">
+                        <li class="azul"><a href="{{route('serviceModel')}}" eclass="link-modulos">Modulo de servicios</a></li>
+                        <li class="rojo"><a href="/" class="link-modulos">Modulo de adopcion y donacion</a></li>
+                        <li class="naranja"><a href="/" class="link-modulos">Modulo de rescate</a></li>
+                        <li class="verde"><a href="/" class="link-modulos">Tienda</a></li>
+                    </ul>
+                </li>
                 <li><a href="#ShowcaseQuienes">Nosotros</a></li>
                 <li><a href="#">Promociones</a></li>
 
