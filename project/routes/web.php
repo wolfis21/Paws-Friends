@@ -1,17 +1,17 @@
 <?php
 
-use App\Http\Controllers\moduloServicios\DogGroomerController;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeServicesController;
+use App\Http\Controllers\welcomeController;
+use App\Http\Controllers\moduloServicios\DogGroomerController;
 use App\Http\Controllers\moduloServicios\CommentsController;
 use App\Http\Controllers\moduloServicios\HousingsController;
 use App\Http\Controllers\moduloServicios\VeterinarianController;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AdopcionesController;
 use App\Http\Controllers\AdopcionesVermasController;
 use App\Http\Controllers\DonacionesController;
 use App\Http\Controllers\FormularioAdopcionesController;
 use App\Http\Controllers\FormularioDonacionesController;
-use App\Http\Controllers\welcomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
