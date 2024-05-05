@@ -59,7 +59,7 @@ Route::get('user/profile', [UserController::class, 'show'])->name('user.profile'
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+//Auth::routes();
 //todo rutas de housings
 Route::controller(HousingsController::class)->group(function(){
     //todo rutas admin
@@ -89,5 +89,37 @@ Route::controller(DogGroomerController::class)->group(function(){
     Route::resource('/dogGroomers', DogGroomerController::class);
     Route::get('/dogGroomers', 'dogGroomerUser')->name('dogGroomerUser');
 });
-//? FIN RUTAS MODULO 1===============================================================================================
-Auth::routes();
+//ver como integrar los comments
+
+//? FIN RUTAS MODULO 1
+
+//? RUTAS MODULO 2===============================================================================================
+
+Route::get('/servicios', function () {
+    return view('servicios');
+});
+Route::get('/registrodemanda', function () {
+    return view('registrodemanda');
+});
+Route::get('/fundation', function () {
+    return view('fundation');
+});
+Route::get('/adminrescate', function () {
+    return view('adminrescate');
+});
+
+
+Route::get('/servicios', [App\Http\Controllers\ServiciosController::class, 'index'])->name('servicios');
+Route::get('/registrodemanda', [App\Http\Controllers\RegistroDemandaController::class, 'index'])->name('registrodemanda');
+
+Route::post('/guardar-denuncia', '[TuControlador]@guardarDenuncia')->name('guardar_denuncia');
+
+Route::get('/fundation', [App\Http\Controllers\FundationController::class, 'index'])->name('fundation');
+
+Route::get('/historialcliente', [App\Http\Controllers\HistorialclienteController::class, 'index'])->name('historialcliente');
+
+Route::get('/adminrescate', [App\Http\Controllers\AdminRescateController::class, 'index'])->name('adminrescate');
+
+//? FIN RUTAS MODULO 2
+ Auth::routes();
+
