@@ -127,6 +127,15 @@ class VeterinarianController extends Controller
 
     //todo User
     public function veterinarioUser(){
-        return view('moduloServicios.veterinarian.user.vetsuser');
+        $veterinarians = Veterinarian::paginate(6);
+        $veterinariansComments = Veterinarians_has_comments::all();
+        return view('moduloServicios.veterinarian.user.vetsuser')
+        ->with('veterinarians', $veterinarians)
+        ->with('veterinariansComments', $veterinariansComments);
+    }
+    public function showVeterinarianUser($id_vet){
+        $veterinarian = Veterinarian::find($id_vet);
+        return view('moduloServicios.veterinarian.user.showVeterinarian')
+        ->with('veterinarian', $veterinarian);
     }
 }
