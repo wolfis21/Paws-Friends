@@ -8,28 +8,28 @@
 
     <div id="ShowcaseServicios" class="services-box">
 
-        <div>
-            <a href="#">
+        <div class="contenedorModulos">
+            <a href="/">
                 <img class="iconosModulos" id="cuidado" src="{{ URL::asset('imagenes/FRAMES/FRAME B/1.png') }}"
                     alt="Cuidados">
             </a>
         </div>
 
-        <div>
-            <a href="/Donaciones">
+        <div class="contenedorModulos">
+            <a href="/Nosotros">
                 <img class="iconosModulos" id="donaciones" src="{{ URL::asset('imagenes/FRAMES/FRAME B/2.png') }}"
                     alt="Donaciones y Adopciones">
             </a>
         </div>
 
-        <div>
-            <a href="#">
+        <div class="contenedorModulos">
+            <a href="/">
                 <img class="iconosModulos" id="rescates" src="{{ URL::asset('imagenes/FRAMES/FRAME B/3.png') }}"
                     alt="Rescates">
             </a>
         </div>
 
-        <div>
+        <div class="contenedorModulos">
             <a href="#">
                 <img class="iconosModulos" id="tienda" src="{{ URL::asset('imagenes/FRAMES/FRAME B/4.png') }}"
                     alt="Catalogo">
@@ -47,6 +47,14 @@
     </div>
 
     <div id="ShowcaseEquipo">
+
+        <div id="txt-vet">
+            <p>
+                Nuestro equipo de profesionales altamente capacitados y amantes de los animales se dedica a proporcionar atencion medica 
+                veterinaria de calidad y alojamiento seguro.
+            </p>
+        </div>
+       
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-bs-slide-to="0"></li>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\FormularioAdopciones;
 use Illuminate\Http\Request;
 
+
 class FormularioAdopcionesController extends Controller
 {
     public function index()
