@@ -15,13 +15,8 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-<<<<<<< HEAD
-        $permissions= DB::table('permissions')->insertGetId([ //falta gestionar luego permisos 
-            'name' => 'global',
-=======
         $permissions= DB::table('permissions')->insertGetId([
             'name' => 'vetsadmin',
->>>>>>> origin/module-1
             'created_at' => now(), 
             'updated_at' => now(), 
         ]);
@@ -47,14 +42,12 @@ class DatabaseSeeder extends Seeder
 
         DB::table('users')->insert([
             'name' => 'admin',
-<<<<<<< HEAD
             'last_name' => 'global',
             'dni' => '12345',
             'phone' => '12345',
             'address' => 'Sin direccion',
             'photo_user' => 'null',
             'email'=> 'admin@admin.com',
-=======
             'last_name' => 'amin',
             'dni' => 'amin',
             'phone' => 'amin',
@@ -77,7 +70,6 @@ class DatabaseSeeder extends Seeder
             'address' => 'global',
             'photo_user' => 'global',
             'email'=> 'user@user.com',
->>>>>>> origin/module-1
             'email_verified_at' => now(),
             'password' => bcrypt('admin'), // Cifrado la contraseña usando Bcrypt
             'rols_id' => $rols,
@@ -87,6 +79,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        $this->call(RolsSeeder::class);
+       /*  $this->call(RolsSeeder::class); */
     }
 }

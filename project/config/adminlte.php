@@ -318,17 +318,17 @@ return [
         ['header' => 'SERVICIOS'],
         [
             'text' =>'Veterinario',
-            'url' => '/admin/Veterinarians',
+            'url' => '/adminPWFS/Veterinarians',
             'ico' =>'manage-servicios',
         ],
         [
             'text' => 'Alojamiento',
-            'url' => '/admin/housingsAdmin',
+            'url' => '/adminPWFS/housingsAdmin',
             'ico' =>'manage-categorias',
         ],
         [
             'text' => 'Peluqueria',
-            'url' => '/admin/DogGroomersAdmin',
+            'url' => '/adminPWFS/DogGroomersAdmin',
             'ico' =>'manage-productos',
         ],
         ['header' => 'account_settings'],
