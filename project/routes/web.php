@@ -13,7 +13,6 @@ use App\Http\Controllers\DonacionesController;
 use App\Http\Controllers\FormularioAdopcionesController;
 use App\Http\Controllers\FormularioDonacionesController;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -135,6 +134,13 @@ Route::resource('/Adopciones', AdopcionesController::class);
 Route::resource('/FormularioAdopciones', FormularioAdopcionesController::class);
 Route::resource('/FormularioDonaciones', FormularioDonacionesController::class);
 Route::resource('/AdopcionesVermas', AdopcionesVermasController::class);
+Route::resource('/Nosotros', NosotrosController::class);
+Route::resource('/Historia', HistoriaController::class);
+route::resource('/AdminP','App\Http\controllers\AdminPlantillaControllerController'::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //? FIN RUTAS MODULO 3
 

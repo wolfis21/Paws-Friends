@@ -26,27 +26,25 @@
           <li><a href="./Adopciones">Adopciones</a></li>
           <li><a href="./Donaciones">Donaciones</a></li>
           <li><a href="./Nosotros">Nosotros</a></li>
+          <li><a href="./Historia">Historial</a></li>
         </ul>
       </nav>
       <a href="#iniciar" class="btn"><button>Foto</button></a>
     </header>
-      <!-- Buscador -->
-      <div class="container">
-        <h1>Adopciones</h1>
-        <input type="text" id="nombreMascota" placeholder="     Buscar mascota..." oninput="buscarMascota()"  />
-        <div class="buscar">
-          <i class="fa fa-search"></i>
-      </div>
 
-            <!-- Nosotros -->
-        <div id="ShowcaseQuienes">
-        <p id="txt-quienes">Paws & Friends es una organizacion comprometida con el bienestar de las mascotas, ofreciendo una
-            amplia gama de servicos para satisfacer
-            todas las necesidades de tus peludos.
-        </p>
-    </div>
-        </section>
+    <main>
+
+      <section class="Informacion">
+        <img src="{{URL::asset('/img/perritos,mascotas png (4).png') }}" alt="Perro">
+      </section>
+
+      <section class="Informacion-contenido">
+        <h2>Adopciones y Donaciones</h2>
+        <p>Nuestro sitio se dedica a conectar personas interesadas en adoptar mascotas y organizaciones que promueven la adopción y el cuidado de animales. Ofrecemos información sobre mascotas disponibles, eventos de adopción y facilitamos donaciones para apoyar a refugios y centros de adopción.</p>
+      </section>
+
     </main>
+
     <script src="/project/public/script-adopciones.js"></script>
     <footer>
       <p>&copy; 2024 Adopciones de Mascotas. Todos los derechos reservados.</p>

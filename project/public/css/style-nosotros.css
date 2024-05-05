@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url(../img/Fondo.png);
+    background-image: url(../img/nosotros.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -84,81 +84,53 @@ button {
 }
 /* Estilos específicos para la sección de botn de busca */
 
-h1 {
-    margin: 20px;
-    color: #6e569f;
-    font-weight: 700;
-    font-size: 45px;
-    text-align: center;
-}
-
 h2 {
     margin: 20px;
     color: #6e569f;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
 }
 
-input {
-    /* Estilos para el contenedor del input de búsqueda */
+main {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
-    height: 40px;
-    width: 34cm;
-    /* Estilos para el input de búsqueda */
-    font-size: 20px;
-    font-weight: 700;
-    outline: none;
-    margin: 20px;
-    padding: 10px;
-    border-radius: 30px;
+    justify-content: center;
+    flex: 1;
+    padding: 20px;
+}
+
+.Informacion-contenido {
     border: 1px solid #6e569f;
-    transition: all 0.7s ease;
-}
-
-::placeholder {
-    color: #6e569f;
-}
-
-.buscar {
-    /* Estilos para el botón de búsqueda */
-    position: absolute;
-    /* Posición del botón de búsqueda */
-    right: 11.5cm;
-    bottom: 11.5cm;
-    width: 80px;
-    height: 80px;
-    /* Estilos para el contenedor del botón de búsqueda */
+    background-color: #ffffffc7;
+    justify-content: center;
+    padding: 36px;
+    background-color: #ffffff9a;
+    border-radius: 10px;
+    flex: 1;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    /* Estilos para el botón de búsqueda */
-    background: #6e569f;
-    border-radius: 50%;
-    border: 1px solid #6e569f;
-    transition: all 0.7s ease;
 }
 
-.container:hover .buscar {
-    /* Estilos para el botón de búsqueda */
-    transform: scale(1.1);
-    border-radius: 50%;
-    /* Estilos para el contenedor del botón de búsqueda */
-    border: 1px solid #6e569f;
-    transition: all 0.7s ease;
+.Informacion-contenido p {
+    font-size: 30px;
+    text-align: justify;
+    margin: 10px;
 }
 
-.buscar i {
-    /* Estilos para el texto del botón de búsqueda */
-    font-size: 50px;
-    line-height: 80px;
-    /* Estilos para el icono del botón de búsqueda */
+.Informacion img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+footer {
+    /* Estilos para el pie de página */
+    background-color: #6e569f;
+    /* Estilos para el texto del pie de página */
     color: #ffffff;
-    transition: all 0.7s ease;
-}
-
-.container:hover i {
-    transform: rotate(+360deg);
+    text-align: center;
+    padding: 10px;
 }

@@ -1,10 +1,11 @@
-import { defineConfig } from "vite";
-import laravel from "laravel-vite-plugin";
+import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
 
 export default defineConfig({
     plugins: [
         laravel({
             input: [
+<<<<<<< HEAD
                 // todo css de navMenu
 
                 //todo css de mainView
@@ -15,6 +16,10 @@ export default defineConfig({
                 'resources/js/app.js',
                 "resources/sass/app.scss",
                 "resources/js/app.js",
+=======
+                'resources/sass/app.scss',
+                'resources/js/app.js',
+>>>>>>> origin/module-3
             ],
             refresh: true,
         }),
