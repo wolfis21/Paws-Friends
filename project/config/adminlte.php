@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'use_ico_only' => false,
+    'use_ico_only' => true,
     'use_full_favicon' => false,
 
     /*
@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Admin</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -171,12 +171,12 @@ return [
     |
     */
 
-    'classes_auth_card' => 'card-outline card-primary',
+    'classes_auth_card' => 'card-outline card-success',
     'classes_auth_header' => '',
     'classes_auth_body' => '',
     'classes_auth_footer' => '',
     'classes_auth_icon' => '',
-    'classes_auth_btn' => 'btn-flat btn-primary',
+    'classes_auth_btn' => 'btn-flat btn-success',
 
     /*
     |--------------------------------------------------------------------------
@@ -196,9 +196,9 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-dark-white elevation-4',
     'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-white navbar-light',
+    'classes_topnav' => 'navbar-dark navbar-dark',
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
 
@@ -222,7 +222,7 @@ return [
     'sidebar_scrollbar_theme' => 'os-theme-light',
     'sidebar_scrollbar_auto_hide' => 'l',
     'sidebar_nav_accordion' => true,
-    'sidebar_nav_animation_speed' => 300,
+    'sidebar_nav_animation_speed' => 500,
 
     /*
     |--------------------------------------------------------------------------
@@ -294,7 +294,11 @@ return [
     */
 
     'menu' => [
-        // Navbar items:
+        // Navbar items:'
+        [
+            'type' => 'darkmode-widget',
+            'topnav_right' => true,     
+        ],
         [
             'type' => 'navbar-search',
             'text' => 'search',
@@ -306,10 +310,16 @@ return [
         ],
 
         // Sidebar items:
+        // [
+        //     'type' => 'sidebar-menu-search',
+        //     'text' => 'search',
+        // ],
         [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
+            'text' =>'Dashboard',
+            'url' => '/',
+            'icon' =>'fas fa-fw fa-home',
         ],
+
         [
             'text' => 'blog',
             'url' => 'admin/blog',
@@ -319,29 +329,67 @@ return [
         [
             'text' =>'Veterinario',
             'url' => '/adminPWFS/Veterinarians',
-            'ico' =>'manage-servicios',
+            'icon' =>'fas fa-fw fa-stethoscope',
         ],
         [
             'text' => 'Alojamiento',
             'url' => '/adminPWFS/housingsAdmin',
-            'ico' =>'manage-categorias',
+            'icon' =>'fas fa-fw fa-home',
         ],
         [
             'text' => 'Peluqueria',
             'url' => '/adminPWFS/DogGroomersAdmin',
-            'ico' =>'manage-productos',
+            'icon' =>'fas fa-fw fa-paw',
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'RESCATE'],
         [
-            'text' => 'profile',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'text' =>'Reubicacion',
+            'url' => '#',
+            'icon' =>'fas fa-fw fa-location',
         ],
         [
-            'text' => 'change_password',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Situacion de calle',
+            'url' => '#',
+            'icon' =>'fas fa-fw fa-shield-dog',
         ],
+        [
+            'text' => 'Abandono',
+            'url' => '#',
+            'icon' =>'fas fa-fw fa-x',
+        ],
+        ['header' => 'DONACIONES / ADOPCIONES'],
+        [
+            'text' =>'Alimentos',
+            'url' => '#',
+            'icon' =>'fas fa-fw fa-bowl-food',
+        ],
+        [
+            'text' => 'Juguetes',
+            'url' => '#',
+            'icon' =>'fas fa-fw fa-bone',
+        ],
+        [
+            'text' => 'Accesorios',
+            'url' => '#',
+            'icon' =>'fas fa-fw fa-ring',
+        ],
+        ['header' => 'TIENDA'],
+        [
+            'text' =>'Productos',
+            'url' => '#',
+            'icon' =>'fas fa-fw fa-pump-soap',
+        ],
+        // ['header' => 'account_settings'],
+        // [
+        //     'text' => 'profile',
+        //     'url' => 'admin/settings',
+        //     'icon' => 'fas fa-fw fa-user',
+        // ],
+        // [
+        //     'text' => 'change_password',
+        //     'url' => 'admin/settings',
+        //     'icon' => 'fas fa-fw fa-lock',
+        // ],
     ],
 
     /*

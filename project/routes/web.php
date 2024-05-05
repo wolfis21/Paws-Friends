@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeServicesController;
 use App\Http\Controllers\moduloServicios\CommentsController;
 use App\Http\Controllers\moduloServicios\HousingsController;
 use App\Http\Controllers\moduloServicios\VeterinarianController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
@@ -26,9 +27,9 @@ Route::get('/', function () {
 
 Route::get('/adminPWFS', HomeServicesController::class)->name('homeService');
 
-//? RUTAS MODULO 1
-Route::controller(HomeServicesController::class)->group(function(){
-    Route::get('/ServiceModel','serviceModel')->name('serviceModel');
+//? RUTAS MODULO 1===============================================================================================
+Route::controller(HomeServicesController::class)->group(function () {
+    Route::get('/ServiceModel', 'serviceModel')->name('serviceModel');
 });
 // Ruta,nombre de la funcion en el controlador, nombre dado en el html
 // todo rutas Veterinarians
@@ -88,8 +89,5 @@ Route::controller(DogGroomerController::class)->group(function(){
     Route::resource('/dogGroomers', DogGroomerController::class);
     Route::get('/dogGroomers', 'dogGroomerUser')->name('dogGroomerUser');
 });
-//ver como integrar los comments
-
-//? FIN RUTAS MODULO 1
-// Auth::routes();
-
+//? FIN RUTAS MODULO 1===============================================================================================
+Auth::routes();

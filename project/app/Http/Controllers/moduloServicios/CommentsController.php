@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class CommentsController extends Controller
 {
-    public function configComment(Request $request, string $id){
+    public function acceptCommentVeterinarians(Request $request, string $id){
         $comment = Comment::findOrFail($id);
         $comment->accepted = true;
         $comment->update($request->all());
@@ -18,6 +18,32 @@ class CommentsController extends Controller
     {
         Comment::find($id)->delete();
         return redirect()->route('index');
+
+    }
+
+    public function acceptHousingsComment(Request $request, string $id){
+        $comment = Comment::findOrFail($id);
+        $comment->accepted = true;
+        $comment->update($request->all());
+        return redirect()->route('housingAdmin');
+    }
+    public function destroyHousingsComment($id)
+    {
+        Comment::find($id)->delete();
+        return redirect()->route('housingAdmin');
+
+    }
+    
+    public function acceptDogGroomersComment(Request $request, string $id){
+        $comment = Comment::findOrFail($id);
+        $comment->accepted = true;
+        $comment->update($request->all());
+        return redirect()->route('dogGroomerAdmin');
+    }
+    public function destroyDogGroomersComment($id)
+    {
+        Comment::find($id)->delete();
+        return redirect()->route('dogGroomerAdmin');
 
     }
 }

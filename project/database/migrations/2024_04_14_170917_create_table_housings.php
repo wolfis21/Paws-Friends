@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('description_location');
             $table->string('type_animals');
             $table->longText('food_offer');
-            $table->string('img_ref');
+            $table->string('img_ref')->nullable();
             $table->timestamps();
         });
     }

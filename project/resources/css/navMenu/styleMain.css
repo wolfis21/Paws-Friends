@@ -1,10 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 
-@font-face {
-    font-family: 'league spartan';
-    src: url('/fuentes/League_Spartan/static/LeagueSpartan-Regular.ttf');
-    font-weight: bold;
-    font-style: bold;
-}
 
 *{
     padding: 0;
@@ -16,6 +11,7 @@ a {
 }
 
 nav{
+    
     background-color: azure;
     padding: auto;
 }
@@ -25,7 +21,9 @@ nav{
 }
 
 ul li a {
-    font-family: 'league spartan';
+    font-family: "League Spartan", sans-serif;
+    font-weight: bold;
+    font-style: normal;
 }
 ul{
     margin-bottom: 0px!important;
@@ -36,7 +34,7 @@ ul{
     overflow: hidden;
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 
@@ -65,6 +63,8 @@ ul{
 }
 #MainNavBar li:hover > ul{
     display: block;
+    background-color: #fff;
+    z-index: 100;
 }
 .link-modulos{
     padding: 0px;
@@ -106,7 +106,7 @@ ul{
 }
 
 .azul:hover{
-    background-color: #2abcc7;
+    background-color: #54E9F4;
 }
 h1{
     margin: 5px;
@@ -268,4 +268,9 @@ a.btn-main:hover{
     justify-content: space-around;
     padding-top: 10px;
     border-top: 2px solid #486284;
+}
+
+.text-text-legals{
+    font-family: "League Spartan", sans-serif;
+    font-style: normal;
 }

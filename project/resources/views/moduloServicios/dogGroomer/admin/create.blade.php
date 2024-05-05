@@ -30,15 +30,15 @@
         </div>
         <div class="mb-3">
             <label for="Img" class="form-label">Img_ref</label>
-            <input type="text" class="form-control @error('img_ref') is-invalid @enderror" id="img_ref" name="img_ref"
-                placeholder="Imagen" value="{{ old('img_ref') }}">
+            <input type="file" class="form-control @error('img_ref') is-invalid @enderror" id="img_ref" name="img_ref"
+                value="{{ old('img_ref') }}" accept="image/*">
         </div>
         <div class="mb-3">
-            <a class="btn btn-danger" href="{{ route('dogGroomerAdmin') }}">Cancelar</a>
-            <button class="btn btn-primary">Guardar</button>
+            <a class="btn bg-red" href="{{ route('dogGroomerAdmin') }}">Cancelar</a>
+            <button class="btn bg-cyan">Guardar</button>
         </div>
 
-        @error('phone')
+        @error('phone','name')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </form>
