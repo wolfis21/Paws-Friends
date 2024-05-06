@@ -10,9 +10,9 @@
             </div>
             <div class="main-view">
 
-                <h1 align="center" class="title-page">Módulo de servicios</h1>
+                <h1 class="title-page">Módulo de servicios</h1>
                 <div class="texto-bienvenida">
-                    <p align="justify">En este módulo de cuidados, se brinda una amplia gama de servicios para mascotas, que incluyen
+                    <p>En este módulo de cuidados, se brinda una amplia gama de servicios para mascotas, que incluyen
                         cuidados, alojamiento, atención veterinaria y servicios de peluquería. Cada uno de estos servicios
                         se detalla en secciones individuales, ofreciendo información específica y detallada para garantizar
                         el bienestar y la salud óptima de las mascotas atendidas.</p>
@@ -52,28 +52,28 @@
                 <div class="carta">
                     <img class="img-dev" src="{{ asset('css/moduloServicios/user/lopez.jpg') }}" alt="">
                     <div class="contenido-texto-card">
-                        <h4>Anibal Lopez</h4>
+                        <h4 class="nombre-Program">Anibal Lopez</h4>
                         <p><b>BACK-END</b></p>
                     </div>
                 </div>
                 <div class="carta">
                     <img class="img-dev" src="{{ asset('css/moduloServicios/user/tussi.png') }}" alt="">
                     <div class="contenido-texto-card">
-                        <h4>Jesus Toussaint</h4>
+                        <h4 class="nombre-Program">Jesus Toussaint</h4>
                         <p><b>BACK-END</b></p>
                     </div>
                 </div>
                 <div class="carta">
                     <img class="img-dev" src="{{ asset('css/moduloServicios/user/romero.jpg') }}" alt="">
                     <div class="contenido-texto-card">
-                        <h4>Daniel Romero</h4>
+                        <h4 class="nombre-Program">Daniel Romero</h4>
                         <p><b>FRONT-END</b></p>
                     </div>
                 </div>
                 <div class="carta">
                     <img class="img-dev" src="{{ asset('css/moduloServicios/user/rebe.jpg') }}" alt="">
                     <div class="contenido-texto-card">
-                        <h4>Yannella Saud</h4>
+                        <h4 class="nombre-Program">Yannella Saud</h4>
                         <p><b>FRONT-END</b></p>
                     </div>
                 </div>
