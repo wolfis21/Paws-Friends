@@ -74,6 +74,7 @@ p {
 .texto-bienvenida {
     padding: 25px;
     font-size: 25px;
+    text-align: justify;
 }
 
 /*todo  segunda vista opciones */
@@ -242,4 +243,8 @@ a {
 
 .nombre-Program{
     text-align: center;
+}
+
+.welcome, .modile, .developer{
+    color: #000000;
 }
