@@ -1,6 +1,8 @@
 .img-container {
-    width: 100%;
-    height: 80%
+    width: 40%;
+    height: 80%;
+    margin: 2%;
+    align-content: center;
 }
 
 .img-container img {
@@ -9,18 +11,51 @@
 
 .name-container {
     background-color: aliceblue;
-    position: absolute;
-    top: 75%;
-    left: 75%
+    position:absolute;
+    font-size: 200%;
+    top: 20%;
+    left: 50%
 }
 
 .especialidad-container {
     position: absolute;
     padding-right: 1%;
     padding-left: 1%;
-    background-color: rgb(148, 170, 189);
+    background-color: rgb(162, 212, 255);
     color: black;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    top: 84%;
-    left: 80%;
+    font-size: 150%;
+    top: 30%;
+    left: 50%;
+}
+
+.info-container {
+    position: absolute;
+    padding-right: 1%;
+    padding-left: 1%;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 150%;
+    top: 45%;
+    left: 50%;
+}
+
+.star{ 
+    width: 100%;
+    height: 100vh;
+    background: #1fcbe2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #1fcbe2;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.star:hover,
+.star.checked {
+color: gold;
+
 }

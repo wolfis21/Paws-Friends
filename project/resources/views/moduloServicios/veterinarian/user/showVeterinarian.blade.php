@@ -5,7 +5,7 @@
 
         <div class="container-general">
             <div class="img-container">
-                <img src="/admin/images/vets/{{$veterinarian->img_ref}}" alt="img-vet" />
+                <img src="/admin/images/vets/{{$veterinarian->img_ref}}" alt="img-vet"  />
                 <div class="name-container">
                     <h1>Dr. {{$veterinarian->name}}</h1> 
                 </div>

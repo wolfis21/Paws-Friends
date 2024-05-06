@@ -10,9 +10,9 @@
             </div>
             <div class="main-view">
 
-                <h1 class="title-page">Módulo de servicios</h1>
+                <h1 align="center" class="title-page">Módulo de servicios</h1>
                 <div class="texto-bienvenida">
-                    <p>En este módulo de cuidados, se brinda una amplia gama de servicios para mascotas, que incluyen
+                    <p align="justify">En este módulo de cuidados, se brinda una amplia gama de servicios para mascotas, que incluyen
                         cuidados, alojamiento, atención veterinaria y servicios de peluquería. Cada uno de estos servicios
                         se detalla en secciones individuales, ofreciendo información específica y detallada para garantizar
                         el bienestar y la salud óptima de las mascotas atendidas.</p>

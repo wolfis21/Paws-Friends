@@ -3,8 +3,9 @@
 @vite(['resources/css/moduloServicios/user/index.css', 'resources/css/moduloServicios/user/cards.css'])
 @section('content')
     <div class="container-general">
-        <h1>Veterinarios</h1>
+        <h1 align="center">Veterinarios</h1>
         @foreach ($veterinarians as $veterinarian)
+       
             <div class="cards">
                 <a class="container-card" href="{{ route('showVeterinarian', $veterinarian->id) }}">
                     <div class="img-container">
