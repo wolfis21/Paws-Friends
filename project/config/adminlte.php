@@ -316,7 +316,7 @@ return [
         // ],
         [
             'text' =>'Dashboard',
-            'url' => '/',
+            'url' => '/adminPWFS',
             'icon' =>'fas fa-fw fa-home',
         ],
 
