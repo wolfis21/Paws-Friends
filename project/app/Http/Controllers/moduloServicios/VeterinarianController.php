@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class VeterinarianController extends Controller
 {
     //todo Admin
-    /**
+    /** 
      * Display a listing of the resource.
      */
     public function index()
@@ -50,13 +50,16 @@ class VeterinarianController extends Controller
             'address' => 'string',
             'phone' => 'required|unique:veterinarians|alpha_num|min_digits:11',
             'link_ref' => 'nullable',
-            'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'img_ref' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
         $veterinarian = $request->all();
 
         if ($image = $request->file('img_ref')) {
-            $imgPhotoPath = $image->store('docs', 'public');
+            $path = 'admin/images/vets';
+            $imageName = date('YmdHis')."_".$image->getClientOriginalExtension();
+            $image->move($path, $imageName );
+            $veterinarian['img_ref'] = "$imageName";
         }
         
         Veterinarian::create([
@@ -65,7 +68,7 @@ class VeterinarianController extends Controller
             'phone' => $request['phone'],
             'email' => $request['email'],
             'link_ref' => $request['link_ref'],
-            'img_ref' => $imgPhotoPath,
+            /* 'img_ref' => $imgPhotoPath, */
             'specialist_animals' => $request['specialist_animals'],
         ]);
         return redirect()->route('index');
@@ -101,11 +104,22 @@ class VeterinarianController extends Controller
             'phone' => 'required||alpha_num|min_digits:11',
             'email' => 'required|email',
             'link_ref' => 'nullable',
-            'img_ref' => 'required|string',
+            'img_ref' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
             'specialist_animals' => 'required|string',
         ]);
         $veterinarian = Veterinarian::findOrFail($id);
-        $veterinarian->update($request->all());
+        $vet = $request->all();
+
+        if ($image = $request->file('img_ref')) {
+            $path = 'admin/images/vets';
+            $imageName = date('YmdHis')."_".$image->getClientOriginalExtension();
+            $image->move($path, $imageName );
+            $vet['img_ref'] = "$imageName";
+        }else{
+            unset($vet['img_ref']);
+        }
+
+        $veterinarian->update($vet);
         return redirect()->route('index');
     }
 
@@ -114,13 +128,25 @@ class VeterinarianController extends Controller
      */
     public function destroy($id_vet)
     {
-        Veterinarian::find($id_vet)->delete();
+        $veterinarian = Veterinarian::find($id_vet);
+        $path = public_path().'/admin/images/vets/'.$veterinarian->img_ref;
+        unlink($path);
+        $veterinarian->delete();
         return redirect()->route('index');
 
     }
 
     //todo User
     public function veterinarioUser(){
-        return view('moduloServicios.veterinarian.user.vetsuser');
+        $veterinarians = Veterinarian::paginate(6);
+        $veterinariansComments = Veterinarians_has_comments::all();
+        return view('moduloServicios.veterinarian.user.vetsuser')
+        ->with('veterinarians', $veterinarians)
+        ->with('veterinariansComments', $veterinariansComments);
+    }
+    public function showVeterinarianUser($id_vet){
+        $veterinarian = Veterinarian::find($id_vet);
+        return view('moduloServicios.veterinarian.user.showVeterinarian')
+        ->with('veterinarian', $veterinarian);
     }
 }

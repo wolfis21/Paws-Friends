@@ -6,14 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    @vite(['resources/css/navMenu/styleMain.css', 'resources/css/navMenu/app.css'])
     <link rel="stylesheet" href="{{ asset('css/styleMain.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css" />
+
+    <!--LINK DE CSS DE SERVICIO RESCATE MODULO 2-->
+    <link rel="stylesheet" href="{{ asset('css/servicio.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/stylehc.css') }}" type="text/css" />
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
+    
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <!--FONT DE MODULO 2--> 
+{{--     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+ --}}
+    <!--SCRIPTS FORMULARIO MODULO 2-->
+{{--     @vite(['resources/js/formulario.js'])
+    @vite(['resources/js/script.js']) --}}
+
+
     <title>Paws & Friends</title>
 </head>
 
@@ -22,14 +37,22 @@
         <div class="container">
             <ul id="MainNavBar">
                 <h1>
-                    <a href="/main">
+                    <a href="/">
                         <img id="logoNav" src="{{ URL::asset('imagenes/Variaciones logo.png') }}" alt="logo" />
                     </a>
                 </h1>
 
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#ShowcaseServicios">Servicios</a></li>
+                <li><a href="/">Inicio</a></li>
+                <li><a class="link-none">Modulos</a>
+                    <ul class="mostrar-secciones">
+                        <li class="azul"><a href="{{route('serviceModel')}}" eclass="link-modulos">Modulo de servicios</a></li>
+                        <li class="rojo"><a href="/" class="link-modulos">Modulo de adopcion y donacion</a></li>
+                        <li class="naranja"><a href="/" class="link-modulos">Modulo de rescate</a></li>
+                        <li class="verde"><a href="/" class="link-modulos">Tienda</a></li>
+                    </ul>
+                </li>
                 <li><a href="#ShowcaseQuienes">Nosotros</a></li>
+                <li><a href="#">Promociones</a></li>
 
                 {{--  <li><a href="{{ route('register') }}" id="registro">Registrate</a></li>
                 <li><a href="{{ route('login') }}" id="ingreso">Iniciar Sesion</a></li> --}}
@@ -74,7 +97,12 @@
                         </div>
                     </li>
                 @endguest
-
+                <li> {{-- temporal hasta que se acomode el despegable --}}
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit">Logout</button>
+                    </form>
+                </li>
             </ul>
         </div>
     </nav>
@@ -99,6 +127,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
+
+    <!--MODULO 2-->
+
+    {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script> --}}
 </body>
 
 </html>

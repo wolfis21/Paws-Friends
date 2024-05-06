@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+{{-- @extends('adminlte::auth.login') --}}
+
+>>>>>>> a2cac56095d6d476c6d3d531744eeee61c6c6841
 {{-- @extends('layouts.app') --}}
 @extends('layouts.headerNav')
 
@@ -72,4 +77,7 @@
     </div>
 </div>
 @endsection
+<<<<<<< HEAD
 
+=======
+>>>>>>> a2cac56095d6d476c6d3d531744eeee61c6c6841

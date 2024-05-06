@@ -5,16 +5,21 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
+<<<<<<< HEAD
                 // todo css de navMenu
-                'resources/css/styleMain.css',
-                'resources/css/app.scss',
 
                 //todo css de mainView
-                'resources/css/moduloServicios/index.css',
+                'resources/css/moduloServicios/user/index.css',
+                'resources/css/moduloServicios/admin/index.css',
 
-                
                 //todo js
                 'resources/js/app.js',
+                "resources/sass/app.scss",
+                "resources/js/app.js",
+=======
+                'resources/sass/app.scss',
+                'resources/js/app.js',
+>>>>>>> origin/module-3
             ],
             refresh: true,
         }),
