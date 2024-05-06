@@ -360,7 +360,6 @@ return [
             'icon' =>'fas fa-fw fa-shield-dog',
         ],
         [
-<<<<<<< HEAD
             'text' => 'multilevel',
             'icon' => 'fas fa-fw fa-share',
             'submenu' => [
@@ -414,7 +413,6 @@ return [
             'icon_color' => 'cyan',
             'url' => '#',
         ],
-=======
             'text' => 'Abandono',
             'url' => '#',
             'icon' =>'fas fa-fw fa-x',
@@ -452,7 +450,6 @@ return [
         //     'url' => 'admin/settings',
         //     'icon' => 'fas fa-fw fa-lock',
         // ],
->>>>>>> a2cac56095d6d476c6d3d531744eeee61c6c6841
     ],
 
     /*
