@@ -11,11 +11,17 @@ class HomeController extends Controller
      *
      * @return void
      */
+
+    
     public function __construct()
     {
+        return view('auth_admin/login');
         $this->middleware('auth');
     }
-
+    
+    public function __invoke(){
+       return view('moduloServicios.dashboard');
+   }
     /**
      * Show the application dashboard.
      *

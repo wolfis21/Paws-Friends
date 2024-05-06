@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeServicesController;
 use App\Http\Controllers\welcomeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\moduloServicios\DogGroomerController;
 use App\Http\Controllers\moduloServicios\CommentsController;
 use App\Http\Controllers\moduloServicios\HousingsController;
@@ -12,6 +14,7 @@ use App\Http\Controllers\AdopcionesVermasController;
 use App\Http\Controllers\DonacionesController;
 use App\Http\Controllers\FormularioAdopcionesController;
 use App\Http\Controllers\FormularioDonacionesController;
+
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -23,12 +26,21 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+//? RUTAS MODULO 0 ===============================================================================================
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/adminPWFS', HomeServicesController::class)->name('homeService');
+Route::get('/adminPWFS', HomeController::class)->name('login_admin');
+
+/* perfil no desarrollado */
+Route::get('user/profile', [UserController::class, 'show'])->name('user.profile');
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+
+//? FIN RUTAS MODULO 0
 
 //? RUTAS MODULO 1===============================================================================================
 Route::controller(HomeServicesController::class)->group(function () {
@@ -55,12 +67,6 @@ Route::controller(CommentsController::class)->group(function(){
     Route::delete('/adminPWFS/CommentVetsDestroy/{id}','destroyVetsComment')->name('destroyVetsComment');
 });
 
-
-/* perfil no desarrollado */
-Route::get('user/profile', [UserController::class, 'show'])->name('user.profile');
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Auth::routes();
 //todo rutas de housings
@@ -126,7 +132,6 @@ Route::get('/adminrescate', [App\Http\Controllers\AdminRescateController::class,
 //? FIN RUTAS MODULO 2
 
 //? RUTAS MODULO 3 ===============================================================================================
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/welcome', welcomeController::class);
 Route::resource('/Donaciones', DonacionesController::class);
@@ -140,7 +145,6 @@ route::resource('/AdminP','App\Http\controllers\AdminPlantillaControllerControll
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //? FIN RUTAS MODULO 3
 

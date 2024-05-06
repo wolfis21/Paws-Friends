@@ -17,17 +17,16 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
-    <!--FONT DE MODULO 2--> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
-
-
+    
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
+    <!--FONT DE MODULO 2--> 
+{{--     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+ --}}
     <!--SCRIPTS FORMULARIO MODULO 2-->
-    @vite(['resources/js/formulario.js'])
-    @vite(['resources/js/script.js'])
+{{--     @vite(['resources/js/formulario.js'])
+    @vite(['resources/js/script.js']) --}}
 
 
     <title>Paws & Friends</title>
@@ -98,7 +97,12 @@
                         </div>
                     </li>
                 @endguest
-
+                <li> {{-- temporal hasta que se acomode el despegable --}}
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit">Logout</button>
+                    </form>
+                </li>
             </ul>
         </div>
     </nav>
@@ -126,7 +130,7 @@
 
     <!--MODULO 2-->
 
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script> --}}
 </body>
 
 </html>
