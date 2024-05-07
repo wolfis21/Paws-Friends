@@ -13,10 +13,10 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
-<<<<<<< HEAD
-        "bootstrap-icons": "^1.11.3"
-=======
+
+        "bootstrap-icons": "^1.11.3",
+
         "build": "^0.1.4"
->>>>>>> origin/module-3
+
     }
 }
