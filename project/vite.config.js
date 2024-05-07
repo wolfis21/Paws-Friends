@@ -5,7 +5,10 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
+<<<<<<< HEAD
 
+=======
+>>>>>>> ae9472e776cb0b3ff59b109646cf1b63f3a1c063
                 // todo css de navMenu
 
                 //todo css de mainView
@@ -19,6 +22,10 @@ export default defineConfig({
 
                 'resources/sass/app.scss',
                 'resources/js/app.js',
+<<<<<<< HEAD
+=======
+                // origin/module-3
+>>>>>>> ae9472e776cb0b3ff59b109646cf1b63f3a1c063
             ],
             refresh: true,
         }),
