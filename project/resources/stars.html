@@ -1,80 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <br><br><br> <br><br><br> <br><br><br> <br>
-    <style>
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            body {
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
 
-}
-body {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+            .star.checked {
+                color: gold;
+            }
 
-}
+            .star_rating {
+                user-select: none;
+            }
 
-.star.checked {
-  color: gold;
+            .star {
+                background-color: unset;
+                font-size: 3rem;
+                color: #000000;
+                transition: color 0.3s;
+                border: none;
+            }
 
-}
-
-.star_rating{
-    user-select: none;
-}
-
-.star{ 
-    background-color: unset;
-    font-size: 3rem;
-    color: #000000;
-    transition: color 0.3s;
-    border: none;
-}
-
-.star:hover{
-color: gold;
-cursor: pointer;
-    }
-
-    </style>
-
-</head>
-<body>
+            .star:hover {
+                color: gold;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
         <div class="rating_stars">
-        <p align = center>Que tal ha sido su experiencia?</p>
-        <button class="star">&#9734;</button>
-        <button class="star">&#9734;</button>
-        <button class="star">&#9734;</button>
-        <button class="star">&#9734;</button>
-        <button class="star">&#9734;</button>
-        <p align = center class="current_rating"> 0 of 5</p>
-    </div>
+            <p align="center">Que tal ha sido su experiencia?</p>
+            <button class="star">&#9734;</button>
+            <button class="star">&#9734;</button>
+            <button class="star">&#9734;</button>
+            <button class="star">&#9734;</button>
+            <button class="star">&#9734;</button>
+            <p align="center" class="current_rating">0 of 5</p>
+        </div>
 
-    <script>
-     const stars= document.querySelectorAll('.star');
-
-stars.forEach(function(star, index){
-     star.addEventListener('click', function(){
-          for (let i=0; i<=index; i++){
-                stars[i].classList.add('checked');
-          }
-          for (let i=index+1; i<stars.length; i++){
-               stars[i].classList.remove('checked');
-          }
-
-
-     })
-
-})
-
-     </script>
-    
-</body>
+        <script>
+            const stars = document.querySelectorAll(".star");
+            const num = document.querySelectorAll(".current_rating");
+            stars.forEach(function (star, index) {
+                star.addEventListener("click", function () {
+                    for (let i = 0; i <= index; i++) {
+                        stars[i].classList.add("checked");
+                    }
+                    for (let i = index + 1; i < stars.length; i++) {
+                        stars[i].classList.remove("checked");
+                    }
+                });
+            });
+        </script>
+    </body>
 </html>
