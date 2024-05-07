@@ -1,4 +1,4 @@
-@extends('layouts.navMenu')
+@extends('layouts.headerNav')
 @section('title', 'Veterinarios')
 @vite(['resources/css/moduloServicios/user/index.css', 'resources/css/moduloServicios/user/cards.css'])
 @section('content')

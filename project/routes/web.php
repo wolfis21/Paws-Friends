@@ -28,7 +28,7 @@ use Illuminate\Support\Facades\Route;
 */
 //? RUTAS MODULO 0 ===============================================================================================
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
 
 Route::get('/adminPWFS', HomeController::class)->name('login_admin');
