@@ -7,7 +7,7 @@
         @foreach ($veterinarians as $veterinarian)
        
             <div class="cards">
-                <a class="container-card" href="{{ route('showVeterinarian', $veterinarian->id) }}">
+                <a class="container-card" href="{{ route('showVeterinarianUser', $veterinarian->id) }}">
                     <div class="img-container">
                         <img src="admin/images/vets/{{ $veterinarian->img_ref }}" alt="Imagen vet" />
                     </div>
