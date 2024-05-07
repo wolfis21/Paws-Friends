@@ -6,19 +6,19 @@
             <div class="title">
                 <h2>Informacion del Usuario</h2>
             </div>
-            <div class="card-space">
+            <div class="card-space peque">
                 <label for="Nombre" class="label">Nombre </label>
                 <div class="user-info">{{ $user->name }}</div>
             </div>
-            <div class="card-space">
+            <div class="card-space peque">
                 <label for="last_name" class="label">Apellido </label>
                 <div class="user-info">{{ $user->last_name }}</div>
             </div>
-            <div class="card-space">
+            <div class="card-space peque">
                 <label for="dni" class="label">Dni </label>
                 <div class="user-info">{{ $user->dni }}</div>
             </div>
-            <div class="card-space">
+            <div class="card-space peque">
                 <label for="phone" class="label">Phone </label>
                 <div class="user-info">{{ $user->phone }}</div>
             </div>
