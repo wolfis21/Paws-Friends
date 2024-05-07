@@ -8,12 +8,24 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    protected function show(){
-        /* $user = Auth::user(); */
-        $user = User::find(1);
+    public function show(string $id){
+        $user = Auth::user();
         
-        $img = base64_encode(file_get_contents(public_path('storage/' . $user->photo_user)));
+        // $img = base64_encode(file_get_contents(public_path('storage/' . $user->photo_user)));
 
-        return view('profile.index', compact('user', 'img'));
+        return view('profile.index', compact('user'));
+    }
+
+    public function edit($id)
+    {
+        $user = Auth::user();
+        return view('profile.edit', compact('user'));
+    }
+
+    public function updateUser(Request $request, string $id){
+        $user = User::findOrFail($id);
+        $userReq = $request->all();
+        $user->update($userReq);
+        return view('main');
     }
 }

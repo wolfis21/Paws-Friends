@@ -34,9 +34,9 @@ Route::get('/', function () {
 Route::get('/adminPWFS', HomeController::class)->name('login_admin');
 
 /* perfil no desarrollado */
-Route::get('user/profile', [UserController::class, 'show'])->name('user.profile');
-
-
+Route::get('/user/profile/{id}', [UserController::class, 'show'])->name('user.profile');
+Route::get('/user/profile/edit/{id}', [UserController::class, 'edit'])->name('userEdit');
+Route::put('/userUpdate/{id}',[UserController::class, 'updateUser'])->name('updateUser');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
