@@ -41,7 +41,7 @@ class DogGroomerController extends Controller
         
         $dogGroomer = $request->all();
         if ($image = $request->file('img_ref')) {
-            $path = 'admin/images/dogGroomers';
+            $path = 'moduloServicios/images/dogGroomers';
             $imageName = date('YmdHis')."_".$image->getClientOriginalExtension();
             $image->move($path, $imageName );
             $dogGroomer['img_ref'] = "$imageName";
@@ -77,7 +77,7 @@ class DogGroomerController extends Controller
         $dogGroomer = Dog_groomer::findOrFail($id);
         $dogGroomerReq = $request->all();
         if ($image = $request->file('img_ref')) {
-            $path = 'admin/images/dogGroomers';
+            $path = 'moduloServicios/images/dogGroomers';
             $imageName = date('YmdHis')."_".$image->getClientOriginalExtension();
             $image->move($path, $imageName );
             $dogGroomerReq['img_ref'] = "$imageName";
@@ -91,7 +91,7 @@ class DogGroomerController extends Controller
      */
     public function destroyDogGroomer(string $id){
         $dogGroomer = Dog_Groomer::find($id);
-        $path = public_path().'/admin/images/dogGroomers/'.$dogGroomer->img_ref;
+        $path = public_path().'/moduloServicios/images/dogGroomers/'.$dogGroomer->img_ref;
         unlink($path);
         $dogGroomer->delete();
         return redirect()->route('dogGroomerAdmin');
