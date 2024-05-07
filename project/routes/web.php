@@ -31,7 +31,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/adminPWFS', HomeController::class)->name('login_admin');
+Route::get('/adminPWFS', HomeController::class)->name('login_admin')->middleware('auth');;
+// Rutas para el inicio de sesión específico que dirige a moduloServicios.dashboard
+
 
 /* perfil no desarrollado */
 Route::get('user/profile', [UserController::class, 'show'])->name('user.profile');

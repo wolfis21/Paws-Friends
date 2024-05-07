@@ -72,7 +72,7 @@ class DatabaseSeeder extends Seeder
             'email'=> 'user@user.com',
             'email_verified_at' => now(),
             'password' => bcrypt('admin'), // Cifrado la contraseña usando Bcrypt
-            'rols_id' => $rols,
+            'rols_id' => '2',
             'remember_token' => Str::random(10),
             'created_at' => now(), 
             'updated_at' => now(), 
