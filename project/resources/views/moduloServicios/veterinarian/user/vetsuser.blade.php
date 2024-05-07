@@ -9,7 +9,7 @@
             <div class="cards">
                 <a class="container-card" href="{{ route('showVeterinarianUser', $veterinarian->id) }}">
                     <div class="img-container">
-                        <img src="admin/images/vets/{{ $veterinarian->img_ref }}" alt="Imagen vet" />
+                        <img src="moduloServicios/images/vets/{{ $veterinarian->img_ref }}" alt="Imagen vet" />
                     </div>
                     <div class="info-container">
                         <h2>{{ $veterinarian->name }}</h2>

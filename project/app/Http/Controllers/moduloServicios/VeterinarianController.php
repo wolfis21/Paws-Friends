@@ -56,7 +56,7 @@ class VeterinarianController extends Controller
         $veterinarian = $request->all();
 
         if ($image = $request->file('img_ref')) {
-            $path = 'admin/images/vets';
+            $path = 'storage/moduloServicios/images/vets';
             $imageName = date('YmdHis')."_".$image->getClientOriginalExtension();
             $image->move($path, $imageName );
             $veterinarian['img_ref'] = "$imageName";
@@ -111,7 +111,7 @@ class VeterinarianController extends Controller
         $vet = $request->all();
 
         if ($image = $request->file('img_ref')) {
-            $path = 'admin/images/vets';
+            $path = 'storage/moduloServicios/images/vets';
             $imageName = date('YmdHis')."_".$image->getClientOriginalExtension();
             $image->move($path, $imageName );
             $vet['img_ref'] = "$imageName";
@@ -129,7 +129,7 @@ class VeterinarianController extends Controller
     public function destroy($id_vet)
     {
         $veterinarian = Veterinarian::find($id_vet);
-        $path = public_path().'/admin/images/vets/'.$veterinarian->img_ref;
+        $path = public_path().'/moduloServicios/images/vets/'.$veterinarian->img_ref;
         unlink($path);
         $veterinarian->delete();
         return redirect()->route('index');

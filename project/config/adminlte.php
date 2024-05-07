@@ -320,11 +320,7 @@ return [
             'icon' =>'fas fa-fw fa-home',
         ],
 
-        [
-            'text' => 'blog',
-            'url' => 'admin/blog',
-            'can' => 'manage-blog',
-        ],
+        ['header' => 'SERVICIOS'],
         [
             'text' =>'Veterinario',
             'url' => '/adminPWFS/Veterinarians',
