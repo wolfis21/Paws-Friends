@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +19,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::get('/main', function () {
+    return view('main');
+});
+
+Route::get('user/profile', [UserController::class, 'show'])->name('user.profile');
 
 /*Rutas Modulo 4 */
 
