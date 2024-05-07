@@ -2,10 +2,43 @@
 @section('title', 'Veterinario')
 @section('content')
 
+<<<<<<< HEAD
+    <a href="{{ route('create') }}" class="btn btn-primary">Añadir Veterinario</a>
+    <h1>Veterinarios admin</h1>
+    <table class=" table table-dark">
+        <thead>
+            <th scope="col">Nombre</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Email</th>
+            <th scope="col">Link</th>
+            <th scope="col">Img</th>
+            <th scope="col">Especialidad</th>
+            <th scope="col">Acciones</th>
+        </thead>
+        <tbody>
+            @foreach ($veterinarians as $veterinarian)
+                <tr>
+                    <td>{{ $veterinarian->name }}</td>
+                    <td>{{ $veterinarian->address }}</td>
+                    <td>{{ $veterinarian->email }}</td>
+                    <td>{{ $veterinarian->link_ref }}</td>
+                    <td>{{-- {{ $veterinarian->img_ref }} --}} 
+                        <img style="width: 5%;" src="{{ asset('storage/' . $veterinarian->img_ref) }}" > {{-- provisional mejorar esto --}}
+                    </td>
+                    <td>{{ $veterinarian->specialist_animals }}</td>
+                    <td>
+                        <form action="{{ route('destroy', $veterinarian->id) }}" method="POST">
+                            <a class="btn btn-primary" href="{{ route('edit', $veterinarian->id) }}">Editar</a>
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+=======
     <h4 style="margin-top: 15px">Veterinarios admin</h4>
     <a href="{{ route('create') }}" class="btn bg-cyan" style="margin-bottom: 15px;">Añadir Veterinario</a>
     <div class="card bg-dark">
         <div class="card-body">
+>>>>>>> origin/module-1
 
             <table id="Veterinarios" class="table table-dark table-responsive-md" style="width:100%">
                 <thead>

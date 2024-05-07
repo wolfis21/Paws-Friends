@@ -257,7 +257,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => '/',
+    'dashboard_url' => 'home',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -316,7 +316,7 @@ return [
         // ],
         [
             'text' =>'Dashboard',
-            'url' => '/',
+            'url' => '/adminPWFS',
             'icon' =>'fas fa-fw fa-home',
         ],
 
@@ -325,20 +325,19 @@ return [
             'url' => 'admin/blog',
             'can' => 'manage-blog',
         ],
-        ['header' => 'SERVICIOS'],
         [
             'text' =>'Veterinario',
-            'url' => '/admin/Veterinarians',
+            'url' => '/adminPWFS/Veterinarians',
             'icon' =>'fas fa-fw fa-stethoscope',
         ],
         [
             'text' => 'Alojamiento',
-            'url' => '/admin/housingsAdmin',
+            'url' => '/adminPWFS/housingsAdmin',
             'icon' =>'fas fa-fw fa-home',
         ],
         [
             'text' => 'Peluqueria',
-            'url' => '/admin/DogGroomersAdmin',
+            'url' => '/adminPWFS/DogGroomersAdmin',
             'icon' =>'fas fa-fw fa-paw',
         ],
         ['header' => 'RESCATE'],

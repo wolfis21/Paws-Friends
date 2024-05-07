@@ -18,6 +18,8 @@ class VeterinarianController extends Controller
     {   
         $veterinarians = Veterinarian::all();
         $veterinariansComments = Veterinarians_has_comments::all();
+
+
         return view('moduloServicios.veterinarian.admin.index')    
         ->with('veterinarians', $veterinarians)
         ->with('veterinariansComments', $veterinariansComments);
@@ -44,7 +46,7 @@ class VeterinarianController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|min:3',
+            'name' => 'required|string|min:3', //no validaron email
             'address' => 'string',
             'phone' => 'required|unique:veterinarians|alpha_num|min_digits:11',
             'link_ref' => 'nullable',
@@ -59,7 +61,16 @@ class VeterinarianController extends Controller
             $image->move($path, $imageName );
             $veterinarian['img_ref'] = "$imageName";
         }
-        Veterinarian::create($veterinarian);
+        
+        Veterinarian::create([
+            'name' => $request['name'],
+            'address' => $request['address'],
+            'phone' => $request['phone'],
+            'email' => $request['email'],
+            'link_ref' => $request['link_ref'],
+            /* 'img_ref' => $imgPhotoPath, */
+            'specialist_animals' => $request['specialist_animals'],
+        ]);
         return redirect()->route('index');
 
     }

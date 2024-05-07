@@ -1,0 +1,312 @@
+@font-face {
+    font-family: "league spartan";
+    src: url("/fuentes/League_Spartan/static/LeagueSpartan-Regular.ttf");
+    font-weight: bold;
+    font-style: bold;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none!important;
+}
+
+nav{
+    
+    background-color: azure;
+    padding: auto;
+}
+
+.nav-main-home{
+    position: relative;
+}
+
+ul li a {
+    font-family: "League Spartan", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+}
+ul{
+    margin-bottom: 0px!important;
+    list-style: none;
+}
+
+#MainNavBar{
+    overflow: hidden;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+#MainNavBar > ul{
+    margin: 0px;
+}
+
+#MainNavBar .logo{
+    float: left;
+}
+
+#MainNavBar > li {
+    float: left;
+    margin: 30px 20px;
+}
+
+#MainNavBar li a{
+    display: block;
+    padding: 10px;
+    font-size: 18px!important;
+}
+
+
+#MainNavBar .link-none{
+    cursor:default;
+}
+#MainNavBar li:hover > ul{
+    display: block;
+    background-color: #fff;
+    z-index: 100;
+}
+.link-modulos{
+    padding: 0px;
+    color: #000;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+.link-modulos:hover{
+    color: #Fff;
+}
+.mostrar-secciones{
+    padding: 0px;
+    display: none;
+    position: absolute;
+    min-width: 140px;
+}
+
+.mostrar-secciones li{
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+.verde:hover{
+    background-color: #9fcb40;
+}
+
+.rojo:hover{
+    background-color: #f35c5c;
+}
+
+.naranja:hover{
+    background-color: #f7a724;
+}
+
+.azul:hover{
+    background-color: #54E9F4;
+}
+h1{
+    margin: 5px;
+} 
+
+#logoNav {
+    width: 100px;
+    height: 100px;
+    margin: 0px;
+}
+
+#registro{
+    text-decoration: underline;
+    border-left: 1px solid black;
+    margin-right: 0px;
+    margin-left: 300px;
+    padding: 10px;
+}
+
+#ingreso {
+    padding: 10px;
+    color: white;
+    background-color: #6e569f;
+    border-radius: 6%;
+}
+
+#ShowcaseMain{
+    background: url('../imagenes/FRAMES/FRAME A/Frame A1 - Bienvenidos.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    height: 100vh;
+    width: 100%;
+}
+
+#ShowcaseServicios{
+    background: url('../imagenes/FRAMES/FRAME B/Frame B1 - Servicios.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    height: 100vh;
+    width: 100%;
+}
+
+#ShowcaseQuienes{
+    background: url('../imagenes/FRAMES/FRAME C/Frame C1 - Somos.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    height: 100vh;
+    width: 100%;
+}
+
+#ShowcaseEquipo{
+    background: url('../imagenes/FRAMES/FRAME D/Frame D1 - Equipo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    height: 100vh;
+    width: 100%;
+}
+
+#ShowcaseContacto{
+    background: url('../imagenes/FRAMES/FRAME E/Frame E1 - Contacto.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    height: 100vh;
+    width: 100%;
+}
+
+.container{
+    margin: auto;
+    padding: auto;
+    max-width: 100%;
+    overflow: overlay;
+}
+
+a.btn-main{
+    position: absolute;
+    left: 70%;
+    top: 84%;
+    font-family: 'league spartan';
+    text-decoration: none;
+    background-color: #54e9f4;
+    padding: 10px 40px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px black;
+    font-size: 18px;
+}
+
+a.btn-main:hover{
+    background-color: #f7a724;
+}
+
+.services-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: stretch;
+    padding-right: 15rem;
+}
+
+.iconosModulos {
+    position: absolute;
+    top: 153%;
+    width: 15rem;
+    height: 15rem;
+}
+
+.contenedorModulos {
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+#cuidado:hover,
+#donaciones:hover,
+#rescates:hover,
+#tienda:hover {
+    box-shadow: 0px 5px 10px #312150;
+}
+
+#txt-vet p {
+    float: right;
+    margin-top: 25%;
+    padding: 20px;
+    width: 40%;
+    font-size: x-large;
+    text-align: justify;
+
+}
+
+/*slider*/
+.carousel-inner.custom{
+    display: flex;
+    float: left;
+    width: 35%!important;
+    align-items: center;
+    margin-left:250px;
+    margin-top:100px;
+}
+
+.carousel-inner img{
+    height: 80vh;
+}
+
+#cuidado{
+    background-color: #54e9f4;
+    border-radius: 10%;
+    
+}
+
+#donaciones{
+    background-color: #6e569f;
+    border-radius: 10%;
+}
+
+#rescates{
+    background-color: #f7a724;
+    border-radius: 10%;
+}
+
+#tienda{
+    background-color: #9fcb40;
+    border-radius: 10%;
+}
+
+#txt-quienes {
+    position: absolute;
+    top: 250%;
+    font-family: 'league spartan';
+    font-size: x-large;
+    text-align: justify;
+    padding: 40px 220px;
+}
+
+/* footer */
+
+.img-footer{
+    display: flex;
+    justify-content: center;
+}
+
+.logo-footer{
+    width: 200px;
+    height: 200px;
+}
+
+.text-legals{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    border-top: 2px solid #486284;
+}
+
+.text-text-legals{
+    font-family: "League Spartan", sans-serif;
+    font-style: normal;
+}

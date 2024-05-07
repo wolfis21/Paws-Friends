@@ -1,13 +1,21 @@
 <?php
 
-use App\Http\Controllers\moduloServicios\DogGroomerController;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeServicesController;
+use App\Http\Controllers\welcomeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\moduloServicios\DogGroomerController;
 use App\Http\Controllers\moduloServicios\CommentsController;
 use App\Http\Controllers\moduloServicios\HousingsController;
 use App\Http\Controllers\moduloServicios\VeterinarianController;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdopcionesController;
+use App\Http\Controllers\AdopcionesVermasController;
+use App\Http\Controllers\DonacionesController;
+use App\Http\Controllers\FormularioAdopcionesController;
+use App\Http\Controllers\FormularioDonacionesController;
 
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,65 +26,126 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//? RUTAS MODULO 0 ===============================================================================================
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/', HomeServicesController::class)->name('homeService');
+Route::get('/adminPWFS', HomeController::class)->name('login_admin');
+
+/* perfil no desarrollado */
+Route::get('user/profile', [UserController::class, 'show'])->name('user.profile');
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+
+//? FIN RUTAS MODULO 0
 
 //? RUTAS MODULO 1===============================================================================================
 Route::controller(HomeServicesController::class)->group(function () {
     Route::get('/ServiceModel', 'serviceModel')->name('serviceModel');
 });
-//! Ruta,nombre de la funcion en el controlador, nombre dado en el html
-//todo rutas Veterinarians===============================================================================================
-Route::controller(VeterinarianController::class)->group(function () {
-    //todo rutas admin===============================================================================================
-    Route::get('/admin/Veterinarians', 'index')->name('index');
-    Route::get('/admin/CreateVeterianarians', 'create')->name('create');
-    Route::put('/admin/storeVeterinarias', 'store')->name('store');
-    Route::get('/admin/editVeterinarians/{id}', 'edit')->name('edit');
-    Route::put('/admin/updateVeterinarians/{id}', 'update')->name('update');
-    Route::delete('/admin/destroyVeterinarians/{id}', 'destroy')->name('destroy');
-    //todo rutas user===============================================================================================
-    Route::get('/Veterinario', 'veterinarioUser')->name('Veterinario');
-    Route::get('Veterinario/{id}', 'showVeterinarianUser')->name('showVeterinarian');
+// Ruta,nombre de la funcion en el controlador, nombre dado en el html
+// todo rutas Veterinarians
+Route::controller(VeterinarianController::class)->group(function(){
+    //todo rutas admin
+    Route::get('/adminPWFS/Veterinarians', 'index')->name('index');
+    Route::get('/adminPWFS/CreateVeterianarians','create')->name('create');
+    Route::put('/adminPWFS/storeVeterinarias','store')->name('store');
+    Route::get('/adminPWFS/editVeterinarians/{id}','edit')->name('edit');
+    Route::put('/adminPWFS/updateVeterinarians/{id}', 'update')->name('update');
+    Route::delete('/adminPWFS/destroyVeterinarians/{id}', 'destroy')->name('destroy');
+
+    //todo comentarios veterinarios
+    
+    //todo rutas user
+    Route::get('/Veterinario','veterinarioUser')->name('Veterinario');
 });
-Route::controller(CommentsController::class)->group(function () {
-    //todo comentarios de veterinarios===============================================================================================
-    Route::get('/admin/CommentVetsAccepted/{id}', 'acceptCommentVeterinarians')->name('acceptCommentVeterinarians');
-    Route::delete('/admin/CommentVetsDestroy/{id}', 'destroyVetsComment')->name('destroyVetsComment');
-    //todo comentarios de housings===============================================================================================
-    Route::get('/admin/CommentHousingsAccepted/{id}', 'acceptHousingsComment')->name('acceptHousingsComment');
-    Route::delete('/admin/CommentHousingsDestroy/{id}', 'destroyHousingsComment')->name('destroyHousingsComment');
-    //todo comentarios de groomers===============================================================================================
-    Route::get('/admin/CommentDogGroomersAccepted/{id}', 'acceptDogGroomersComment')->name('acceptDogGroomersComment');
-    Route::delete('/admin/CommentDogGroomersDestroy/{id}', 'destroyDogGroomersComment')->name('destroyDogGroomersComment');
+Route::controller(CommentsController::class)->group(function(){
+    Route::get('/adminPWFS/CommentVetsAccepted/{id}','configComment')->name('configComment');
+    Route::delete('/adminPWFS/CommentVetsDestroy/{id}','destroyVetsComment')->name('destroyVetsComment');
 });
 
-//todo rutas de housings===============================================================================================
-Route::controller(HousingsController::class)->group(function () {
-    //todo rutas admin===============================================================================================
-    Route::get('/admin/housingsAdmin', 'housingAdmin')->name('housingAdmin');
-    Route::get('/admin/createHousing', 'createHousing')->name('createHousing');
-    Route::put('/admin/storeHousings', 'storeHousing')->name('storeHousing');
-    Route::get('/admin/editHousing/{id}', 'editHousing')->name('editHousing');
-    Route::put('/admin/updateHousing/{id}', 'updateHousing')->name('updateHousing');
-    Route::delete('/admin/destroyHousing/{id}', 'destroyHousing')->name('destroyHousing');
-    //todo rutas user===============================================================================================
+
+//Auth::routes();
+//todo rutas de housings
+Route::controller(HousingsController::class)->group(function(){
+    //todo rutas admin
+    
+    Route::get('/adminPWFS/housingsAdmin', 'housingAdmin')->name('housingAdmin');
+    Route::get('/adminPWFS/createHousing', 'createHousing')->name('createHousing');
+    Route::put('/adminPWFS/storeHousings', 'storeHousing')->name('storeHousing');
+    Route::get('/adminPWFS/editHousing/{id}', 'editHousing')->name('editHousing');
+    Route::put('/adminPWFS/updateHousing/{id}', 'updateHousing')->name('updateHousing');
+    Route::delete('/adminPWFS/destroyHousing/{id}', 'destroyHousing')->name('destroyHousing');
+    
+    //todo rutas user
     Route::resource('/housings', HousingsController::class);
     Route::get('/housings', 'housingUser')->name('housingUser');
 });
 //----------------------------------------------------------------
-// todo: rutas de dog_groomer===============================================================================================
-Route::controller(DogGroomerController::class)->group(function () {
-    //todo rutas admin===============================================================================================
-    Route::get('/admin/DogGroomersAdmin', 'dogGroomerAdmin')->name('dogGroomerAdmin');
-    Route::get('/admin/createDogGroomer', 'createDogGroomer')->name('createDogGroomer');
-    Route::put('/admin/storeDogGroomers', 'storeDogGroomer')->name('storeDogGroomer');
-    Route::get('/admin/editDogGroomer/{id}', 'editDogGroomer')->name('editDogGroomer');
-    Route::put('/admin/updateDogGroomer/{id}', 'updateDogGroomer')->name('updateDogGroomer');
-    Route::delete('/admin/destroyDogGroomer/{id}', 'destroyDogGroomer')->name('destroyDogGroomer');
-    //todo rutas user===============================================================================================
+// todo: rutas de dog_groomer
+Route::controller(DogGroomerController::class)->group(function(){
+    //todo rutas admin
+    Route::get('/adminPWFS/DogGroomersAdmin', 'dogGroomerAdmin')->name('dogGroomerAdmin');
+    Route::get('/adminPWFS/createDogGroomer', 'createDogGroomer')->name('createDogGroomer');
+    Route::put('/adminPWFS/storeDogGroomers', 'storeDogGroomer')->name('storeDogGroomer');
+    Route::get('/adminPWFS/editDogGroomer/{id}', 'editDogGroomer')->name('editDogGroomer');
+    Route::put('/adminPWFS/updateDogGroomer/{id}', 'updateDogGroomer')->name('updateDogGroomer');
+    Route::delete('/adminPWFS/destroyDogGroomer/{id}', 'destroyDogGroomer')->name('destroyDogGroomer');
+    //todo rutas user
     Route::resource('/dogGroomers', DogGroomerController::class);
     Route::get('/dogGroomers', 'dogGroomerUser')->name('dogGroomerUser');
 });
-//? FIN RUTAS MODULO 1===============================================================================================
+//ver como integrar los comments
+
+//? FIN RUTAS MODULO 1
+
+//? RUTAS MODULO 2===============================================================================================
+
+Route::get('/servicios', function () {
+    return view('servicios');
+});
+Route::get('/registrodemanda', function () {
+    return view('registrodemanda');
+});
+Route::get('/fundation', function () {
+    return view('fundation');
+});
+Route::get('/adminrescate', function () {
+    return view('adminrescate');
+});
+
+
+Route::get('/servicios', [App\Http\Controllers\ServiciosController::class, 'index'])->name('servicios');
+Route::get('/registrodemanda', [App\Http\Controllers\RegistroDemandaController::class, 'index'])->name('registrodemanda');
+
+Route::post('/guardar-denuncia', '[TuControlador]@guardarDenuncia')->name('guardar_denuncia');
+
+Route::get('/fundation', [App\Http\Controllers\FundationController::class, 'index'])->name('fundation');
+
+Route::get('/historialcliente', [App\Http\Controllers\HistorialclienteController::class, 'index'])->name('historialcliente');
+
+Route::get('/adminrescate', [App\Http\Controllers\AdminRescateController::class, 'index'])->name('adminrescate');
+
+//? FIN RUTAS MODULO 2
+
+//? RUTAS MODULO 3 ===============================================================================================
+
+Route::get('/welcome', welcomeController::class);
+Route::resource('/Donaciones', DonacionesController::class);
+Route::resource('/Adopciones', AdopcionesController::class);
+Route::resource('/FormularioAdopciones', FormularioAdopcionesController::class);
+Route::resource('/FormularioDonaciones', FormularioDonacionesController::class);
+Route::resource('/AdopcionesVermas', AdopcionesVermasController::class);
+Route::resource('/Nosotros', NosotrosController::class);
+Route::resource('/Historia', HistoriaController::class);
+route::resource('/AdminP','App\Http\controllers\AdminPlantillaControllerController'::class);
+
 Auth::routes();
+
+
+//? FIN RUTAS MODULO 3
+
+/* Auth::routes(); */

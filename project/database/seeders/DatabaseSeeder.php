@@ -26,6 +26,12 @@ class DatabaseSeeder extends Seeder
             'created_at' => now(), 
             'updated_at' => now(), 
         ]);
+        
+        DB::table('rols')->insertGetId([ //por defect customer creado 
+            'name' => 'customer',
+            'created_at' => now(), 
+            'updated_at' => now(), 
+        ]);
 
         DB::table('permissions_rols')->insert([
                 'permission_id' => $permissions,
@@ -36,6 +42,12 @@ class DatabaseSeeder extends Seeder
 
         DB::table('users')->insert([
             'name' => 'admin',
+            'last_name' => 'global',
+            'dni' => '12345',
+            'phone' => '12345',
+            'address' => 'Sin direccion',
+            'photo_user' => 'null',
+            'email'=> 'admin@admin.com',
             'last_name' => 'amin',
             'dni' => 'amin',
             'phone' => 'amin',
@@ -66,7 +78,6 @@ class DatabaseSeeder extends Seeder
             'updated_at' => now(), 
         ]);
 
-
-        $this->call(RolsSeeder::class);
+       /*  $this->call(RolsSeeder::class); */
     }
 }
