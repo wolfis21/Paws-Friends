@@ -20,7 +20,7 @@ class HomeController extends Controller
     }
     
     public function __invoke(){
-       return view('moduloServicios.dashboard');
+       return view('layouts.dashboard');
    }
     /**
      * Show the application dashboard.

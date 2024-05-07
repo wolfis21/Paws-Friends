@@ -45,7 +45,7 @@ class HousingsController extends Controller
         $housing = $request->all();
 
         if ($image = $request->file('img_ref')) {
-            $path = 'moduloServicios/images/housings';
+            $path = 'storage/moduloServicios/images/housings';
             $imageName = date('YmdHis')."_".$image->getClientOriginalExtension();
             $image->move($path, $imageName );
             $housing['img_ref'] = "$imageName";
@@ -83,7 +83,7 @@ class HousingsController extends Controller
         $housing = Housing::findOrFail($id);
         $housingReq = $request->all();
         if ($image = $request->file('img_ref')) {
-            $path = 'moduloServicios/images/housings';
+            $path = 'storage/moduloServicios/images/housings';
             $imageName = date('YmdHis')."_".$image->getClientOriginalExtension();
             $image->move($path, $imageName );
             $housingReq['img_ref'] = "$imageName";

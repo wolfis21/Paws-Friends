@@ -3,16 +3,12 @@
     <div class="modal-dialog">
         <div class="modal-content" style="color: #000">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Informacion del veterinario</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Informacion de la peluqueria</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="mb-3">
-                    <label for="email" class="form-label">Imagen: </label>
-                    <p>{{ $dogGroomer->email }}</p>
-                </div>
-                <div class="mb-3">
-                    <p>{{ $dogGroomer->img_ref }}</p>
+                    <img class="img-HD" src="{{ asset('storage/moduloServicios/images/dogGroomers/'. $dogGroomer->img_ref) }}" alt="imagen.dogGroomer" />
                 </div>
                 <div class="mb-3">
                     <label for="Nombre" class="form-label">Nombre: </label>

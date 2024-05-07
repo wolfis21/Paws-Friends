@@ -41,7 +41,7 @@ class DogGroomerController extends Controller
         
         $dogGroomer = $request->all();
         if ($image = $request->file('img_ref')) {
-            $path = 'moduloServicios/images/dogGroomers';
+            $path = 'storage/moduloServicios/images/dogGroomers';
             $imageName = date('YmdHis')."_".$image->getClientOriginalExtension();
             $image->move($path, $imageName );
             $dogGroomer['img_ref'] = "$imageName";
@@ -77,7 +77,7 @@ class DogGroomerController extends Controller
         $dogGroomer = Dog_groomer::findOrFail($id);
         $dogGroomerReq = $request->all();
         if ($image = $request->file('img_ref')) {
-            $path = 'moduloServicios/images/dogGroomers';
+            $path = 'storage/moduloServicios/images/dogGroomers';
             $imageName = date('YmdHis')."_".$image->getClientOriginalExtension();
             $image->move($path, $imageName );
             $dogGroomerReq['img_ref'] = "$imageName";

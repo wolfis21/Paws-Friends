@@ -8,8 +8,10 @@
             </div>
             <div class="modal-body">
                 <div class="mb-3">
-                    <img class="img-vets" src="images/vets/{{ $veterinarian->img_ref }}" alt="imagen.vet" />
+                    <img class="img-vets" src="{{ asset('storage/moduloServicios/images/vets/'. $veterinarian->img_ref) }}" alt="imagen.vet" />
                 </div>
+                
+                
                 <div class="mb-3">
                     <label for="Nombre" class="form-label">Nombre: </label>
                     <p>{{ $veterinarian->name }}</p>

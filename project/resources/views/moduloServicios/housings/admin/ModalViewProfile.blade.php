@@ -3,13 +3,12 @@
     <div class="modal-dialog">
         <div class="modal-content" style="color: #000">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Informacion del veterinario</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Informacion del Alojamiento</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="mb-3">
-                    <label for="imagen" class="form-label">imagen: </label>
-                    <p>{{ $housing->img_ref }}</p>
+                    <img class="img-HD" src="{{ asset('storage/moduloServicios/images/housings/'. $housing->img_ref) }}" alt="imagen.housing" />
                 </div>
                 <div class="mb-3">
                     <label for="Direccion" class="form-label">Direccion: </label>
@@ -34,7 +33,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <a href="{{route('editHousing',$housing->id)}}" class="btn bg-cyan">Editar</a>
+                <a href="{{ route('editHousing', $housing->id) }}" class="btn bg-cyan">Editar</a>
             </div>
         </div>
     </div>
