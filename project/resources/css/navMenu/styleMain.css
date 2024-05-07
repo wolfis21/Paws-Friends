@@ -108,8 +108,55 @@ ul{
 .azul:hover{
     background-color: #54E9F4;
 }
+
+#usuario {
+    cursor: pointer;
+}
+
+.options{
+    display: none;
+}
+
+.user-options{
+    position: absolute;
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    width: 125px;
+    background-color: #fff;
+}
+
+
+.user-options li:hover > a{
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    background-color: #6e569f;
+    color: #fff;
+}
+
+.logout-link {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 0;
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  .logout-link:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+
+
+
 h1{
-    margin: 5px;
+    margin: 10px;
+    width: 100%;
 }
 
 #logoNav {

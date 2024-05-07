@@ -28,7 +28,7 @@ use Illuminate\Support\Facades\Route;
 */
 //? RUTAS MODULO 0 ===============================================================================================
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
 
 Route::get('/adminPWFS', HomeController::class)->name('login_admin')->middleware('auth');;
@@ -36,9 +36,9 @@ Route::get('/adminPWFS', HomeController::class)->name('login_admin')->middleware
 
 
 /* perfil no desarrollado */
-Route::get('user/profile', [UserController::class, 'show'])->name('user.profile');
-
-
+Route::get('/user/profile/{id}', [UserController::class, 'show'])->name('user.profile');
+Route::get('/user/profile/edit/{id}', [UserController::class, 'edit'])->name('userEdit');
+Route::put('/userUpdate/{id}',[UserController::class, 'updateUser'])->name('updateUser');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
@@ -63,6 +63,7 @@ Route::controller(VeterinarianController::class)->group(function(){
     
     //todo rutas user
     Route::get('/Veterinario','veterinarioUser')->name('Veterinario');
+    Route::get('/VeterinarioShow/{id}','showVeterinarianUser')->name('showVeterinarianUser');
 });
 Route::controller(CommentsController::class)->group(function(){
     Route::get('/adminPWFS/CommentVetsAccepted/{id}','configComment')->name('configComment');

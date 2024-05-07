@@ -11,6 +11,9 @@ export default defineConfig({
                 'resources/css/moduloServicios/user/index.css',
                 'resources/css/moduloServicios/admin/index.css',
 
+                //TOdo profile
+                'resources/css/profile/index.css',
+
                 //todo js
                 'resources/js/app.js',
                 "resources/sass/app.scss",

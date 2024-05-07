@@ -1,8 +1,7 @@
-@extends('moduloServicios.dashboard')
+@extends('layouts.dashboard')
 @section('title', 'Veterinario')
 @section('content')
 
-<<<<<<< HEAD
     <a href="{{ route('create') }}" class="btn btn-primary">Añadir Veterinario</a>
     <h1>Veterinarios admin</h1>
     <table class=" table table-dark">
@@ -33,12 +32,12 @@
                             @csrf
                             <button type="submit" class="btn btn-danger">Eliminar</button>
                         </form>
-=======
+
     <h4 style="margin-top: 15px">Veterinarios admin</h4>
     <a href="{{ route('create') }}" class="btn bg-cyan" style="margin-bottom: 15px;">Añadir Veterinario</a>
     <div class="card bg-dark">
         <div class="card-body">
->>>>>>> origin/module-1
+
 
             <table id="Veterinarios" class="table table-dark table-responsive-md" style="width:100%">
                 <thead>

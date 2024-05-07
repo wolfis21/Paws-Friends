@@ -1,4 +1,4 @@
-@extends('layouts.navMenu')
+@extends('layouts.headerNav')
 @section('title', 'Modulo de servicio')
 @vite(['resources/css/moduloServicios/user/index.css'])
 @section('content')
@@ -52,28 +52,28 @@
                 <div class="carta">
                     <img class="img-dev" src="{{ asset('css/moduloServicios/user/lopez.jpg') }}" alt="">
                     <div class="contenido-texto-card">
-                        <h4>Anibal Lopez</h4>
+                        <h4 class="nombre-Program">Anibal Lopez</h4>
                         <p><b>BACK-END</b></p>
                     </div>
                 </div>
                 <div class="carta">
                     <img class="img-dev" src="{{ asset('css/moduloServicios/user/tussi.png') }}" alt="">
                     <div class="contenido-texto-card">
-                        <h4>Jesus Toussaint</h4>
+                        <h4 class="nombre-Program">Jesus Toussaint</h4>
                         <p><b>BACK-END</b></p>
                     </div>
                 </div>
                 <div class="carta">
                     <img class="img-dev" src="{{ asset('css/moduloServicios/user/romero.jpg') }}" alt="">
                     <div class="contenido-texto-card">
-                        <h4>Daniel Romero</h4>
+                        <h4 class="nombre-Program">Daniel Romero</h4>
                         <p><b>FRONT-END</b></p>
                     </div>
                 </div>
                 <div class="carta">
                     <img class="img-dev" src="{{ asset('css/moduloServicios/user/rebe.jpg') }}" alt="">
                     <div class="contenido-texto-card">
-                        <h4>Yannella Saud</h4>
+                        <h4 class="nombre-Program">Yannella Saud</h4>
                         <p><b>FRONT-END</b></p>
                     </div>
                 </div>
