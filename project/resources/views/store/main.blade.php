@@ -11,7 +11,7 @@
         <section class="welcome">
 
             <div class="img">
-                <img src="{{ asset('/moduloStore/Camaleon.png') }}"
+                <img src="{{ asset('/css/moduloStore/Camaleon.png') }}"
                     alt="">
             </div>
             
@@ -78,15 +78,28 @@
             <h2 class="titulo-des">Desarrolladores</h2>
             <div class="cartas">
                 <div class="carta">
-                    <img class="img-dev" src="{{ asset('/moduloStore/jesus.jpg') }}" alt="">
+                    <img class="img-dev" src="{{ asset('/css/moduloStore/jesus.jpg') }}" alt="">
                     <div class="contenido-texto-card">
                         <h4>José Vargas</h4>
                         <p><b>BACK-END</b></p>
                     </div>
                 </div>
-
+                <div class="carta"> 
+                    <img class="img-dev" src="{{ asset('/css/moduloStore/maria.jpg') }}" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Maria Navarro</h4>
+                        <p><b>BACK-END</b></p>
+                    </div>
+                </div>
                 <div class="carta">
-                    <img class="img-dev" src="{{ asset('/moduloStore/ismael.jpg') }}" alt="">
+                    <img class="img-dev" src="{{ asset('/css/moduloStore/fabiola.jpg') }}" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Fabiola Fernandez</h4>
+                        <p><b>FRONT-END</b></p>
+                    </div>
+                </div>
+                <div class="carta">
+                    <img class="img-dev" src="{{ asset('/css/moduloStore/ismael.jpg') }}" alt="">
                     <div class="contenido-texto-card">
                         <h4>Ismael Prado</h4>
                         <p><b>FRONT-END</b></p>

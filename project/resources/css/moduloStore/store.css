@@ -21,7 +21,7 @@
     font-weight: bold;
     font-family: 'Itim';
     font-size: 60px;
-    padding-left: 40px;
+    padding-left: 20px;
     padding-right: 50px;
     margin: 0;
 }
@@ -41,8 +41,10 @@
 }
 /* Camaleon */
 .img{
-    width: auto;
-    padding-top: 70px;
+    width: 150%;
+    height: 100%;
+    object-fit: cover ;
+    border-radius: 20px;
 }
 
 .main-view {
@@ -142,8 +144,8 @@
 
 /* Descripción de Productos */
 .product-desc{
-    font-weight: bold;
     font-size: 16px;
+    font-weight: 600;
     text-align: justify;
     padding-left: 15px;
     padding-right: 15px;
