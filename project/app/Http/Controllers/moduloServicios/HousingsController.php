@@ -105,8 +105,19 @@ class HousingsController extends Controller
         return redirect()->route('housingAdmin');
     }
     //todo funciones user
-    public function housingUser()
-    {
-        return view('moduloServicios.housings.user.index');
+    public function housingUser(){
+        $housings = Housing::paginate(7);
+        $housingsComments = Housings_has_comments::all();
+        return view('moduloServicios.housings.user.houser')
+        ->with('housings', $housings)
+        ->with('housingsComments', $housingsComments);
+
+        }
+
+        public function showHousingsUser($id_hou){
+            $housings = Housing::find($id_hou);
+            return view('moduloServicios.housings.user.showHousings')
+            ->with('housings', $housings);
+        }
     }
-}
+

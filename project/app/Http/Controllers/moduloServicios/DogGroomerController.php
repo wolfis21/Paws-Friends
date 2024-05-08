@@ -97,8 +97,16 @@ class DogGroomerController extends Controller
         return redirect()->route('dogGroomerAdmin');
     }
     //todo funciones user
-    public function dogGroomerUser()
-    {
-        return view('moduloServicios.dogGroomer.user.index');
+    public function dogGroomerUser(){
+        $dogGroomers = Dog_Groomer::paginate(6);
+        $dogGroomersComments = Dog_Groomer_has_comments::all();
+        return view('moduloServicios.dogGroomer.user.doguser')
+        ->with('dogGroomers', $dogGroomers)
+        ->with('dogGroomersComments',$dogGroomersComments);
+    }
+    public function showdogGroomerUser($id_dog){
+        $dogGroomers = Dog_Groomer::find($id_dog);
+        return view('moduloServicios.dogGroomer.user.showdogGroomer')
+        ->with('dogGroomer', $dogGroomers);
     }
 }
