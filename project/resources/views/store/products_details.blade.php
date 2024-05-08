@@ -1,7 +1,7 @@
-@extends('layouts.app')
-
+@extends('layouts.headerNav')
+@vite(['resources/css/moduloStore/products-details.css'])
 @section('content')
 <div class="container">
-un producto {{$product_id}}
+un producto
 </div>
 @endsection
