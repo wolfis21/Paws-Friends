@@ -8,7 +8,7 @@
             <div class="modal-body">
                 <p>Deseas eliminar a {{ $housing->address }}</p>
             </div>
-            <form action="{{ route('destroy', $housing->id) }}" method="POST">
+            <form action="{{ route('destroyHousing', $housing->id) }}" method="POST">
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 @method('DELETE')

@@ -61,16 +61,7 @@ class VeterinarianController extends Controller
             $image->move($path, $imageName );
             $veterinarian['img_ref'] = "$imageName";
         }
-        
-        Veterinarian::create([
-            'name' => $request['name'],
-            'address' => $request['address'],
-            'phone' => $request['phone'],
-            'email' => $request['email'],
-            'link_ref' => $request['link_ref'],
-            /* 'img_ref' => $imgPhotoPath, */
-            'specialist_animals' => $request['specialist_animals'],
-        ]);
+        Veterinarian::create($veterinarian);
         return redirect()->route('index');
 
     }
@@ -129,7 +120,7 @@ class VeterinarianController extends Controller
     public function destroy($id_vet)
     {
         $veterinarian = Veterinarian::find($id_vet);
-        $path = public_path().'/moduloServicios/images/vets/'.$veterinarian->img_ref;
+        $path = public_path().'storage/moduloServicios/images/vets/'.$veterinarian->img_ref;
         unlink($path);
         $veterinarian->delete();
         return redirect()->route('index');
