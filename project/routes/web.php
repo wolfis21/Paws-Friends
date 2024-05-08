@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeServicesController;
-use App\Http\Controllers\welcomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\moduloServicios\DogGroomerController;
@@ -107,20 +106,6 @@ Route::controller(DogGroomerController::class)->group(function(){
 
 //? RUTAS MODULO 2===============================================================================================
 
-Route::get('/servicios', function () {
-    return view('servicios');
-});
-Route::get('/registrodemanda', function () {
-    return view('registrodemanda');
-});
-Route::get('/fundation', function () {
-    return view('fundation');
-});
-Route::get('/adminrescate', function () {
-    return view('adminrescate');
-});
-
-
 Route::get('/servicios', [App\Http\Controllers\ServiciosController::class, 'index'])->name('servicios');
 Route::get('/registrodemanda', [App\Http\Controllers\RegistroDemandaController::class, 'index'])->name('registrodemanda');
 
@@ -136,7 +121,6 @@ Route::get('/adminrescate', [App\Http\Controllers\AdminRescateController::class,
 
 //? RUTAS MODULO 3 ===============================================================================================
 
-Route::get('/welcome', welcomeController::class);
 Route::resource('/Donaciones', DonacionesController::class);
 Route::resource('/Adopciones', AdopcionesController::class);
 Route::resource('/FormularioAdopciones', FormularioAdopcionesController::class);

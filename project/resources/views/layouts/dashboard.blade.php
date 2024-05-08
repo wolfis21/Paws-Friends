@@ -27,7 +27,7 @@
                                             <h2 class="text-right"><i
                                                     class="fas fa-fw fa-dog f-left"></i><span>{{ $cant_Vets }}</span>
                                             </h2>
-                                            <p class="m-b-0 text-right"><a href="/admin/Veterinarians"
+                                            <p class="m-b-0 text-right"><a href="/adminPWFS/Veterinarians"
                                                     class="text-white">Ver más</a></p>
                                         </div>
                                     </div>
@@ -43,7 +43,7 @@
                                             <h2 class="text-right"><i
                                                     class="fas fa-fw fa-home f-left"></i><span>{{ $cant_Housing }}</span>
                                             </h2>
-                                            <p class="m-b-0 text-right"><a href="/admin/housingsAdmin"
+                                            <p class="m-b-0 text-right"><a href="/adminPWFS/housingsAdmin"
                                                     class="text-white">Ver más</a></p>
                                         </div>
                                     </div>
@@ -59,7 +59,7 @@
                                             <h2 class="text-right"><i
                                                     class="fas fa-fw fa-paw f-left"></i><span>{{ $cant_Peluqueria }}</span>
                                             </h2>
-                                            <p class="m-b-0 text-right"><a href="/admin/DogGroomersAdmin"
+                                            <p class="m-b-0 text-right"><a href="/adminPWFS/DogGroomersAdmin"
                                                     class="text-white">Ver más</a></p>
                                         </div>
                                     </div>
