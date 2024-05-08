@@ -319,6 +319,11 @@ return [
             'url' => '/adminPWFS',
             'icon' =>'fas fa-fw fa-home',
         ],
+        [
+            'text' =>'Pagina Principal',
+            'url' => '/',
+            'icon' =>'fas fa-fw fa-home',
+        ],
 
         ['header' => 'SERVICIOS'],
         [

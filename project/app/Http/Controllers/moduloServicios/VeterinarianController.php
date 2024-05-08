@@ -61,6 +61,7 @@ class VeterinarianController extends Controller
             $image->move($path, $imageName );
             $veterinarian['img_ref'] = "$imageName";
         }
+        
         Veterinarian::create($veterinarian);
         return redirect()->route('index');
 
