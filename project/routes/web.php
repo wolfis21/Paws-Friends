@@ -151,4 +151,11 @@ Auth::routes();
 
 //? FIN RUTAS MODULO 3
 
+// RUTAS MODULO 4
+
+Route::get('/store', [App\Http\Controllers\StoreController::class, 'main'])->name('store.main');
+Route::get('/store/products', [App\Http\Controllers\StoreController::class, 'products'])->name('store.products');
+Route::get('/store/products/{product_id}', [App\Http\Controllers\StoreController::class, 'products_details'])->name('store.products.details');
+Route::get('/store/recommendations', [App\Http\Controllers\StoreController::class, 'recommendations'])->name('store.recomendations');
+
 /* Auth::routes(); */
