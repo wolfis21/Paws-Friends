@@ -41,21 +41,3 @@
     left: 50%;
 }
 
-.star{ 
-    width: 100%;
-    height: 100vh;
-    background: #1fcbe2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    color: #1fcbe2;
-    transition: color 0.3s;
-    cursor: pointer;
-}
-
-.star:hover,
-.star.checked {
-color: gold;
-
-}
