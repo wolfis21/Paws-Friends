@@ -1,4 +1,4 @@
-const stars = document.querySelectorAll(".star");
+const stars = document.querySelectorAll(".star"); 
 
 // Evento clic para cada estrella
 stars.forEach(function (star, index) {
@@ -25,10 +25,11 @@ function updateStarRating(rating) {
   for (let i = 0; i < rating; i++) {
     stars[i].classList.add("checked");
   }
-}
+   
+  // Mostrar la calificación en el elemento de la interfaz de usuario
+  document.getElementById("rating").innerHTML = rating;
 
-// Obtener la calificación almacenada en local storage
-const storedRating = localStorage.getItem("rating");
+}
 
 // Si hay una calificación almacenada, actualizar la interfaz de usuario
 if (storedRating) {
