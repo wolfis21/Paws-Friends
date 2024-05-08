@@ -121,7 +121,7 @@ class VeterinarianController extends Controller
     public function destroy($id_vet)
     {
         $veterinarian = Veterinarian::find($id_vet);
-        $path = public_path().'/moduloServicios/images/vets/'.$veterinarian->img_ref;
+        $path = public_path().'/storage/moduloServicios/images/vets/'.$veterinarian->img_ref;
         unlink($path);
         $veterinarian->delete();
         return redirect()->route('index');

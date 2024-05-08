@@ -99,7 +99,7 @@ class HousingsController extends Controller
      */
     public function destroyHousing(string $id){
         $housing = Housing::find($id);
-        $path = public_path().'/moduloServicios/images/housings/'.$housing->img_ref;
+        $path = public_path().'/storage/moduloServicios/images/housings/'.$housing->img_ref;
         unlink($path);
         $housing->delete();
         return redirect()->route('housingAdmin');
