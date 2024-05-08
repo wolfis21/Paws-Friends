@@ -9,7 +9,7 @@
     <div id="ShowcaseServicios" class="services-box">
 
         <div class="contenedorModulos">
-            <a href="#">
+            <a href="{{route('serviceModel')}}">
                 <img class="iconosModulos" id="cuidado" src="{{ URL::asset('imagenes/FRAMES/FRAME B/1.png') }}"
                     alt="Cuidados">
             </a>
