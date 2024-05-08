@@ -4,7 +4,7 @@
 .containerMainNav{
     background-image: url(Imagen-login.png);
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
   }
 h2{
   font-size: 50px !important;
