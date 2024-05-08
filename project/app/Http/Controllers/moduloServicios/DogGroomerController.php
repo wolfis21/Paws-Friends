@@ -91,7 +91,7 @@ class DogGroomerController extends Controller
      */
     public function destroyDogGroomer(string $id){
         $dogGroomer = Dog_Groomer::find($id);
-        $path = public_path().'/moduloServicios/images/dogGroomers/'.$dogGroomer->img_ref;
+        $path = public_path().'/storage/moduloServicios/images/dogGroomers/'.$dogGroomer->img_ref;
         unlink($path);
         $dogGroomer->delete();
         return redirect()->route('dogGroomerAdmin');
