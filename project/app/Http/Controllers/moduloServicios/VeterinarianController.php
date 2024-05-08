@@ -62,15 +62,7 @@ class VeterinarianController extends Controller
             $veterinarian['img_ref'] = "$imageName";
         }
         
-        Veterinarian::create([
-            'name' => $request['name'],
-            'address' => $request['address'],
-            'phone' => $request['phone'],
-            'email' => $request['email'],
-            'link_ref' => $request['link_ref'],
-            /* 'img_ref' => $imgPhotoPath, */
-            'specialist_animals' => $request['specialist_animals'],
-        ]);
+        Veterinarian::create($veterinarian);
         return redirect()->route('index');
 
     }
