@@ -1,6 +1,6 @@
 @extends('layouts.headerNav')
 @section('title', 'Veterinarios')
-@vite(['resources/css/moduloServicios/user/showServices.css'])
+@vite(['resources/css/moduloServicios/user/indexServices.css'])
 @section('content')
     <div class="container-title">
         <h1 class="title">Veterinarios</h1>
