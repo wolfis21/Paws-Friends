@@ -14,8 +14,10 @@ export default defineConfig({
                 //TOdo profile
                 'resources/css/profile/index.css',
 
+                //todo servies
+                'moduloServicios/stars/star.css',
                 //todo js
-                'resources/js/app.js',
+                '/project/public/js/moduloServicios/star.js',
                 "resources/js/app.js",
 
                 'resources/js/app.js',
