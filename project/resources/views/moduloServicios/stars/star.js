@@ -3,14 +3,18 @@ const stars = document.querySelectorAll(".star");
 // Evento clic para cada estrella
 stars.forEach(function (star, index) {
   star.addEventListener("click", function () {
-    // obtener la calificación actual
     const rating = index + 1;
+    const currentRating = parseInt(localStorage.getItem("rating"));
 
-    // Almacenar la calificación en local storage
-    localStorage.setItem("rating", rating);
-
-    // Actualizar la interfaz de usuario
-    updateStarRating(rating);
+    if (rating === currentRating) {
+      // If the clicked star is the highest rated star, reset the rating to 0
+      localStorage.setItem("rating", 0);
+      updateStarRating(0);
+    } else {
+      // Otherwise, update the rating as usual
+      localStorage.setItem("rating", rating);
+      updateStarRating(rating);
+    }
   });
 });
 
