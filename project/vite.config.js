@@ -10,7 +10,7 @@ export default defineConfig({
                 //todo css de mainView
                 'resources/css/moduloServicios/user/index.css',
                 'resources/css/moduloServicios/admin/index.css',
-
+'                resources/css/moduloServicios/user/indexServic.css',
                 //TOdo profile
                 'resources/css/profile/index.css',
 
