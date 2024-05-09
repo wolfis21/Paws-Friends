@@ -1,0 +1,65 @@
+.title-page {
+    position: 70px;
+    bottom: 70px;
+    font-weight: bold;
+    font-family: 'Itim';
+    font-size: 40px;
+    padding-left: 0px;
+    padding-right: 100px;
+    margin: 20;
+}
+.welcome {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    
+}
+.text-welcome{
+    padding-left: 20px;
+    padding-right: 300px;
+    position: relative;
+    font-size: 25px;
+    font-weight: 200;
+    text-align: justify;
+    font-family: 'League Spartan';
+}
+.caracteristics{
+    padding-left: 20px;
+}
+/* Producto1 */
+.img{
+    position: absolute;
+    z-index: 2;
+}
+/* Cosomorado */
+.img2{
+    position: relative;
+    margin-top: 350px;
+    z-index: 1;
+}    
+
+.contenedor {
+    display: flex;
+    padding-left: 20px;
+  }
+  
+  .rectangulo {
+    width: 150px; 
+    height: 50px; 
+    margin-right: 10px; 
+    background-color: whitesmoke;
+    color: black;
+    text-align: center; 
+    line-height: 50px; 
+    font-size: 18px; 
+    font-weight: 500;
+    border-style:groove;
+    border-color: #6D569E;
+    border-radius: 10%;
+  }
+  

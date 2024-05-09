@@ -11,10 +11,9 @@
         <section class="welcome">
 
             <div class="img">
-                <img src="{{ asset('/css/moduloStore/Camaleon.png') }}"
-                    alt="">
+                <img src="{{ asset('/css/moduloStore/Camaleon.png') }}"   alt="">
             </div>
-            
+
             <div class="main-view">
 
                 <h1 class="title-page">Bienvenido al Módulo de Catálogo</h1>
@@ -30,7 +29,7 @@
             <h2 class="title-prod">Productos Destacados</h2>
             
             <div class="cards">
-                <a href="/store/products/{product_id} style="color: black;">
+                <a href="/store/products/1 style="color: black;">
                 <div class="card-img2">
                         <img src="https://static.miscota.com/media/1/photos/products/430600/Grature-adult-chicken-cat-6368e5845ef91_g.jpg"
                             alt="">
@@ -39,7 +38,7 @@
                 </div>
                 </a>
 
-                <a href="/store/products/{product_id}">
+                <a href="/store/products/2">
                 <div class="card-img2">
                     
                         <img
@@ -49,7 +48,7 @@
                 </div>
                 </a>
 
-                <a href="/store/products/{product_id}">
+                <a href="/store/products/3">
                 <div class="card-img2">
                         <img src="https://static.miscota.com/media/1/photos/products/126684/w2aayeehnkfsopiaz4pp-6368c7830ffd2_g.jpg">
                         <p class= 'product-desc'> Champú de Arbol de Té para Mascotas </p>
@@ -109,7 +108,7 @@
                 <div class="carta">
                     <img class="img-dev" src="{{ asset('/css/moduloStore/jesus.jpg') }}" alt="">
                     <div class="contenido-texto-card">
-                        <h4>José Vargas</h4>
+                        <h4>Jesus Padrón</h4>
                         <j><b>BACK-END</b></j>
                     </div>
                 </div>
@@ -123,7 +122,7 @@
                 <div class="carta">
                     <img class="img-dev" src="{{ asset('/css/moduloStore/fabiola.jpg') }}" alt="">
                     <div class="contenido-texto-card">
-                        <h4>Fabiola Fernandez</h4>
+                        <h4>Fabiola Fernández</h4>
                         <j><b>FRONT-END</b></j>
                     </div>
                 </div>

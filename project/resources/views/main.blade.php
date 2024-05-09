@@ -30,7 +30,7 @@
         </div>
 
         <div class="contenedorModulos">
-            <a href="#">
+            <a href="/store">
                 <img class="iconosModulos" id="tienda" src="{{ URL::asset('imagenes/FRAMES/FRAME B/4.png') }}"
                     alt="Catalogo">
             </a>
