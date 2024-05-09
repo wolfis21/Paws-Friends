@@ -20,6 +20,9 @@
             <div class="start">
                 @include('layouts/stars/stars')
             </div>
+            <div class="container-comments">
+                @include('moduloServicios/comments')
+            </div>
         </div>
     </div>
 @endsection

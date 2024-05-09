@@ -1,15 +1,19 @@
 <?php
 
 namespace App\Http\Controllers\moduloServicios;
- 
+
 use App\Models\moduloServicios\Veterinarian;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\moduloServicios;
 use App\Models\moduloServicios\Puntuations;
 use App\Models\moduloServicios\Veterinarians_has_comments;
+use App\Models\moduloServicios\Veterinarians_has_puntuation;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use PhpParser\Node\Stmt\Else_;
+
+use function Laravel\Prompts\search;
 
 class VeterinarianController extends Controller
 {
@@ -18,14 +22,14 @@ class VeterinarianController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {   
+    {
         $veterinarians = Veterinarian::all();
         $veterinariansComments = Veterinarians_has_comments::all();
 
 
-        return view('moduloServicios.veterinarian.admin.index')    
-        ->with('veterinarians', $veterinarians)
-        ->with('veterinariansComments', $veterinariansComments);
+        return view('moduloServicios.veterinarian.admin.index')
+            ->with('veterinarians', $veterinarians)
+            ->with('veterinariansComments', $veterinariansComments);
     }
 
     // public function vetuser()
@@ -62,14 +66,13 @@ class VeterinarianController extends Controller
 
         if ($image = $request->file('img_ref')) {
             $path = 'storage/moduloServicios/images/vets';
-            $imageName = date('YmdHis')."_".$image->getClientOriginalExtension();
-            $image->move($path, $imageName );
+            $imageName = date('YmdHis') . "_" . $image->getClientOriginalExtension();
+            $image->move($path, $imageName);
             $veterinarian['img_ref'] = "$imageName";
         }
-        
+
         Veterinarian::create($veterinarian);
         return redirect()->route('index');
-
     }
 
     /**
@@ -87,7 +90,7 @@ class VeterinarianController extends Controller
     public function edit($id_vet)
     {
         $veterinarian = Veterinarian::find($id_vet);
-        return view('moduloServicios.veterinarian.admin.edit')->with('veterinarian',$veterinarian);
+        return view('moduloServicios.veterinarian.admin.edit')->with('veterinarian', $veterinarian);
     }
 
     /**
@@ -111,10 +114,10 @@ class VeterinarianController extends Controller
 
         if ($image = $request->file('img_ref')) {
             $path = 'storage/moduloServicios/images/vets';
-            $imageName = date('YmdHis')."_".$image->getClientOriginalExtension();
-            $image->move($path, $imageName );
+            $imageName = date('YmdHis') . "_" . $image->getClientOriginalExtension();
+            $image->move($path, $imageName);
             $vet['img_ref'] = "$imageName";
-        }else{
+        } else {
             unset($vet['img_ref']);
         }
 
@@ -128,45 +131,73 @@ class VeterinarianController extends Controller
     public function destroy($id_vet)
     {
         $veterinarian = Veterinarian::find($id_vet);
-        $path = public_path().'/storage/moduloServicios/images/vets/'.$veterinarian->img_ref;
+        $path = public_path() . '/storage/moduloServicios/images/vets/' . $veterinarian->img_ref;
         unlink($path);
         $veterinarian->delete();
         return redirect()->route('index');
-
     }
 
     //todo User
-    public function veterinarioUser(){
+    public function veterinarioUser()
+    {
         $veterinarians = Veterinarian::all();
         $veterinariansComments = Veterinarians_has_comments::all();
         return view('moduloServicios.veterinarian.user.vetsuser')
-        ->with('veterinarians', $veterinarians)
-        ->with('veterinariansComments', $veterinariansComments);
+            ->with('veterinarians', $veterinarians)
+            ->with('veterinariansComments', $veterinariansComments);
     }
-    public function showVeterinarianUser($id_vet){
+    public function showVeterinarianUser($id_vet)
+    {
         $veterinarian = Veterinarian::find($id_vet);
         return view('moduloServicios.veterinarian.user.showVeterinarian')
-        ->with('veterinarian', $veterinarian);
+            ->with('veterinarian', $veterinarian);
     }
 
-    public function updateVeterinarianPuntuations(Request $request, string $id){
+    public function updateVeterinarianPuntuations(Request $request, string $id)
+    {
         $veterinarian = Veterinarian::findOrFail($id);
-        $user = User::findOrFail($id);
         $vet = $request->all();
-
+        $puntuaciones = Puntuations::all();
+        $found = false;
+        foreach ($puntuaciones as $puntuacion) {
+            $searchPuntuationVeterinarians = Veterinarians_has_puntuation::where('puntuations_id', $puntuacion->id)
+                ->where('veterinarians_id', $veterinarian->id)
+                ->first();
+            if ($searchPuntuationVeterinarians) {
+                $found = true; // Si se encuentra una coincidencia, establecer $found en true
+                break; // Salir del bucle ya que solo necesitamos verificar la primera coincidencia
+            }
+        }
+        $searchUser = Puntuations::where('users_id', Auth::user()->id);
+        // $UserCounter = Veterinarian::withCount('puntuations')->find($id);
         //todo primero se debe crear la puntuacion
-        $puntuation = Puntuations::create([
-            'puntuation' => $vet['puntuation'],
-            'users_id' => Auth::user()->id,
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ]);
 
-        $veterinarian->all_puntuations += $vet['puntuation'];
-        $veterinarian->puntuation = $vet['puntuation'] / 1;
+        // TODO VER SI EL USUARIO YA LE A DADO UNA PUNTUACION ANTERIORMENTE
+        if ($found) {
+            $veterinarian->all_puntuations += $vet['puntuation'];
+            $veterinarian->puntuation = $vet['puntuation'];
+            $veterinarian->save();
+        } else {
+            $veterinarian->puntuation = $vet['puntuation'];
+            $puntuation = Puntuations::create([
+                'puntuation' => $vet['puntuation'],
+                'users_id' => Auth::user()->id,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+
+            $puntuacionVeterinario = Veterinarians_has_puntuation::create([
+                'puntuations_id' => $puntuation->id,
+                'veterinarians_id' => $veterinarian->id,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+        }
         $veterinarian->update($vet);
         return redirect()->route('Veterinario');
-
+    }
+    public function prubea()
+    {
         //Pruebas
         // $veterinarian = Veterinarian::findOrFail($id);
         // $puntuacion = Puntuations::findOrFail($id);
