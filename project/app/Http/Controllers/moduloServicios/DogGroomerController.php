@@ -36,7 +36,7 @@ class DogGroomerController extends Controller
             'address' => 'string',
             'phone' => 'required|unique:veterinarians|alpha_num|min_digits:11',
             'link_ref' => 'nullable',
-            'img_ref' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'img_ref' => 'require|image|mimes:jpeg,png,jpg|max:2048',
             'all_puntuation' => 'nullable',
             'puntuation' => 'nullable',
         ]);
@@ -74,7 +74,7 @@ class DogGroomerController extends Controller
             'address' => 'string',
             'phone' => 'required|unique:veterinarians|alpha_num|min_digits:11',
             'link_ref' => 'nullable',
-            'img_ref' => 'nullable|string',
+            'img_ref' => 'require|string',
             'all_puntuation' => 'nullable',
             'puntuation' => 'nullable',
         ]);

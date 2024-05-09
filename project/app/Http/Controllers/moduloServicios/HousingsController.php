@@ -39,7 +39,7 @@ class HousingsController extends Controller
             'type_animals' => 'required',
             'food_offer' => 'required',
             'link_ref' => 'nullable',
-            'img_ref' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'img_ref' => 'require|image|mimes:jpeg,png,jpg|max:2048',
             'all_puntuation' => 'nullable',
             'puntuation' => 'nullable',
         ]);
@@ -80,7 +80,7 @@ class HousingsController extends Controller
             'type_animals' => 'required',
             'food_offer' => 'required',
             'link_ref' => 'nullable',
-            'img_ref' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'img_ref' => 'require|image|mimes:jpeg,png,jpg|max:2048',
             'all_puntuation' => 'nullable',
             'puntuation' => 'nullable',
         ]);
