@@ -22,7 +22,9 @@
             @endforeach
         </div>
         <div class="container-aside">
-            <H2>BUSCADOR</H2>
+            <div class="buscador">
+                <H2>BUSCADOR</H2>
+            </div>
         </div>
     </div>
 @endsection

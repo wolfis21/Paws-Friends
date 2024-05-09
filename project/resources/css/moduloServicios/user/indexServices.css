@@ -13,6 +13,11 @@
     background-attachment: fixed;
 }
 
+.container-title{
+    text-align: center;
+    margin: 10px;
+}
+
 .container-service{
     display: flex;
 }
@@ -29,7 +34,6 @@
     align-content: center;
     justify-content: space-evenly;
     align-items: center;
-    padding: 20px;
 }
 
 .cards{
@@ -81,4 +85,18 @@ img {
 .info-container{
     color: #000;
     /* color: #5BBBDD; */
+}
+
+.container-aside{
+    position: fixed;
+    left: 84%;
+    background-color: aliceblue;
+    height: 500px;
+    margin-top: 30px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    padding: 20px;
 }
