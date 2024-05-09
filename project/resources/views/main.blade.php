@@ -1,4 +1,5 @@
 @extends('layouts.headerNav')
+@vite('resources/css/login/loginUser.css')
 @section('content')
     <div id="ShowcaseMain">
         <div>
@@ -9,7 +10,7 @@
     <div id="ShowcaseServicios" class="services-box">
 
         <div class="contenedorModulos">
-            <a href="{{route('serviceModel')}}">
+            <a href="{{ route('serviceModel') }}">
                 <img class="iconosModulos" id="cuidado" src="{{ URL::asset('imagenes/FRAMES/FRAME B/1.png') }}"
                     alt="Cuidados">
             </a>
@@ -23,7 +24,7 @@
         </div>
 
         <div class="contenedorModulos">
-            <a href="{{route('servicios')}}">
+            <a href="{{ route('servicios') }}">
                 <img class="iconosModulos" id="rescates" src="{{ URL::asset('imagenes/FRAMES/FRAME B/3.png') }}"
                     alt="Rescates">
             </a>
@@ -50,11 +51,12 @@
 
         <div id="txt-vet">
             <p>
-                Nuestro equipo de profesionales altamente capacitados y amantes de los animales se dedica a proporcionar atencion medica 
+                Nuestro equipo de profesionales altamente capacitados y amantes de los animales se dedica a proporcionar
+                atencion medica
                 veterinaria de calidad y alojamiento seguro.
             </p>
         </div>
-       
+
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-bs-slide-to="0"></li>
@@ -90,10 +92,6 @@
                 </a>
             </div>
         </div>
-        
+
     </div>
-
-    
-
-  
 @endsection

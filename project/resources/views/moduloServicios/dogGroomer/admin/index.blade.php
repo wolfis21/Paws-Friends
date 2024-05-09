@@ -18,7 +18,6 @@
                             <td>{{$dogGroomer->name}}</td>
                             <td>{{$dogGroomer->address}}</td>
                             <td>{{$dogGroomer->phone}}</td>
-                            {{-- <td><img src="images/dogGroomers/{{($dogGroomer->img_ref)}}" alt="a"></td> --}}
                             <td>
                                 <button type="button" class="btn bg-cyan" data-bs-toggle="modal" data-bs-target="#viewProfile{{$dogGroomer->id}}">Ver perfil</button>
                                 <button type="button" class="btn bg-red" data-bs-toggle="modal" data-bs-target="#deleteProfile{{$dogGroomer->id}}">Eliminar</button>
