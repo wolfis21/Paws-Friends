@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('type_animals');
             $table->longText('food_offer');
             $table->string('img_ref')->nullable();
+            $table->string('Allpuntuations')->nullable();
+            $table->string('puntuations')->nullable();
             $table->timestamps();
         });
     }

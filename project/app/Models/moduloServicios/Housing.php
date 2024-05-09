@@ -15,7 +15,9 @@ class Housing extends Model
         'description_location' ,
         'type_animals' ,
         'food_offer' ,
-        'img_ref' 
+        'img_ref',
+        'all_puntuation',
+        'puntuation'
     ];
 
     use HasFactory;

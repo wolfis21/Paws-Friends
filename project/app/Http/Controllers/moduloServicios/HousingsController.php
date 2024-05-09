@@ -40,6 +40,8 @@ class HousingsController extends Controller
             'food_offer' => 'required',
             'link_ref' => 'nullable',
             'img_ref' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'all_puntuation' => 'nullable',
+            'puntuation' => 'nullable',
         ]);
         
         $housing = $request->all();
@@ -79,6 +81,8 @@ class HousingsController extends Controller
             'food_offer' => 'required',
             'link_ref' => 'nullable',
             'img_ref' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'all_puntuation' => 'nullable',
+            'puntuation' => 'nullable',
         ]);
         $housing = Housing::findOrFail($id);
         $housingReq = $request->all();

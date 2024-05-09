@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('link_ref')->nullable();
             $table->string('img_ref')->nullable();
             $table->string('specialist_animals');
+            $table->string('Allpuntuations')->nullable();
+            $table->string('puntuations')->nullable();
             $table->timestamps();
         });
     }

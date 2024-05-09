@@ -19,3 +19,8 @@
 .star.checked {
     color: gold;
 }
+
+.btnE{
+    border: none;
+    background-color: transparent;
+}

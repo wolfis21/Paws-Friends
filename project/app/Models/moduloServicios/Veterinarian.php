@@ -17,7 +17,9 @@ class Veterinarian extends Model
         'email',
         'link_ref',
         'img_ref',
-        'specialist_animals'
+        'specialist_animals',
+        'all_puntuation',
+        'puntuation'
     ];
 
 
