@@ -5,9 +5,11 @@ namespace App\Http\Controllers\moduloServicios;
 use App\Models\moduloServicios\Veterinarian;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\moduloServicios;
+use App\Models\moduloServicios\Puntuations;
 use App\Models\moduloServicios\Veterinarians_has_comments;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class VeterinarianController extends Controller
 {
@@ -153,7 +155,13 @@ class VeterinarianController extends Controller
         $vet = $request->all();
 
         //todo primero se debe crear la puntuacion
-        
+        $puntuation = Puntuations::create([
+            'puntuation' => $vet['puntuation'],
+            'users_id' => Auth::user()->id,
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+
         $veterinarian->all_puntuations += $vet['puntuation'];
         $veterinarian->puntuation = $vet['puntuation'] / 1;
         $veterinarian->update($vet);
