@@ -22,7 +22,7 @@
             @endforeach
         </div>
         <div class="container-aside">
-            sdk;fndlknaklsncnk
+            <H2>BUSCADOR</H2>
         </div>
     </div>
 @endsection

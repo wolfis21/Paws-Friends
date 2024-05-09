@@ -16,10 +16,8 @@ export default defineConfig({
 
                 //todo js
                 'resources/js/app.js',
-                "resources/sass/app.scss",
                 "resources/js/app.js",
 
-                'resources/sass/app.scss',
                 'resources/js/app.js',
             ],
             refresh: true,
