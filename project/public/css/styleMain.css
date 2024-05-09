@@ -15,8 +15,7 @@ a {
 }
 
 nav{
-    
-    background-color: azure;
+    background-color: #f0fcff;
     padding: auto;
 }
 
@@ -70,6 +69,17 @@ ul{
     background-color: #fff;
     z-index: 100;
 }
+.container-nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80px;
+}
+
+#title{
+    margin: 0px;
+    padding: 0px;
+}
 .link-modulos{
     padding: 0px;
     color: #000;
@@ -117,8 +127,8 @@ h1{
 } 
 
 #logoNav {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     margin: 0px;
 }
 
@@ -310,3 +320,47 @@ a.btn-main:hover{
     font-family: "League Spartan", sans-serif;
     font-style: normal;
 }
+
+#usuario {
+    cursor: pointer;
+}
+
+.options{
+    display: none;
+}
+
+.user-options{
+    position: absolute;
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    width: 125px;
+    background-color: #fff;
+}
+
+
+.user-options li:hover > a{
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    background-color: #6e569f;
+    color: #fff;
+}
+
+.logout-link {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 0;
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  .logout-link:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+
