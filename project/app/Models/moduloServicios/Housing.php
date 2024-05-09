@@ -16,7 +16,7 @@ class Housing extends Model
         'type_animals' ,
         'food_offer' ,
         'img_ref',
-        'all_puntuation',
+        'all_puntuations',
         'puntuation'
     ];
 

@@ -6,6 +6,7 @@ use App\Models\moduloServicios\Veterinarian;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\moduloServicios;
 use App\Models\moduloServicios\Veterinarians_has_comments;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class VeterinarianController extends Controller
@@ -144,5 +145,44 @@ class VeterinarianController extends Controller
         $veterinarian = Veterinarian::find($id_vet);
         return view('moduloServicios.veterinarian.user.showVeterinarian')
         ->with('veterinarian', $veterinarian);
+    }
+
+    public function updateVeterinarianPuntuations(Request $request, string $id){
+        $veterinarian = Veterinarian::findOrFail($id);
+        $user = User::findOrFail($id);
+        $vet = $request->all();
+
+        //todo primero se debe crear la puntuacion
+        
+        $veterinarian->all_puntuations += $vet['puntuation'];
+        $veterinarian->puntuation = $vet['puntuation'] / 1;
+        $veterinarian->update($vet);
+        return redirect()->route('Veterinario');
+
+        //Pruebas
+        // $veterinarian = Veterinarian::findOrFail($id);
+        // $puntuacion = Puntuations::findOrFail($id);
+        // //todo ver si el usuario tiene una puntuacion hacia el veterinario y ver si el veterinario tiene puntuacion de ese usuario
+        // $searchVeterinarian = Veterinarians_has_puntuation::where('veterinarians_id', $veterinarian->id)
+        // ->where('puntuations_id',  $puntuacion);
+
+        // //todo ver si el usuario tiene puntuaciones
+        // $searchUser = Puntuations::where('user_id', Auth::user()->id);
+        // $vet = $request->all();
+        // if ($searchVeterinarian) {
+        //     $veterinarian->all_puntuations += $vet['puntuation'];
+        //     $veterinarian->puntuation = $vet['puntuation'] / 1;
+        // } else {
+        //     $puntuation = Veterinarians_has_puntuation::create([
+        //         'user_id' => Auth::user()->id,
+        //         'veterinarians_id' => $veterinarian->id,
+        //         'created_at' => date('Y-m-d H:i:s'),
+        //         'updated_at' => date('Y-m-d H:i:s'),
+        //     ]);
+        //     $veterinarian->all_puntuations += $vet['puntuation'];
+        //     $veterinarian->puntuation = $vet['puntuation'] / 1;
+        // }
+        // $veterinarian->update($vet);
+        // return redirect()->route('Veterinario');
     }
 }

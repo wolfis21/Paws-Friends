@@ -63,6 +63,7 @@ Route::controller(VeterinarianController::class)->group(function(){
     //todo rutas user
     Route::get('/Veterinario','veterinarioUser')->name('Veterinario');
     Route::get('/VeterinarioShow/{id}','showVeterinarianUser')->name('showVeterinarianUser');
+    Route::put('/VeterinarioUpdatePuntuations/{id}','updateVeterinarianPuntuations')->name('updateVeterinarianPuntuations');
 });
 Route::controller(CommentsController::class)->group(function(){
     Route::get('/adminPWFS/CommentVetsAccepted/{id}','configComment')->name('configComment');

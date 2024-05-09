@@ -14,7 +14,7 @@ class Dog_groomer extends Model
         'phone' ,
         'link_ref' ,
         'img_ref' ,
-        'all_puntuation',
+        'all_puntuations',
         'puntuation'
     ];
     use HasFactory;
