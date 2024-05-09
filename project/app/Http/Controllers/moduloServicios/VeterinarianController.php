@@ -173,26 +173,24 @@ class VeterinarianController extends Controller
         //todo primero se debe crear la puntuacion
 
         // TODO VER SI EL USUARIO YA LE A DADO UNA PUNTUACION ANTERIORMENTE
-        if ($found) {
-            $veterinarian->all_puntuations += $vet['puntuation'];
-            $veterinarian->puntuation = $vet['puntuation'];
-            $veterinarian->save();
-        } else {
-            $veterinarian->puntuation = $vet['puntuation'];
-            $puntuation = Puntuations::create([
-                'puntuation' => $vet['puntuation'],
-                'users_id' => Auth::user()->id,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
-            ]);
 
-            $puntuacionVeterinario = Veterinarians_has_puntuation::create([
-                'puntuations_id' => $puntuation->id,
-                'veterinarians_id' => $veterinarian->id,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
-            ]);
-        }
+        $veterinarian->puntuation = $vet['puntuation'];
+        $puntuation = Puntuations::create([
+            'puntuation' => $vet['puntuation'],
+            'users_id' => Auth::user()->id,
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        $puntuacionVeterinario = Veterinarians_has_puntuation::create([
+            'puntuations_id' => $puntuation->id,
+            'veterinarians_id' => $veterinarian->id,
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        $veterinarian->all_puntuations += $vet['puntuation'];
+        $veterinarian->puntuation = $vet['puntuation'];
+ 
         $veterinarian->update($vet);
         return redirect()->route('Veterinario');
     }
