@@ -204,32 +204,7 @@ class VeterinarianController extends Controller
         $veterinarian->save();
         return redirect()->route('Veterinario');
     }
-    public function prubea()
-    {
-        //Pruebas
-        // $veterinarian = Veterinarian::findOrFail($id);
-        // $puntuacion = Puntuations::findOrFail($id);
-        // //todo ver si el usuario tiene una puntuacion hacia el veterinario y ver si el veterinario tiene puntuacion de ese usuario
-        // $searchVeterinarian = Veterinarians_has_puntuation::where('veterinarians_id', $veterinarian->id)
-        // ->where('puntuations_id',  $puntuacion);
+    public function mostrarPuntuacionFront(){
 
-        // //todo ver si el usuario tiene puntuaciones
-        // $searchUser = Puntuations::where('user_id', Auth::user()->id);
-        // $vet = $request->all();
-        // if ($searchVeterinarian) {
-        //     $veterinarian->all_puntuations += $vet['puntuation'];
-        //     $veterinarian->puntuation = $vet['puntuation'] / 1;
-        // } else {
-        //     $puntuation = Veterinarians_has_puntuation::create([
-        //         'user_id' => Auth::user()->id,
-        //         'veterinarians_id' => $veterinarian->id,
-        //         'created_at' => date('Y-m-d H:i:s'),
-        //         'updated_at' => date('Y-m-d H:i:s'),
-        //     ]);
-        //     $veterinarian->all_puntuations += $vet['puntuation'];
-        //     $veterinarian->puntuation = $vet['puntuation'] / 1;
-        // }
-        // $veterinarian->update($vet);
-        // return redirect()->route('Veterinario');
     }
 }
