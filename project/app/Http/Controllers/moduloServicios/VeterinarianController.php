@@ -145,11 +145,25 @@ class VeterinarianController extends Controller
             ->with('veterinarians', $veterinarians)
             ->with('veterinariansComments', $veterinariansComments);
     }
+
+    public function verificarPuntuacion($id_vet){
+        $veterinarian = Veterinarian::find($id_vet);
+        // Verificar si el usuario ya ha dado una puntuación al veterinario
+        $puntuacionExistente = Veterinarians_has_puntuation::where('veterinarians_id', $veterinarian->id)
+            ->whereHas('puntuations', function ($query) {
+                $query->where('users_id', Auth::user()->id);
+            })
+            ->first();
+        return $puntuacionExistente;
+    }
+
     public function showVeterinarianUser($id_vet)
     {
         $veterinarian = Veterinarian::find($id_vet);
+        $verificarPuntajeUsuario = $this->verificarPuntuacion($id_vet); //TODO ASI SE LLAMAN FUNCIONES
         return view('moduloServicios.veterinarian.user.showVeterinarian')
-            ->with('veterinarian', $veterinarian);
+            ->with('veterinarian', $veterinarian)
+            ->with('verificarPuntajeUsuario', $verificarPuntajeUsuario);
     }
 
     public function updateVeterinarianPuntuations(Request $request, string $id)
@@ -158,11 +172,7 @@ class VeterinarianController extends Controller
         $vet = $request->all();
         $contador = 0;
         // Verificar si el usuario ya ha dado una puntuación al veterinario
-        $puntuacionExistente = Veterinarians_has_puntuation::where('veterinarians_id', $veterinarian->id)
-            ->whereHas('puntuations', function ($query) {
-                $query->where('users_id', Auth::user()->id);
-            })
-            ->first();
+        $puntuacionExistente = $this->verificarPuntuacion($id);
 
         // Si el usuario ya ha dado una puntuación, actualizarla
         if ($puntuacionExistente) {

@@ -17,7 +17,7 @@
 
 .star:hover,
 .star.checked {
-    color: gold;
+    color: #00ffff;
 }
 
 .btnE{

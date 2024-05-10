@@ -35,13 +35,16 @@
     justify-content: space-evenly;
     align-items: center;
 }
-
+.container-card{
+    width: 100%;
+}
 .cards{
     display: flex;
     background-color: #F0FFFF;
     width: 200px;
     height: 350px;
     margin: 30px;
+    padding: 25px;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -55,7 +58,7 @@
     box-shadow: 0px 0px 10px #cccccc;
     flex-wrap: nowrap;
     flex-direction: row;
-    align-content: center;
+    align-content: flex-start;
     justify-content: center;
     align-items: center;
 }
