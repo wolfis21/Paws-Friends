@@ -56,8 +56,7 @@ class VeterinarianController extends Controller
             'address' => 'string',
             'phone' => 'required|unique:veterinarians|alpha_num|min_digits:11',
             'link_ref' => 'nullable',
-            'img_ref' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-            'all_puntuation' => 'nullable',
+            'img_ref' => 'requerid|image|mimes:jpeg,png,jpg|max:2048',
             'puntuation' => 'nullable',
         ]);
 
@@ -103,9 +102,8 @@ class VeterinarianController extends Controller
             'phone' => 'required||alpha_num|min_digits:11',
             'email' => 'required|email',
             'link_ref' => 'nullable',
-            'img_ref' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'img_ref' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
             'specialist_animals' => 'required|string',
-            'all_puntuation' => 'nullable',
             'puntuation' => 'nullable',
         ]);
         $veterinarian = Veterinarian::findOrFail($id);
