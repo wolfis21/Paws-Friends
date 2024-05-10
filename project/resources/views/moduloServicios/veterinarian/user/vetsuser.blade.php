@@ -20,7 +20,7 @@
                             <img src="/storage/moduloServicios/images/vets/{{ $veterinarian->img_ref }}" alt="Imagen vet" />
                         </div>
                         <div class="info-container">
-                            <h2>{{ $veterinarian->name }}</h2>
+                            <h5>{{ $veterinarian->name }}</h5>
                             <p>{{ $veterinarian->specialist_animals }}</p>
                             <div class="rating">
                                 @for ($i = 0; $i < $veterinarian->puntuation; $i++)

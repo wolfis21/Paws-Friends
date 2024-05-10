@@ -46,18 +46,26 @@ h1{
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
+    margin-bottom: .5rem;
 }
 p{
     margin-bottom: 0px !important;
 }
-
+.especialidad-texto{
+    display: inline-block;
+    font-weight: 600;
+}
 .texto{
     display: inline-block;
     font-weight: 600;
+    margin-bottom: 0.5rem !important;
 }
 
 h4{
     margin-bottom: 0px !important;
+}
+h2{
+    margin-bottom: .5rem;
 }
 .info-container{
     display: flex;
@@ -84,11 +92,39 @@ h4{
 
 .especialidad{
     background-color: #94aabd;
-    padding: 5px;
-    border-radius: 10px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+    padding: .5rem ;
+    border-radius: 10px !important;
+    -webkit-border-radius: 10px !important;
+    -moz-border-radius: 10px !important;
+    -ms-border-radius: 10px !important;
+    -o-border-radius: 10px !important;
     margin-left: 20px;
+    margin-bottom: 0px !important;
+}
+
+.btn{
+    position: absolute;
+    margin-top: 0.5rem;
+    padding: 10px;
+    /* width: 100%; */
+    border: none;
+    bottom: 28%;
+    right: 29%;
+    background-color: .A9D4F9;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    font-weight: 600;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+
+.btn:hover{
+    background-color: #5880d8;
+    color: #fff;
 }

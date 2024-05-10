@@ -145,7 +145,6 @@ class VeterinarianController extends Controller
             ->with('veterinarians', $veterinarians)
             ->with('veterinariansComments', $veterinariansComments);
     }
-
     public function verificarPuntuacion($id_vet){
         $veterinarian = Veterinarian::find($id_vet);
         // Verificar si el usuario ya ha dado una puntuación al veterinario
@@ -204,7 +203,5 @@ class VeterinarianController extends Controller
         $veterinarian->save();
         return redirect()->route('Veterinario');
     }
-    public function mostrarPuntuacionFront(){
 
-    }
 }
