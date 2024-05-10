@@ -52,11 +52,12 @@ class VeterinarianController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|min:3', //no validaron email
+            'name' => 'required|string|min:3', 
+            'email' => 'required|string',
             'address' => 'string',
-            'phone' => 'required|unique:veterinarians|alpha_num|min_digits:11',
+            'phone' => 'required|unique:veterinarians|alpha_num|min:11', 
             'link_ref' => 'nullable',
-            'img_ref' => 'requerid|image|mimes:jpeg,png,jpg|max:2048',
+            'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048', 
             'puntuation' => 'nullable',
         ]);
 
@@ -98,6 +99,7 @@ class VeterinarianController extends Controller
     {
         $request->validate([
             'name' => 'required|string|min:3',
+            'email' => 'required',
             'address' => 'string',
             'phone' => 'required||alpha_num|min_digits:11',
             'email' => 'required|email',
