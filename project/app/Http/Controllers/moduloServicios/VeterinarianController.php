@@ -11,7 +11,6 @@ use App\Models\moduloServicios\Veterinarians_has_puntuation;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use PhpParser\Node\Stmt\Else_;
 
 use function Laravel\Prompts\search;
 
@@ -157,41 +156,39 @@ class VeterinarianController extends Controller
     {
         $veterinarian = Veterinarian::findOrFail($id);
         $vet = $request->all();
-        $puntuaciones = Puntuations::all();
-        $found = false;
-        foreach ($puntuaciones as $puntuacion) {
-            $searchPuntuationVeterinarians = Veterinarians_has_puntuation::where('puntuations_id', $puntuacion->id)
-                ->where('veterinarians_id', $veterinarian->id)
-                ->first();
-            if ($searchPuntuationVeterinarians) {
-                $found = true; // Si se encuentra una coincidencia, establecer $found en true
-                break; // Salir del bucle ya que solo necesitamos verificar la primera coincidencia
-            }
+    
+        // Verificar si el usuario ya ha dado una puntuación al veterinario
+        $puntuacionExistente = Veterinarians_has_puntuation::where('veterinarians_id', $veterinarian->id)
+            ->whereHas('puntuations', function ($query) {
+                $query->where('users_id', Auth::user()->id);
+            })
+            ->first();
+    
+        // Si el usuario ya ha dado una puntuación, actualizarla
+        if ($puntuacionExistente) {
+            $puntuacionExistente->puntuation = $vet['puntuation'];
+            $puntuacionExistente->save();
+        } else { // Si no, crear una nueva puntuación
+            $puntuation = Puntuations::create([
+                'puntuation' => $vet['puntuation'],
+                'users_id' => Auth::user()->id,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+    
+            $puntuacionVeterinario = Veterinarians_has_puntuation::create([
+                'puntuations_id' => $puntuation->id,
+                'veterinarians_id' => $veterinarian->id,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
         }
-        $searchUser = Puntuations::where('users_id', Auth::user()->id);
-        // $UserCounter = Veterinarian::withCount('puntuations')->find($id);
-        //todo primero se debe crear la puntuacion
-
-        // TODO VER SI EL USUARIO YA LE A DADO UNA PUNTUACION ANTERIORMENTE
-
-        $veterinarian->puntuation = $vet['puntuation'];
-        $puntuation = Puntuations::create([
-            'puntuation' => $vet['puntuation'],
-            'users_id' => Auth::user()->id,
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ]);
-
-        $puntuacionVeterinario = Veterinarians_has_puntuation::create([
-            'puntuations_id' => $puntuation->id,
-            'veterinarians_id' => $veterinarian->id,
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ]);
+    
+        // Sumar la nueva puntuación al total de puntuaciones del veterinario
         $veterinarian->all_puntuations += $vet['puntuation'];
         $veterinarian->puntuation = $vet['puntuation'];
- 
         $veterinarian->update($vet);
+    
         return redirect()->route('Veterinario');
     }
     public function prubea()
