@@ -98,3 +98,4 @@ Route::controller(DogGroomerController::class)->group(function(){
 });
 //ver como integrar los comments
 
+Auth::routes();

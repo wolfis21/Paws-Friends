@@ -156,18 +156,20 @@ class VeterinarianController extends Controller
     {
         $veterinarian = Veterinarian::findOrFail($id);
         $vet = $request->all();
-    
+        $contador = 0;
         // Verificar si el usuario ya ha dado una puntuación al veterinario
         $puntuacionExistente = Veterinarians_has_puntuation::where('veterinarians_id', $veterinarian->id)
             ->whereHas('puntuations', function ($query) {
                 $query->where('users_id', Auth::user()->id);
             })
             ->first();
-    
+
         // Si el usuario ya ha dado una puntuación, actualizarla
         if ($puntuacionExistente) {
-            $puntuacionExistente->puntuation = $vet['puntuation'];
-            $puntuacionExistente->save();
+            $puntuacionExistente->puntuations()->updateOrCreate(
+                ['users_id' => Auth::user()->id],
+                ['puntuation' => $vet['puntuation']]
+            );
         } else { // Si no, crear una nueva puntuación
             $puntuation = Puntuations::create([
                 'puntuation' => $vet['puntuation'],
@@ -175,7 +177,7 @@ class VeterinarianController extends Controller
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
-    
+            
             $puntuacionVeterinario = Veterinarians_has_puntuation::create([
                 'puntuations_id' => $puntuation->id,
                 'veterinarians_id' => $veterinarian->id,
@@ -183,12 +185,13 @@ class VeterinarianController extends Controller
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
         }
-    
-        // Sumar la nueva puntuación al total de puntuaciones del veterinario
-        $veterinarian->all_puntuations += $vet['puntuation'];
-        $veterinarian->puntuation = $vet['puntuation'];
-        $veterinarian->update($vet);
-    
+        
+        // Obtener el veterinario por su ID y calcular el promedio de sus puntuaciones
+        // Ahora puedes acceder al promedio de las puntuaciones a través de la propiedad puntuaciones_avg_puntuation
+        $veterinarian = Veterinarian::withAvg('puntuaciones', 'puntuation')->find($id);
+        $promedioRedondeado = round($veterinarian->puntuaciones_avg_puntuation);
+        $veterinarian->puntuation = $promedioRedondeado;
+        $veterinarian->save();
         return redirect()->route('Veterinario');
     }
     public function prubea()
