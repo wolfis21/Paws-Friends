@@ -148,7 +148,7 @@ h1{
 }
 
 #ShowcaseMain{
-    background: url('../imagenes/FRAMES/FRAME A/Frame A1 - Bienvenidos.png');
+    background: url('../imagenes/FRAMES/FRAME A/FrameA1-Bienvenidos.webp');
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0px;
@@ -157,7 +157,7 @@ h1{
 }
 
 #ShowcaseServicios{
-    background: url('../imagenes/FRAMES/FRAME B/Frame B1 - Servicios.png');
+    background: url('../imagenes/FRAMES/FRAME B/Frame-B1-Servicios.webp');
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0px;
@@ -166,7 +166,7 @@ h1{
 }
 
 #ShowcaseQuienes{
-    background: url('../imagenes/FRAMES/FRAME C/Frame C1 - Somos.png');
+    background: url('../imagenes/FRAMES/FRAME C/FrameC1-Somos.webp');
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0px;
