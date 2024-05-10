@@ -17,7 +17,7 @@
             <div><p class="texto">Telefono:</p> {{ $veterinarian->phone }}</div>
             <a href="{{ $veterinarian->link_ref }}">Link: {{ $veterinarian->link_ref }}</a>
             @if (!$verificarPuntajeUsuario)   
-                <div class="start">
+                <div class="estrellas">
                     @include('layouts/stars/stars')
                 </div>
             @endif

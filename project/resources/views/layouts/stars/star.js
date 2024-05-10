@@ -39,3 +39,19 @@ function updateStarRating(rating) {
 if (storedRating) {
   updateStarRating(storedRating);
 }
+
+stars = document.querySelectorAll('.star').forEach(star => {
+  stars.addEventListener('mouseover', function() {
+      document.querySelectorAll('.star').forEach(otherStar => {
+          if (otherStar!== this) {
+              otherStar.classList.add('hovered');
+          }
+      });
+  });
+
+  stars.addEventListener('mouseout', function() {
+      document.querySelectorAll('.star').forEach(otherStar => {
+          otherStar.classList.remove('hovered');
+      });
+  });
+});

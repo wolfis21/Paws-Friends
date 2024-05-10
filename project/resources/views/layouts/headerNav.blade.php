@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/styleMain.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
-
+    <link rel="icon" type="image/x-icon" href="{{asset('imagenes/icono.ico')}}">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
@@ -19,7 +19,7 @@
         <div class="container-title">
             <h1 id="title">
                 <a href="/">
-                    <img id="logoNav" src="{{ URL::asset('imagenes/Variaciones logo.png') }}" alt="logo" />
+                    <img id="logoNav" src="{{ URL::asset('imagenes/Variaciones-logo.png') }}" alt="logo" />
                 </a>
             </h1>
         </div>
@@ -77,7 +77,7 @@
     <footer>
         <div class="container-footer">
             <div class="img-footer">
-                <img class="logo-footer" src="{{ URL::asset('imagenes/Variaciones logo.png') }}" alt="logo" />
+                <img class="logo-footer" src="{{ URL::asset('imagenes/Variaciones-logo.png') }}" alt="logo" />
             </div>
             <div class="text-legals">
                 <div>©2024 Company Name. All rights reserved UGMA</div>
