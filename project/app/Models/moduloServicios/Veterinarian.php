@@ -21,6 +21,9 @@ class Veterinarian extends Model
         'all_puntuations',
         'puntuation'
     ];
-
-
+    public function puntuaciones()
+    {
+        return $this->belongsToMany(Puntuations::class, 'veterinarians_has_puntuations', 'veterinarians_id', 'puntuations_id')
+            ->withPivot('created_at', 'updated_at');
+    }
 };

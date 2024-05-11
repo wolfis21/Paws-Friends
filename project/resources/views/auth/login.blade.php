@@ -12,7 +12,7 @@
                <h3>Bienvenido a </h3>
            </div>
            <div class="logo">
-               <img class="logo-register" src="{{ URL::asset('imagenes/Variaciones logo.png') }}" alt="logo" />
+               <img class="logo-register" src="{{ URL::asset('imagenes/Variaciones-logo.png') }}" alt="logo" />
            </div>
            <div class="register">
                 <a href="#">¿No tienes una cuenta?

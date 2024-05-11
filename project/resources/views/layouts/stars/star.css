@@ -11,15 +11,28 @@
 .star {
     font-size: 32px;
     color: #dad0d0;
-    transition: color 0.3s;
+    transition: color 0.5s;
     cursor: pointer;
+    -webkit-transition: color 0.5s;
+    -moz-transition: color 0.5s;
+    -ms-transition: color 0.5s;
+    -o-transition: color 0.5s;
 }
 
 .star:hover,
 .star.checked {
-    color: gold;
+    /* color: #ffd700; */
+    /* color: #00ffff;
+    color: #5BBBDD; */
+    color: #F7AC35;
 }
 
+.hovered{
+    /* color: #ffd700; */
+    /* color: #00ffff; */
+    /* color: #5BBBDD; */
+    color: #F7AC35;
+}
 .btnE{
     border: none;
     background-color: transparent;

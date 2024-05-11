@@ -322,7 +322,7 @@ return [
         [
             'text' =>'Pagina Principal',
             'url' => '/',
-            'icon' =>'fas fa-fw fa-home',
+            'icon' =>'fas fa-fw fa-handshake-angle',
         ],
 
         ['header' => 'SERVICIOS'],
@@ -334,7 +334,7 @@ return [
         [
             'text' => 'Alojamiento',
             'url' => '/adminPWFS/housingsAdmin',
-            'icon' =>'fas fa-fw fa-home',
+            'icon' =>'fas fa-fw fa-shield-dog',
         ],
         [
             'text' => 'Peluqueria',
@@ -350,7 +350,7 @@ return [
         [
             'text' => 'Situacion de calle',
             'url' => '#',
-            'icon' =>'fas fa-fw fa-shield-dog',
+            'icon' =>'fas fa-fw fa-hand-holding-medical',
         ],
         [
             'text' => 'Abandono',

@@ -11,5 +11,11 @@ class Puntuations extends Model
         'puntuation',
         'users_id'
     ];
+
+    public function veterinarios()
+    {
+        return $this->belongsToMany(Veterinarian::class, 'veterinarians_has_puntuations', 'puntuations_id', 'veterinarians_id')
+            ->withPivot('created_at', 'updated_at');
+    }
     use HasFactory;
 }

@@ -8,11 +8,6 @@ use App\Http\Controllers\moduloServicios\DogGroomerController;
 use App\Http\Controllers\moduloServicios\CommentsController;
 use App\Http\Controllers\moduloServicios\HousingsController;
 use App\Http\Controllers\moduloServicios\VeterinarianController;
-use App\Http\Controllers\AdopcionesController;
-use App\Http\Controllers\AdopcionesVermasController;
-use App\Http\Controllers\DonacionesController;
-use App\Http\Controllers\FormularioAdopcionesController;
-use App\Http\Controllers\FormularioDonacionesController;
 
 use Illuminate\Support\Facades\Route;
 /*
@@ -103,37 +98,4 @@ Route::controller(DogGroomerController::class)->group(function(){
 });
 //ver como integrar los comments
 
-//? FIN RUTAS MODULO 1
-
-//? RUTAS MODULO 2===============================================================================================
-
-Route::get('/servicios', [App\Http\Controllers\ServiciosController::class, 'index'])->name('servicios');
-Route::get('/registrodemanda', [App\Http\Controllers\RegistroDemandaController::class, 'index'])->name('registrodemanda');
-
-Route::post('/guardar-denuncia', '[TuControlador]@guardarDenuncia')->name('guardar_denuncia');
-
-Route::get('/fundation', [App\Http\Controllers\FundationController::class, 'index'])->name('fundation');
-
-Route::get('/historialcliente', [App\Http\Controllers\HistorialclienteController::class, 'index'])->name('historialcliente');
-
-Route::get('/adminrescate', [App\Http\Controllers\AdminRescateController::class, 'index'])->name('adminrescate');
-
-//? FIN RUTAS MODULO 2
-
-//? RUTAS MODULO 3 ===============================================================================================
-
-Route::resource('/Donaciones', DonacionesController::class);
-Route::resource('/Adopciones', AdopcionesController::class);
-Route::resource('/FormularioAdopciones', FormularioAdopcionesController::class);
-Route::resource('/FormularioDonaciones', FormularioDonacionesController::class);
-Route::resource('/AdopcionesVermas', AdopcionesVermasController::class);
-Route::resource('/Nosotros', NosotrosController::class);
-Route::resource('/Historia', HistoriaController::class);
-route::resource('/AdminP','App\Http\controllers\AdminPlantillaControllerController'::class);
-
 Auth::routes();
-
-
-//? FIN RUTAS MODULO 3
-
-/* Auth::routes(); */

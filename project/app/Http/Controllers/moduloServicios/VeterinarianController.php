@@ -11,7 +11,6 @@ use App\Models\moduloServicios\Veterinarians_has_puntuation;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use PhpParser\Node\Stmt\Else_;
 
 use function Laravel\Prompts\search;
 
@@ -53,12 +52,12 @@ class VeterinarianController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|min:3', //no validaron email
+            'name' => 'required|string|min:3', 
+            'email' => 'required|string',
             'address' => 'string',
-            'phone' => 'required|unique:veterinarians|alpha_num|min_digits:11',
+            'phone' => 'required|unique:veterinarians|alpha_num|min:11', 
             'link_ref' => 'nullable',
-            'img_ref' => 'require|image|mimes:jpeg,png,jpg|max:2048',
-            'all_puntuation' => 'nullable',
+            'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048', 
             'puntuation' => 'nullable',
         ]);
 
@@ -100,13 +99,13 @@ class VeterinarianController extends Controller
     {
         $request->validate([
             'name' => 'required|string|min:3',
+            'email' => 'required',
             'address' => 'string',
             'phone' => 'required||alpha_num|min_digits:11',
             'email' => 'required|email',
             'link_ref' => 'nullable',
-            'img_ref' => 'require|image|mimes:jpeg,png,jpg|max:2048',
+            'img_ref' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
             'specialist_animals' => 'required|string',
-            'all_puntuation' => 'nullable',
             'puntuation' => 'nullable',
         ]);
         $veterinarian = Veterinarian::findOrFail($id);
@@ -146,80 +145,63 @@ class VeterinarianController extends Controller
             ->with('veterinarians', $veterinarians)
             ->with('veterinariansComments', $veterinariansComments);
     }
+    public function verificarPuntuacion($id_vet){
+        $veterinarian = Veterinarian::find($id_vet);
+        // Verificar si el usuario ya ha dado una puntuación al veterinario
+        $puntuacionExistente = Veterinarians_has_puntuation::where('veterinarians_id', $veterinarian->id)
+            ->whereHas('puntuations', function ($query) {
+                $query->where('users_id', Auth::user()->id);
+            })
+            ->first();
+        return $puntuacionExistente;
+    }
+
     public function showVeterinarianUser($id_vet)
     {
         $veterinarian = Veterinarian::find($id_vet);
+        $verificarPuntajeUsuario = $this->verificarPuntuacion($id_vet); //TODO ASI SE LLAMAN FUNCIONES
         return view('moduloServicios.veterinarian.user.showVeterinarian')
-            ->with('veterinarian', $veterinarian);
+            ->with('veterinarian', $veterinarian)
+            ->with('verificarPuntajeUsuario', $verificarPuntajeUsuario);
     }
 
     public function updateVeterinarianPuntuations(Request $request, string $id)
     {
         $veterinarian = Veterinarian::findOrFail($id);
         $vet = $request->all();
-        $puntuaciones = Puntuations::all();
-        $found = false;
-        foreach ($puntuaciones as $puntuacion) {
-            $searchPuntuationVeterinarians = Veterinarians_has_puntuation::where('puntuations_id', $puntuacion->id)
-                ->where('veterinarians_id', $veterinarian->id)
-                ->first();
-            if ($searchPuntuationVeterinarians) {
-                $found = true; // Si se encuentra una coincidencia, establecer $found en true
-                break; // Salir del bucle ya que solo necesitamos verificar la primera coincidencia
-            }
+        $contador = 0;
+        // Verificar si el usuario ya ha dado una puntuación al veterinario
+        $puntuacionExistente = $this->verificarPuntuacion($id);
+
+        // Si el usuario ya ha dado una puntuación, actualizarla
+        if ($puntuacionExistente) {
+            $puntuacionExistente->puntuations()->updateOrCreate(
+                ['users_id' => Auth::user()->id],
+                ['puntuation' => $vet['puntuation']]
+            );
+        } else { // Si no, crear una nueva puntuación
+            $puntuation = Puntuations::create([
+                'puntuation' => $vet['puntuation'],
+                'users_id' => Auth::user()->id,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+            
+            $puntuacionVeterinario = Veterinarians_has_puntuation::create([
+                'puntuations_id' => $puntuation->id,
+                'veterinarians_id' => $veterinarian->id,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
         }
-        $searchUser = Puntuations::where('users_id', Auth::user()->id);
-        // $UserCounter = Veterinarian::withCount('puntuations')->find($id);
-        //todo primero se debe crear la puntuacion
-
-        // TODO VER SI EL USUARIO YA LE A DADO UNA PUNTUACION ANTERIORMENTE
-
-        $veterinarian->puntuation = $vet['puntuation'];
-        $puntuation = Puntuations::create([
-            'puntuation' => $vet['puntuation'],
-            'users_id' => Auth::user()->id,
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ]);
-
-        $puntuacionVeterinario = Veterinarians_has_puntuation::create([
-            'puntuations_id' => $puntuation->id,
-            'veterinarians_id' => $veterinarian->id,
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ]);
-        $veterinarian->all_puntuations += $vet['puntuation'];
-        $veterinarian->puntuation = $vet['puntuation'];
- 
-        $veterinarian->update($vet);
+        
+        // Obtener el veterinario por su ID y calcular el promedio de sus puntuaciones
+        // Ahora puedes acceder al promedio de las puntuaciones a través de la propiedad puntuaciones_avg_puntuation
+        $veterinarian = Veterinarian::withAvg('puntuaciones', 'puntuation')->find($id);
+        $promedioRedondeado = round($veterinarian->puntuaciones_avg_puntuation);
+        $veterinarian->puntuation = $promedioRedondeado;
+        $veterinarian->save();
         return redirect()->route('Veterinario');
     }
-    public function prubea()
-    {
-        //Pruebas
-        // $veterinarian = Veterinarian::findOrFail($id);
-        // $puntuacion = Puntuations::findOrFail($id);
-        // //todo ver si el usuario tiene una puntuacion hacia el veterinario y ver si el veterinario tiene puntuacion de ese usuario
-        // $searchVeterinarian = Veterinarians_has_puntuation::where('veterinarians_id', $veterinarian->id)
-        // ->where('puntuations_id',  $puntuacion);
 
-        // //todo ver si el usuario tiene puntuaciones
-        // $searchUser = Puntuations::where('user_id', Auth::user()->id);
-        // $vet = $request->all();
-        // if ($searchVeterinarian) {
-        //     $veterinarian->all_puntuations += $vet['puntuation'];
-        //     $veterinarian->puntuation = $vet['puntuation'] / 1;
-        // } else {
-        //     $puntuation = Veterinarians_has_puntuation::create([
-        //         'user_id' => Auth::user()->id,
-        //         'veterinarians_id' => $veterinarian->id,
-        //         'created_at' => date('Y-m-d H:i:s'),
-        //         'updated_at' => date('Y-m-d H:i:s'),
-        //     ]);
-        //     $veterinarian->all_puntuations += $vet['puntuation'];
-        //     $veterinarian->puntuation = $vet['puntuation'] / 1;
-        // }
-        // $veterinarian->update($vet);
-        // return redirect()->route('Veterinario');
-    }
 }

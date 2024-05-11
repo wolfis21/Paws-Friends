@@ -43,7 +43,7 @@ p {
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    background-image: url('../imageFront/friends.png');
+    background-image: url('../imageFront/friends.webp');
     background-size: cover;
     background-position: center;
     font-family: 'Inter';
@@ -86,7 +86,7 @@ p {
     align-items: center;
     width: 100%;
     height: 100vh;
-    background-image: url('../imageFront/ImagenRegister.png');
+    background-image: url('../imageFront/ImagenRegister.webp');
     background-size: cover;
     /* Add this property */
     background-position: center;
