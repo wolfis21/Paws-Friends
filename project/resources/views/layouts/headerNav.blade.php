@@ -13,7 +13,6 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <title>Paws & Friends</title>
 </head>
-
 <body>
     <nav class="container-nav">
         <div class="container-title">
@@ -73,7 +72,6 @@
     <div class="containerMainNav">
         @yield('content')
     </div>
-
     <footer>
         <div class="container-footer">
             <div class="img-footer">
