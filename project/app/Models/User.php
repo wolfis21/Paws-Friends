@@ -24,6 +24,8 @@ class User extends Authenticatable
         'phone',
         'address',
         'photo_user',
+        'photo_dni',
+        'photo_rif',
         'email',
         'password',
         'rols_id',

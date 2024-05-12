@@ -141,6 +141,42 @@
                                         @enderror
                                     </div>
                                 </div>
+                                <div class="inferior-container">
+                                    <div class="row mb-0">
+                                        <label for="photo_dni"
+                                            class="col-md-4 col-form-label text-md-init">{{ __('Foto Cedula') }}</label>
+    
+                                        <div class="col-md-6 width-temp-2">
+                                            <input id="photo_dni" type="file"
+                                                class="form-control @error('photo_dni') is-invalid @enderror"
+                                                name="photo_dni" value="{{ old('photo_dni') }}" required
+                                                autocomplete="photo_dni" autofocus>
+    
+                                            @error('photo_dni')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="inferior-container">
+                                        <div class="row mb-0">
+                                            <label for="photo_rif"
+                                                class="col-md-4 col-form-label text-md-init">{{ __('Foto Rif') }}</label>
+        
+                                            <div class="col-md-6 width-temp-2">
+                                                <input id="photo_rif" type="file"
+                                                    class="form-control @error('photo_rif') is-invalid @enderror"
+                                                    name="photo_rif" value="{{ old('photo_rif') }}" required
+                                                    autocomplete="photo_rif" autofocus>
+        
+                                                @error('photo_rif')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
+                                        </div>
 
                                 <div class="row mb-0">
                                     <label for="password"
