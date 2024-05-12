@@ -158,11 +158,16 @@ class VeterinarianController extends Controller
 
     public function showVeterinarianUser($id_vet)
     {
-        $veterinarian = Veterinarian::find($id_vet);
-        $verificarPuntajeUsuario = $this->verificarPuntuacion($id_vet); 
-        return view('moduloServicios.veterinarian.user.showVeterinarian')
-            ->with('veterinarian', $veterinarian)
-            ->with('verificarPuntajeUsuario', $verificarPuntajeUsuario);
+        if (Auth::check()) {
+            $veterinarian = Veterinarian::find($id_vet);
+            $verificarPuntajeUsuario = $this->verificarPuntuacion($id_vet); 
+            return view('moduloServicios.veterinarian.user.showVeterinarian')
+                ->with('veterinarian', $veterinarian)
+                ->with('verificarPuntajeUsuario', $verificarPuntajeUsuario);
+        }
+        else {
+            return redirect()->route('login');
+        }
     }
 
     public function updateVeterinarianPuntuations(Request $request, string $id)
