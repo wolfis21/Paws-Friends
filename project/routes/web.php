@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\FundationController;
+use App\Http\Controllers\Demand_animal_has_fundationController;
 use App\Http\Controllers\moduloServicios\DogGroomerController;
 use App\Http\Controllers\HomeServicesController;
 use App\Http\Controllers\moduloServicios\CommentsController;
 use App\Http\Controllers\moduloServicios\HousingsController;
 use App\Http\Controllers\moduloServicios\VeterinarianController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 
@@ -100,9 +103,9 @@ Route::get('/servicios', function () {
 Route::get('/registrodemanda', function () {
     return view('registrodemanda');
 });
-Route::get('/fundation', function () {
+/* Route::get('/fundation', function () {
     return view('fundation');
-});
+}); */
 Route::get('/adminrescate', function () {
     return view('adminrescate');
 });
@@ -112,14 +115,17 @@ Route::get('/servicios', [App\Http\Controllers\ServiciosController::class, 'inde
 
 Route::get('/registrodemanda', [App\Http\Controllers\RegistroDemandaController::class, 'index'])->name('registrodemanda');
 
-Route::post('/guardar-denuncia', '[TuControlador]@guardarDenuncia')->name('guardar_denuncia');
-
-Route::get('/fundation', [App\Http\Controllers\FundationController::class, 'index'])->name('fundation');
-
+/* Route::post('/guardar-denuncia', '[TuControlador]@guardarDenuncia')->name('guardar_denuncia');
+ */
+/*  Route::get('/fundation', [App\Http\Controllers\FundationController::class, 'index'])->name('fundation'); */
+ 
 Route::get('/historialcliente', [App\Http\Controllers\HistorialclienteController::class, 'index'])->name('historialcliente');
 
 Route::get('/adminrescate', [App\Http\Controllers\AdminRescateController::class, 'index'])->name('adminrescate');
 
+Route::resource('fundations', FundationController::class);
+
+Route::resource('contactarfundaciones', Demand_animal_has_fundationController::class);
 
  Auth::routes();
 

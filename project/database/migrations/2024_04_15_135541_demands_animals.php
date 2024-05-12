@@ -19,10 +19,14 @@ return new class extends Migration
             $table->string('adress_animals', 45);
             $table->string('photo_ref', 45);
 
+            $table->unsignedBigInteger('motivo_id'); // Clave foránea
+            $table->unsignedBigInteger('urgencia_id'); // Clave foránea
             $table->unsignedBigInteger('types_status_id'); // Clave foránea
            
             $table->timestamps(); // created_at update_at 
 
+            $table->foreign('motivo_id')->references('id')->on('motivo')->onDelete('cascade');
+            $table->foreign('urgencia_id')->references('id')->on('urgencia')->onDelete('cascade');
             $table->foreign('types_status_id')->references('id')->on('types_status')->onDelete('cascade');
         });
     }

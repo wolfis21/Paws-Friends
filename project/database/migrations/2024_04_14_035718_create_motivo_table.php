@@ -11,16 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rescue', function(Blueprint $table) {
-            //Confirmaciones demanda
+        Schema::create('motivo', function (Blueprint $table) {
             $table->id();
-            //clave foranea demands animals has fundation - Date , process
-            $table->date('date');
-            $table->unsignedBigInteger('fundation_id'); //Clave foranea 
-
+            $table->string('name');
             $table->timestamps();
-
-            $table->foreign('fundation_id')->references('id')->on('fundation')->onDelete('cascade');
         });
     }
 
@@ -29,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rescue');
+        Schema::dropIfExists('motivo');
     }
 };

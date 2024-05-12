@@ -10,12 +10,17 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <link rel="stylesheet" href="{{ asset ('css/app.css')}}"  type="text/css"/>
+
+    <!-- Style Aletify -->
+    <link rel="stylesheet" href="{{ asset ('css/alertify.min.css')}}">
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <script src="{{asset('js/alertify.min.js')}}"></script> {{-- Alertify --}}
 </head>
 <body>
     <div id="app">

@@ -66,10 +66,6 @@
                                                 <h2 class="steps">Paso 2 - 3</h2>
                                             </div>
                                         </div>
-                                         <label class="fieldlabels">Imagen de su cédula de identidad:</label>
-                                         <input type="file" name="cedula" accept="image/*">
-                                          <label class="fieldlabels">Imagen de su RIF:</label> 
-                                          <input type="file" name="rif" accept="image/*">
                                           <label class="fieldlabels">Imagen del animal encontrado:</label> 
                                           <input type="file" name="animal" accept="image/*">
 
