@@ -39,13 +39,14 @@ class HousingsController extends Controller
             'type_animals' => 'required',
             'food_offer' => 'required',
             'link_ref' => 'nullable',
-            'img_ref' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048', 
+            'puntuation' => 'nullable',
         ]);
         
         $housing = $request->all();
 
         if ($image = $request->file('img_ref')) {
-            $path = 'admin/images/housings';
+            $path = 'storage/moduloServicios/images/housings';
             $imageName = date('YmdHis')."_".$image->getClientOriginalExtension();
             $image->move($path, $imageName );
             $housing['img_ref'] = "$imageName";
@@ -78,12 +79,13 @@ class HousingsController extends Controller
             'type_animals' => 'required',
             'food_offer' => 'required',
             'link_ref' => 'nullable',
-            'img_ref' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048', 
+            'puntuation' => 'nullable',
         ]);
         $housing = Housing::findOrFail($id);
         $housingReq = $request->all();
         if ($image = $request->file('img_ref')) {
-            $path = 'admin/images/housings';
+            $path = 'storage/moduloServicios/images/housings';
             $imageName = date('YmdHis')."_".$image->getClientOriginalExtension();
             $image->move($path, $imageName );
             $housingReq['img_ref'] = "$imageName";
@@ -99,14 +101,25 @@ class HousingsController extends Controller
      */
     public function destroyHousing(string $id){
         $housing = Housing::find($id);
-        $path = public_path().'/admin/images/housings/'.$housing->img_ref;
+        $path = public_path().'/storage/moduloServicios/images/housings/'.$housing->img_ref;
         unlink($path);
         $housing->delete();
         return redirect()->route('housingAdmin');
     }
     //todo funciones user
-    public function housingUser()
-    {
-        return view('moduloServicios.housings.user.index');
+    public function housingUser(){
+        $housings = Housing::paginate(7);
+        $housingsComments = Housings_has_comments::all();
+        return view('moduloServicios.housings.user.houser')
+        ->with('housings', $housings)
+        ->with('housingsComments', $housingsComments);
+
+        }
+
+        public function showHousingsUser($id_hou){
+            $housings = Housing::find($id_hou);
+            return view('moduloServicios.housings.user.showHousings')
+            ->with('housings', $housings);
+        }
     }
-}
+

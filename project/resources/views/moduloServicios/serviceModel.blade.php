@@ -1,4 +1,4 @@
-@extends('layouts.navMenu')
+@extends('layouts.headerNav')
 @section('title', 'Modulo de servicio')
 @vite(['resources/css/moduloServicios/user/index.css'])
 @section('content')
@@ -6,11 +6,11 @@
         <section class="welcome">
 
             <div class="img">
-                <img src="{{ asset('css/moduloServicios/user/pngegg.png') }}">
+                <img src="{{ asset('css/moduloServicios/user/pngegg.webp') }}">
             </div>
             <div class="main-view">
 
-                <h1 class="title-page">Módulo de servicios</h1>
+                <h1 class="title-page">Bienvenido a Servicios</h1>
                 <div class="texto-bienvenida">
                     <p>En este módulo de cuidados, se brinda una amplia gama de servicios para mascotas, que incluyen
                         cuidados, alojamiento, atención veterinaria y servicios de peluquería. Cada uno de estos servicios
@@ -52,28 +52,28 @@
                 <div class="carta">
                     <img class="img-dev" src="{{ asset('css/moduloServicios/user/lopez.jpg') }}" alt="">
                     <div class="contenido-texto-card">
-                        <h4>Anibal Lopez</h4>
+                        <h4 class="nombre-Program">Anibal Lopez</h4>
                         <p><b>BACK-END</b></p>
                     </div>
                 </div>
                 <div class="carta">
                     <img class="img-dev" src="{{ asset('css/moduloServicios/user/tussi.png') }}" alt="">
                     <div class="contenido-texto-card">
-                        <h4>Jesus Toussaint</h4>
+                        <h4 class="nombre-Program">Jesus Toussaint</h4>
                         <p><b>BACK-END</b></p>
                     </div>
                 </div>
                 <div class="carta">
-                    <img class="img-dev" src="{{ asset('css/moduloServicios/user/romero.jpg') }}" alt="">
+                    <img class="img-dev" src="{{ asset('css/moduloServicios/user/romero.webp') }}" alt="">
                     <div class="contenido-texto-card">
-                        <h4>Daniel Romero</h4>
+                        <h4 class="nombre-Program">Daniel Romero</h4>
                         <p><b>FRONT-END</b></p>
                     </div>
                 </div>
                 <div class="carta">
                     <img class="img-dev" src="{{ asset('css/moduloServicios/user/rebe.jpg') }}" alt="">
                     <div class="contenido-texto-card">
-                        <h4>Yannella Saud</h4>
+                        <h4 class="nombre-Program">Yannella Saud</h4>
                         <p><b>FRONT-END</b></p>
                     </div>
                 </div>

@@ -1,31 +1,34 @@
-import { defineConfig } from 'vite';
+ import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 
 export default defineConfig({
     plugins: [
         laravel({
             input: [
-<<<<<<< HEAD
-
-=======
->>>>>>> ae9472e776cb0b3ff59b109646cf1b63f3a1c063
+                //todo css admin
+                'resources/css/moduloServicios/admin/index.css',
                 // todo css de navMenu
 
                 //todo css de mainView
                 'resources/css/moduloServicios/user/index.css',
                 'resources/css/moduloServicios/admin/index.css',
+'                resources/css/moduloServicios/user/indexServic.css',
+                'resources/css/login/loginUser.css',
+                //TOdo profile
+                'resources/css/profile/index.css',
 
+                //todo servies 
+                'moduloServicios/stars/star.css',
+
+                //todo veterinarios
+                'resources/css/moduloServicios/user/index.css',
+                'resources/css/moduloServicios/user/indexServices.css',
+                'resources/css/moduloServicios/user/showServices.css',
                 //todo js
-                'resources/js/app.js',
-                "resources/sass/app.scss",
+                '/project/public/js/moduloServicios/star.js',
                 "resources/js/app.js",
 
-                'resources/sass/app.scss',
                 'resources/js/app.js',
-<<<<<<< HEAD
-=======
-                // origin/module-3
->>>>>>> ae9472e776cb0b3ff59b109646cf1b63f3a1c063
             ],
             refresh: true,
         }),

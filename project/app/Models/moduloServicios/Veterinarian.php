@@ -17,8 +17,13 @@ class Veterinarian extends Model
         'email',
         'link_ref',
         'img_ref',
-        'specialist_animals'
+        'specialist_animals',
+        'all_puntuations',
+        'puntuation'
     ];
-
-
+    public function puntuaciones()
+    {
+        return $this->belongsToMany(Puntuations::class, 'veterinarians_has_puntuations', 'veterinarians_id', 'puntuations_id')
+            ->withPivot('created_at', 'updated_at');
+    }
 };

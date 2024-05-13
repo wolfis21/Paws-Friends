@@ -110,7 +110,7 @@ ul{
 }
 h1{
     margin: 5px;
-}
+} 
 
 #logoNav {
     width: 100px;
@@ -207,6 +207,25 @@ a.btn-main:hover{
     width: 15rem;
     height: 15rem;
 }
+
+.contenedorModulos {
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+#cuidado:hover,
+#donaciones:hover,
+#rescates:hover,
+#tienda:hover {
+    box-shadow: 0px 5px 10px #312150;
+}
+
+#txt-vet p {
+    float: right;
+    width: 40%;
+    font-size: x-large;
+}
+
 /*slider*/
 .carousel-inner.custom{
     display: flex;

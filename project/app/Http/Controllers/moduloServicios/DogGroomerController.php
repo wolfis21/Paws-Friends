@@ -36,12 +36,13 @@ class DogGroomerController extends Controller
             'address' => 'string',
             'phone' => 'required|unique:veterinarians|alpha_num|min_digits:11',
             'link_ref' => 'nullable',
-            'img_ref' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048', 
+            'puntuation' => 'nullable',
         ]);
         
         $dogGroomer = $request->all();
         if ($image = $request->file('img_ref')) {
-            $path = 'admin/images/dogGroomers';
+            $path = 'storage/moduloServicios/images/dogGroomers';
             $imageName = date('YmdHis')."_".$image->getClientOriginalExtension();
             $image->move($path, $imageName );
             $dogGroomer['img_ref'] = "$imageName";
@@ -72,12 +73,13 @@ class DogGroomerController extends Controller
             'address' => 'string',
             'phone' => 'required|unique:veterinarians|alpha_num|min_digits:11',
             'link_ref' => 'nullable',
-            'img_ref' => 'nullable|string',
+            'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048', 
+            'puntuation' => 'nullable',
         ]);
         $dogGroomer = Dog_groomer::findOrFail($id);
         $dogGroomerReq = $request->all();
         if ($image = $request->file('img_ref')) {
-            $path = 'admin/images/dogGroomers';
+            $path = 'storage/moduloServicios/images/dogGroomers';
             $imageName = date('YmdHis')."_".$image->getClientOriginalExtension();
             $image->move($path, $imageName );
             $dogGroomerReq['img_ref'] = "$imageName";
@@ -91,14 +93,22 @@ class DogGroomerController extends Controller
      */
     public function destroyDogGroomer(string $id){
         $dogGroomer = Dog_Groomer::find($id);
-        $path = public_path().'/admin/images/dogGroomers/'.$dogGroomer->img_ref;
+        $path = public_path().'/storage/moduloServicios/images/dogGroomers/'.$dogGroomer->img_ref;
         unlink($path);
         $dogGroomer->delete();
         return redirect()->route('dogGroomerAdmin');
     }
     //todo funciones user
-    public function dogGroomerUser()
-    {
-        return view('moduloServicios.dogGroomer.user.index');
+    public function dogGroomerUser(){
+        $dogGroomers = Dog_Groomer::paginate(6);
+        $dogGroomersComments = Dog_Groomer_has_comments::all();
+        return view('moduloServicios.dogGroomer.user.doguser')
+        ->with('dogGroomers', $dogGroomers)
+        ->with('dogGroomersComments',$dogGroomersComments);
+    }
+    public function showdogGroomerUser($id_dog){
+        $dogGroomers = Dog_Groomer::find($id_dog);
+        return view('moduloServicios.dogGroomer.user.showdogGroomer')
+        ->with('dogGroomer', $dogGroomers);
     }
 }

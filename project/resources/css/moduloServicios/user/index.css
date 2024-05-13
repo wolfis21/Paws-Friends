@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 @font-face {
     font-family: 'League Spartan';
     src: url('/font/LeagueSpartan-VariableFont_wght.ttf');
@@ -28,18 +29,21 @@
     font-size: 50px;
     padding: 0;
     margin: 0;
+    text-align: center;
 }
 
-
+p {
+    margin: 0px;
+}
 /*todo  primera vista bienvenida */
 .welcome {
     display: flex;
     width: 100%;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: nowrap;
-    background-image: url('friends.png');
+    background-image: url('../imageFront/friends.webp');
     background-size: cover;
     background-position: center;
     font-family: 'Inter';
@@ -58,7 +62,6 @@
     flex-wrap: nowrap;
     flex-grow: 0.45;
     border-radius: 25px;
-    margin-top: 8rem;
     /* -webkit-box-shadow: 0px 0px 18px 1px rgba(153,153,153,1);
     -moz-box-shadow: 0px 0px 18px 1px rgba(153,153,153,1);
     box-shadow: 0px 0px 18px 1px rgba(153,153,153,1); */
@@ -68,12 +71,14 @@
     -o-border-radius: 25px;
 }
 
-.texto-bienvenida{
+.texto-bienvenida {
     padding: 25px;
     font-size: 25px;
+    text-align: justify;
 }
+
 /*todo  segunda vista opciones */
-.module{
+.module {
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -81,11 +86,12 @@
     align-items: center;
     width: 100%;
     height: 100vh;
-    background-image: url('ImagenRegister.png');
+    background-image: url('../imageFront/ImagenRegister.webp');
     background-size: cover;
     /* Add this property */
     background-position: center;
 }
+
 .texto {
     padding: 0px;
     margin: 0px;
@@ -93,6 +99,7 @@
     font-family: 'Nunito';
     font-size: 50px;
 }
+
 .cards {
     display: flex;
     justify-content: space-evenly;
@@ -120,6 +127,7 @@
 }
 
 .card-img2:hover {
+    scale: 1.05;
     -webkit-box-shadow: 0px 0px 35px 3px rgba(84, 233, 244, 1);
     -moz-box-shadow: 0px 0px 35px 3px rgba(84, 233, 244, 1);
     box-shadow: 0px 0px 35px 3px #54e9f4;
@@ -153,17 +161,13 @@ img {
     font-size: 20px;
     padding: 15px;
     font-weight: bold;
-}
-
-
-.pservicio {
     display: flex;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
     position: relative;
     top: -60;
-    background-color: rgba(0, 0, 0, 0.25);
+    background: linear-gradient(transparent, #000);
     color: white;
     padding: 20px;
     height: 60px;
@@ -188,8 +192,9 @@ a {
 }
 
 /*TODO Desarrolladores */
-.developer{
-    background: #e9eaeb;  /* fallback for old browsers */
+.developer {
+    background: #e9eaeb;
+    /* fallback for old browsers */
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -198,13 +203,14 @@ a {
     width: 100%;
     height: 315px;
 }
-.cartas{
+
+.cartas {
     display: flex;
     width: 50%;
     justify-content: space-evenly;
 }
 
-.carta{
+.carta {
 
     display: flex;
     flex-direction: column;
@@ -218,18 +224,27 @@ a {
     -o-border-radius: 20px;
 }
 
-.img-dev{
+.img-dev {
     width: 100px;
     height: 100px;
     border-radius: 50%;
 }
-.contenido-texto-card{
+
+.contenido-texto-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 5px;
 }
 
-.texto-program{
+.texto-program {
     margin: 10px 0px;
+}
+
+.nombre-Program{
+    text-align: center;
+}
+
+.welcome, .modile, .developer{
+    color: #000000;
 }

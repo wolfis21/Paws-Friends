@@ -1,13 +1,10 @@
-@extends('moduloServicios.dashboard')
+@extends('layouts.dashboard')
 @section('title', 'Crear Alojamiento')
 @section('content')
     <h1>Añadir Alojamiento</h1>
     <form method="POST" action="{{ route('storeHousing') }}" role="form" enctype="multipart/form-data">
         {{ method_field('PUT') }}
         @csrf
-        @php
-            $isEdit = false;
-        @endphp
         <div class="mb-3">
             <label for="address" class="form-label">direccion</label>
             <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address"

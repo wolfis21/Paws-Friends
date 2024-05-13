@@ -19,10 +19,16 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'last_name',
+        'dni',
+        'phone',
+        'address',
+        'photo_user',
+        'photo_dni',
+        'photo_rif',
         'email',
         'password',
         'rols_id',
-        'datas_users_id',
     ];
 
     /**
@@ -44,9 +50,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function data_user(){
-        return $this->belongsTo(Datas_users::class,'datas_users_id', 'id');
-    }
     public function rol(){
         return $this->belongsTo(Rols::class,'rols_id', 'id');
     }
