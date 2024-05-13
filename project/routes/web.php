@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\moduloServicios\DogGroomerController;
 use App\Http\Controllers\moduloServicios\CommentsController;
 use App\Http\Controllers\moduloServicios\HousingsController;
+use App\Http\Controllers\moduloServicios\SearchController;
 use App\Http\Controllers\moduloServicios\VeterinarianController;
 
 use Illuminate\Support\Facades\Route;
@@ -60,6 +61,7 @@ Route::controller(VeterinarianController::class)->group(function(){
     Route::get('/VeterinarioShow/{id}','showVeterinarianUser')->name('showVeterinarianUser');
     Route::put('/VeterinarioUpdatePuntuations/{id}','updateVeterinarianPuntuations')->name('updateVeterinarianPuntuations');
     Route::put('/VeterinarioComentario/{id}','enviarComentario')->name('enviarComentario');
+    
 });
 Route::controller(CommentsController::class)->group(function(){
     //todo veterinarios
@@ -73,8 +75,11 @@ Route::controller(CommentsController::class)->group(function(){
     Route::delete('/adminPWFS/CommentDestroyDogGroomer/{id}','destroyDogGroomersComment')->name('destroyDogGroomersComment');
 });
 
-
-//Auth::routes();
+    //TODO BUSQUEDA
+Route::controller(SearchController::class)->group(function(){
+    //TODO VETERINARIOS
+    Route::post('/searchVeterinario','searchVets')->name('searchVets');
+});
 //todo rutas de housings
 Route::controller(HousingsController::class)->group(function(){
     //todo rutas admin

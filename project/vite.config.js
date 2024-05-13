@@ -26,7 +26,7 @@ export default defineConfig({
                 'resources/css/moduloServicios/user/showServices.css',
 
                 //todo comentarios
-                'resources/css/moduloServicios/user/comments.css'
+                'resources/css/moduloServicios/user/comments.css',
                 //todo js
                 '/project/public/js/moduloServicios/star.js',
                 "resources/js/app.js",
