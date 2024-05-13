@@ -59,10 +59,18 @@ Route::controller(VeterinarianController::class)->group(function(){
     Route::get('/Veterinario','veterinarioUser')->name('Veterinario');
     Route::get('/VeterinarioShow/{id}','showVeterinarianUser')->name('showVeterinarianUser');
     Route::put('/VeterinarioUpdatePuntuations/{id}','updateVeterinarianPuntuations')->name('updateVeterinarianPuntuations');
+    Route::put('/VeterinarioComentario/{id}','enviarComentario')->name('enviarComentario');
 });
 Route::controller(CommentsController::class)->group(function(){
-    Route::get('/adminPWFS/CommentVetsAccepted/{id}','configComment')->name('configComment');
-    Route::delete('/adminPWFS/CommentVetsDestroy/{id}','destroyVetsComment')->name('destroyVetsComment');
+    //todo veterinarios
+    Route::put('/adminPWFS/CommentAccepted/{id}','configComment')->name('configComment');
+    Route::delete('/adminPWFS/CommentDestroy/{id}','destroyVetsComment')->name('destroyVetsComment');
+    //todo alojamiento
+    Route::put('/adminPWFS/CommentAcceptedHousing/{id}','acceptHousingsComment')->name('acceptHousingsComment');
+    Route::delete('/adminPWFS/CommentDestroyHousing/{id}','destroyHousingsComment')->name('destroyHousingsComment');
+    //todo peluquerias
+    Route::put('/adminPWFS/CommentAcceptedDogGroomer/{id}','acceptDogGroomersComment')->name('acceptDogGroomersComment');
+    Route::delete('/adminPWFS/CommentDestroyDogGroomer/{id}','destroyDogGroomersComment')->name('destroyDogGroomersComment');
 });
 
 

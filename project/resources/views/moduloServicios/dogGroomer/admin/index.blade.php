@@ -19,8 +19,8 @@
                             <td>{{$dogGroomer->address}}</td>
                             <td>{{$dogGroomer->phone}}</td>
                             <td>
-                                <button type="button" class="btn bg-cyan" data-bs-toggle="modal" data-bs-target="#viewProfile{{$dogGroomer->id}}">Ver perfil</button>
-                                <button type="button" class="btn bg-red" data-bs-toggle="modal" data-bs-target="#deleteProfile{{$dogGroomer->id}}">Eliminar</button>
+                                <button type="button" class="btn bg-cyan" data-bs-toggle="modal" data-bs-target="#viewProfile{{$dogGroomer->comments->id}}">Ver perfil</button>
+                                <button type="button" class="btn bg-red" data-bs-toggle="modal" data-bs-target="#deleteProfile{{$dogGroomer->comments->id}}">Eliminar</button>
                             </td>
                         </tr>
                         @include('moduloServicios.dogGroomer.admin.ModalViewProfile')
