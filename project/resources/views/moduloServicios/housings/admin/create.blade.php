@@ -1,13 +1,10 @@
-@extends('moduloServicios.dashboard')
+@extends('layouts.dashboard')
 @section('title', 'Crear Alojamiento')
 @section('content')
     <h1>Añadir Alojamiento</h1>
     <form method="POST" action="{{ route('storeHousing') }}" role="form" enctype="multipart/form-data">
         {{ method_field('PUT') }}
         @csrf
-        @php
-            $isEdit = false;
-        @endphp
         <div class="mb-3">
             <label for="address" class="form-label">direccion</label>
             <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address"
@@ -38,13 +35,13 @@
                 name="food_offer" placeholder="Ingrese nombre" value="{{ old('food_offer') }}">
         </div>
         <div class="mb-3">
-            <label for="img" class="form-label">Img_ref</label>
-            <input type="text" class="form-control @error('img_ref') is-invalid @enderror" id="img_ref" name="img_ref"
-                placeholder="Jose Garcia" value="{{ old('img_ref') }}">
+            <label for="Img" class="form-label">Img_ref</label>
+            <input type="file" class="form-control @error('img_ref') is-invalid @enderror" id="img_ref" name="img_ref"
+            value="{{ old('img_ref') }}" accept="image/*">
         </div>
         <div class="mb-3">
-            <a class="btn btn-danger" href="{{ route('housingAdmin') }}">Cancelar</a>
-            <button class="btn btn-primary">Guardar</button>
+            <a class="btn bg-red" href="{{ route('housingAdmin') }}">Cancelar</a>
+            <button class="btn bg-cyan">Guardar</button>
         </div>
 
         @error('phone')

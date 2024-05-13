@@ -17,9 +17,11 @@ return new class extends Migration
             $table->string('address');
             $table->string('phone');
             $table->string('email');
-            $table->string('link_ref');
-            $table->string('img_ref');
+            $table->string('link_ref')->nullable();
+            $table->string('img_ref')->nullable();
             $table->string('specialist_animals');
+            $table->string('all_puntuations')->nullable();
+            $table->string('puntuation')->nullable();
             $table->timestamps();
         });
     }

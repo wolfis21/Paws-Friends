@@ -13,6 +13,11 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
-        "alertifyjs": "^1.14.0"
+
+
+        "bootstrap-icons": "^1.11.3",
+
+        "build": "^0.1.4"
+
     }
 }

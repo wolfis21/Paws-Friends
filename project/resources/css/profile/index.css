@@ -1,0 +1,113 @@
+/* profile/index.css */
+
+/* Container styles */
+.containerMainNav{
+  display: flex;
+  justify-content: center;
+  background-image: url(Imagen-actualizacion.png);
+  background-size: cover;
+  background-position: center;
+}
+.title{
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+}
+h2{
+  padding: 0px !important;
+  margin: 0px !important;
+  width: 100%;
+  font-size: 50px !important;
+}
+.container2 {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 40px 0px;
+    padding: 20px;
+  }
+  .info-User{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0px 0px 20px #ccc;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+  /* Card space styles */
+  .card-space {
+    width: 46%;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 10px 10px;
+    text-decoration: none;
+  }
+
+  .ae{
+    width: 100%;
+  }
+p {
+    margin-bottom: 0px !important;
+}
+.label{
+    font-size: 20px;
+}
+
+.user-info{
+    width: 100%;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.peque{
+  width: 261.5px;
+}
+.btn-link{
+  width: 50%;
+  background-color: #7660A5;
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none !important;
+  border-radius: 10px;
+  transition: all .5s;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+
+}
+
+.btn-link:hover{
+  background-color: #3b2569;
+  color: #fff;
+}
+.btna{
+  font-size: 16px;
+  color: #fff;
+}
+
+.btnE{
+  border: none;
+  background: transparent;
+  color: #fff;
+}

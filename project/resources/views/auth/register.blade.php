@@ -1,8 +1,9 @@
-<<<<<<< HEAD
+{{-- @extends('adminlte::auth.register') --}}
+
 {{-- @extends('layouts.app') --}}
 
 @extends('layouts.headerNav')
-
+@vite('resources/css/login/loginUser.css')
 @section('content')
     <div class="container-register">
         <div class="row justify-content-center">
@@ -26,7 +27,8 @@
                                     <div class="col-md-6 width-temp-2">
                                         <input id="name" type="text"
                                             class="form-control @error('name') is-invalid @enderror" name="name"
-                                            value="{{ old('name') }}" required autocomplete="name" placeholder="Nombre" autofocus>
+                                            value="{{ old('name') }}" required autocomplete="name" placeholder="Nombre"
+                                            autofocus>
 
                                         @error('name')
                                             <span class="invalid-feedback" role="alert">
@@ -42,7 +44,8 @@
                                     <div class="col-md-6 width-temp-2">
                                         <input id="last_name" type="text"
                                             class="form-control @error('last_name') is-invalid @enderror" name="last_name"
-                                            value="{{ old('last_name') }}" required autocomplete="last_name" placeholder="Apellido" autofocus>
+                                            value="{{ old('last_name') }}" required autocomplete="last_name"
+                                            placeholder="Apellido" autofocus>
 
                                         @error('last_name')
                                             <span class="invalid-feedback" role="alert">
@@ -58,7 +61,8 @@
                                     <div class="col-md-6 width-temp-2">
                                         <input id="dni" type="text"
                                             class="form-control @error('dni') is-invalid @enderror" name="dni"
-                                            value="{{ old('dni') }}" required autocomplete="dni" placeholder="Cedula" autofocus>
+                                            value="{{ old('dni') }}" required autocomplete="dni" placeholder="Cedula"
+                                            autofocus>
 
                                         @error('dni')
                                             <span class="invalid-feedback" role="alert">
@@ -74,7 +78,8 @@
                                     <div class="col-md-6 width-temp-2">
                                         <input id="phone" type="text"
                                             class="form-control @error('phone') is-invalid @enderror" name="phone"
-                                            value="{{ old('phone') }}" required autocomplete="phone" placeholder="Telefono movil" autofocus>
+                                            value="{{ old('phone') }}" required autocomplete="phone"
+                                            placeholder="Telefono movil" autofocus>
 
                                         @error('phone')
                                             <span class="invalid-feedback" role="alert">
@@ -90,7 +95,8 @@
                                     <div class="col-md-6 width-temp-2">
                                         <input id="address" type="text"
                                             class="form-control @error('address') is-invalid @enderror" name="address"
-                                            value="{{ old('address') }}" required autocomplete="address" placeholder="Direccion" autofocus>
+                                            value="{{ old('address') }}" required autocomplete="address"
+                                            placeholder="Direccion" autofocus>
 
                                         @error('address')
                                             <span class="invalid-feedback" role="alert">
@@ -121,12 +127,13 @@
                                 <div class="row mb-0">
                                     <label for="photo_user"
                                         class="col-md-4 col-form-label text-md-init">{{ __('Ajuste Foto') }}</label>
-    
+
                                     <div class="col-md-6 width-temp-2">
                                         <input id="photo_user" type="file"
-                                            class="form-control @error('photo_user') is-invalid @enderror" name="photo_user"
-                                            value="{{ old('photo_user') }}" required autocomplete="photo_user" autofocus>
-    
+                                            class="form-control @error('photo_user') is-invalid @enderror"
+                                            name="photo_user" value="{{ old('photo_user') }}" required
+                                            autocomplete="photo_user" autofocus>
+
                                         @error('photo_user')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -134,16 +141,52 @@
                                         @enderror
                                     </div>
                                 </div>
+                                <div class="inferior-container">
+                                    <div class="row mb-0">
+                                        <label for="photo_dni"
+                                            class="col-md-4 col-form-label text-md-init">{{ __('Foto Cedula') }}</label>
     
+                                        <div class="col-md-6 width-temp-2">
+                                            <input id="photo_dni" type="file"
+                                                class="form-control @error('photo_dni') is-invalid @enderror"
+                                                name="photo_dni" value="{{ old('photo_dni') }}" required
+                                                autocomplete="photo_dni" autofocus>
+    
+                                            @error('photo_dni')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="inferior-container">
+                                        <div class="row mb-0">
+                                            <label for="photo_rif"
+                                                class="col-md-4 col-form-label text-md-init">{{ __('Foto Rif') }}</label>
+        
+                                            <div class="col-md-6 width-temp-2">
+                                                <input id="photo_rif" type="file"
+                                                    class="form-control @error('photo_rif') is-invalid @enderror"
+                                                    name="photo_rif" value="{{ old('photo_rif') }}" required
+                                                    autocomplete="photo_rif" autofocus>
+        
+                                                @error('photo_rif')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
                                 <div class="row mb-0">
                                     <label for="password"
                                         class="col-md-4 col-form-label text-md-init">{{ __('Contraseña') }}</label>
-    
+
                                     <div class="col-md-6 width-temp-2">
                                         <input id="password" type="password"
-                                            class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Contraseña"
-                                            required autocomplete="new-password">
-    
+                                            class="form-control @error('password') is-invalid @enderror" name="password"
+                                            placeholder="Contraseña" required autocomplete="new-password">
+
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -151,17 +194,18 @@
                                         @enderror
                                     </div>
                                 </div>
-    
+
                                 <div class="row mb-0">
                                     <label for="password-confirm"
                                         class="col-md-4 col-form-label text-md-init">{{ __('Confirme Contraseña') }}</label>
-    
+
                                     <div class="col-md-6 width-temp-2">
                                         <input id="password-confirm" type="password" class="form-control"
-                                            name="password_confirmation" placeholder="Repita contraseña" required autocomplete="new-password">
+                                            name="password_confirmation" placeholder="Repita contraseña" required
+                                            autocomplete="new-password">
                                     </div>
                                 </div>
-    
+
                                 <div class="row mb-0">
                                     <div class="col-md-6 width-temp-2 offset-md-4">
                                         <button type="submit" class="btn btn-primary">
@@ -177,6 +221,3 @@
         </div>
     </div>
 @endsection
-=======
-@extends('adminlte::auth.register')
->>>>>>> origin/module-1

@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'league spartan';
-    src: url('/fuentes/League_Spartan/static/LeagueSpartan-Regular.ttf');
+    font-family: "league spartan";
+    src: url("/fuentes/League_Spartan/static/LeagueSpartan-Regular.ttf");
     font-weight: bold;
     font-style: bold;
 }
@@ -15,7 +15,7 @@ a {
 }
 
 nav{
-    background-color: azure;
+    background-color: #f0fcff;
     padding: auto;
 }
 
@@ -24,21 +24,24 @@ nav{
 }
 
 ul li a {
-    font-family: 'league spartan';
+    font-family: "League Spartan", sans-serif;
+    font-weight: bold;
+    font-style: normal;
 }
 ul{
     margin-bottom: 0px!important;
+    list-style: none;
 }
 
 #MainNavBar{
     overflow: hidden;
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 
-#MainNavBar ul{
+#MainNavBar > ul{
     margin: 0px;
 }
 
@@ -46,7 +49,7 @@ ul{
     float: left;
 }
 
-#MainNavBar li {
+#MainNavBar > li {
     float: left;
     margin: 30px 20px;
 }
@@ -57,13 +60,75 @@ ul{
     font-size: 18px!important;
 }
 
-h1{
-    margin: 5px;
+
+#MainNavBar .link-none{
+    cursor:default;
+}
+#MainNavBar li:hover > ul{
+    display: block;
+    background-color: #fff;
+    z-index: 100;
+}
+.container-nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80px;
 }
 
+#title{
+    margin: 0px;
+    padding: 0px;
+}
+.link-modulos{
+    padding: 0px;
+    color: #000;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+.link-modulos:hover{
+    color: #Fff;
+}
+.mostrar-secciones{
+    padding: 0px;
+    display: none;
+    position: absolute;
+    min-width: 140px;
+}
+
+.mostrar-secciones li{
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+.verde:hover{
+    background-color: #9fcb40;
+}
+
+.rojo:hover{
+    background-color: #f35c5c;
+}
+
+.naranja:hover{
+    background-color: #f7a724;
+}
+
+.azul:hover{
+    background-color: #54E9F4;
+}
+h1{
+    margin: 5px;
+} 
+
 #logoNav {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     margin: 0px;
 }
 
@@ -83,7 +148,7 @@ h1{
 }
 
 #ShowcaseMain{
-    background: url('../imagenes/FRAMES/FRAME A/Frame A1 - Bienvenidos.png');
+    background: url('../imagenes/FRAMES/FRAME A/FrameA1-Bienvenidos.webp');
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0px;
@@ -92,7 +157,7 @@ h1{
 }
 
 #ShowcaseServicios{
-    background: url('../imagenes/FRAMES/FRAME B/Frame B1 - Servicios.png');
+    background: url('../imagenes/FRAMES/FRAME B/Frame-B1-Servicios.webp');
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0px;
@@ -101,7 +166,7 @@ h1{
 }
 
 #ShowcaseQuienes{
-    background: url('../imagenes/FRAMES/FRAME C/Frame C1 - Somos.png');
+    background: url('../imagenes/FRAMES/FRAME C/FrameC1-Somos.webp');
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0px;
@@ -118,6 +183,14 @@ h1{
     width: 100%;
 }
 
+#ShowcaseContacto{
+    background: url('../imagenes/FRAMES/FRAME E/Frame E1 - Contacto.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    height: 100vh;
+    width: 100%;
+}
 .container{
     margin: auto;
     padding: auto;
@@ -157,20 +230,26 @@ a.btn-main:hover{
     height: 15rem;
 }
 
-.contenedorModulos{
+.contenedorModulos {
     margin-left: 150px;
     margin-right: 150px;
 }
 
-#cuidado:hover, #donaciones:hover, 
-#rescates:hover, #tienda:hover{
+#cuidado:hover,
+#donaciones:hover,
+#rescates:hover,
+#tienda:hover {
     box-shadow: 0px 5px 10px #312150;
 }
 
-#txt-vet p{
+#txt-vet p {
     float: right;
-    width: 40%; 
+    margin-top: 25%;
+    padding: 20px;
+    width: 40%;
     font-size: x-large;
+    text-align: justify;
+
 }
 
 /*slider*/
@@ -235,3 +314,52 @@ a.btn-main:hover{
     padding-top: 10px;
     border-top: 2px solid #486284;
 }
+
+.text-text-legals{
+    font-family: "League Spartan", sans-serif;
+    font-style: normal;
+}
+
+#usuario {
+    cursor: pointer;
+}
+
+.options{
+    display: none;
+}
+
+.user-options{
+    position: absolute;
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    width: 125px;
+    background-color: #fff;
+}
+
+
+.user-options li:hover > a{
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    background-color: #6e569f;
+    color: #fff;
+}
+
+.logout-link {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 0;
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  .logout-link:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+
