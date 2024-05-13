@@ -8,6 +8,12 @@ use App\Http\Controllers\moduloServicios\DogGroomerController;
 use App\Http\Controllers\moduloServicios\CommentsController;
 use App\Http\Controllers\moduloServicios\HousingsController;
 use App\Http\Controllers\moduloServicios\VeterinarianController;
+use App\Http\Controllers\moduloAdopcionDonacion\DonacionesController;
+use App\Http\Controllers\moduloAdopcionDonacion\AdopcionesController;
+use App\Http\Controllers\moduloAdopcionDonacion\PrincipalController;
+use App\Http\Controllers\moduloAdopcionDonacion\HistoriaController;
+
+
 
 use Illuminate\Support\Facades\Route;
 /*
@@ -66,7 +72,6 @@ Route::controller(CommentsController::class)->group(function(){
 });
 
 
-//Auth::routes();
 //todo rutas de housings
 Route::controller(HousingsController::class)->group(function(){
     //todo rutas admin
@@ -97,5 +102,24 @@ Route::controller(DogGroomerController::class)->group(function(){
     Route::get('/dogGroomers', 'dogGroomerUser')->name('dogGroomerUser');
 });
 //ver como integrar los comments
+
+//? FIN RUTAS MODULO 1
+
+//? RUTAS MODULO 3 ===============================================================================================
+
+Route::resource('donaciones', DonacionesController::class);
+Route::get('/adminPWFS/donations',  [DonacionesController::class, 'index'])->name('index');
+
+Route::resource('adopciones', AdopcionesController::class);
+/* Route::resource('/FormularioAdopciones', FormularioAdopcionesController::class);
+Route::resource('/FormularioDonaciones', FormularioDonacionesController::class);
+Route::resource('/AdopcionesVermas', AdopcionesVermasController::class); */
+Route::resource('adopcion-donaciones', PrincipalController::class);
+Route::get('/donar/formulario',  [PrincipalController::class, 'indexDonations'])->name('indexDonations');
+Route::get('/adoptar/formulario',  [PrincipalController::class, 'indexAdoptions'])->name('indexAdoptions');
+
+Route::resource('historias', HistoriaController::class);
+
+//? FIN RUTAS MODULO 3
 
 Auth::routes();

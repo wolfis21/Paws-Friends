@@ -191,16 +191,15 @@
                                 <div class="col-md-4 col-xl-4">
                                     <div class="card bg-c-green order-card">
                                         <div class="card-block">
-                                            <h5>Alimentos</h5>
                                             {{-- @php
                                                 use App\Models\moduloServicios\Veterinarian;
                                                 $cant_Vets = Veterinarian::count();
                                             @endphp
                                             <h2 class="text-right"><i
                                                     class="fas fa-fw fa-bowl-food f-left"></i><span>{{ $cant_Vets }}</span>
-                                            </h2>
-                                            <p class="m-b-0 text-right"><a href="/admin/Veterinarians"
-                                                    class="text-white">Ver más</a></p> --}}
+                                            </h2>--}}
+                                            <p class="m-b-0 text-right"><a href="/adminPWFS/donationes"
+                                                    class="text-white"><h5>Ver Donaciones</h5></a></p> {{-- para despues --}} 
                                         </div>
                                     </div>
                                 </div>
