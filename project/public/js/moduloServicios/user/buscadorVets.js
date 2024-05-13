@@ -42,9 +42,13 @@ $(document).ready(function () {
                             '</div>';
                         html += enlace;
                     }
-                     $('#results').html(html);
+                    if (html.trim()!== "") {
+                        $('#results').html(html);
+                    }
                 })
                 .catch((error) => console.log(error));
-        } 
+        } else {
+            $('#results').html("");
+        }
     });
 });

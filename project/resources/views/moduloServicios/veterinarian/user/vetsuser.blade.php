@@ -9,6 +9,7 @@
          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
      <!-- Mis Estilos CSS -->
      <link rel="stylesheet" href="{{ asset('vendor/jquery-ui-1.13.3/jquery-ui.min.css') }}">
+
      <div class="container-title">
          <h1 class="title">Veterinarios</h1>
      </div>
@@ -58,7 +59,6 @@
          <div class="container-aside">
              <div class="form-input">
                  <div class="search">
-                     {{-- <i class="bi bi-search icon"></i> --}}
                      <input id="buscador-input" type="text" name="searchVets" placeholder="Buscar veterinario" />
                  </div>
                  <div id="results">
