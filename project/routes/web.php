@@ -54,8 +54,6 @@ Route::controller(VeterinarianController::class)->group(function(){
     Route::put('/adminPWFS/updateVeterinarians/{id}', 'update')->name('update');
     Route::delete('/adminPWFS/destroyVeterinarians/{id}', 'destroy')->name('destroy');
 
-    //todo comentarios veterinarios
-    
     //todo rutas user
     Route::get('/Veterinario','veterinarioUser')->name('Veterinario');
     Route::get('/VeterinarioShow/{id}','showVeterinarianUser')->name('showVeterinarianUser');
@@ -63,23 +61,7 @@ Route::controller(VeterinarianController::class)->group(function(){
     Route::put('/VeterinarioComentario/{id}','enviarComentario')->name('enviarComentario');
     
 });
-Route::controller(CommentsController::class)->group(function(){
-    //todo veterinarios
-    Route::put('/adminPWFS/CommentAccepted/{id}','configComment')->name('configComment');
-    Route::delete('/adminPWFS/CommentDestroy/{id}','destroyVetsComment')->name('destroyVetsComment');
-    //todo alojamiento
-    Route::put('/adminPWFS/CommentAcceptedHousing/{id}','acceptHousingsComment')->name('acceptHousingsComment');
-    Route::delete('/adminPWFS/CommentDestroyHousing/{id}','destroyHousingsComment')->name('destroyHousingsComment');
-    //todo peluquerias
-    Route::put('/adminPWFS/CommentAcceptedDogGroomer/{id}','acceptDogGroomersComment')->name('acceptDogGroomersComment');
-    Route::delete('/adminPWFS/CommentDestroyDogGroomer/{id}','destroyDogGroomersComment')->name('destroyDogGroomersComment');
-});
 
-    //TODO BUSQUEDA
-Route::controller(SearchController::class)->group(function(){
-    //TODO VETERINARIOS
-    Route::post('/searchVeterinario','searchVets')->name('searchVets');
-});
 //todo rutas de housings
 Route::controller(HousingsController::class)->group(function(){
     //todo rutas admin
@@ -92,8 +74,10 @@ Route::controller(HousingsController::class)->group(function(){
     Route::delete('/adminPWFS/destroyHousing/{id}', 'destroyHousing')->name('destroyHousing');
     
     //todo rutas user
-    Route::resource('/housings', HousingsController::class);
-    Route::get('/housings', 'housingUser')->name('housingUser');
+    Route::get('/housing','housingUser')->name('housingUser');
+    Route::get('/housingShow/{id}','showHousingUser')->name('showHousingUser');
+    Route::put('/housingUpdatePuntuations/{id}','updateHousingPuntuations')->name('updateHousingPuntuations');
+    Route::put('/housingComentario/{id}','enviarComentarioHousing')->name('enviarComentarioHousing');
 });
 //----------------------------------------------------------------
 // todo: rutas de dog_groomer
@@ -108,7 +92,29 @@ Route::controller(DogGroomerController::class)->group(function(){
     //todo rutas user
     Route::resource('/dogGroomers', DogGroomerController::class);
     Route::get('/dogGroomers', 'dogGroomerUser')->name('dogGroomerUser');
+    Route::get('/DogGroomerShow/{id}','showDogGroomerUser')->name('showDogGroomerUser');
+    Route::put('/DogGroomerUpdatePuntuations/{id}','updateDogGroomerPuntuations')->name('updateDogGroomerPuntuations');
+    Route::put('/DogGroomerComentario/{id}','enviarComentarioDogGroomer')->name('enviarComentarioDogGroomer');
 });
 //ver como integrar los comments
 
+Route::controller(CommentsController::class)->group(function(){
+    //todo veterinarios
+    Route::get('/adminPWFS/CommentAccepted/{id}','configComment')->name('configComment');
+    Route::delete('/adminPWFS/CommentDestroy/{id}','destroyVetsComment')->name('destroyVetsComment');
+    //todo alojamiento
+    Route::get('/adminPWFS/CommentAcceptedHousing/{id}','acceptHousingsComment')->name('acceptHousingsComment');
+    Route::delete('/adminPWFS/CommentDestroyHousing/{id}','destroyHousingsComment')->name('destroyHousingsComment');
+    //todo peluquerias
+    Route::get('/adminPWFS/CommentAcceptedDogGroomer/{id}','acceptDogGroomersComment')->name('acceptDogGroomersComment');
+    Route::delete('/adminPWFS/CommentDestroyDogGroomer/{id}','destroyDogGroomersComment')->name('destroyDogGroomersComment');
+});
+
+    //TODO BUSQUEDAs
+Route::controller(SearchController::class)->group(function(){
+    //TODO VETERINARIOS
+    Route::post('/searchVeterinario','searchVets')->name('searchVets');
+    Route::post('/searchHousings','searchHousings')->name('searchHousings');
+    Route::post('/searchDogGroomers','searchDogGroomers')->name('searchDogGroomers');
+});
 Auth::routes();

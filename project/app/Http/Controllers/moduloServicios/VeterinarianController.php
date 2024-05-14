@@ -178,7 +178,6 @@ class VeterinarianController extends Controller
     {
         $veterinarian = Veterinarian::findOrFail($id);
         $vet = $request->all();
-        $contador = 0;
         // Verificar si el usuario ya ha dado una puntuación al veterinario
         $puntuacionExistente = $this->verificarPuntuacion($id);
 

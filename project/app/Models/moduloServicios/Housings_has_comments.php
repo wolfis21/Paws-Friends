@@ -9,6 +9,12 @@ class Housings_has_comments extends Model
 {
     protected $table = 'housings_has_comments';
 
+    protected $fillable = [
+        'comments_id',
+        'housings_id',
+        'created_at',
+        'updated_at',
+    ];
     public function housings(){
         return $this->belongsTo(Housing::class, 'housings_id', 'id');
     }

@@ -16,9 +16,13 @@ class Housing extends Model
         'type_animals' ,
         'food_offer' ,
         'img_ref',
-        'all_puntuations',
         'puntuation'
     ];
 
+    public function puntuaciones()
+    {
+        return $this->belongsToMany(Puntuations::class, 'housings_has_puntuations', 'housings_id', 'puntuations_id')
+            ->withPivot('created_at', 'updated_at');
+    }
     use HasFactory;
 }

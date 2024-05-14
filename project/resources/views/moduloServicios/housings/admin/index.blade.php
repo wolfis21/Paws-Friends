@@ -22,8 +22,8 @@
                             <td>{{$housing->type_animals}}</td>
                             {{-- <td><img src="images/housings/{{($housing->img_ref)}}"  alt="a" ></td> --}}
                             <td>
-                                <button type="button" class="btn bg-cyan" data-bs-toggle="modal" data-bs-target="#viewProfile{{$housing->comments->id}}">Ver perfil</button>
-                                <button type="button" class="btn bg-red" data-bs-toggle="modal" data-bs-target="#deleteProfile{{$housing->comments->id}}">Eliminar</button>
+                                <button type="button" class="btn bg-cyan" data-bs-toggle="modal" data-bs-target="#viewProfile{{$housing->id}}">Ver perfil</button>
+                                <button type="button" class="btn bg-red" data-bs-toggle="modal" data-bs-target="#deleteProfile{{$housing->id}}">Eliminar</button>
                             </td>
                         </tr>
                         @include('moduloServicios.housings.admin.ModalViewProfile')
@@ -52,11 +52,11 @@
                                 <td>{{ $housingComment->comments->data_text }}</td>
                                 <td>{{ $housing->name }}</td>
                                 <td>
-                                    <form action="{{ route('destroyHousingsComment', $housingComment->id) }}"
+                                    <form action="{{ route('destroyHousingsComment', $housingComment->comments->id) }}"
                                         method="POST">
                                         @method('PUT')
                                         <a class="btn bg-cyan"
-                                            href="{{ route('acceptHousingsComment', $housingComment->id) }}">Confirmar</a>
+                                            href="{{ route('acceptHousingsComment', $housingComment->comments->id) }}">Confirmar</a>
                                         @method('DELETE')
                                         @csrf
                                         <button type="submit" class="btn bg-red">Denegar</button>
