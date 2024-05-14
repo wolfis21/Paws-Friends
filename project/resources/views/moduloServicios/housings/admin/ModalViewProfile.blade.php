@@ -11,6 +11,10 @@
                     <img class="img-HD" src="{{ asset('storage/moduloServicios/images/housings/'. $housing->img_ref) }}" alt="imagen.housing" />
                 </div>
                 <div class="mb-3">
+                    <label for="Direccion" class="form-label">Nombre: </label>
+                    <p>{{ $housing->name }}</p>
+                </div>
+                <div class="mb-3">
                     <label for="Direccion" class="form-label">Direccion: </label>
                     <p>{{ $housing->address }}</p>
                 </div>
