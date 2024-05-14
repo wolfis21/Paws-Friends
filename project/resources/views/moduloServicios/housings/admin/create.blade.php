@@ -6,9 +6,9 @@
         {{ method_field('PUT') }}
         @csrf
         <div class="mb-3">
-            <label for="name" class="form-label">direccion</label>
+            <label for="name" class="form-label">Nombre</label>
             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
-                placeholder="Ingrese direccion" value="{{ old('name') }}">
+                placeholder="Ingrese nombre" value="{{ old('name') }}">
         </div>
         <div class="mb-3">
             <label for="address" class="form-label">direccion</label>

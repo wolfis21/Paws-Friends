@@ -9,7 +9,7 @@
             $isEdit = false;
         @endphp
         <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
+            <label for="name" class="form-label">Nombre</label>
             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Ingrese nombre" value="{{$housing->name}}">
         </div>
         <div class="mb-3">
