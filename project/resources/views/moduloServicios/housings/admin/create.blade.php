@@ -32,6 +32,7 @@
                 <option selected>Elegir Tipo de Animal...</option>
                 <option value="Perro">Perro</option>
                 <option value="Gato">Gato</option>
+                <option value="Otros">Otros</option>
             </select>
         </div>
         <div class="mb-3">
