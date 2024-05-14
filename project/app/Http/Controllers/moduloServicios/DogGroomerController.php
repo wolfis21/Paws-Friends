@@ -81,7 +81,7 @@ class DogGroomerController extends Controller
         $request->validate([
             'name' => 'required|string|min:3',
             'address' => 'string',
-            'phone' => 'required|unique:veterinarians|alpha_num|min_digits:11',
+            'phone' => 'required|alpha_num|min_digits:11',
             'link_ref' => 'nullable',
             'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'puntuation' => 'nullable',

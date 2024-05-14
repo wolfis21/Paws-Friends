@@ -84,7 +84,7 @@ class HousingsController extends Controller
     {
         $request->validate([
             'address' => 'required|string|min:3',
-            'phone' => 'required|unique:housings|alpha_num|min_digits:3',
+            'phone' => 'required|alpha_num|min_digits:3',
             'description_location' => 'required|string|min:6',
             'type_animals' => 'required',
             'food_offer' => 'required',
