@@ -30,6 +30,7 @@
                 <option selected value="{{($housing->type_animals)}}">{{$housing->type_animals}}</option>
                 <option value="Perro">Perro</option>
                 <option value="Gato">Gato</option>
+                <option value="Otros">Otros</option>
             </select>
         </div>
         <div class="mb-3">
