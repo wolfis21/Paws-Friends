@@ -1,6 +1,6 @@
-@extends('layouts.plantillaBase')
+@extends('layouts.dashboard')
 
-@section('contenido')
+@section('content')
 <h2>CREAR REGISTRO</h2>
 
 <form action="/AdminP" method="POST">

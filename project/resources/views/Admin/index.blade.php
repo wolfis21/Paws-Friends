@@ -1,24 +1,11 @@
-@extends('layouts.plantillaBase')
+@extends('layouts.dashboard')
 
 @section('css')
   <link href="https://cdn.datatables.net/2.0.6/css/dataTables.bootstrap5.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 @endsection
 
-    <header>
-      <nav>
-        <ul>
-          <th><a href="./welcome">Pagina Principal</a></th>
-          <th><a href="/AdminPP">animales</a></th>
-          <th><a href="/AdminP">adopcion</a></th>
-          <th><a href="./Donaciones">donations</a></th>
-          <th><a href="./Historia">Historial</a></th>
-        </ul>
-      </nav>
-      <a href="#iniciar" class="btn"></a>
-    </header>
-
-@section('contenido')
+@section('content')
 <a href="AdminP/create"  class="btn btn-primary">CREAR</a>
 <table id='adopciones' class="table table-dark table-bordered shadow-lg mt-4" style="width:100%">
   <thead clase="bg-primary text-white">

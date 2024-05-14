@@ -1,8 +1,6 @@
-@extends('layouts.plantillaBase')
+@extends('layouts.dashboard')
 
-@section('contenido')
-<h2>CREAR REGISTRO animals_adoption</h2>
-
+@section('content')
 <form action="/AdminPP" method="POST">
   @csrf
   <div class="mb-3 mt-3">

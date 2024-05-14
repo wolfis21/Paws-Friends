@@ -1,6 +1,6 @@
-@extends('layouts.plantillaBase')
+@extends('layouts.dashboard')
 
-@section('contenido')
+@section('content')
 <h2>EDITAR REGISTRO</h2>
 
 <form action="/AdminP/{{$FormularioAdopcion->id}}" method="POST">

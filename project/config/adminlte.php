@@ -352,12 +352,12 @@ return [
         ['header' => 'DONACIONES / ADOPCIONES'],
         [
             'text' =>'Mascotas',
-            'url' => '/AdminP',
+            'url' => '/AdminPP',
             'icon' =>'fas fa-fw fa-bowl-food',
         ],
         [
             'text' => 'Adopciones',
-            'url' => '/AdminPP',
+            'url' => '/AdminP',
             'icon' =>'fas fa-fw fa-bone',
         ],
         [
