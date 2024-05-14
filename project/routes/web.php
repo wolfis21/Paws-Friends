@@ -111,6 +111,8 @@ Route::resource('donaciones', DonacionesController::class);
 Route::get('/adminPWFS/donations',  [DonacionesController::class, 'index'])->name('index');
 
 Route::resource('adopciones', AdopcionesController::class);
+Route::get('/adminPWFS/adopciones',  [AdopcionesController::class, 'index'])->name('index');
+
 /* Route::resource('/FormularioAdopciones', FormularioAdopcionesController::class);
 Route::resource('/FormularioDonaciones', FormularioDonacionesController::class);
 Route::resource('/AdopcionesVermas', AdopcionesVermasController::class); */
