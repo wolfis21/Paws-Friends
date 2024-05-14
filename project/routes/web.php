@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FundationController;
 use App\Http\Controllers\Demand_animal_has_fundationController;
+use App\Http\Controllers\Historial_adminController;
 use App\Http\Controllers\HomeServicesController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
@@ -110,29 +111,18 @@ Route::get('/servicios', function () {
 Route::get('/registrodemanda', function () {
     return view('registrodemanda');
 });
-/* Route::get('/fundation', function () {
-    return view('fundation');
-}); */
-Route::get('/adminrescate', function () {
-    return view('adminrescate');
-});
-
 
 Route::get('/servicios', [App\Http\Controllers\ServiciosController::class, 'index'])->name('servicios');
 
 Route::get('/registrodemanda', [App\Http\Controllers\RegistroDemandaController::class, 'index'])->name('registrodemanda');
 
-/* Route::post('/guardar-denuncia', '[TuControlador]@guardarDenuncia')->name('guardar_denuncia');
- */
-/*  Route::get('/fundation', [App\Http\Controllers\FundationController::class, 'index'])->name('fundation'); */
- 
-Route::get('/historialcliente', [App\Http\Controllers\HistorialclienteController::class, 'index'])->name('historialcliente');
-
-Route::get('/adminrescate', [App\Http\Controllers\AdminRescateController::class, 'index'])->name('adminrescate');
+Route::get('/historialcliente', [App\Http\Controllers\HistorialClienteController::class, 'index'])->name('historialcliente');
 
 Route::resource('fundations', FundationController::class);
 
 Route::resource('contactarfundaciones', Demand_animal_has_fundationController::class);
+
+Route::resource('historial_admin', Historial_adminController::class);
 
  Auth::routes();
 

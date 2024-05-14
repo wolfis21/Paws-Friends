@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('demands_animals_id'); //Clave foranea 
             $table->unsignedBigInteger('fundation_id'); //Clave foranea 
             $table->text('description');
-            $table->unsignedBigInteger('types_status_id'); // Clave foránea
+            $table->unsignedBigInteger('statusfund_id'); 
             //fecha
           //  $table->date('date');   
             //Proceso de estado de demanda
@@ -26,7 +26,6 @@ return new class extends Migration
 
              $table->foreign('demands_animals_id')->references('id')->on('demands_animals')->onDelete('cascade');
              $table->foreign('fundation_id')->references('id')->on('fundation')->onDelete('cascade');
-             $table->foreign('types_status_id')->references('id')->on('types_status')->onDelete('cascade');
             
         });
     }

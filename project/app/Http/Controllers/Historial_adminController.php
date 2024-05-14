@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Demands_animalss;
+use App\Models\Motivo;
+use App\Models\Urgencia;
+use App\Models\User;
+use App\Models\Types_status;
 
 class Historial_adminController extends Controller
 {
@@ -11,7 +16,9 @@ class Historial_adminController extends Controller
      */
     public function index()
     {
-        //
+        $demand = Demands_animalss::all();
+        
+        return view('moduloRescate.historial_admin.index')->with('demand', $demand);
     }
 
     /**
@@ -19,7 +26,13 @@ class Historial_adminController extends Controller
      */
     public function create()
     {
-        //
+        $demand = Demands_animalss::all();
+        $motivos = Motivo::all();
+        $urgencias = Urgencia::all();
+        $users = User::all();
+
+        return view('moduloRescate.historial_admin.create')->with('demand', $demand)
+        ->with('motivos', $motivos)->with('urgencias', $urgencias)->with('users', $users);
     }
 
     /**
@@ -27,7 +40,18 @@ class Historial_adminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'users_id' => 'required',
+            'description_case' => 'required|string|min:3',
+            'adress_animals' => 'required|string|min:3',
+            'photo_ref' => 'required|string|min:1',
+            'motivo_id' => 'required',
+            'urgencia_id' => 'required',
+        ]);
+
+        Demands_animalss::create($request->all());
+
+        return redirect()->route('historial_admin.index');
     }
 
     /**
@@ -43,7 +67,12 @@ class Historial_adminController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $demand = Demands_animalss::find($id);
+        $motivos = Motivo::all();
+        $urgencias = Urgencia::all();
+        $users = User::all();
+        $type = Types_status::all();
+        return view('moduloRescate.historial_admin.edit')->with('demand',$demand)->with('motivos',$motivos)->with('urgencias',$urgencias)->with('users',$users)->with('type',$type);
     }
 
     /**
@@ -51,7 +80,19 @@ class Historial_adminController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'users_id' => 'required',
+            'description_case' => 'required|string|min:3',
+            'adress_animals' => 'required|string|min:3',
+            'photo_ref' => 'required|string|min:1',
+            'motivo_id' => 'required',
+            'urgencia_id' => 'required',
+            'types_status_id' => 'required',
+        ]);
+
+        $demand = Demands_animalss::findOrFail($id);
+        $demand->update($request->all());
+        return redirect()->route('historial_admin.index');
     }
 
     /**
@@ -59,6 +100,7 @@ class Historial_adminController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Demands_animalss::find($id)->delete();
+        return redirect()->route('historial_admin.index');
     }
 }

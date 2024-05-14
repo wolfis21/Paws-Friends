@@ -24,16 +24,9 @@
     <input type="text" class="form-control @error('description') is-invalid @enderror" id="description" name="description"
         placeholder="Descripción" value="{{ old('description') }}">
 </div>
-
-<div class="mb-3">
-    <label for="status" class="form-label">Status</label>
-    <select name="types_status_id" class="form-control">
-        <option value="">Selecciona un status</option>
-        @foreach ($status as $types_status)
-            <option value="{{ $types_status->id }}">{{ $types_status->name }}</option>
-        @endforeach
-    </select>
-</div>
+{{-- 
+Al registrar se coloca por defecto "en espera" id=1 --}}
+<input type="hidden" class="form-control" id="statusfund_id" name="statusfund_id" value="{{($demands_animals->statusfund->id)}}">
 
 
 <div class="mb-3">
