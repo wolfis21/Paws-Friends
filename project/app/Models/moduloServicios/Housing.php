@@ -10,6 +10,7 @@ class Housing extends Model
     protected $table = 'housings';
 
     protected $fillable = [
+        'name',
         'address' ,
         'phone' ,
         'description_location' ,
