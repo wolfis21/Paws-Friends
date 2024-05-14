@@ -29,7 +29,6 @@
         <div class="mb-3">
             <label for="type_animals" class="form-label">Tipo de animal</label>
             <select id="type_animals" name="type_animals" class="form-select">
-                <option selected>Elegir Tipo de Animal...</option>
                 <option value="Perro">Perro</option>
                 <option value="Gato">Gato</option>
                 <option value="Otros">Otros</option>

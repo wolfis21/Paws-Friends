@@ -33,7 +33,7 @@ $(document).ready(function () {
                     var html = "";
                     for (var i in filteredList) {
                         var enlace = '<div class="flex">' +
-                            '<a href="/dogGroomerShow/' + filteredList[i].id + '" class="container-search">' +
+                            '<a href="/DogGroomerShow/' + filteredList[i].id + '" class="container-search">' +
                             '<img class="img-search" src="/storage/moduloServicios/images/dogGroomers/' + filteredList[i].img_ref + '" alt="Imagen del alojamiento" />' +
                             '<div class="container-search-text">' +
                                 '<p class="texto-search bold">Pel. ' + filteredList[i].name + '</p>' +
