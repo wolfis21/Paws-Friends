@@ -25,8 +25,6 @@ class VeterinarianController extends Controller
     {
         $veterinarians = Veterinarian::all();
         $veterinariansComments = Veterinarians_has_comments::all();
-
-
         return view('moduloServicios.veterinarian.admin.index')
             ->with('veterinarians', $veterinarians)
             ->with('veterinariansComments', $veterinariansComments);
