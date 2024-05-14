@@ -25,16 +25,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomeServicesController::class)->name('homeService');
 
 //? RUTAS MODULO 1===============================================================================================
-Route::controller(HomeServicesController::class)->group(function () {
-    Route::get('/ServiceModel', 'serviceModel')->name('serviceModel');
-//? RUTAS MODULO 1===============================================================================================
-Route::controller(HomeServicesController::class)->group(function () {
-    Route::get('/ServiceModel', 'serviceModel')->name('serviceModel');
-});
 //! Ruta,nombre de la funcion en el controlador, nombre dado en el html
-//todo rutas Veterinarians===============================================================================================
-Route::controller(VeterinarianController::class)->group(function () {
-    //todo rutas admin===============================================================================================
 //todo rutas Veterinarians===============================================================================================
 Route::controller(VeterinarianController::class)->group(function () {
     //todo rutas admin===============================================================================================
@@ -64,6 +55,7 @@ Route::controller(CommentsController::class)->group(function () {
     //todo comentarios de groomers===============================================================================================
     Route::get('/admin/CommentDogGroomersAccepted/{id}', 'acceptDogGroomersComment')->name('acceptDogGroomersComment');
     Route::delete('/admin/CommentDogGroomersDestroy/{id}', 'destroyDogGroomersComment')->name('destroyDogGroomersComment');
+}
 Route::controller(CommentsController::class)->group(function () {
     //todo comentarios de veterinarios===============================================================================================
     Route::get('/admin/CommentVetsAccepted/{id}', 'acceptCommentVeterinarians')->name('acceptCommentVeterinarians');
@@ -76,10 +68,6 @@ Route::controller(CommentsController::class)->group(function () {
     Route::delete('/admin/CommentDogGroomersDestroy/{id}', 'destroyDogGroomersComment')->name('destroyDogGroomersComment');
 });
 
-//todo rutas de housings===============================================================================================
-Route::controller(HousingsController::class)->group(function () {
-    //todo rutas admin===============================================================================================
-//todo rutas de housings===============================================================================================
 Route::controller(HousingsController::class)->group(function () {
     //todo rutas admin===============================================================================================
     Route::get('/admin/housingsAdmin', 'housingAdmin')->name('housingAdmin');
@@ -94,9 +82,6 @@ Route::controller(HousingsController::class)->group(function () {
     Route::get('/housings', 'housingUser')->name('housingUser');
 });
 //----------------------------------------------------------------
-// todo: rutas de dog_groomer===============================================================================================
-Route::controller(DogGroomerController::class)->group(function () {
-    //todo rutas admin===============================================================================================
 // todo: rutas de dog_groomer===============================================================================================
 Route::controller(DogGroomerController::class)->group(function () {
     //todo rutas admin===============================================================================================
@@ -127,4 +112,3 @@ route::resource('/AdminP','App\Http\controllers\AdminPlantillaControllerControll
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
