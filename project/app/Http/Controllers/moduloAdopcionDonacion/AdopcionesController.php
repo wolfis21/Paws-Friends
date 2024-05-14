@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers\moduloAdopcionDonacion;
 use App\Http\Controllers\Controller;
+<<<<<<< HEAD
 use App\Models\moduloAdopcionDonacion\AnimalsAdoption;
+=======
+>>>>>>> 38899f21f843320ae366384ac3647f317c34d534
 
 use Illuminate\Http\Request;
 
@@ -10,6 +13,7 @@ class AdopcionesController extends Controller
 {
     public function index()
     {
+<<<<<<< HEAD
       $adopcion= AnimalsAdoption::all();
 
       return view('moduloAdopcionDonacion.adopcion.admin.index')
@@ -83,5 +87,8 @@ class AdopcionesController extends Controller
       $animals_adoption->delete();
       return redirect('/adminPWFS/adopciones');
 
+=======
+      return view('moduloAdopcionDonacion.Adopciones');
+>>>>>>> 38899f21f843320ae366384ac3647f317c34d534
     }
 }

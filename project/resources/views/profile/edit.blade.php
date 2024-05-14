@@ -30,17 +30,26 @@
                 <input class="user-info" type="text" id="address" name="address" value="{{ $user->address }}">
             </div>
             <div class="card-space">
-                <label for="photo_user" class="label">Foto</>
-                    <input class="user-info" type="file" value="{{ $user->photo_user }}">
+                <label for="photo_user" class="label">Foto</label>
+                    <input class="user-info" type="file" name="photo_user" value="{{ $user->photo_user }}">
             </div>
             <div class="card-space ae">
                 <label for="email" class="label">Correo</label>
                 <input class="user-info" type="text" id="email" name="email" value="{{ $user->email }}">
             </div>
-            {{-- <div class="card-space ae">
+            <div class="card-space ae">
+                <label for="photo_user" class="label">Foto Cedula</label>
+                    <input class="user-info" type="file" name="photo_dni" value="{{ $user->photo_dni }}">
+            </div>
+            <div class="card-space ae">
+                <label for="photo_user" class="label">Foto Rif</label>
+                    <input class="user-info" type="file" name="photo_rif" value="{{ $user->photo_rif }}">
+            </div>
+{{--             <div class="card-space ae">
                 <label for="password" class="label">Contraseña</label>
                 <input class="user-info" type="text" id="password" name="password" value="" placeholder="Ingrese la contraseña">
-            </div> --}}
+            </div> --}} {{-- Pensar esto un poco mas --}}
+
             <div class="card-space btn-link">
                 {{-- <a class="btn" href="{{ route('user.profile', $user->id) }}">Volver</a> --}}
                 <button class="btnE">Guardar Cambios</button>

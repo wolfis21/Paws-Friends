@@ -11,13 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
+<<<<<<< HEAD
         Schema::create('animals_adoptions', function (Blueprint $table) {
+=======
+        Schema::create('animals_adoption', function (Blueprint $table) {
+>>>>>>> 38899f21f843320ae366384ac3647f317c34d534
             $table->id();
             $table->string('name');
             $table->string('species');
             $table->string('animal_race');
             $table->string('sex_animal');
+<<<<<<< HEAD
             $table->string('age_animal');
+=======
+>>>>>>> 38899f21f843320ae366384ac3647f317c34d534
             $table->string('description_animals');
             $table->string('photo_animal');
             $table->string('location_address');

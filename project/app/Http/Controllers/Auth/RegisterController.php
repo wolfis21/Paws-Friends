@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -68,9 +68,19 @@ class RegisterController extends Controller
     protected function create(array $data)
     {   
         $imgPhoto = $data['photo_user'];
-    
-        // Guardar la imagen de la cedula
+        // Guardar una foto de perfil
         $imgPhotoPath = $imgPhoto->store('docs', 'public');
+
+
+        if ($data['photo_dni'] && $data['photo_rif']) {
+            $imgDni = $data['photo_dni'];
+            $imgRif = $data['photo_rif'];
+            $imgPhotoPathDni = $imgDni->store('docs', 'public');
+            $imgPhotoPathRif = $imgRif->store('docs', 'public');
+        } else {
+            $imgPhotoPathDni = null;
+            $imgPhotoPathRif = null;
+        }
 
         return User::create([
             'name' => $data['name'],
@@ -79,6 +89,8 @@ class RegisterController extends Controller
             'phone' => $data['phone'],
             'address' => $data['address'],
             'photo_user' => $imgPhotoPath,
+            'photo_dni' => $imgPhotoPathDni,
+            'photo_rif' => $imgPhotoPathRif,
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'rols_id' => '2',
