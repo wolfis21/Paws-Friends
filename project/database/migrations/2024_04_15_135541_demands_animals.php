@@ -32,7 +32,8 @@ return new class extends Migration
             $table->foreign('motivo_id')->references('id')->on('motivo')->onDelete('cascade');
             $table->foreign('urgencia_id')->references('id')->on('urgencia')->onDelete('cascade');
             $table->foreign('types_status_id')->references('id')->on('types_status')->onDelete('cascade');
-            $table->foreign('statusfund_id')->references('id')->on('status_fund')->onDelete('cascade');
+            $table->foreign('statusfund_id')->references('id')->on('statusfund')->onDelete('cascade');
+    
         });
     }
 

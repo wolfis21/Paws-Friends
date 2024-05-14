@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Demands_animalss;
+use App\Models\Demand_animal_has_fundation;
 use App\Models\Motivo;
 use App\Models\Urgencia;
 use App\Models\User;
 use App\Models\Types_status;
+
 
 class Historial_adminController extends Controller
 {
@@ -17,8 +19,9 @@ class Historial_adminController extends Controller
     public function index()
     {
         $demand = Demands_animalss::all();
+        $completada = Demand_animal_has_fundation::with(['demands_animalss'])->where('statusfund_id',3)->get();
         
-        return view('moduloRescate.historial_admin.index')->with('demand', $demand);
+        return view('moduloRescate.historial_admin.index')->with('demand', $demand)->with('completada', $completada);
     }
 
     /**

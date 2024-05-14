@@ -31,7 +31,4 @@ class Demands_animalss extends Model
     public function statusfund(){
         return $this->belongsTo(statusfund::class, 'statusfund_id');
     }
-    public function demand_animal_has_fundation(){
-        return $this->belongsTo(Demand_animal_has_fundation::class, 'demand_animal_has_fundation_id');
-    }
 }

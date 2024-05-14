@@ -9,13 +9,10 @@
 
         <div class="mb-3">
             <label for="usuario" class="form-label">Usuario</label>
-            <select name="users_id" class="form-control">
-                <option value="">Selecciona un usuario</option>
-                @foreach ($users as $user)
-                    <option value="{{ $user->id }}">{{ $user->name }}</option>
-                @endforeach
-            </select>
+            <input type="text" class="form-control" id="users_name" name="users_name" value="{{ $demand->user->name}}" readonly>
+            <input type="hidden" id="users_id" name="users_id" value="{{ $demand->user->id }}"> 
         </div>
+
         <div class="mb-3">
             <label for="Descripción" class="form-label">Descripción de la situación</label>
             <input type="text" class="form-control @error('description_case') is-invalid @enderror" id="description_case" name="description_case"

@@ -52,28 +52,19 @@
             <th scope="col">Urgencia</th>
             <th scope="col">Fundación</th>
             <th scope="col">Status</th>
-            <th scope="col">Acciones</th>
         </thead>
         <tbody>
-            @foreach ($demand as $demands_animalss)
+            @foreach ($completada as $demand_animal_has_fundation)
                 <tr>
-                    <td>{{ $demands_animalss->id }}</td>
-                    <td>{{ $demands_animalss->user->name }}</td>
-                    <td>{{ $demands_animalss->description_case }}</td>
-                    <td>{{ $demands_animalss->motivo->name }}</td>
-                    <td>{{ $demands_animalss->urgencia->name }}</td>
-                    <td>{{ $demands_animalss->types_status->name }}</td>
-                    <td>{{ $demands_animalss->statusfund->name }}</td>
+                    <td>{{ $demand_animal_has_fundation->demands_animalss->id }}</td>
+                    <td>{{ $demand_animal_has_fundation->demands_animalss->user->name }}</td>
+                    <td>{{ $demand_animal_has_fundation->demands_animalss->description_case }}</td>
+                    <td>{{ $demand_animal_has_fundation->demands_animalss->motivo->name }}</td>
+                    <td>{{ $demand_animal_has_fundation->demands_animalss->urgencia->name }}</td>
+                    <td>{{ $demand_animal_has_fundation->fundation->name }}</td>
+                    <td>{{ $demand_animal_has_fundation->demands_animalss->statusfund->name }}</td>
 
-                    <td>
-                        <form action="{{ route('historial_admin.destroy', $demands_animalss->id) }}" method="POST">
-                            <a class="btn btn-primary" href="{{ route('historial_admin.edit', $demands_animalss->id) }}">Editar</a>
-                            @method('DELETE')
-                            @csrf
-                            <button type="submit" class="btn btn-danger">Eliminar</button>
-                        </form>
 
-                    </td>
                 </tr>
             @endforeach
         </tbody>
