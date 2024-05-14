@@ -1,5 +1,6 @@
 @extends('layouts.headerNav')
 @vite('resources/css/login/loginUser.css')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
 @section('content')
     <div id="ShowcaseMain">
         <div>

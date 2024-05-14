@@ -16,6 +16,7 @@ export default defineConfig({
                 'resources/css/login/loginUser.css',
                 //TOdo profile
                 'resources/css/profile/index.css',
+                'resources/css/register/registroUser.css',
 
                 //todo servies 
                 'moduloServicios/stars/star.css',

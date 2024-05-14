@@ -1,6 +1,3 @@
-{{-- @extends('adminlte::auth.login') --}}
-
-{{-- @extends('layouts.app') --}}
 @extends('layouts.headerNav')
 @vite('resources/css/login/loginUser.css')
 @section('content')
