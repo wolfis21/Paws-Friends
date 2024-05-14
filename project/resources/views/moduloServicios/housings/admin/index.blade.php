@@ -7,6 +7,7 @@
         <div class="card-body">
             <table id="Alojamiento" class="table table-responsive-md table-dark" style="width:100%">
                 <thead>
+                    <th scope="col">Nombre</th>
                     <th scope="col">Direccion</th>
                     <th scope="col">Telefono</th>
                     <th scope="col">Localizacion</th>
@@ -16,6 +17,7 @@
                 <tbody>
                     @foreach ($housings as $housing)
                         <tr>
+                            <td>{{$housing->name}}</td>
                             <td>{{$housing->address}}</td>
                             <td>{{$housing->phone}}</td>
                             <td>{{$housing->description_location}}</td>
