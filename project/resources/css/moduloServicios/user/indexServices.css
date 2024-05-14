@@ -13,7 +13,7 @@
     background-position: center;
     background-attachment: fixed;
 }
-.container-title{
+#section-title{
     margin-top: 0.5rem;
     width: 100%;
     display: flex;

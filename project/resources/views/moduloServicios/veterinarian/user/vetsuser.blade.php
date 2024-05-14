@@ -10,7 +10,7 @@
      <!-- Mis Estilos CSS -->
      <link rel="stylesheet" href="{{ asset('vendor/jquery-ui-1.13.3/jquery-ui.min.css') }}">
 
-     <div class="container-title">
+     <div id="section-title">
         <a class="link-hover" href="{{route('housingUser')}}">Alojamientos</a>
         <h1 class="title">Veterinarios</h1>
         <a class="link-hover" href="{{route('dogGroomerUser')}}">Peluquerias</i></a>
