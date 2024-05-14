@@ -23,7 +23,7 @@
           <li><a href="./Historia">Historial</a></li>
       </ul>
     </nav>
-    <a href="#iniciar" class="btn"><button>Foto</button></a>
+    <a href="#iniciar" class="btn"></a>
   </header>
 
   <!-- Formulario de adopción -->
@@ -31,21 +31,23 @@
     <section class="formulario-adopcion">
       <h2>Formulario de Adopción</h2>
       <div class="contenedor-formulario">
+      @foreach ($adopciones as $adopcion)
         <!-- Cuadro izquierdo: Imagen de la mascota -->
         <div class="cuadro-imagen">
           <img src="{{ asset ( 'img/Animales/perro1.jpeg')}}" alt="Imagen de la mascota" />
         </div>
         <!-- Cuadro derecho: Información de la mascota -->
         <div class="cuadro-info">
-          <p><strong>Nombre:</strong> Max</p>
-          <p><strong>Especie:</strong> Perro</p>
-          <p><strong>Raza:</strong> Labrador</p>
-          <p><strong>Sexo:</strong> Masculino</p>
-          <p><strong>Edad:</strong> 3 año</p>
-          <p><strong>localizado</strong> Centro de rescate</p>
-          <p><strong>Descripción:</strong> Un perro amigable y cariñoso.</p>
+          <p><strong>Nombre: </strong>{{$adopcion->name}}</p>
+          <p><strong>Especie: </strong>{{$adopcion->species}}</p>
+          <p><strong>Raza: </strong> {{$adopcion->animal_race}}</p>
+          <p><strong>Sexo: </strong>{{$adopcion->sex_animal}}</p>
+          <p><strong>Edad: </strong>{{$adopcion->age_animal}}</p>
+          <p><strong>localizado: </strong>{{$adopcion->location_addres}}</p>
+          <p><strong>Descripción: </strong>{{$adopcion->descriptions_animals}}</p>
         </div>
       </div>
+      @endforeach
       <!-- Botón de adopción -->
       <div class="boton-adopcion">
          <a href="/FormularioAdopciones" class="btn"><button>Adoptar</button></a>

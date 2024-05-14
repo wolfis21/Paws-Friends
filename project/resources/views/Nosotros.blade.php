@@ -29,7 +29,7 @@
           <li><a href="./Historia">Historial</a></li>
         </ul>
       </nav>
-      <a href="#iniciar" class="btn"><button>Foto</button></a>
+      <a href="#iniciar" class="btn"></a>
     </header>
 
     <main>
@@ -39,6 +39,7 @@
       </section>
 
       <section class="Informacion-contenido">
+        <h1>Bienvenido a</h1>
         <h2>Adopciones y Donaciones</h2>
         <p>Nuestro sitio se dedica a conectar personas interesadas en adoptar mascotas y organizaciones que promueven la adopción y el cuidado de animales. Ofrecemos información sobre mascotas disponibles, eventos de adopción y facilitamos donaciones para apoyar a refugios y centros de adopción.</p>
       </section>

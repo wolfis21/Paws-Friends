@@ -29,7 +29,7 @@
           <li><a href="./Historia">Historial</a></li>
         </ul>
       </nav>
-      <a href="#iniciar" class="btn"><button>Foto</button></a>
+      <a href="#iniciar" class="btn"></a>
     </header>
     <!-- Buscador -->
     <div class="container">
@@ -101,9 +101,9 @@
 
       </section>
     </main>
-    <script src="/project/public/donaciones/asset/js/script.js"></script>
     <footer>
       <p>&copy; 2024 Adopciones de Mascotas. Todos los derechos reservados.</p>
     </footer>
   </body>
-</html>
+  </html>
+  <script src="{{asset('js/script-donaciones.js')}}"></script>

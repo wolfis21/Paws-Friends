@@ -28,7 +28,7 @@
           <li><a href="./Historia">Historial</a></li>
         </ul>
       </nav>
-      <a href="#iniciar" class="btn"><button>Foto</button></a>
+      <a href="#iniciar" class="btn"></a>
     </header>
 
   <!-- Formulario de donaciones -->

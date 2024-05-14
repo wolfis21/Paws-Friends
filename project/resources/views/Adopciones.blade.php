@@ -10,6 +10,7 @@
       href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     />
     <link href="{{ asset ('css/style-adopciones.css')}}" rel="stylesheet">
+
   </head>
   <body>
      <!-- navegado-->
@@ -29,7 +30,7 @@
           <li><a href="./Historia">Historial</a></li>
         </ul>
       </nav>
-      <a href="#iniciar" class="btn"><button>Foto</button></a>
+      <a href="#iniciar" class="btn"></a>
     </header>
       <!-- Buscador -->
       <div class="container">
@@ -42,48 +43,22 @@
             <!-- animales -->
       <main>
         <section class="animales">
+          @foreach ($adopciones as $adopcion)
             <div class="animal" id="Max">
                 <img src="{{ asset ( 'img/Animales/perro1.jpeg')}}" alt="Perro">
-                <h2>Max</h2>
-                <p>Raza: Labrador</p>
-                <p>Edad: 3 años</p>
+                <h2>{{$adopcion->name}}</h2>
+                <p>Raza: {{$adopcion->animal_race}}</p>
+                <p>Edad: {{$adopcion->age_animal}}</p>
                 <a href="/AdopcionesVermas" class="btn"><button>Ver mas</button></a>
             </div>
-
-            <div class="animal">
-                <img src="{{ asset ( 'img/Animales/gato1.jpeg')}}" alt="Gato">
-                <h2>Luna</h2>
-                <p>Raza: Siames</p>
-                <p>Edad: 2 años</p>
-                <a href="/AdopcionesVermas" class="btn"><button>Ver mas</button></a>
-            </div>
-
-            <div class="animal">
-                <img src="{{ asset ( 'img/Animales/perro2.jpeg')}}" alt="Perro">
-                <h2>Toby</h2>
-                <p>Raza: Labrador</p>
-                <p>Edad: 3 años</p>
-                <a href="AdopcionesVermas" class="btn"><button>Ver mas</button></a>
-            </div>
-
-            <div class="animal">
-                <img src="{{ asset ( 'img/Animales/gato2.jpeg')}}" alt="Gato">
-                <h2>Rocky</h2>
-                <p>Raza: Siames</p>
-                <p>Edad: 2 años</p>
-                <a href="AdopcionesVermas" class="btn"><button>Ver mas</button></a>
-            </div>
-
-
-            
-            <!-- Agrega más animales aquí -->
-
+@endforeach
 
         </section>
     </main>
-    <script src="/project/public/script-adopciones.js"></script>
+    
     <footer>
       <p>&copy; 2024 Adopciones de Mascotas. Todos los derechos reservados.</p>
     </footer>
   </body>
 </html>
+<script src="{{ asset ('js/script-adopciones.js')}}"></script>

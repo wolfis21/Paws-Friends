@@ -17,8 +17,8 @@ class FormularioAdopcionesController extends Controller
     {
       $datosFormularioAdopciones=request()->except('_token');
       FormularioAdopciones::insert($datosFormularioAdopciones);
-      if ( $request->hasFile('dni')) {
-        $datosFormularioAdopciones['dni']=$request->file('dni')->store('uploads','public');
+      if ( $request->hasFile('photo_animal')) {
+        $datosFormularioAdopciones['photo_animal']=$request->file('photo_animal')->store('uploads','public');
         return redirect('FormularioAdopciones');
       }
       return response() ->json($datosFormularioAdopciones);

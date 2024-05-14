@@ -29,7 +29,7 @@
           <li><a href="./Historia">Historial</a></li>
         </ul>
       </nav>
-      <a href="#iniciar" class="btn"><button>Foto</button></a>
+      <a href="#iniciar" class="btn"></a>
     </header>
       <!-- Historial -->
 
@@ -74,7 +74,7 @@
                         <td>Macho</td> <!-- Movido al lado de Edad -->
                         <td>2 años</td> <!-- Movido después de Motivo -->
                         <td>En espera</td>
-                        <td>En proceso</td>
+                        <td>Rechazado</td>
                     </tr>
                     <tr>
                         <td>2</td>
@@ -85,7 +85,7 @@
                         <td>Hembra</td> <!-- Movido al lado de Edad -->
                         <td>4 años</td> <!-- Movido después de Motivo -->
                         <td>En proceso</td>
-                        <td>En espera</td>
+                        <td>En proceso</td>
                     </tr>
                     <tr>
                         <td>3</td>

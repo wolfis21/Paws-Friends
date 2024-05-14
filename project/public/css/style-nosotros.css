@@ -84,6 +84,13 @@ button {
 }
 /* Estilos específicos para la sección de botn de busca */
 
+h1 {
+    margin: 5px;
+    color: #6e569f;
+    font-weight: 700;
+    font-size: 55px;
+    text-align: center;
+}
 h2 {
     margin: 20px;
     color: #6e569f;

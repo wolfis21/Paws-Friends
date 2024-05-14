@@ -12,7 +12,9 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
-    <title>@yield('title')</title>
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <title>Paws & Friends</title>
 </head>
 
 <body>
@@ -25,20 +27,13 @@
                     </a>
                 </h1>
 
-                <li><a href="{{route('homeService')}}">Inicio</a></li>
-                <li><a class="link-none">Modulos</a>
-                    <ul class="mostrar-secciones">
-                        <li class="azul"><a href="{{route('serviceModel')}}" class="link-modulos">Modulo de servicios</a></li>
-                        <li class="rojo"><a href="/" class="link-modulos">Modulo de adopcion y donacion</a></li>
-                        <li class="naranja"><a href="/" class="link-modulos">Modulo de rescate</a></li>
-                        <li class="verde"><a href="/" class="link-modulos">Tienda</a></li>
-                    </ul>
-                </li>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#ShowcaseServicios">Servicios</a></li>
                 <li><a href="#ShowcaseQuienes">Nosotros</a></li>
                 <li><a href="#">Promociones</a></li>
 
-                 {{-- <li><a href="" id="registro">Registrate</a></li>
-                <li><a href="" id="ingreso">Iniciar Sesion</a></li> --}}
+                {{--  <li><a href="{{ route('register') }}" id="registro">Registrate</a></li>
+                <li><a href="{{ route('login') }}" id="ingreso">Iniciar Sesion</a></li> --}}
 
                 @guest
                     @if (Route::has('login'))
@@ -94,10 +89,10 @@
                 <img class="logo-footer" src="{{ URL::asset('imagenes/Variaciones logo.png') }}" alt="logo" />
             </div>
             <div class="text-legals">
-                <div class="text-text-legals">©2024 Company Name. All rights reserved UGMA</div>
+                <div>©2024 Company Name. All rights reserved UGMA</div>
                 <div class="terms-policy">
-                    <div class="text-text-legals"> Privacy & Policy</div>
-                    <div class="text-text-legals">Terms & Condition</div>
+                    <div> Privacy & Policy</div>
+                    <div>Terms & Condition</div>
                 </div>
             </div>
         </div>

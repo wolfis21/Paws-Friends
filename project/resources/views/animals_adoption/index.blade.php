@@ -4,7 +4,6 @@
   <link href="https://cdn.datatables.net/2.0.6/css/dataTables.bootstrap5.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 @endsection
-
     <header>
       <nav>
         <ul>
@@ -17,32 +16,40 @@
       </nav>
       <a href="#iniciar" class="btn"></a>
     </header>
-
 @section('contenido')
-<a href="AdminP/create"  class="btn btn-primary">CREAR</a>
+
+<a href="AdminPP/create"  class="btn btn-primary">CREAR</a>
 <table id='adopciones' class="table table-dark table-bordered shadow-lg mt-4" style="width:100%">
   <thead clase="bg-primary text-white">
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">NOMBRE</th>
-      <th scope="col">APELLIDO</th>  
-      <th scope="col">DNI</th>
-      <th scope="col">TELEFONO</th>
+      <th scope="col">NAME</th>
+      <th scope="col">SPECIES</th>  
+      <th scope="col">ANIMAL RACE</th>
+      <th scope="col">SEX ANIMAL</th>
+      <th scope="col">AGE ANIMAL</th>  
+      <th scope="col">DESCRIPTION ANIMALS</th>
+      <th scope="col">PHOTO ANIMAL</th>
+      <th scope="col">LOCATION ADDRESS</th>
       <th scope="col">ACCIONES</th>
     </tr>
   </thead>  
     <tbody>
-      @foreach ($FormularioAdopciones as $FormularioAdopcion)
+      @foreach ($animals_adoption as $animals_adoptions)
       <tr>
-        <td>{{$FormularioAdopcion->id}}</td>
-        <td>{{$FormularioAdopcion->nombre}}</td>
-        <td>{{$FormularioAdopcion->apellido}}</td>
-        <td>{{$FormularioAdopcion->Dni}}</td>
-        <td>{{$FormularioAdopcion->telefono}}</td>
+        <td>{{$animals_adoptions->id}}</td>
+        <td>{{$animals_adoptions->name}}</td>
+        <td>{{$animals_adoptions->species}}</td>
+        <td>{{$animals_adoptions->animal_race}}</td>
+        <td>{{$animals_adoptions->sex_animal}}</td>
+        <td>{{$animals_adoptions->age_animal}}</td>
+        <td>{{$animals_adoptions->descriptions_animals}}</td>
+        <td>{{$animals_adoptions->photo_animal}}</td>
+        <td>{{$animals_adoptions->location_addres}}</td>
         <td>
 
-          <form action="{{route('AdminP.destroy',$FormularioAdopcion->id)}}" method="POST">
-          <a  href="/AdminP/{{$FormularioAdopcion->id}}/edit" class="btn btn-info">Editar</a>
+          <form action="{{route('AdminPP.destroy',$animals_adoptions->id)}}" method="POST">
+          <a  href="/AdminPP/{{$animals_adoptions->id}}/edit" class="btn btn-info">Editar</a>
           @csrf
           @method('DELETE')
           <button type="submit" class="btn btn-danger">Borrar</button>
@@ -52,7 +59,6 @@
       @endforeach
     </tbody>
 </table>
-
   @section('js')
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.datatables.net/2.0.6/js/dataTables.js"></script>
