@@ -120,7 +120,7 @@ class HousingsController extends Controller
     //todo funciones user
     public function housingUser()
     {
-        $housings = Housing::paginate(7);
+        $housings = Housing::all();
         $housingsComments = Housings_has_comments::all();
         return view('moduloServicios.housings.user.houser')
             ->with('housings', $housings)

@@ -112,7 +112,7 @@ class DogGroomerController extends Controller
     //todo funciones user
     public function dogGroomerUser()
     {
-        $dogGroomers = Dog_Groomer::paginate(6);
+        $dogGroomers = Dog_Groomer::all();
         $dogGroomersComments = Dog_Groomer_has_comments::all();
         return view('moduloServicios.dogGroomer.user.doguser')
             ->with('dogGroomers', $dogGroomers)
