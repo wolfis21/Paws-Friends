@@ -11,7 +11,7 @@
                 <div class="card add-colors">
                     <div class="card-header-prom">
                         <p>Bienvenido a: </p>
-                        <img class="logo-register" src="{{ URL::asset('imagenes/Variaciones logo.png') }}" alt="logo" />
+                        <img class="logo-register" src="{{ URL::asset('imagenes/Variaciones-logo.png') }}" alt="logo" />
                     </div>
                     <div class="card-header register">Registro</div>
 
