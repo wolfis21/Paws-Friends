@@ -307,86 +307,81 @@ return [
 
         // Sidebar items:
         [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
+            'text' =>'Dashboard',
+            'url' => '/adminPWFS',
+            'icon' =>'fas fa-fw fa-home',
         ],
         [
-            'text' => 'blog',
-            'url' => 'admin/blog',
-            'can' => 'manage-blog',
+            'text' =>'Pagina Principal',
+            'url' => '/',
+            'icon' =>'fas fa-fw fa-handshake-angle',
+        ],
+
+        ['header' => 'SERVICIOS'],
+        [
+            'text' =>'Veterinario',
+            'url' => '/adminPWFS/Veterinarians',
+            'icon' =>'fas fa-fw fa-stethoscope',
         ],
         [
-            'text' => 'pages',
-            'url' => 'admin/pages',
-            'icon' => 'far fa-fw fa-file',
-            'label' => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'text' => 'Alojamiento',
+            'url' => '/adminPWFS/housingsAdmin',
+            'icon' =>'fas fa-fw fa-shield-dog',
         ],
         [
-            'text' => 'change_password',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Peluqueria',
+            'url' => '/adminPWFS/DogGroomersAdmin',
+            'icon' =>'fas fa-fw fa-paw',
         ],
+        ['header' => 'RESCATE'],
         [
-            'text' => 'multilevel',
-            'icon' => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                        ],
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text' => 'important',
-            'icon_color' => 'red',
+            'text' =>'Reubicacion',
             'url' => '#',
+            'icon' =>'fas fa-fw fa-location',
         ],
         [
-            'text' => 'warning',
-            'icon_color' => 'yellow',
+            'text' => 'Situacion de calle',
             'url' => '#',
+            'icon' =>'fas fa-fw fa-hand-holding-medical',
         ],
         [
-            'text' => 'information',
-            'icon_color' => 'cyan',
+            'text' => 'Abandono',
             'url' => '#',
+            'icon' =>'fas fa-fw fa-x',
         ],
+        ['header' => 'DONACIONES / ADOPCIONES'],
+        [
+            'text' =>'Alimentos',
+            'url' => '#',
+            'icon' =>'fas fa-fw fa-bowl-food',
+        ],
+        [
+            'text' => 'Juguetes',
+            'url' => '#',
+            'icon' =>'fas fa-fw fa-bone',
+        ],
+        [
+            'text' => 'Accesorios',
+            'url' => '#',
+            'icon' =>'fas fa-fw fa-ring',
+        ],
+        ['header' => 'TIENDA'],
+        [
+            'text' =>'Productos',
+            'url' => '#',
+            'icon' =>'fas fa-fw fa-pump-soap',
+        ],
+        // ['header' => 'account_settings'],
+        // [
+        //     'text' => 'profile',
+        //     'url' => 'admin/settings',
+        //     'icon' => 'fas fa-fw fa-user',
+        // ],
+        // [
+        //     'text' => 'change_password',
+        //     'url' => 'admin/settings',
+        //     'icon' => 'fas fa-fw fa-lock',
+        // ],
     ],
 
     /*

@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -50,6 +50,10 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
+            'dni' => ['required', 'string', 'max:20'],
+            'phone' => ['required', 'string', 'max:12'] ,
+            'address' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -62,11 +66,42 @@ class RegisterController extends Controller
      * @return \App\Models\User
      */
     protected function create(array $data)
-    {
+    {   
+        $imgPhoto = $data['photo_user'];
+        // Guardar una foto de perfil
+        $imgPhotoPath = $imgPhoto->store('docs', 'public');
+
+
+        if ($data['photo_dni'] && $data['photo_rif']) {
+            $imgDni = $data['photo_dni'];
+            $imgRif = $data['photo_rif'];
+            $imgPhotoPathDni = $imgDni->store('docs', 'public');
+            $imgPhotoPathRif = $imgRif->store('docs', 'public');
+        } else {
+            $imgPhotoPathDni = null;
+            $imgPhotoPathRif = null;
+        }
+
         return User::create([
             'name' => $data['name'],
+            'last_name' => $data['last_name'],
+            'dni' => $data['dni'],
+            'phone' => $data['phone'],
+            'address' => $data['address'],
+            'photo_user' => $imgPhotoPath,
+            'photo_dni' => $imgPhotoPathDni,
+            'photo_rif' => $imgPhotoPathRif,
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'rols_id' => '2',
         ]);
+    }
+
+    protected function show($id){
+        $user = User::find($id);
+        
+        $img = base64_encode(file_get_contents(public_path('storage/' . $user->photo_user)));
+
+        return view('profile.index', compact('user', 'img'));
     }
 }

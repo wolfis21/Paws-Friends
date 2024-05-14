@@ -3,9 +3,11 @@
 @section('content')
 
     <h4 style="margin-top: 15px">Veterinarios admin</h4>
-    <a href="{{ route('create') }}" class="btn bg-cyan" style="margin-bottom: 15px;">Añadir Veterinario</a>
+    <a href="{{ route('create') }}" class="btn bg-cyan" style="margin-bottom: 15px;">Añadir
+        Veterinario</a>
     <div class="card bg-dark">
         <div class="card-body">
+
 
             <table id="Veterinarios" class="table table-dark table-responsive-md" style="width:100%">
                 <thead>
@@ -23,10 +25,16 @@
                             <td>{{ $veterinarian->email }}</td>
                             <td>{{ $veterinarian->specialist_animals }}</td>
                             <td>
-                                <button type="button" class="btn bg-cyan" data-bs-toggle="modal" data-bs-target="#viewProfile{{$veterinarian->id}}">Ver perfil</button>
-                                <button type="button" class="btn bg-red" data-bs-toggle="modal" data-bs-target="#deleteProfile{{$veterinarian->id}}">Eliminar</button>
+                                <button type="button" class="btn bg-cyan" data-bs-toggle="modal"
+                                    data-bs-target="#viewProfile{{ $veterinarian->id }}">Ver
+                                    perfil</button>
+                                <button type="button" class="btn bg-red" data-bs-toggle="modal"
+                                    data-bs-target="#deleteProfile{{ $veterinarian->id }}">Eliminar</button>
                             </td>
                         </tr>
+                        {{-- <td>{{ $veterinarian->img_ref }} 
+                            <img style="width: 5%;" src="{{ asset('storage/' . $veterinarian->img_ref) }}" > -- provisional mejorar esto 
+                        </td> --}}
                         @include('moduloServicios.veterinarian.admin.ModalViewProfile')
                         @include('moduloServicios.veterinarian.admin.ModalDeleteProfile')
                     @endforeach
@@ -41,7 +49,7 @@
 
             <table id="ComentariosVets" class="table table-dark" style="width:100%">
                 <thead>
-                    <th scope="col">User Name</th>
+                    <th scope="col">Usuario</th>
                     <th scope="col">Comentario</th>
                     <th scope="col">Veterinario</th>
                     <th scope="col">Acciones</th>
@@ -52,13 +60,13 @@
                             <tr>
                                 <td>{{ $veterinarianComment->comments->users->name }}</td>
                                 <td>{{ $veterinarianComment->comments->data_text }}</td>
-                                <td>{{ $veterinarian->name }}</td>
+                                <td>{{ $veterinarianComment->veterinarians->name }}</td>
                                 <td>
-                                    <form action="{{ route('destroyVetsComment', $veterinarianComment->id) }}"
+                                    <form action="{{ route('destroyVetsComment', $veterinarianComment->comments->id) }}"
                                         method="POST">
                                         @method('PUT')
                                         <a class="btn bg-cyan"
-                                            href="{{ route('acceptCommentVeterinarians', $veterinarianComment->id) }}">Confirmar</a>
+                                            href="{{ route('configComment', $veterinarianComment->comments->id) }}">Confirmar</a>
                                         @method('DELETE')
                                         @csrf
                                         <button type="submit" class="btn bg-red">Denegar</button>
@@ -75,6 +83,5 @@
     {{-- @foreach ($veterinarians as $veterinarian)
         <div class="container">
             <img src="images/vets/{{($veterinarian->img_ref)}}" alt="a">
-        </div>
-    @endforeach --}}
+        </div> --}}
 @endsection
