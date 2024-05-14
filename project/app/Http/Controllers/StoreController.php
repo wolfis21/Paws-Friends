@@ -34,7 +34,7 @@ class StoreController extends Controller
     {
         //  $product = Product::find($product_id); cuando haya base de datos
         $product = new Product;
-        $product->name = "Pienso Light de Pavo para Perros por Grature";
+        $product->name = "Pienso Light de Pavo para Perros por Grature"; 
         $product->description = "Pienso natural light de pavo para perros adultos 
         de todas las razas y tamaños   Grature Pavo es una receta elaborada 
         con ingredientes naturales para perros adultos de cualquier raza y 

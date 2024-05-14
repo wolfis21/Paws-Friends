@@ -16,7 +16,7 @@
 
             <div class="main-view">
 
-                <h1 class="title-page">Bienvenido al Módulo de Catálogo</h1>
+                <h1 class="title-page">Módulo de Catálogo</h1>
                 <div>
                     <p class="text-welcome">Bienvenido a nuestro catálogo de productos para mascotas,
                         acá podrá encontrar información sobre distintos productos 
