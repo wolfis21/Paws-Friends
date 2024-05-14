@@ -9,6 +9,10 @@
             $isEdit = false;
         @endphp
         <div class="mb-3">
+            <label for="name" class="form-label">direccion</label>
+            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Ingrese nombre" value="{{$housing->name}}">
+        </div>
+        <div class="mb-3">
             <label for="address" class="form-label">direccion</label>
             <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" placeholder="Ingrese direccion" value="{{$housing->address}}">
         </div>
