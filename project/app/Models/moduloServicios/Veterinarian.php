@@ -18,7 +18,6 @@ class Veterinarian extends Model
         'link_ref',
         'img_ref',
         'specialist_animals',
-        'all_puntuations',
         'puntuation'
     ];
     public function puntuaciones()
