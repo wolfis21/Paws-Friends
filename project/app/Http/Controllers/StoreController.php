@@ -40,7 +40,7 @@ class StoreController extends Controller
         con ingredientes naturales para perros adultos de cualquier raza y 
         tamaño a partir de 1 año.";
         $product->category_id = 1;
-        $product->img_ref=  asset('/css/moduloStore/producto1.png');
+        $product->img_ref=  asset('/css/moduloCatalogo/producto1.png');
 
         return view('store.products_details')->with('product', $product);
     }

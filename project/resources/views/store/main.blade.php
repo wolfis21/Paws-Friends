@@ -1,5 +1,5 @@
 @extends('layouts.headerNav')
-@vite(['resources/css/moduloStore/store.css'])
+@vite(['resources/css/moduloCatalogo/store.css'])
 @section('content')
 <head>
 <link href="https://fonts.googleapis.com/css2?family=Itim&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
         <section class="welcome">
 
             <div class="img">
-                <img src="{{ asset('/css/moduloStore/Camaleon.png') }}"   alt="">
+                <img src="{{ asset('/css/moduloCatalogo/Camaleon.png') }}"   alt="">
             </div>
 
             <div class="main-view">
@@ -106,28 +106,28 @@
             <h2 class="titulo-des">Desarrolladores</h2>
             <div class="cartas">
                 <div class="carta">
-                    <img class="img-dev" src="{{ asset('/css/moduloStore/jesus.jpg') }}" alt="">
+                    <img class="img-dev" src="{{ asset('/css/moduloCatalogo/jesus.jpg') }}" alt="">
                     <div class="contenido-texto-card">
                         <h4>Jesus Padrón</h4>
                         <j><b>BACK-END</b></j>
                     </div>
                 </div>
                 <div class="carta"> 
-                    <img class="img-dev" src="{{ asset('/css/moduloStore/maria.jpg') }}" alt="">
+                    <img class="img-dev" src="{{ asset('/css/moduloCatalogo/maria.jpg') }}" alt="">
                     <div class="contenido-texto-card">
                         <h4>Maria Navarro</h4>
                         <j><b>BACK-END</b></j>
                     </div>
                 </div>
                 <div class="carta">
-                    <img class="img-dev" src="{{ asset('/css/moduloStore/fabiola.jpg') }}" alt="">
+                    <img class="img-dev" src="{{ asset('/css/moduloCatalogo/fabiola.jpg') }}" alt="">
                     <div class="contenido-texto-card">
                         <h4>Fabiola Fernández</h4>
                         <j><b>FRONT-END</b></j>
                     </div>
                 </div>
                 <div class="carta">
-                    <img class="img-dev" src="{{ asset('/css/moduloStore/ismael.jpg') }}" alt="">
+                    <img class="img-dev" src="{{ asset('/css/moduloCatalogo/ismael.jpg') }}" alt="">
                     <div class="contenido-texto-card">
                         <h4>Ismael Prado</h4>
                         <j><b>FRONT-END</b></j>

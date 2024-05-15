@@ -1,5 +1,5 @@
 @extends('layouts.headerNav')
-@vite(['resources/css/moduloStore/products-details.css'])
+@vite(['resources/css/moduloCatalogo/products-details.css'])
 @section('content')
 <head>
 <link href="https://fonts.googleapis.com/css2?family=Itim&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
@@ -10,7 +10,7 @@
 
 <div>
     <img src="{{$product->img_ref}}" class="img" alt="">
-    <img src="{{ asset('/css/moduloStore/cosomorado.png') }}" class="img2" alt="">
+    <img src="{{ asset('/css/moduloCatalogo/cosomorado.png') }}" class="img2" alt="">
 </div>
 
 <div class="main-view">
