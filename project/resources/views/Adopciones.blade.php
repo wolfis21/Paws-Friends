@@ -23,7 +23,7 @@
       </div>
       <nav>
         <ul>
-          <li><a href="./welcome">Pagina Principal</a></li>
+          <li><a href="./main">Pagina Principal</a></li>
           <li><a href="./Adopciones">Adopciones</a></li>
           <li><a href="./Donaciones">Donaciones</a></li>
           <li><a href="./Nosotros">Nosotros</a></li>

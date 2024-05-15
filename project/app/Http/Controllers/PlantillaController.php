@@ -8,6 +8,6 @@ class PlantillaController extends Controller
 {
     public function CargarPlantilla()
     {
-      include "vista/Plantilla.blade.php"
+      include "vista/Plantilla.blade.php";
     }
 }
