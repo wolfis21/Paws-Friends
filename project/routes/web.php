@@ -14,6 +14,7 @@ use App\Http\Controllers\AdopcionesVermasController;
 use App\Http\Controllers\DonacionesController;
 use App\Http\Controllers\FormularioAdopcionesController;
 use App\Http\Controllers\FormularioDonacionesController;
+use App\Http\Controllers\moduloCatalogo\PostController;
 
 use Illuminate\Support\Facades\Route;
 /*
@@ -157,5 +158,5 @@ Route::get('/store', [App\Http\Controllers\StoreController::class, 'main'])->nam
 Route::get('/store/products', [App\Http\Controllers\StoreController::class, 'products'])->name('store.products');
 Route::get('/store/products/{product_id}', [App\Http\Controllers\StoreController::class, 'products_details'])->name('store.products.details');
 Route::get('/store/recommendations', [App\Http\Controllers\StoreController::class, 'recommendations'])->name('store.recomendations');
-
+Route::resource('post', PostController::class);
 /* Auth::routes(); */

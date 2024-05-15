@@ -9,18 +9,9 @@ class Post extends Model
 {
     use HasFactory;
 
-    /**
-     * Indica los campos que pueden ser llenados.
-     *
-     * @var array
-     */
-    protected $fillable = ['title', 'content', 'img_ref', 'user_id'];
-
-    /**
-     * Obtiene el usuario que creó el post.
-     */
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+    protected $fillable = [
+        'title',
+        'post_content',
+        'img_ref'
+    ];
 }
