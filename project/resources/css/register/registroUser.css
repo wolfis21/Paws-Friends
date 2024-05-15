@@ -1,0 +1,15 @@
+/* app general de nav */
+
+/* 
+Paletas de colores
+#54E9F4
+#6E569F
+#F7A724
+#9FCB40 */
+
+.container-register {
+    background: url("../../../public/imagenes/background-register.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 115vh;
+}

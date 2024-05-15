@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/styleMain.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="icon" type="image/x-icon" href="{{asset('imagenes/icono.ico')}}">
     <!-- Fonts -->
@@ -29,7 +29,7 @@
                     <ul class="mostrar-secciones">
                         <li class="azul"><a href="{{ route('serviceModel') }}" class="link-modulos">Modulo de
                                 servicios</a></li>
-                        <li class="rojo"><a href="/adopcion-donaciones" class="link-modulos">Modulo de adopcion y
+                        <li class="rojo"><a href="/" class="link-modulos">Modulo de adopcion y
                                 donacion</a></li>
                         <li class="naranja"><a href="/" class="link-modulos">Modulo de rescate</a></li>
                         <li class="verde"><a href="/" class="link-modulos">Tienda</a></li>

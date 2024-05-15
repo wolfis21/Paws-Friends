@@ -1,6 +1,3 @@
-{{-- @extends('adminlte::auth.login') --}}
-
-{{-- @extends('layouts.app') --}}
 @extends('layouts.headerNav')
 @vite('resources/css/login/loginUser.css')
 @section('content')
@@ -9,7 +6,7 @@
         @csrf
         <div class="register-welcome">
            <div class="welcome">
-               <h3>Bienvenido a </h3>
+               <h3 class="text-h3">Bienvenido a </h3>
            </div>
            <div class="logo">
                <img class="logo-register" src="{{ URL::asset('imagenes/Variaciones-logo.png') }}" alt="logo" />
