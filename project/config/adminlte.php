@@ -359,19 +359,14 @@ return [
         ],
         ['header' => 'DONACIONES / ADOPCIONES'],
         [
-            'text' =>'Alimentos',
-            'url' => '#',
+            'text' =>'Ver Donaciones',
+            'url' => '/adminPWFS/donations',
             'icon' =>'fas fa-fw fa-bowl-food',
         ],
         [
-            'text' => 'Juguetes',
+            'text' => 'Ver Adopciones',
             'url' => '#',
             'icon' =>'fas fa-fw fa-bone',
-        ],
-        [
-            'text' => 'Accesorios',
-            'url' => '#',
-            'icon' =>'fas fa-fw fa-ring',
         ],
         ['header' => 'TIENDA'],
         [

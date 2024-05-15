@@ -9,6 +9,12 @@ use App\Http\Controllers\moduloServicios\CommentsController;
 use App\Http\Controllers\moduloServicios\HousingsController;
 use App\Http\Controllers\moduloServicios\SearchController;
 use App\Http\Controllers\moduloServicios\VeterinarianController;
+use App\Http\Controllers\moduloAdopcionDonacion\DonacionesController;
+use App\Http\Controllers\moduloAdopcionDonacion\AdopcionesController;
+use App\Http\Controllers\moduloAdopcionDonacion\PrincipalController;
+use App\Http\Controllers\moduloAdopcionDonacion\HistoriaController;
+
+
 
 use Illuminate\Support\Facades\Route;
 /*
