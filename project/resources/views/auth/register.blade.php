@@ -3,7 +3,7 @@
 {{-- @extends('layouts.app') --}}
 
 @extends('layouts.headerNav')
-@vite('resources/css/login/loginUser.css')
+
 @section('content')
     <div class="container-register">
         <div class="row justify-content-center">
