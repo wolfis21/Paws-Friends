@@ -16,7 +16,7 @@
         </div>
 
         <div class="contenedorModulos">
-            <a href="#">
+            <a href="./Nosotros">
                 <img class="iconosModulos" id="donaciones" src="{{ URL::asset('imagenes/FRAMES/FRAME B/2.png') }}"
                     alt="Donaciones y Adopciones">
             </a>

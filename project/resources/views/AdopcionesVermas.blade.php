@@ -16,11 +16,12 @@
     </div>
     <nav>
       <ul>
-          <li><a href="./welcome">Pagina Principal</a></li>
+          <li><a href="./home">Inicio</a></li>
           <li><a href="./Adopciones">Adopciones</a></li>
           <li><a href="./Donaciones">Donaciones</a></li>
+          <li><a href="./HistoriaA">Historial de adopciones</a></li>
+          <li><a href="./HistoriaD">Historial de Donaciones</a></li>
           <li><a href="./Nosotros">Nosotros</a></li>
-          <li><a href="./Historia">Historial</a></li>
       </ul>
     </nav>
     <a href="#iniciar" class="btn"></a>

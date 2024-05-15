@@ -22,11 +22,12 @@
       </div>
       <nav>
         <ul>
-          <li><a href="./welcome">Pagina Principal</a></li>
+          <li><a href="./home">Inicio</a></li>
           <li><a href="./Adopciones">Adopciones</a></li>
           <li><a href="./Donaciones">Donaciones</a></li>
+          <li><a href="./HistoriaA">Historial de adopciones</a></li>
+          <li><a href="./HistoriaD">Historial de Donaciones</a></li>
           <li><a href="./Nosotros">Nosotros</a></li>
-          <li><a href="./Historia">Historial</a></li>
         </ul>
       </nav>
       <a href="#iniciar" class="btn"></a>
@@ -60,7 +61,6 @@
                         <th>Raza <span class="icon-arrow">&UpArrow;</span></th>
                         <th>Sexo <span class="icon-arrow">&UpArrow;</span></th>
                         <th>Edad <span class="icon-arrow">&UpArrow;</span></th> 
-                        <th>Status adopcion</th>
                         <th>Status donacion</th> 
                     </tr>
                 </thead>
@@ -73,7 +73,6 @@
                         <td>Raza 1</td>
                         <td>Macho</td> <!-- Movido al lado de Edad -->
                         <td>2 años</td> <!-- Movido después de Motivo -->
-                        <td>En espera</td>
                         <td>Rechazado</td>
                     </tr>
                     <tr>
@@ -85,7 +84,6 @@
                         <td>Hembra</td> <!-- Movido al lado de Edad -->
                         <td>4 años</td> <!-- Movido después de Motivo -->
                         <td>En proceso</td>
-                        <td>En proceso</td>
                     </tr>
                     <tr>
                         <td>3</td>
@@ -95,7 +93,6 @@
                         <td>Raza 3</td>
                         <td>Macho</td> <!-- Movido al lado de Edad -->
                         <td>1 años</td> <!-- Movido después de Motivo -->
-                        <td>Aceptada</td>
                         <td>Aceptada</td>
                     </tr>
                 </tbody>
