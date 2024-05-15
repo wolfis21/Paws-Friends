@@ -9,6 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+    //categories_product, tabla para crear categorias de productos
     public function up(): void
     {
         Schema::create('categories', function (Blueprint $table) {
