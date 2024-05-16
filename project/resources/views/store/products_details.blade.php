@@ -18,8 +18,9 @@
     <h1 class="title-page">{{$product->name}}</h1>
     <div>
         <p class="text-welcome">{{$product->description}}</p>
+
     <h2 class="caracteristics">Especificaciones del Producto</h2>
-    
+
     <div class="contenedor">
     <div class="rectangulo">
       <p>$10.77</p>
@@ -29,5 +30,9 @@
     </div>
     <div class="rectangulo">
       <p>Perros</p>
+</div>
+
+  <h3 class="ubication">Ubicación del Producto</h3>
+
 </section>
 @endsection
