@@ -1,17 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\moduloCatalogo;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use \App\Models\moduloCatalogo\Product;
+use App\Models\moduloCatalogo\Product;
 
 class StoreController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('auth');
