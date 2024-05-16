@@ -17,7 +17,7 @@ class ShopController extends Controller
     {
         //
         $shop = Shop::all();
-        return view('store.shop.index', compact('shop') );
+        return view('store.shop.admin.index', compact('shop') );
     }
 
     /**
@@ -27,7 +27,7 @@ class ShopController extends Controller
     {
         //
         $shop = new Shop();
-        return view('store.shop.create');
+        return view('store.shop.admin.create');
     }
 
     /**
@@ -47,7 +47,7 @@ class ShopController extends Controller
 
         $shop = Shop::create($request->all());
 
-        return redirect()->route('<store.shop.index')
+        return redirect()->route('<store.shop.admin.index')
         ->with('success', 'Tienda creada');
 
     }
@@ -60,7 +60,7 @@ class ShopController extends Controller
     {
         //
         $shop = Shop::find($id);
-        return view('store.shop.edit', compact('shop'));
+        return view('store.shop.admin.edit', compact('shop'));
     }
 
     /**
@@ -80,7 +80,7 @@ class ShopController extends Controller
 
         $shop->update($request->all());
 
-        return redirect()->route('store.shop.index')
+        return redirect()->route('store.shop.admin.index')
         ->with('success', 'Tienda actualizada');
 
     }
@@ -92,7 +92,7 @@ class ShopController extends Controller
     {
         $shop = Shop::find($id);
         $shop->delete();
-        return redirect()->route('store.shop.index')
+        return redirect()->route('store.shop.admin.index')
         ->with('success', 'Tienda borrada');
     }
 
