@@ -124,8 +124,6 @@ Route::controller(SearchController::class)->group(function(){
     Route::post('/searchHousings','searchHousings')->name('searchHousings');
     Route::post('/searchDogGroomers','searchDogGroomers')->name('searchDogGroomers');
 });
-Auth::routes();
-
 
 //? FIN RUTAS MODULO 3
 
@@ -177,6 +175,5 @@ Route::controller(Categories_productController::class)->group(function(){
     Route::delete('/adminPWFS/destroyCategoryProduct/{id}', 'destroyCategoryProduct')->name('destroyCategoryProduct');
 
 });
+Auth::routes();
 
-
-/* Auth::routes(); */

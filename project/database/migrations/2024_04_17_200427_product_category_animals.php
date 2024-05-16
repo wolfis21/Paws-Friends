@@ -9,14 +9,11 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    //categories_product, tabla para crear categorias de productos
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('product_category_animals', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description');
-            $table->timestamps();
         });
     }
 
@@ -25,7 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('product_category_animals');
     }
 };
-
