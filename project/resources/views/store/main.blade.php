@@ -12,7 +12,8 @@
 
             <div class="img">
                 <img src="{{ asset('/css/moduloCatalogo/Camaleon.png') }}"   alt="">
-            </div>
+            </div>            
+
 
             <div class="main-view">
 
@@ -26,9 +27,11 @@
         </section>
 
         <section class="module">
-            <h2 class="title-prod">Productos Destacados</h2>
             
+            <h2 class="title-prod">Productos más Vendidos</h2>
+
             <div class="cards">
+                
                 <a href="/store/products/1 style=">
                 <div class="card-img2">
                         <img src="https://static.miscota.com/media/1/photos/products/430600/Grature-adult-chicken-cat-6368e5845ef91_g.jpg"
@@ -58,6 +61,7 @@
             </div>
 
         </section>
+
         <section class="categorias">
         <h2 class="title-cat">Categorías</h2>
  

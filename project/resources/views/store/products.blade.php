@@ -67,7 +67,7 @@
                         <img src="https://static.miscota.com/media/1/photos/products/430600/Grature-adult-chicken-cat-6368e5845ef91_g.jpg"
                             alt="">
                             <p class= 'product-desc'> Pienso Light de Pavo para Gatos Adultos por Grature </p>
-                            <p class= 'product-prize'>10.77 </p>
+                            <p class= 'product-prize'>$10.77 </p>
                 </div>
                 </a>
                 <a href="/store/products/{product_id}">
@@ -75,14 +75,14 @@
                         <img
                             src="https://static.miscota.com/media/1/photos/products/430598/Grature-adult-turkey-dog-6368e5b15102c_g.jpg">
                             <p class= 'product-desc'> Pienso Light de Pavo para Perros por Grature </p>
-                            <p class= 'product-prize'>10.77 </p>
+                            <p class= 'product-prize'>$10.77 </p>
                 </div>
                 </a>
                 <a href="/store/products/{product_id}">
                 <div class="card-img2">
                         <img src="https://static.miscota.com/media/1/photos/products/126684/w2aayeehnkfsopiaz4pp-6368c7830ffd2_g.jpg">
                         <p class= 'product-desc'> Champú de Arbol de Té para Mascotas </p>
-                        <p class= 'product-prize'>9.77 </p>
+                        <p class= 'product-prize'>$9.77 </p>
                 </div>
                 </a>    
             </div>

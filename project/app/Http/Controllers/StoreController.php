@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use \App\Models\Product;
+use \App\Models\moduloCatalogo\Product;
 
 class StoreController extends Controller
 {
@@ -40,8 +40,8 @@ class StoreController extends Controller
         con ingredientes naturales para perros adultos de cualquier raza y 
         tamaño a partir de 1 año.";
         $product->category_id = 1;
-        $product->img_ref=  asset('/css/moduloCatalogo/producto1.png');
-
+        $product->img_ref =  asset('/css/moduloCatalogo/producto1.png');
+        $product->quantity = 1;
         return view('store.products_details')->with('product', $product);
     }
 
