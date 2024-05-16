@@ -17,6 +17,7 @@ use App\Http\Controllers\FormularioAdopcionesController;
 use App\Http\Controllers\FormularioDonacionesController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -201,5 +202,6 @@ Route::controller(Categories_productController::class)->group(function(){
     Route::delete('/adminPWFS/destroyCategoryProduct/{id}', 'destroyCategoryProduct')->name('destroyCategoryProduct');
 
 });
+
 
 /* Auth::routes(); */
