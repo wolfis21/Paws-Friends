@@ -11,12 +11,12 @@ use App\Http\Controllers\moduloServicios\HousingsController;
 use App\Http\Controllers\moduloServicios\VeterinarianController;
 use App\Http\Controllers\AdopcionesController;
 use App\Http\Controllers\AdopcionesVermasController;
+use App\Http\Controllers\Categories_productController;
 use App\Http\Controllers\DonacionesController;
 use App\Http\Controllers\FormularioAdopcionesController;
 use App\Http\Controllers\FormularioDonacionesController;
-use \App\Http\Controllers\moduloCatalogo\PostController;
-use \App\Http\Controllers\moduloCatalogo\ShopController;
-
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -186,10 +186,20 @@ Route::controller(ShopController::class)->group(function(){
     Route::get('/adminPWFS/editShop/{id}', 'editShop')->name('editShop');
     Route::put('/adminPWFS/updateShop/{id}', 'updateShop')->name('updateShop');
     Route::delete('/adminPWFS/destroyShop/{id}', 'destroyShop')->name('destroyShop');
+
+});
+
+//rutas de Categories_productController
+Route::controller(Categories_productController::class)->group(function(){
+    //todo rutas admin
     
-    //todo rutas user
-    Route::resource('/shops', ShopController::class);
-    Route::get('/shops', 'ShopUser')->name('ShopUser');
+    Route::get('/adminPWFS/categoriesProductAdmin', 'categoriesProductAdmin')->name('categoriesProductAdmin');
+    Route::get('/adminPWFS/createCategoryProduct', 'createCategoryProduct')->name('createCategoryProduct');
+    Route::put('/adminPWFS/storeCategoryProduct', 'storeCategoryProduct')->name('storeCategoryProduct');
+    Route::get('/adminPWFS/editCategoryProduct/{id}', 'editCategoryProduct')->name('editCategoryProduct');
+    Route::put('/adminPWFS/updateCategoryProduct/{id}', 'updateCategoryProduct')->name('updateCategoryProduct');
+    Route::delete('/adminPWFS/destroyCategoryProduct/{id}', 'destroyCategoryProduct')->name('destroyCategoryProduct');
+
 });
 
 /* Auth::routes(); */
