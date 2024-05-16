@@ -15,7 +15,7 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'category_id', 'img_ref', 'description',
+        'name', 'category_id', 'img_ref', 'description', 'quantity', // Se agregó 'quantity'
     ];
 
     /**
@@ -38,4 +38,5 @@ class Product extends Model
         return $this->belongsTo(User::class);
     }
 }
+
 

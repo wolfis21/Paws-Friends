@@ -17,6 +17,9 @@
     flex-wrap: nowrap;
     padding-top: 5px;
     padding-bottom: 0px;
+    background-image: url("C:/laragon/www/Paws-Friends/project/resources/views/store/img/fondo.png");
+    background-size: cover;
+    background-position: center;    
     
 }
 .text-welcome{
@@ -30,6 +33,12 @@
 }
 .caracteristics{
     padding-left: 20px;
+}
+.ubication{
+position: absolute;
+font-size: 28;
+padding-top: 70;
+padding-right: 0;
 }
 /* Producto1 */
 .img{
