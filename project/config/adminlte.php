@@ -371,7 +371,7 @@ return [
         ['header' => 'TIENDA'],
         [
             'text' =>'Productos',
-            'url' => '#',
+            'url' => '/adminPWFS/productAdmin',
             'icon' =>'fas fa-fw fa-pump-soap',
         ],
         // ['header' => 'account_settings'],

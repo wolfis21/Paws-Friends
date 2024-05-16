@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Categories_productController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeServicesController;
 use App\Http\Controllers\UserController;
@@ -13,9 +14,11 @@ use App\Http\Controllers\moduloAdopcionDonacion\DonacionesController;
 use App\Http\Controllers\moduloAdopcionDonacion\AdopcionesController;
 use App\Http\Controllers\moduloAdopcionDonacion\PrincipalController;
 use App\Http\Controllers\moduloAdopcionDonacion\HistoriaController;
-
-
-
+use App\Http\Controllers\moduloCatalogo\StoreController;
+use App\Http\Controllers\moduloCatalogo\PostController;
+use App\Http\Controllers\moduloCatalogo\ProductController as ModuloCatalogoProductController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -129,29 +132,31 @@ Route::controller(SearchController::class)->group(function(){
 
 //? RUTAS MODULO 4=========================================================================================
 
-Route::get('/store', [App\Http\Controllers\moduloCatalogo\StoreController::class, 'main'])->name('store.main');
-Route::get('/store/products', [App\Http\Controllers\moduloCatalogo\StoreController::class, 'products'])->name('store.products');
-Route::get('/store/products/{product_id}', [App\Http\Controllers\moduloCatalogo\StoreController::class, 'products_details'])->name('store.products.details');
-Route::get('/store/recommendations', [App\Http\Controllers\moduloCatalogo\StoreController::class, 'recommendations'])->name('store.recomendations');
-
-//rutas de postController
-Route::controller(PostController::class)->group(function(){
-    //todo rutas admin
-    
-    Route::get('/adminPWFS/postAdmin', 'postAdmin')->name('postAdmin');
-    Route::get('/adminPWFS/createPost', 'createPost')->name('createPost');
-    Route::put('/adminPWFS/storePost', 'storePost')->name('storePost');
-    Route::get('/adminPWFS/editPost/{id}', 'editPost')->name('editPost');
-    Route::put('/adminPWFS/updatePost/{id}', 'updatePost')->name('updatePost');
-    Route::delete('/adminPWFS/destroyPost/{id}', 'destroyPost')->name('destroyPost');
-    
-    //todo rutas user
-    Route::resource('/posts', PostController::class);
-    Route::get('/posts', 'PostUser')->name('PostUser');
+Route::controller(StoreController::class)->group(function(){
+    Route::get('/store', 'main')->name('store.main');
+    Route::get('/store/products', 'products')->name('store.products');
+    Route::get('/store/products/{product_id}', 'products_details')->name('store.products.details');
+    Route::get('/store/recommendations', 'recommendations')->name('store.recomendations');
 });
 
+//rutas de postController
+// Route::controller(PostController::class)->group(function(){
+//     //todo rutas admin
+    
+//     Route::get('/adminPWFS/postAdmin', 'postAdmin')->name('postAdmin');
+//     Route::get('/adminPWFS/createPost', 'createPost')->name('createPost');
+//     Route::put('/adminPWFS/storePost', 'storePost')->name('storePost');
+//     Route::get('/adminPWFS/editPost/{id}', 'editPost')->name('editPost');
+//     Route::put('/adminPWFS/updatePost/{id}', 'updatePost')->name('updatePost');
+//     Route::delete('/adminPWFS/destroyPost/{id}', 'destroyPost')->name('destroyPost');
+    
+//     //todo rutas user
+//     Route::resource('/posts', PostController::class);
+//     Route::get('/posts', 'PostUser')->name('PostUser');
+// });
+
 //rutas de ProductController
-Route::controller(ProductController::class)->group(function(){
+Route::controller(ModuloCatalogoProductController::class)->group(function(){
     //todo rutas admin
     
     Route::get('/adminPWFS/productAdmin', 'productAdmin')->name('productAdmin');
@@ -163,7 +168,7 @@ Route::controller(ProductController::class)->group(function(){
     Route::delete('/adminPWFS/destroyProduct/{id}', 'destroyProduct')->name('destroyProduct');
     
     //todo rutas user
-    Route::resource('/products', ProductController::class);
+    Route::resource('/products', ModuloCatalogoProductController::class);
     Route::get('/products', 'ProductUser')->name('ProductUser');
 });
 

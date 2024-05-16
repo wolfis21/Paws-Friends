@@ -1,21 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\moduloCatalogo;
 
-use App\Models\Product;
+use App\Http\Controllers\Controller;
+use App\Models\moduloCatalogo\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    /**
-     * Muestra una lista de los productos.
-     */
     public function productAdmin()
     {
         // Recupera todos los productos de la base de datos
-        $products = product::all();
+        $products = Product::all();
         // Retorna la vista 'index' con los productos
-        return view('products.index', compact('products'));
+        return view('store.products.admin.index', compact('products'));
     }
 
     /**
@@ -24,7 +22,7 @@ class ProductController extends Controller
     public function createProduct()
     {
         // Retorna la vista 'create' para crear un nuevo producto
-        return view('products.create');
+        return view('store.products.admin.create');
     }
 
     /**
@@ -36,17 +34,15 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required',
-            'img_ref' => 'required|string|max:255',
-            'category_id' => 'required|exists:categories,id',
-            'quantity' => 'required|integer|min:0',
-            'category_animal_id' => 'nullable|exists:categories_animal,id',
+            'img_ref' => 'nullable',
+            'product_category_animals_id' => 'nullable',
         ]);
 
         // Crea un nuevo producto con los datos validados
         Product::create($request->all());
 
         // Redirige a la lista de productos con un mensaje de éxito
-        return redirect()->route('products.index')->with('success', 'Producto creado exitosamente.');
+        return redirect()->route('productAdmin');
     }
 
     /**
@@ -56,7 +52,7 @@ class ProductController extends Controller
     {
         // Retorna la vista 'show' con el producto especificado
         $product = Product::find($id);
-        return view('products.show', compact('product'));
+        return view('store.products.admin.show', compact('product'));
     }
 
     /**
@@ -66,7 +62,7 @@ class ProductController extends Controller
     {
         // Retorna la vista 'edit' con el producto especificado
         $product = Product::find($id);
-        return view('products.edit', compact('product'));
+        return view('store.products.admin.edit', compact('product'));
     }
 
     /**
@@ -79,9 +75,7 @@ class ProductController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'required',
             'img_ref' => 'required|string|max:255',
-            'category_id' => 'required|exists:categories,id',
-            'quantity' => 'required|integer|min:0',
-            'category_animal_id' => 'nullable|exists:categories_animal,id',
+            'product_category_animals_id' => 'nullable',
         ]);
 
         $product = Product::find($id);
@@ -90,7 +84,7 @@ class ProductController extends Controller
         $product->update($request->all());
 
         // Redirige a la lista de productos con un mensaje de éxito
-        return redirect()->route('products.index')->with('success', 'Producto actualizado exitosamente.');
+        return redirect()->route('productAdmin')->with('success', 'Producto actualizado exitosamente.');
     }
 
     /**
@@ -105,7 +99,7 @@ class ProductController extends Controller
         $product->delete();
 
         // Redirige a la lista de productos con un mensaje de éxito
-        return redirect()->route('products.index')->with('success', 'Producto eliminado exitosamente.');
+        return redirect()->route('productAdmin')->with('success', 'Producto eliminado exitosamente.');
     }
 
     //funcion para mostrar index de usuario
@@ -114,5 +108,3 @@ class ProductController extends Controller
         return view('store.products');
     }
 }
-
-
