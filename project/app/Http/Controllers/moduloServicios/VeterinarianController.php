@@ -5,6 +5,7 @@ namespace App\Http\Controllers\moduloServicios;
 use App\Models\moduloServicios\Veterinarian;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\moduloServicios;
+use App\Models\moduloServicios\Comment;
 use App\Models\moduloServicios\Puntuations;
 use App\Models\moduloServicios\Veterinarians_has_comments;
 use App\Models\moduloServicios\Veterinarians_has_puntuation;
@@ -24,8 +25,6 @@ class VeterinarianController extends Controller
     {
         $veterinarians = Veterinarian::all();
         $veterinariansComments = Veterinarians_has_comments::all();
-
-
         return view('moduloServicios.veterinarian.admin.index')
             ->with('veterinarians', $veterinarians)
             ->with('veterinariansComments', $veterinariansComments);
@@ -136,6 +135,7 @@ class VeterinarianController extends Controller
         return redirect()->route('index');
     }
 
+
     //todo User
     public function veterinarioUser()
     {
@@ -158,18 +158,24 @@ class VeterinarianController extends Controller
 
     public function showVeterinarianUser($id_vet)
     {
-        $veterinarian = Veterinarian::find($id_vet);
-        $verificarPuntajeUsuario = $this->verificarPuntuacion($id_vet); //TODO ASI SE LLAMAN FUNCIONES
-        return view('moduloServicios.veterinarian.user.showVeterinarian')
-            ->with('veterinarian', $veterinarian)
-            ->with('verificarPuntajeUsuario', $verificarPuntajeUsuario);
+        if (Auth::check()) {
+            $veterinarian = Veterinarian::find($id_vet);
+            $verificarPuntajeUsuario = $this->verificarPuntuacion($id_vet); 
+            $veterinariansComments = Veterinarians_has_comments::where('veterinarians_id', $id_vet)->get();
+            return view('moduloServicios.veterinarian.user.showVeterinarian')
+                ->with('veterinarian', $veterinarian)
+                ->with('verificarPuntajeUsuario', $verificarPuntajeUsuario)
+                ->with('veterinariansComments', $veterinariansComments);
+        }
+        else {
+            return redirect()->route('login');
+        }
     }
 
     public function updateVeterinarianPuntuations(Request $request, string $id)
     {
         $veterinarian = Veterinarian::findOrFail($id);
         $vet = $request->all();
-        $contador = 0;
         // Verificar si el usuario ya ha dado una puntuación al veterinario
         $puntuacionExistente = $this->verificarPuntuacion($id);
 
@@ -204,4 +210,23 @@ class VeterinarianController extends Controller
         return redirect()->route('Veterinario');
     }
 
+    public function enviarComentario(Request $request, string $id){
+        $veterinarian = Veterinarian::findOrFail($id);
+        $comentarioUsuario = $request->all();
+        $comment = Comment::create([
+            'data_text' => $comentarioUsuario['comments'],
+            'date' => date('d g:i:s A'),
+            'users_id' => Auth::user()->id,
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        $comentarioVeterinario = Veterinarians_has_comments::create([
+            'comments_id' => $comment->id,
+            'veterinarians_id' => $veterinarian->id,
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        return redirect()->back();
+    }
 }

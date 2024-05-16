@@ -12,8 +12,9 @@ class Comment extends Model
 
     protected $fillable = [
         'data_text',
-        'accepted',
         'date',
+        'accepted',
+        'users_id'
     ];
 
     public function users(){

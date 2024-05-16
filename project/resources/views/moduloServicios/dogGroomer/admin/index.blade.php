@@ -49,11 +49,11 @@
                                 <td>{{ $dogGroomerComment->comments->data_text }}</td>
                                 <td>{{ $dogGroomer->name }}</td>
                                 <td>
-                                    <form action="{{ route('destroyDogGroomersComment', $dogGroomerComment->id) }}"
+                                    <form action="{{ route('destroyDogGroomersComment', $dogGroomerComment->comments->id) }}"
                                         method="POST">
                                         @method('PUT')
                                         <a class="btn bg-cyan"
-                                            href="{{ route('acceptDogGroomersComment', $dogGroomerComment->id) }}">Confirmar</a>
+                                            href="{{ route('acceptDogGroomersComment', $dogGroomerComment->comments->id) }}">Confirmar</a>
                                         @method('DELETE')
                                         @csrf
                                         <button type="submit" class="btn bg-red">Denegar</button>

@@ -9,7 +9,11 @@
             $isEdit = false;
         @endphp
         <div class="mb-3">
-            <label for="address" class="form-label">direccion</label>
+            <label for="name" class="form-label">Nombre</label>
+            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Ingrese nombre" value="{{$housing->name}}">
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Direccion</label>
             <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" placeholder="Ingrese direccion" value="{{$housing->address}}">
         </div>
         <div class="mb-3">
@@ -26,6 +30,7 @@
                 <option selected value="{{($housing->type_animals)}}">{{$housing->type_animals}}</option>
                 <option value="Perro">Perro</option>
                 <option value="Gato">Gato</option>
+                <option value="Otros">Otros</option>
             </select>
         </div>
         <div class="mb-3">
@@ -35,8 +40,7 @@
         <div class="mb-3">
             <label for="Img" class="form-label">Img_ref</label>
             <input type="file" class="form-control @error('img_ref') is-invalid @enderror" id="img_ref" name="img_ref"
-             accept="image/*">
-             <img  src="images/housings/{{$housing->img_ref}}">
+             accept="image/*" value="">
         </div>
         <div class="mb-3">
             <a class="btn bg-red" href="{{route('housingAdmin')}}">Cancelar</a>

@@ -6,9 +6,14 @@
         {{ method_field('PUT') }}
         @csrf
         <div class="mb-3">
+            <label for="name" class="form-label">Nombre</label>
+            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
+                placeholder="Ingrese nombre" value="{{ old('name') }}">
+        </div>
+        <div class="mb-3">
             <label for="address" class="form-label">direccion</label>
             <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address"
-                placeholder="Ingrese direccion" value="{{ old('name') }}">
+                placeholder="Ingrese direccion" value="{{ old('address') }}">
         </div>
         <div class="mb-3">
             <label for="phone" class="form-label">Telefono</label>
@@ -24,9 +29,9 @@
         <div class="mb-3">
             <label for="type_animals" class="form-label">Tipo de animal</label>
             <select id="type_animals" name="type_animals" class="form-select">
-                <option selected>Elegir Tipo de Animal...</option>
                 <option value="Perro">Perro</option>
                 <option value="Gato">Gato</option>
+                <option value="Otros">Otros</option>
             </select>
         </div>
         <div class="mb-3">

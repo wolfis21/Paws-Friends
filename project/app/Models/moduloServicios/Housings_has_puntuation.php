@@ -9,6 +9,12 @@ class Housings_has_puntuation extends Model
 {
         protected $table = 'housings_has_puntuations';
     
+        protected $fillable = [
+            'puntuations_id',
+            'housings_id',
+            'created_at',
+            'updated_at',
+        ];
         public function housing(){
             return $this->belongsTo(housing::class, 'housing_id', 'id');
         }
