@@ -37,6 +37,18 @@ class AdminPlantillaControllerController extends Controller
       $FormularioAdopciones->apellido = $request->get('apellido');
       $FormularioAdopciones->Dni = $request->get('Dni');
       $FormularioAdopciones->telefono = $request->get('telefono');
+      $FormularioAdopciones->solicitud = $request->get('solicitud');
+    
+
+      if ( $request->hasFile('dni')) {
+        $file = $request->file('dni');
+        $name = time().$file->getClientOriginalName();
+        $file->move(public_path().'/images/', $name);
+        $datosFormularioAdopciones['dni']=$name;
+        $datosFormularioAdopciones['dni']=$request->file('dni')->store('uploads','public');
+        
+        return redirect('FormularioAdopciones');
+      }
 
       $FormularioAdopciones->save();
 
@@ -72,7 +84,17 @@ class AdminPlantillaControllerController extends Controller
       $FormularioAdopcion->apellido = $request->get('apellido');
       $FormularioAdopcion->Dni = $request->get('Dni');
       $FormularioAdopcion->telefono = $request->get('telefono');
+      $FormularioAdopcion->solicitud = $request->get('solicitud');
 
+      if ( $request->hasFile('dni')) {
+        $file = $request->file('dni');
+        $name = time().$file->getClientOriginalName();
+        $file->move(public_path().'/images/', $name);
+        $datosFormularioAdopciones['dni']=$name;
+        $datosFormularioAdopciones['dni']=$request->file('dni')->store('uploads','public');
+        
+        return redirect('FormularioAdopciones');
+      }
       $FormularioAdopcion->save();
 
       return redirect('/AdminP');

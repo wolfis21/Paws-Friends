@@ -84,8 +84,15 @@
             />
           </div>
 
+          <div class="form-group">
+            <label for="solicitud">Solicitud :
+              <select id="solicitud" name="solicitud">
+                <option value="Procesado">procesado</option>
+              </select>
+            </label>
+          </div>
 
-
+          
           <!-- Botón de envío -->
           <div class="form-group">
             <button type="submit">Enviar</button>

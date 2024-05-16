@@ -34,6 +34,14 @@
     <input type="string" class="form-control" id="telefono" placeholder="Enter telefono" name="telefono" required >
   </div>
 
+    <div class="mb-3">
+    <label for="solicitud" class="form-label">solicitud:</label>
+      <select id="solicitud" name="solicitud" placeholder="solicitud" required>
+      <option value="Aceptar">Aceptar</option>
+      <option value="Negado">Negado</option>
+      </select>
+  </div>
+
 
 
   <a href="/AdminP" class="btn btn-primary" tabindex="6" >Volver</a>

@@ -8,7 +8,10 @@ class AdopcionesVermasController extends Controller
 {
     public function index()
     {
+
       $adopciones= animals_adoption::all();
-      return view('AdopcionesVermas')->with('adopciones',$adopciones);;
+      return view('AdopcionesVermas')-> with('adopciones',$adopciones);;
     }
+
+
 }

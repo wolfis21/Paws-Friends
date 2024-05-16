@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('formulario_adopciones', function (Blueprint $table) {
+        Schema::create('formulario_donaciones', function (Blueprint $table) {
             $table->id('id');
-            $table->string('nombre');
-            $table->string('apellido');
-            $table->string('Dni');
-            $table->string('telefono');
-            $table->string('solicitud');
+            $table->string('fotos-donacion');
+            $table->string('destino');
+            $table->string('tipos');
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('formulario_adopciones');
+        Schema::dropIfExists('formulario_donaciones');
     }
 };

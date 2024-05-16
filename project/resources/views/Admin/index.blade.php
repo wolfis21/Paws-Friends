@@ -15,6 +15,7 @@
       <th scope="col">APELLIDO</th>  
       <th scope="col">DNI</th>
       <th scope="col">TELEFONO</th>
+      <th scope="col">solicitud</th>
       <th scope="col">ACCIONES</th>
     </tr>
   </thead>  
@@ -26,6 +27,7 @@
         <td>{{$FormularioAdopcion->apellido}}</td>
         <td>{{$FormularioAdopcion->Dni}}</td>
         <td>{{$FormularioAdopcion->telefono}}</td>
+        <td>{{$FormularioAdopcion->solicitud}}</td>
         <td>
 
           <form action="{{route('AdminP.destroy',$FormularioAdopcion->id)}}" method="POST">

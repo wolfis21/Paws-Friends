@@ -45,14 +45,14 @@
       <main>
         <section class="animales">
           @foreach ($adopciones as $adopcion)
-            <div class="animal" id="Max">
+            <div class="animal" >
                 <img src="{{ asset ( 'img/Animales/perro1.jpeg')}}" alt="Perro">
                 <h2>{{$adopcion->name}}</h2>
                 <p>Raza: {{$adopcion->animal_race}}</p>
                 <p>Edad: {{$adopcion->age_animal}}</p>
                 <a href="/AdopcionesVermas" class="btn"><button>Ver mas</button></a>
             </div>
-@endforeach
+          @endforeach
 
         </section>
     </main>

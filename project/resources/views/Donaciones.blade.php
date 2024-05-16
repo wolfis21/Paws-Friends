@@ -44,7 +44,7 @@
     <main>
       <section class="boletin-informativo">
         <h2>Boletín informativo !</h2>
-        <img src="{{URL::asset('imagenes/FRAMES/FRAME A/Frame A1 - Bienvenidos.png') }}" alt="Perro">
+        <img src="{{URL::asset('/imagenes/FRAMES/FRAME A/FrameA1-Bienvenidos.webp') }}" alt="Perro">
         <p>
           Suscríbete a nuestro boletín informativo para recibir las últimas
           noticias sobre Paws & Friends, nuestras mascotas disponibles para

@@ -26,7 +26,8 @@
 
   <div class="mb-3">
     <label for="Dni" class="form-label" >DNI:</label>
-    <input type="file" class="form-control" id="Dni" placeholder="Enter Dni" name="Dni"   value="{{$FormularioAdopcion->Dni}}" required>
+    <input type="file" class="form-control" id="Dni" placeholder="Enter Dni" 
+    name="Dni" value="{{$FormularioAdopcion->Dni}}" required>
   </div>
 
 
@@ -35,6 +36,13 @@
     <input type="string" class="form-control" id="telefono" placeholder="Enter telefono" name="telefono"  value="{{$FormularioAdopcion->telefono}}" required>
   </div>
 
+    <div class="mb-3">
+    <label for="solicitud" class="form-label">solicitud:</label>
+      <select id="solicitud" name="solicitud" placeholder="solicitud" required>
+      <option value="Aceptar">Aceptar</option>
+      <option value="Negado">Negado</option>
+      </select>
+  </div>
 
   <a href="/AdminP" class="btn btn-danger" tabindex="5" >Cancelar</a>
   <button type="submit" class="btn btn-success" tabindex="4">Guardar</button>

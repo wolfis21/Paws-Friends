@@ -64,8 +64,9 @@
           <div class="destino-donacion">
           <p>Tipo de Donaciones</p>
           <select id="tipos" name="tipos">
-            <option value="alimentos">Donaciones de alimentos y suministros</option>
-            <option value="Medicina">Donaciones de medicamentos:</option>
+            <option value="alimentos">Donaciones de alimentos</option>
+            <option value="alimentos">Donaciones de suministros</option>
+            <option value="Medicina">Donaciones de medicamentos</option>
             <option value="otro">Otros</option>
           </select>
         </div>

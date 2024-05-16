@@ -30,9 +30,12 @@ class FormularioDonacionesController extends Controller
     {
         $datosFormularioDonaciones=request()->except('_token');
         FormularioDonaciones::insert($datosFormularioDonaciones);
-        if ($request ->hasFile('fotos-donacion')){
-          $datosFormularioDonaciones['fotos-donacion']=$request->file('fotos-donacion')->store('uploads','public');
         return redirect('FormularioDonaciones');
+        if ($request ->hasFile('fotos-donacion')){
+          $file = $request->file('fotos-donacion');
+          $name = time().$file->getClientOriginalName();
+          $file->move(public_path().'/images', $name);
+          $datosFormularioDonaciones['fotos-donacion']=$request->file('fotos-donacion')->store('uploads','public');
         }
         return response() ->json($datosFormularioDonaciones);
     }

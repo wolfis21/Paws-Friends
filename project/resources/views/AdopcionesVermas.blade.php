@@ -38,7 +38,7 @@
           <img src="{{ asset ( 'img/Animales/perro1.jpeg')}}" alt="Imagen de la mascota" />
         </div>
         <!-- Cuadro derecho: Información de la mascota -->
-        <div class="cuadro-info">
+        <div class="cuadro-info" >
           <p><strong>Nombre: </strong>{{$adopcion->name}}</p>
           <p><strong>Especie: </strong>{{$adopcion->species}}</p>
           <p><strong>Raza: </strong> {{$adopcion->animal_race}}</p>
@@ -51,7 +51,7 @@
       @endforeach
       <!-- Botón de adopción -->
       <div class="boton-adopcion">
-         <a href="/FormularioAdopciones" class="btn"><button>Adoptar</button></a>
+        <a href="/FormularioAdopciones" class="btn"><button>Adoptar</button></a>
       </div>
     </section>
   </main>
