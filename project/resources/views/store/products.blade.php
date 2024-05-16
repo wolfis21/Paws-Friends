@@ -1,5 +1,5 @@
 @extends('layouts.headerNav')
-@vite(['resources/css/moduloStore/products.css'])
+@vite(['resources/css/moduloCatalogo/products.css'])
 @section('content')
 <!-- <div class="container">
     <ul>
@@ -16,7 +16,7 @@
 </head>
 
 <div class="contenedor">
-        <section class="categorias">
+<section class="categorias">
         <h2 class="title-cat">Categorías</h2>
  
     <div class="mascotas">
