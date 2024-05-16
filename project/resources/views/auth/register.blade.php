@@ -4,7 +4,8 @@
 @section('content')
     <div class="container-register">
         <fieldset >
-            <form class="box-registre">
+            <form class="box-registre" method="POST" action="{{route('register')}}">
+                @csrf
                 <div class="register-welcome">
                     <div class="welcome">
                         <h3 class="text-h3">Bienvenido a </h3>
@@ -23,27 +24,27 @@
                 <div class="f-left">
                     <div class="card-space" >
                         <label>Nombre</label>
-                        <input class="user-info" placeholder="Nombre"/>
+                        <input name="name" class="user-info" placeholder="Nombre"/>
                     </div>
                     <div class="card-space">
                         <label>Cedula</label>
-                        <input class="user-info" placeholder="Cedula"/>
+                        <input name="dni" class="user-info" placeholder="Cedula"/>
                     </div>
                     <div class="card-space">
                         <label>Direccion</label>
-                        <input class="user-info" placeholder="Direccion"/>
+                        <input name="address" class="user-info" placeholder="Direccion"/>
                     </div>
                     <div class="card-space">
                     <label>Apellido</label>
-                    <input class="user-info" placeholder="Apellido"/>
+                    <input  name="last_name"class="user-info" placeholder="Apellido"/>
                 </div>
                 <div class="card-space">
                     <label>Telefono Movil</label>
-                    <input class="user-info" placeholder="Telefono Movil"/>
+                    <input name="phone" class="user-info" placeholder="Telefono Movil"/>
                 </div>
                 <div class="card-space">
                     <label>Foto</label>
-                    <input class="user-info" placeholder="Foto de Perfil"/>
+                    <input type="file" name="img_ref" class="user-info" placeholder="Foto de Perfil"/>
                 </div>
                 </div>
                 
@@ -55,6 +56,14 @@
                 <div class="card-foot">
                     <label>Ingresa tu contrasena</label>
                     <input class="user-info" placeholder="Contrasena de la Cuenta"/>
+                </div>
+                <div class="card-foot">
+                    <label for="photo_user" class="label">Foto Cedula</label>
+                        <input class="user-info" type="file" name="photo_dni" value="">
+                </div>
+                <div class="card-foot">
+                    <label for="photo_user" class="label">Foto Rif</label>
+                        <input class="user-info" type="file" name="photo_rif" value="">
                 </div>
                 <div class="card-space btn-link">
                     <button type="submit" class="btnE">{{ __('Registrate') }}</button>
