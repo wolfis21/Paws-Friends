@@ -3,45 +3,27 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    @vite(['resources/css/navMenu/styleMain.css', 'resources/css/navMenu/app.css'])
     <link rel="stylesheet" href="{{ asset('css/styleMain.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
-    <!--LINK DE CSS DE SERVICIO RESCATE MODULO 2-->
-    <link rel="stylesheet" href="{{ asset('css/servicio.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ asset('css/stylehc.css') }}" type="text/css" />
-
+    <link rel="icon" type="image/x-icon" href="{{asset('imagenes/icono.ico')}}">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
-    <!--FONT DE MODULO 2-->
-    {{--     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
- --}}
-    <!--SCRIPTS FORMULARIO MODULO 2-->
-    {{--     @vite(['resources/js/formulario.js'])
-    @vite(['resources/js/script.js']) --}}
-
-
     <title>Paws & Friends</title>
 </head>
-
 <body>
-    <nav class="nav-main-home">
-        <div class="container">
+    <nav class="container-nav">
+        <div class="container-title">
+            <h1 id="title">
+                <a href="/">
+                    <img id="logoNav" src="{{ URL::asset('imagenes/Variaciones-logo.png') }}" alt="logo" />
+                </a>
+            </h1>
+        </div>
+        <div class="container-menu">
             <ul id="MainNavBar">
-                <h1>
-                    <a href="/">
-                        <img id="logoNav" src="{{ URL::asset('imagenes/Variaciones logo.png') }}" alt="logo" />
-                    </a>
-                </h1>
-
                 <li><a href="/">Inicio</a></li>
                 <li><a class="link-none">Modulos</a>
                     <ul class="mostrar-secciones">
@@ -54,10 +36,6 @@
                 </li>
                 <li><a href="#ShowcaseQuienes">Nosotros</a></li>
                 <li><a href="#">Promociones</a></li>
-
-                {{--  <li><a href="{{ route('register') }}" id="registro">Registrate</a></li>
-                <li><a href="{{ route('login') }}" id="ingreso">Iniciar Sesion</a></li> --}}
-
                 @guest
                     @if (Route::has('login'))
                         <li>
@@ -85,26 +63,6 @@
                                 </a>
                             </li>
                         </ul>
-
-                        {{-- <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-
-                            <a class="btn btn-sm btn-primary" href="{{ route('user.profile') }}">
-                                <i class="fa fa-fw fa-eye"></i> Ver Perfil
-                            </a>
-
-
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                                <button type="submit">Logout</button>
-                            </form>
-
-                        </div> --}}
                     </li>
                 @endguest
             </ul>
@@ -113,11 +71,10 @@
     <div class="containerMainNav">
         @yield('content')
     </div>
-
     <footer>
         <div class="container-footer">
             <div class="img-footer">
-                <img class="logo-footer" src="{{ URL::asset('imagenes/Variaciones logo.png') }}" alt="logo" />
+                <img class="logo-footer" src="{{ URL::asset('imagenes/Variaciones-logo.png') }}" alt="logo" />
             </div>
             <div class="text-legals">
                 <div>©2024 Company Name. All rights reserved UGMA</div>

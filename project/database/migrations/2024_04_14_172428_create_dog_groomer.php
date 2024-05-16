@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('phone');
             $table->string('link_ref')->nullable();
             $table->string('img_ref')->nullable();
+            $table->string('puntuation')->nullable();
             $table->timestamps();
         });
     }

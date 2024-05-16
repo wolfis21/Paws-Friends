@@ -8,6 +8,12 @@ class Veterinarians_has_comments extends Model
 {
     protected $table = 'veterinarians_has_comments';
 
+    protected $fillable = [
+        'comments_id',
+        'veterinarians_id',
+        'created_at',
+        'updated_at',
+    ];
     public function veterinarians(){
         return $this->belongsTo(Veterinarian::class,'veterinarians_id','id');
     }

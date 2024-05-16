@@ -1,180 +1,74 @@
-{{-- @extends('adminlte::auth.register') --}}
-
-{{-- @extends('layouts.app') --}}
-
 @extends('layouts.headerNav')
+@vite('resources/css/register/registroUser.css')
 
 @section('content')
     <div class="container-register">
-        <div class="row justify-content-center">
-            <div class="col-md-8 box-ajust">
-                <div class="card add-colors">
-                    <div class="card-header-prom">
-                        <p>Bienvenido a: </p>
-                        <img class="logo-register" src="{{ URL::asset('imagenes/Variaciones logo.png') }}" alt="logo" />
+        <fieldset >
+            <form class="box-registre" method="POST" action="{{route('register')}}">
+                @csrf
+                <div class="register-welcome">
+                    <div class="welcome">
+                        <h3 class="text-h3">Bienvenido a </h3>
                     </div>
-                    <div class="card-header register">Registro</div>
-
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
-                            @csrf
-
-                            <div class="superior-container">
-                                <div class="row mb-0 width-temp">
-                                    <label for="name"
-                                        class="col-md-4 col-form-label text-md-init">{{ __('Nombre') }}</label>
-
-                                    <div class="col-md-6 width-temp-2">
-                                        <input id="name" type="text"
-                                            class="form-control @error('name') is-invalid @enderror" name="name"
-                                            value="{{ old('name') }}" required autocomplete="name" placeholder="Nombre" autofocus>
-
-                                        @error('name')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="row mb-0 width-temp">
-                                    <label for=""
-                                        class="col-md-4 col-form-label text-md-init">{{ __('Apellido') }}</label>
-
-                                    <div class="col-md-6 width-temp-2">
-                                        <input id="last_name" type="text"
-                                            class="form-control @error('last_name') is-invalid @enderror" name="last_name"
-                                            value="{{ old('last_name') }}" required autocomplete="last_name" placeholder="Apellido" autofocus>
-
-                                        @error('last_name')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="row mb-0 width-temp">
-                                    <label for="dni"
-                                        class="col-md-4 col-form-label text-md-init">{{ __('Cedula') }}</label>
-
-                                    <div class="col-md-6 width-temp-2">
-                                        <input id="dni" type="text"
-                                            class="form-control @error('dni') is-invalid @enderror" name="dni"
-                                            value="{{ old('dni') }}" required autocomplete="dni" placeholder="Cedula" autofocus>
-
-                                        @error('dni')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="row mb-0 width-temp">
-                                    <label for="phone"
-                                        class="col-md-4 col-form-label text-md-init">{{ __('Telefono') }}</label>
-
-                                    <div class="col-md-6 width-temp-2">
-                                        <input id="phone" type="text"
-                                            class="form-control @error('phone') is-invalid @enderror" name="phone"
-                                            value="{{ old('phone') }}" required autocomplete="phone" placeholder="Telefono movil" autofocus>
-
-                                        @error('phone')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="row mb-0 width-temp">
-                                    <label for="address"
-                                        class="col-md-4 col-form-label text-md-init">{{ __('Direccion') }}</label>
-
-                                    <div class="col-md-6 width-temp-2">
-                                        <input id="address" type="text"
-                                            class="form-control @error('address') is-invalid @enderror" name="address"
-                                            value="{{ old('address') }}" required autocomplete="address" placeholder="Direccion" autofocus>
-
-                                        @error('address')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="row mb-0 width-temp">
-                                    <label for="email"
-                                        class="col-md-4 col-form-label text-md-init">{{ __('Correo') }}</label>
-
-                                    <div class="col-md-6 width-temp-2">
-                                        <input id="email" type="email"
-                                            class="form-control @error('email') is-invalid @enderror" name="email"
-                                            value="{{ old('email') }}" required placeholder="Correo" autocomplete="email">
-
-                                        @error('email')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- fin --}}
-                            <div class="inferior-container">
-                                <div class="row mb-0">
-                                    <label for="photo_user"
-                                        class="col-md-4 col-form-label text-md-init">{{ __('Ajuste Foto') }}</label>
-    
-                                    <div class="col-md-6 width-temp-2">
-                                        <input id="photo_user" type="file"
-                                            class="form-control @error('photo_user') is-invalid @enderror" name="photo_user"
-                                            value="{{ old('photo_user') }}" required autocomplete="photo_user" autofocus>
-    
-                                        @error('photo_user')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-    
-                                <div class="row mb-0">
-                                    <label for="password"
-                                        class="col-md-4 col-form-label text-md-init">{{ __('Contraseña') }}</label>
-    
-                                    <div class="col-md-6 width-temp-2">
-                                        <input id="password" type="password"
-                                            class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Contraseña"
-                                            required autocomplete="new-password">
-    
-                                        @error('password')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-    
-                                <div class="row mb-0">
-                                    <label for="password-confirm"
-                                        class="col-md-4 col-form-label text-md-init">{{ __('Confirme Contraseña') }}</label>
-    
-                                    <div class="col-md-6 width-temp-2">
-                                        <input id="password-confirm" type="password" class="form-control"
-                                            name="password_confirmation" placeholder="Repita contraseña" required autocomplete="new-password">
-                                    </div>
-                                </div>
-    
-                                <div class="row mb-0">
-                                    <div class="col-md-6 width-temp-2 offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
-                                            {{ __('Registrarse') }}
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                    <div class="logo">
+                        <img class="logo-register" src="{{ URL::asset('imagenes/Variaciones-logo.png') }}" alt="logo" />
                     </div>
+                    <div class="register">
+                        <span>¿Ya tienes una cuenta?</span><a href="#">Inicia sesion</a>
+                    </div>
+                </div>    
+                <div class="title">
+                    <h2>Registrate</h2>
                 </div>
-            </div>
-        </div>
+
+                <div class="f-left">
+                    <div class="card-space" >
+                        <label>Nombre</label>
+                        <input name="name" class="user-info" placeholder="Nombre"/>
+                    </div>
+                    <div class="card-space">
+                        <label>Cedula</label>
+                        <input name="dni" class="user-info" placeholder="Cedula"/>
+                    </div>
+                    <div class="card-space">
+                        <label>Direccion</label>
+                        <input name="address" class="user-info" placeholder="Direccion"/>
+                    </div>
+                    <div class="card-space">
+                    <label>Apellido</label>
+                    <input  name="last_name"class="user-info" placeholder="Apellido"/>
+                </div>
+                <div class="card-space">
+                    <label>Telefono Movil</label>
+                    <input name="phone" class="user-info" placeholder="Telefono Movil"/>
+                </div>
+                <div class="card-space">
+                    <label>Foto</label>
+                    <input type="file" name="img_ref" class="user-info" placeholder="Foto de Perfil"/>
+                </div>
+                </div>
+                
+                
+                <div class="card-foot">
+                    <label>Ingresa correo electronico</label>
+                    <input class="user-info" placeholder="Correo Electronico"/>
+                </div>
+                <div class="card-foot">
+                    <label>Ingresa tu contrasena</label>
+                    <input class="user-info" placeholder="Contrasena de la Cuenta"/>
+                </div>
+                <div class="card-foot">
+                    <label for="photo_user" class="label">Foto Cedula</label>
+                        <input class="user-info" type="file" name="photo_dni" value="">
+                </div>
+                <div class="card-foot">
+                    <label for="photo_user" class="label">Foto Rif</label>
+                        <input class="user-info" type="file" name="photo_rif" value="">
+                </div>
+                <div class="card-space btn-link">
+                    <button type="submit" class="btnE">{{ __('Registrate') }}</button>
+                </div>
+            </form>
+        </fieldset>
     </div>
 @endsection

@@ -24,8 +24,26 @@ class UserController extends Controller
 
     public function updateUser(Request $request, string $id){
         $user = User::findOrFail($id);
-        $userReq = $request->all();
-        $user->update($userReq);
+    
+        $userData = $request->except('photo_user','photo_dni','photo_rif');
+        
+        if ($request->hasFile('photo_dni') && $request->hasFile('photo_rif') && $request->hasFile('photo_user')) {
+            $imgDni = $request->file('photo_dni')->store('docs', 'public');
+            $imgRif = $request->file('photo_rif')->store('docs', 'public');
+            $imgPhoto = $request->file('photo_user')->store('docs', 'public');
+            
+            $userData['photo_user'] = $imgPhoto;
+            $userData['photo_dni'] = $imgDni;
+            $userData['photo_rif'] = $imgRif;
+        } else {
+            $userData['photo_user'] = null;
+            $userData['photo_dni'] = null;
+            $userData['photo_rif'] = null;
+        }
+    
+        $user->update($userData);
+        
         return view('main');
     }
+    
 }
