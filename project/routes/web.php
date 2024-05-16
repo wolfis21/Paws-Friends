@@ -150,6 +150,23 @@ Route::controller(PostController::class)->group(function(){
     Route::get('/posts', 'PostUser')->name('PostUser');
 });
 
+//rutas de ProductController
+Route::controller(ProductController::class)->group(function(){
+    //todo rutas admin
+    
+    Route::get('/adminPWFS/productAdmin', 'productAdmin')->name('productAdmin');
+    Route::get('/adminPWFS/createProduct', 'createProduct')->name('createProduct');
+    Route::put('/adminPWFS/storeProduct', 'storeProduct')->name('storeProduct');
+    Route::get('/adminPWFS/showProduct/{id}', 'showProduct')->name('showProduct');
+    Route::get('/adminPWFS/editProduct/{id}', 'editProduct')->name('editProduct');
+    Route::put('/adminPWFS/updateProduct/{id}', 'updateProduct')->name('updateProduct');
+    Route::delete('/adminPWFS/destroyProduct/{id}', 'destroyProduct')->name('destroyProduct');
+    
+    //todo rutas user
+    Route::resource('/products', ProductController::class);
+    Route::get('/products', 'ProductUser')->name('ProductUser');
+});
+
 //rutas de shopController
 Route::controller(ShopController::class)->group(function(){
     //todo rutas admin
