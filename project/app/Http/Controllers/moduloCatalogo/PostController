@@ -19,7 +19,7 @@ class PostController extends Controller
     {
         //
         $post = post::all();
-        return view('store.post.index', compact('post') );
+        return view('store.post.admin.index', compact('post') );
     }
 
     /**
@@ -29,7 +29,7 @@ class PostController extends Controller
     {
         //
         $post = new Post();
-        return view('store.post.create');
+        return view('store.post.admin.create');
     }
 
     /**
@@ -54,7 +54,7 @@ class PostController extends Controller
             $post->save();
         }
 
-        return redirect()->route('<store.post.index')
+        return redirect()->route('<store.post.admin.index')
         ->with('success', 'Post creado');
 
     }
@@ -67,7 +67,7 @@ class PostController extends Controller
     {
         //
         $post = Post::find($id);
-        return view('store.post.edit', compact('post'));
+        return view('store.post.admin.edit', compact('post'));
     }
 
     /**
@@ -93,7 +93,7 @@ class PostController extends Controller
 
         $post->update($request->all());
 
-        return redirect()->route('store.post.index')
+        return redirect()->route('store.post.admin.index')
         ->with('success', 'Post actualizado');
 
     }
@@ -106,7 +106,7 @@ class PostController extends Controller
         $post = Post::find($id);
         Storage::disk('public')->delete($post->image);
         $post->delete();
-        return redirect()->route('store.post.index')
+        return redirect()->route('store.post.admin.index')
         ->with('success', 'Post borrado');
     }
 

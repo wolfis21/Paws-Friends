@@ -11,11 +11,12 @@ use App\Http\Controllers\moduloServicios\HousingsController;
 use App\Http\Controllers\moduloServicios\VeterinarianController;
 use App\Http\Controllers\AdopcionesController;
 use App\Http\Controllers\AdopcionesVermasController;
+use App\Http\Controllers\Categories_productController;
 use App\Http\Controllers\DonacionesController;
 use App\Http\Controllers\FormularioAdopcionesController;
 use App\Http\Controllers\FormularioDonacionesController;
-use App\Http\Controllers\moduloCatalogo\PostController;
-
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -159,7 +160,7 @@ Route::get('/store/products', [App\Http\Controllers\StoreController::class, 'pro
 Route::get('/store/products/{product_id}', [App\Http\Controllers\StoreController::class, 'products_details'])->name('store.products.details');
 Route::get('/store/recommendations', [App\Http\Controllers\StoreController::class, 'recommendations'])->name('store.recomendations');
 
-//rutas de post
+//rutas de postController
 Route::controller(PostController::class)->group(function(){
     //todo rutas admin
     
@@ -173,6 +174,32 @@ Route::controller(PostController::class)->group(function(){
     //todo rutas user
     Route::resource('/posts', PostController::class);
     Route::get('/posts', 'PostUser')->name('PostUser');
+});
+
+//rutas de shopController
+Route::controller(ShopController::class)->group(function(){
+    //todo rutas admin
+    
+    Route::get('/adminPWFS/shopAdmin', 'shopAdmin')->name('shopAdmin');
+    Route::get('/adminPWFS/createShop', 'createShop')->name('createShop');
+    Route::put('/adminPWFS/storeShop', 'storeShop')->name('storeShop');
+    Route::get('/adminPWFS/editShop/{id}', 'editShop')->name('editShop');
+    Route::put('/adminPWFS/updateShop/{id}', 'updateShop')->name('updateShop');
+    Route::delete('/adminPWFS/destroyShop/{id}', 'destroyShop')->name('destroyShop');
+
+});
+
+//rutas de Categories_productController
+Route::controller(Categories_productController::class)->group(function(){
+    //todo rutas admin
+    
+    Route::get('/adminPWFS/categoriesProductAdmin', 'categoriesProductAdmin')->name('categoriesProductAdmin');
+    Route::get('/adminPWFS/createCategoryProduct', 'createCategoryProduct')->name('createCategoryProduct');
+    Route::put('/adminPWFS/storeCategoryProduct', 'storeCategoryProduct')->name('storeCategoryProduct');
+    Route::get('/adminPWFS/editCategoryProduct/{id}', 'editCategoryProduct')->name('editCategoryProduct');
+    Route::put('/adminPWFS/updateCategoryProduct/{id}', 'updateCategoryProduct')->name('updateCategoryProduct');
+    Route::delete('/adminPWFS/destroyCategoryProduct/{id}', 'destroyCategoryProduct')->name('destroyCategoryProduct');
+
 });
 
 /* Auth::routes(); */
