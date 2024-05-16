@@ -52,17 +52,6 @@ class Categories_productController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(Category $id)
-    {
-        //
-        $categories = Category::find($id);
-        return view('store.categories_product.show', compact('categories'));
-
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit(Category $id)
