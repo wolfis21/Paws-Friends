@@ -4,7 +4,7 @@
 @section('content')
     <div class="container-general">
         <div class="img-container">
-            <a href="{{route('housingUser')}}">Volver</a>
+            <a class="link-hover" href="{{route('housingUser')}}">Volver</a>
             <img src="{{ asset('storage/moduloServicios/images/housings/'. $housing->img_ref) }}" alt="Imagen Housing" />
         </div>
         <div class="info-container">

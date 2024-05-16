@@ -4,7 +4,7 @@
 @section('content')
     <div class="container-general">
         <div class="img-container">
-            <a href="{{route('dogGroomerUser')}}">Volver</a>
+            <a class="link-hover" href="{{route('dogGroomerUser')}}">Volver</a>
             <img src="{{asset('storage/moduloServicios/images/dogGroomers/'. $dogGroomer->img_ref)}}" alt="Imagen dog" />
         </div>
         <div class="info-container">

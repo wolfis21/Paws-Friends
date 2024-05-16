@@ -4,7 +4,7 @@
 @section('content')
     <div class="container-general">
         <div class="img-container">
-            <a href="{{route('Veterinario')}}">Volver</a>
+            <a class="link-hover" href="{{route('Veterinario')}}">Volver</a>
             <img src="/storage/moduloServicios/images/vets/{{ $veterinarian->img_ref }}" alt="Imagen vet" />
         </div>
         <div class="info-container">

@@ -32,6 +32,8 @@ h1{
 }
 
 .img-container{
+    display: flex;
+    flex-direction: column;
     width: 400px;
     height: 500px;
     border-radius: 20px;
@@ -100,4 +102,27 @@ h2{
     -o-border-radius: 10px !important;
     margin-left: 20px;
     margin-bottom: 0px !important;
+}
+
+.link-hover{
+    width: fit-content;
+    background-color: #5CBADC;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    color: #FfFFFF;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+.link-hover:hover{
+    background-color: #3d8ba8;
+    color: #fff;
 }
