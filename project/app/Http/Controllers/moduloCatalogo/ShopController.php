@@ -13,7 +13,7 @@ class ShopController extends Controller
      /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function shopAdmin()
     {
         //
         $shop = Shop::all();
@@ -23,7 +23,7 @@ class ShopController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function createShop()
     {
         //
         $shop = new Shop();
@@ -33,7 +33,7 @@ class ShopController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function storeShop(Request $request)
     {
         $request->validate([
 
@@ -56,7 +56,7 @@ class ShopController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Shop $id)
+    public function editShop(Shop $id)
     {
         //
         $shop = Shop::find($id);
@@ -66,7 +66,7 @@ class ShopController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Shop $id)
+    public function updateShop(Request $request, Shop $id)
     {
         $request->validate([
             'name'=> 'required|string|min:3',
@@ -88,11 +88,13 @@ class ShopController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Shop $id)
+    public function destroyShop(Shop $id)
     {
         $shop = Shop::find($id);
         $shop->delete();
         return redirect()->route('store.shop.index')
         ->with('success', 'Tienda borrada');
     }
+
+  
 }
