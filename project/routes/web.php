@@ -152,11 +152,27 @@ Auth::routes();
 
 //? FIN RUTAS MODULO 3
 
-// RUTAS MODULO 4
+// RUTAS MODULO 4=========================================================================================
 
 Route::get('/store', [App\Http\Controllers\StoreController::class, 'main'])->name('store.main');
 Route::get('/store/products', [App\Http\Controllers\StoreController::class, 'products'])->name('store.products');
 Route::get('/store/products/{product_id}', [App\Http\Controllers\StoreController::class, 'products_details'])->name('store.products.details');
 Route::get('/store/recommendations', [App\Http\Controllers\StoreController::class, 'recommendations'])->name('store.recomendations');
-Route::resource('post', PostController::class);
+
+//rutas de post
+Route::controller(PostController::class)->group(function(){
+    //todo rutas admin
+    
+    Route::get('/adminPWFS/postAdmin', 'postAdmin')->name('postAdmin');
+    Route::get('/adminPWFS/createPost', 'createPost')->name('createPost');
+    Route::put('/adminPWFS/storePost', 'storePost')->name('storePost');
+    Route::get('/adminPWFS/editPost/{id}', 'editPost')->name('editPost');
+    Route::put('/adminPWFS/updatePost/{id}', 'updatePost')->name('updatePost');
+    Route::delete('/adminPWFS/destroyPost/{id}', 'destroyPost')->name('destroyPost');
+    
+    //todo rutas user
+    Route::resource('/posts', PostController::class);
+    Route::get('/posts', 'PostUser')->name('PostUser');
+});
+
 /* Auth::routes(); */
