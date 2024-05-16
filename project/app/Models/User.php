@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class User extends Authenticatable
 {
@@ -50,6 +51,22 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected function name(): Attribute{
+        return new Attribute(
+            //todo transformar el valor la primeras en mayusculas accesorio
+            get: function($value){
+                return ucwords($value);
+            },
+
+            //para las funciones flechas
+            // set: fn($value) => strtolower($value),
+
+            // todo transformar todas a minusculas mutador
+            set: function($value){
+                return strtolower($value);
+            }
+        );
+    }
     public function rol(){
         return $this->belongsTo(Rols::class,'rols_id', 'id');
     }

@@ -13,6 +13,6 @@ class VeterinarianSeeder extends Seeder
      */
     public function run(): void
     {
-        Veterinarian::factory(20)->create();
+        Veterinarian::factory(8)->create();
     }
 }

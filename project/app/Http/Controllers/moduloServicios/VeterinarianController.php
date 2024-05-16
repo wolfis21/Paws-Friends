@@ -19,7 +19,7 @@ class VeterinarianController extends Controller
 {
     //todo Admin
     /** 
-     * Display a listing of the resource.
+     * Display a listing of the r source.
      */
     public function index()
     {
@@ -30,14 +30,6 @@ class VeterinarianController extends Controller
             ->with('veterinariansComments', $veterinariansComments);
     }
 
-    // public function vetuser()
-    // {
-    //     return view('veterinarian.admin.vetsuser');
-    // }
-
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
 
     {

@@ -22,10 +22,5 @@ class Veterinarians_has_puntuation extends Model
     public function puntuations(){
         return $this->belongsTo(Puntuations::class, 'puntuations_id', 'id');
     }
-    // public function puntuations()
-    // {
-    //     return $this->belongsToMany(User::class, 'veterinarians_has_puntuations', 'veterinarians_id', 'users_id')
-    //                 ->withPivot('puntuations');
-    // }
     use HasFactory;
 }
