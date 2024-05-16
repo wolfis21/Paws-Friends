@@ -9,14 +9,16 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    //categories_product, tabla para crear categorias de productos
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('categories_animal', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description');
+            $table->unsignedBigInteger('category_id'); // Clave foránea
             $table->timestamps();
+
+            // Definir la clave foránea
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 
@@ -25,7 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('categories_animal');
     }
 };
-
