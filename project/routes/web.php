@@ -51,6 +51,7 @@ Route::controller(HomeServicesController::class)->group(function () {
 });
 // Ruta,nombre de la funcion en el controlador, nombre dado en el html
 // todo rutas Veterinarians
+
 Route::controller(VeterinarianController::class)->group(function(){
     //todo rutas admin
     Route::get('/adminPWFS/Veterinarians', 'index')->name('index');
