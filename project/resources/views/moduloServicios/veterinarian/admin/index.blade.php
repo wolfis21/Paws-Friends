@@ -49,7 +49,7 @@
 
             <table id="ComentariosVets" class="table table-dark" style="width:100%">
                 <thead>
-                    <th scope="col">User Name</th>
+                    <th scope="col">Usuario</th>
                     <th scope="col">Comentario</th>
                     <th scope="col">Veterinario</th>
                     <th scope="col">Acciones</th>
@@ -60,13 +60,13 @@
                             <tr>
                                 <td>{{ $veterinarianComment->comments->users->name }}</td>
                                 <td>{{ $veterinarianComment->comments->data_text }}</td>
-                                <td>{{ $veterinarian->name }}</td>
+                                <td>{{ $veterinarianComment->veterinarians->name }}</td>
                                 <td>
-                                    <form action="{{ route('destroyVetsComment', $veterinarianComment->id) }}"
+                                    <form action="{{ route('destroyVetsComment', $veterinarianComment->comments->id) }}"
                                         method="POST">
                                         @method('PUT')
                                         <a class="btn bg-cyan"
-                                            href="{{ route('acceptCommentVeterinarians', $veterinarianComment->id) }}">Confirmar</a>
+                                            href="{{ route('configComment', $veterinarianComment->comments->id) }}">Confirmar</a>
                                         @method('DELETE')
                                         @csrf
                                         <button type="submit" class="btn bg-red">Denegar</button>

@@ -5,10 +5,6 @@
     <form method="POST" action="{{ route('store') }}" enctype="multipart/form-data" >
         {{ method_field('PUT') }}
         @csrf
-        @php
-
-            $isEdit = false;
-        @endphp
         
         @include('moduloServicios.veterinarian.admin.form')
 

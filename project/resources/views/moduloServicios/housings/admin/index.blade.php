@@ -7,6 +7,7 @@
         <div class="card-body">
             <table id="Alojamiento" class="table table-responsive-md table-dark" style="width:100%">
                 <thead>
+                    <th scope="col">Nombre</th>
                     <th scope="col">Direccion</th>
                     <th scope="col">Telefono</th>
                     <th scope="col">Localizacion</th>
@@ -16,6 +17,7 @@
                 <tbody>
                     @foreach ($housings as $housing)
                         <tr>
+                            <td>{{$housing->name}}</td>
                             <td>{{$housing->address}}</td>
                             <td>{{$housing->phone}}</td>
                             <td>{{$housing->description_location}}</td>
@@ -52,11 +54,11 @@
                                 <td>{{ $housingComment->comments->data_text }}</td>
                                 <td>{{ $housing->name }}</td>
                                 <td>
-                                    <form action="{{ route('destroyHousingsComment', $housingComment->id) }}"
+                                    <form action="{{ route('destroyHousingsComment', $housingComment->comments->id) }}"
                                         method="POST">
                                         @method('PUT')
                                         <a class="btn bg-cyan"
-                                            href="{{ route('acceptHousingsComment', $housingComment->id) }}">Confirmar</a>
+                                            href="{{ route('acceptHousingsComment', $housingComment->comments->id) }}">Confirmar</a>
                                         @method('DELETE')
                                         @csrf
                                         <button type="submit" class="btn bg-red">Denegar</button>
