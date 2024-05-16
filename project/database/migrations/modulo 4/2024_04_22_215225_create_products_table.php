@@ -18,9 +18,14 @@ return new class extends Migration
             $table->string('img_ref');
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
-            $table->unsignedBigInteger('shop_id');
-            $table->foreign('shop_id')->references('id')->on('shops');
+            $table->unsignedInteger('quantity'); // Nuevo atributo para la cantidad
             $table->timestamps();
+        });
+
+        // Agregar la columna para la categoría de animal y su clave foránea
+        Schema::table('products', function (Blueprint $table) {
+            $table->unsignedBigInteger('category_animal_id')->nullable();
+            $table->foreign('category_animal_id')->references('id')->on('categories_animal');
         });
     }
 
@@ -29,7 +34,13 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('products', function (Blueprint $table) {
+            $table->dropForeign(['category_animal_id']);
+            $table->dropColumn('category_animal_id');
+        });
+
         Schema::dropIfExists('products');
     }
 };
+
 
