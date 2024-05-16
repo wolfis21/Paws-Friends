@@ -153,7 +153,7 @@ Auth::routes();
 
 //? FIN RUTAS MODULO 3
 
-// RUTAS MODULO 4=========================================================================================
+//? RUTAS MODULO 4=========================================================================================
 
 Route::get('/store', [App\Http\Controllers\StoreController::class, 'main'])->name('store.main');
 Route::get('/store/products', [App\Http\Controllers\StoreController::class, 'products'])->name('store.products');
