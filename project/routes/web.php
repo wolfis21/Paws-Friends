@@ -124,4 +124,24 @@ Route::controller(SearchController::class)->group(function(){
     Route::post('/searchHousings','searchHousings')->name('searchHousings');
     Route::post('/searchDogGroomers','searchDogGroomers')->name('searchDogGroomers');
 });
+
+//? RUTAS MODULO 3 ===============================================================================================
+
+Route::resource('donaciones', DonacionesController::class);
+Route::get('/adminPWFS/donations',  [DonacionesController::class, 'index'])->name('index');
+
+Route::resource('adopciones', AdopcionesController::class);
+Route::get('/adminPWFS/adopciones',  [AdopcionesController::class, 'index'])->name('index');
+
+/* Route::resource('/FormularioAdopciones', FormularioAdopcionesController::class);
+Route::resource('/FormularioDonaciones', FormularioDonacionesController::class);
+Route::resource('/AdopcionesVermas', AdopcionesVermasController::class); */
+Route::resource('adopcion-donaciones', PrincipalController::class);
+Route::get('/donar/formulario',  [PrincipalController::class, 'indexDonations'])->name('indexDonations');
+Route::get('/adoptar/formulario',  [PrincipalController::class, 'indexAdoptions'])->name('indexAdoptions');
+
+Route::resource('historias', HistoriaController::class);
+
+//? FIN RUTAS MODULO 3
+
 Auth::routes();
