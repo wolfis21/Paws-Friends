@@ -133,12 +133,12 @@ Route::controller(SearchController::class)->group(function(){
 //? RUTAS MODULO 2 ===============================================================================================
 
 
-Route::get('/servicios', function () {
+/* Route::get('/servicios', function () {
     return view('servicios');
 });
 Route::get('/registrodemanda', function () {
     return view('registrodemanda');
-});
+}); */
 
 Route::get('/servicios', [App\Http\Controllers\ServiciosController::class, 'index'])->name('servicios');
 
@@ -146,11 +146,12 @@ Route::get('/registrodemanda', [App\Http\Controllers\RegistroDemandaController::
 
 Route::get('/historialcliente', [App\Http\Controllers\HistorialClienteController::class, 'index'])->name('historialcliente');
 
-Route::resource('fundations', FundationController::class);
+/* admin */
+Route::resource('/adminPWFS/fundations', FundationController::class);
 
-Route::resource('contactarfundaciones', Demand_animal_has_fundationController::class);
+Route::resource('/adminPWFS/contactarfundaciones', Demand_animal_has_fundationController::class);
 
-Route::resource('historial_admin', Historial_adminController::class);
+Route::resource('/adminPWFS/historial_admin', Historial_adminController::class);
 
 //? FIN RUTAS MODULO 2
 
