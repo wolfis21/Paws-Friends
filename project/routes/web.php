@@ -130,6 +130,21 @@ Route::controller(SearchController::class)->group(function(){
 //? FIN RUTAS MODULO 3
 
 
+Route::resource('donaciones', DonacionesController::class);
+Route::get('/adminPWFS/donations',  [DonacionesController::class, 'index'])->name('index');
+
+Route::resource('adopciones', AdopcionesController::class);
+Route::get('/adminPWFS/adopciones',  [AdopcionesController::class, 'index'])->name('index');
+
+/* Route::resource('/FormularioAdopciones', FormularioAdopcionesController::class);
+/*Route::resource('/FormularioDonaciones', FormularioDonacionesController::class);
+Route::resource('/AdopcionesVermas', AdopcionesVermasController::class); */
+
+Route::resource('adopcion-donaciones', PrincipalController::class);
+Route::get('/donar/formulario',  [PrincipalController::class, 'indexDonations'])->name('indexDonations');
+Route::get('/adoptar/formulario',  [PrincipalController::class, 'indexAdoptions'])->name('indexAdoptions');
+
+Route::resource('historias', HistoriaController::class);
 
 //? RUTAS MODULO 4=========================================================================================
 
@@ -201,6 +216,6 @@ Route::controller(Categories_productController::class)->group(function(){
     Route::put('/adminPWFS/updateCategoryProduct/{id}', 'updateCategoryProduct')->name('updateCategoryProduct');
     Route::delete('/adminPWFS/destroyCategoryProduct/{id}', 'destroyCategoryProduct')->name('destroyCategoryProduct');
 
-});
-Auth::routes();*/
+});*/
+Auth::routes();
 
