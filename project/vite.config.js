@@ -22,13 +22,17 @@ export default defineConfig({
                 //todo servies 
                 'moduloServicios/stars/star.css',
 
-                //todo veterinarios
+                //todo modulo 1 Servicios
                 'resources/css/moduloServicios/user/index.css',
                 'resources/css/moduloServicios/user/indexServices.css',
                 'resources/css/moduloServicios/user/showServices.css',
 
                 //todo comentarios
                 'resources/css/moduloServicios/user/comments.css',
+                
+                //todo modulo 3 adopciones y donaciones
+                'resources/css/moduloAdopcionesDonaciones/index.css',
+                
                 //todo js
                 '/project/public/js/moduloServicios/star.js',
                 "resources/js/app.js",

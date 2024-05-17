@@ -13,11 +13,11 @@ class PrincipalController extends Controller
     }
 
     public function indexDonations(){
-        return view('moduloAdopcionDonacion.Donaciones');
+        return view('moduloAdopcionDonacion.donations.user.Donaciones');
     }
 
     public function indexAdoptions(){
-        return view('moduloAdopcionDonacion.Adopciones');
+        return view('moduloAdopcionDonacion.adopcion.user.Adopciones');
     }
 
 }
