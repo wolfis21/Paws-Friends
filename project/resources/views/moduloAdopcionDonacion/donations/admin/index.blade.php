@@ -15,10 +15,8 @@
                     <th scope="col">Tipo de donacion</th>
                     <th scope="col">Descripcion</th>
                     <th scope="col">Cantidad</th>
-                    <th scope="col">Foto</th>
                     <th scope="col">Destino</th>
                     <th scope="col">Usuario</th>
-                    <th scope="col">Acciones</th>
                 </thead>
                 <tbody>
                     @foreach ($donations as $donation)
@@ -27,15 +25,9 @@
                             <td>{{ $donation->type_donation }}</td>
                             <td>{{ $donation->description_ref }}</td>
                             <td>{{ $donation->qty }}</td>
-                            <td>{{ $donation->photo_ref }}</td>
                             <td>{{ $donation->destino_fundacion }}</td>
                             <td>{{ $donation->user->name }} {{ $donation->user->last_name }}</td>
-                            <td>
-                                <button type="button" class="btn bg-cyan" data-bs-toggle="modal"
-                                    data-bs-target="#viewProfile{{ $donation->id }}">Aprobar</button>
-                                <button type="button" class="btn bg-red" data-bs-toggle="modal"
-                                    data-bs-target="#deleteProfile{{ $donation->id }}">Eliminar</button> {{-- pensar un poco mas --}}
-                            </td>
+
                         </tr>
                         {{-- <td>{{ $donation->img_ref }} 
                             <img style="width: 5%;" src="{{ asset('storage/' . $donation->img_ref) }}" > -- provisional mejorar esto 
