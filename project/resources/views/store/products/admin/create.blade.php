@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', 'Crear Producto')
+@section('title', 'Crear Post')
 @section('content')
 <h1>Añadir Producto</h1>
     <form method="POST" action="{{ route('storeProduct') }}" role="form" enctype="multipart/form-data">
@@ -13,7 +13,7 @@
         <div class="mb-3">
             <label for="description" class="form-label">Descripcion</label>
             <input type="text" class="form-control @error('description') is-invalid @enderror" id="description" name="description"
-                placeholder="Ingrese direccion" value="{{ old('description') }}">
+                placeholder="Ingrese descripcion" value="{{ old('description') }}">
         </div>
         <div class="mb-3">
             <label for="product_category_animals_id" class="form-label">Categoria del producto</label>

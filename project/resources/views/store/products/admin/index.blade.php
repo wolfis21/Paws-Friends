@@ -24,7 +24,7 @@
                         <td>
                             <button type="button" class="btn bg-green" data-bs-toggle="modal"
                                 data-bs-target="#viewProfile{{ $product->id }}">Ver
-                                perfil</button>
+                                producto</button>
                             <button type="button" class="btn bg-red" data-bs-toggle="modal"
                                 data-bs-target="#deleteProfile{{ $product->id }}">Eliminar</button>
                         </td>
