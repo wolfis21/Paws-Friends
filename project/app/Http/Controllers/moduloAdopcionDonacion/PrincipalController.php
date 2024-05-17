@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\moduloAdopcionDonacion;
 use App\Http\Controllers\Controller;
-
+use App\Models\moduloAdopcionDonacion\AnimalsAdoption;
 use Illuminate\Http\Request;
 
 class PrincipalController extends Controller
@@ -13,11 +13,19 @@ class PrincipalController extends Controller
     }
 
     public function indexDonations(){
+
+
         return view('moduloAdopcionDonacion.donations.user.Donaciones');
     }
 
+    
     public function indexAdoptions(){
-        return view('moduloAdopcionDonacion.adopcion.user.Adopciones');
+        $adopciones = AnimalsAdoption::all(); // Ejemplo, reemplaza esto con tus datos
+        return view('moduloAdopcionDonacion.adopcion.user.Adopciones', compact('adopciones'));
     }
-
+    
+    public function showAdoptions($id){
+        $adopcion = AnimalsAdoption::find($id);
+        return view('moduloAdopcionDonacion.adopcion.user.show', compact('adopcion'));
+    }
 }

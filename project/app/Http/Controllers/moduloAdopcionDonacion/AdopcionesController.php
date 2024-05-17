@@ -84,4 +84,6 @@ class AdopcionesController extends Controller
       return redirect('/adminPWFS/adopciones');
 
     }
+
+
 }

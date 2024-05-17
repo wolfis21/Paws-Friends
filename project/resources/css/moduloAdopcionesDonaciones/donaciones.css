@@ -1,0 +1,59 @@
+.container-form{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-container{
+    width: 100%;
+    margin-top: 1rem;
+    padding: 10px ;
+    text-align: center;
+}
+.buscador{
+    margin-top: 1rem;
+    width: 50%;
+}
+.title{
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Nunito';
+    color: #6e569f;
+    margin-bottom: 0 !important;
+}
+
+#nombreAdopcion{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    border: 2px solid #6e569f;
+    border-radius: 10px;
+}
+
+#nombreAdopcion::placeholder{
+    color: #6e569f;
+}
+
+#nombreAdopcion:focus{
+    outline: none;
+    border: 2px solid #6e569f;
+    box-shadow: 0px 0px 10px #6e569f;
+}
+
+.content{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+}
+
+.form{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    border: 2px solid #6e569f;
+    border-radius: 10px;
+}

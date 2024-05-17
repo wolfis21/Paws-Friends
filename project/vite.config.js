@@ -32,6 +32,7 @@ export default defineConfig({
                 
                 //todo modulo 3 adopciones y donaciones
                 'resources/css/moduloAdopcionesDonaciones/index.css',
+                'resources/css/moduloAdopcionesDonaciones/adopciones.css',
                 
                 //todo js
                 '/project/public/js/moduloServicios/star.js',

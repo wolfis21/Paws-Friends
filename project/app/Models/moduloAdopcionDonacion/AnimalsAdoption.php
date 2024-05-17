@@ -9,6 +9,8 @@ class AnimalsAdoption extends Model
 {
     use HasFactory;
 
+    protected $table = 'animals_adoptions';
+
     protected $fillable = [
         'name',
         'species',

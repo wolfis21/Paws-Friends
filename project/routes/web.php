@@ -168,6 +168,7 @@ Route::resource('/AdopcionesVermas', AdopcionesVermasController::class); */
 Route::resource('adopcion-donaciones', PrincipalController::class);
 Route::get('/donar/formulario',  [PrincipalController::class, 'indexDonations'])->name('indexDonations');
 Route::get('/adoptar/formulario',  [PrincipalController::class, 'indexAdoptions'])->name('indexAdoptions');
+Route::get('/showAdoptions/{id}',[PrincipalController::class, 'showAdoptions'])->name('showAdoptions');
 
 Route::resource('historias', HistoriaController::class);
 
