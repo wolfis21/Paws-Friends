@@ -1,10 +1,5 @@
 <?php
 
-use App\Http\Controllers\FundationController;
-use App\Http\Controllers\Demand_animal_has_fundationController;
-use App\Http\Controllers\Historial_adminController;
-use App\Http\Controllers\Categories_productController;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeServicesController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
@@ -21,7 +16,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\moduloCatalogo\StoreController;
 use App\Http\Controllers\moduloCatalogo\PostController;
 use App\Http\Controllers\moduloCatalogo\ProductController as ModuloCatalogoProductController;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
 /*
@@ -134,6 +128,8 @@ Route::controller(SearchController::class)->group(function(){
 });
 
 //? FIN RUTAS MODULO 3
+
+
 
 //? RUTAS MODULO 4=========================================================================================
 
