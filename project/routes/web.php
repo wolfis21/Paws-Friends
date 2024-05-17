@@ -1,6 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\FundationController;
+use App\Http\Controllers\Demand_animal_has_fundationController;
+use App\Http\Controllers\Historial_adminController;
 use App\Http\Controllers\HomeServicesController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
@@ -105,6 +107,7 @@ Route::controller(DogGroomerController::class)->group(function(){
 });
 //ver como integrar los comments
 
+
 Route::controller(CommentsController::class)->group(function(){
     //todo veterinarios
     Route::get('/adminPWFS/CommentAccepted/{id}','configComment')->name('configComment');
@@ -124,6 +127,32 @@ Route::controller(SearchController::class)->group(function(){
     Route::post('/searchHousings','searchHousings')->name('searchHousings');
     Route::post('/searchDogGroomers','searchDogGroomers')->name('searchDogGroomers');
 });
+
+//? FIN RUTAS MODULO 1
+
+//? RUTAS MODULO 2 ===============================================================================================
+
+
+Route::get('/servicios', function () {
+    return view('servicios');
+});
+Route::get('/registrodemanda', function () {
+    return view('registrodemanda');
+});
+
+Route::get('/servicios', [App\Http\Controllers\ServiciosController::class, 'index'])->name('servicios');
+
+Route::get('/registrodemanda', [App\Http\Controllers\RegistroDemandaController::class, 'index'])->name('registrodemanda');
+
+Route::get('/historialcliente', [App\Http\Controllers\HistorialClienteController::class, 'index'])->name('historialcliente');
+
+Route::resource('fundations', FundationController::class);
+
+Route::resource('contactarfundaciones', Demand_animal_has_fundationController::class);
+
+Route::resource('historial_admin', Historial_adminController::class);
+
+//? FIN RUTAS MODULO 2
 
 //? RUTAS MODULO 3 ===============================================================================================
 
@@ -153,4 +182,6 @@ Route::resource('historias', HistoriaController::class);
 
 //? FIN RUTAS MODULO 3
 
-Auth::routes();
+
+ Auth::routes();
+
