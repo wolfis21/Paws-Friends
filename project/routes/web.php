@@ -183,9 +183,13 @@ Route::controller(ShopController::class)->group(function(){
     Route::put('/adminPWFS/updateShop/{id}', 'updateShop')->name('updateShop');
     Route::delete('/adminPWFS/destroyShop/{id}', 'destroyShop')->name('destroyShop');
 
+        //todo rutas user
+        Route::resource('/shops', ShopController::class);
+        Route::get('/shops', 'ShopUser')->name('ShopUser');
+
 });
 
-//rutas de Categories_productController
+/*//rutas de Categories_productController
 Route::controller(Categories_productController::class)->group(function(){
     //todo rutas admin
     
@@ -197,5 +201,5 @@ Route::controller(Categories_productController::class)->group(function(){
     Route::delete('/adminPWFS/destroyCategoryProduct/{id}', 'destroyCategoryProduct')->name('destroyCategoryProduct');
 
 });
-Auth::routes();
+Auth::routes();*/
 

@@ -47,8 +47,7 @@ class ShopController extends Controller
 
         $shop = Shop::create($request->all());
 
-        return redirect()->route('<store.shop.admin.index')
-        ->with('success', 'Tienda creada');
+        return redirect()->route('<store.shop.admin.index');
 
     }
 
@@ -80,8 +79,7 @@ class ShopController extends Controller
 
         $shop->update($request->all());
 
-        return redirect()->route('store.shop.admin.index')
-        ->with('success', 'Tienda actualizada');
+        return redirect()->route('store.shop.admin.index');
 
     }
 
@@ -92,8 +90,12 @@ class ShopController extends Controller
     {
         $shop = Shop::find($id);
         $shop->delete();
-        return redirect()->route('store.shop.admin.index')
-        ->with('success', 'Tienda borrada');
+        return redirect()->route('store.shop.admin.index');
+    }
+
+    public function ShopUser()
+    {
+        return view('store.shop.user');
     }
 
   
