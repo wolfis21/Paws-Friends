@@ -54,8 +54,7 @@ class PostController extends Controller
             $post->save();
         }
 
-        return redirect()->route('<store.post.admin.index')
-        ->with('success', 'Post creado');
+        return redirect()->route('<store.post.admin.index');
 
     }
 
@@ -93,8 +92,7 @@ class PostController extends Controller
 
         $post->update($request->all());
 
-        return redirect()->route('store.post.admin.index')
-        ->with('success', 'Post actualizado');
+        return redirect()->route('store.post.admin.index');
 
     }
 
@@ -106,13 +104,13 @@ class PostController extends Controller
         $post = Post::find($id);
         Storage::disk('public')->delete($post->image);
         $post->delete();
-        return redirect()->route('store.post.admin.index')
-        ->with('success', 'Post borrado');
+        return redirect()->route('store.post.admin.index');
     }
 
     //funcion para mostrar index de usuario
     public function PostUser()
     {
+        $post = Post::all();
         return view('store.post.user.index');
     }
 }
