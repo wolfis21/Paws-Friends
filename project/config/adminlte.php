@@ -365,7 +365,7 @@ return [
         ],
         [
             'text' => 'Ver Adopciones',
-            'url' => '#',
+            'url' => '/adminPWFS/adopciones',
             'icon' =>'fas fa-fw fa-bone',
         ],
         ['header' => 'TIENDA'],

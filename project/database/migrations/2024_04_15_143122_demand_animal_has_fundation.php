@@ -15,11 +15,12 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('demands_animals_id'); //Clave foranea 
             $table->unsignedBigInteger('fundation_id'); //Clave foranea 
-           
+            $table->text('description');
+            $table->unsignedBigInteger('statusfund_id'); 
             //fecha
-            $table->date('date');   
+          //  $table->date('date');   
             //Proceso de estado de demanda
-            $table->enum('status_process', ['pendiente', 'aceptada', 'rechazada']);
+          //  $table->enum('status_process', ['pendiente', 'aceptada', 'rechazada']);
 
             $table->timestamps();
 

@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\Categories_productController;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Demand_animal_has_fundationController;
+use App\Http\Controllers\FundationController;
+use App\Http\Controllers\Historial_adminController;
 use App\Http\Controllers\HomeServicesController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
@@ -14,10 +15,10 @@ use App\Http\Controllers\moduloAdopcionDonacion\DonacionesController;
 use App\Http\Controllers\moduloAdopcionDonacion\AdopcionesController;
 use App\Http\Controllers\moduloAdopcionDonacion\PrincipalController;
 use App\Http\Controllers\moduloAdopcionDonacion\HistoriaController;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\moduloCatalogo\StoreController;
 use App\Http\Controllers\moduloCatalogo\PostController;
 use App\Http\Controllers\moduloCatalogo\ProductController as ModuloCatalogoProductController;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
 /*
@@ -108,6 +109,7 @@ Route::controller(DogGroomerController::class)->group(function(){
 });
 //ver como integrar los comments
 
+
 Route::controller(CommentsController::class)->group(function(){
     //todo veterinarios
     Route::get('/adminPWFS/CommentAccepted/{id}','configComment')->name('configComment');
@@ -128,6 +130,41 @@ Route::controller(SearchController::class)->group(function(){
     Route::post('/searchDogGroomers','searchDogGroomers')->name('searchDogGroomers');
 });
 
+//? FIN RUTAS MODULO 1
+
+//? RUTAS MODULO 2
+Route::get('/servicios', [App\Http\Controllers\ServiciosController::class, 'index'])->name('servicios');
+
+Route::get('/registrodemanda', [App\Http\Controllers\RegistroDemandaController::class, 'index'])->name('registrodemanda');
+
+Route::get('/historialcliente', [App\Http\Controllers\HistorialClienteController::class, 'index'])->name('historialcliente');
+
+/* admin */
+Route::resource('/adminPWFS/fundations', FundationController::class);
+
+Route::resource('/adminPWFS/contactarfundaciones', Demand_animal_has_fundationController::class);
+
+Route::resource('/adminPWFS/historial_admin', Historial_adminController::class);
+//? FIN RUTAS MODULO 2
+
+
+//? RUTAS MODULO 3
+
+Route::resource('donaciones', DonacionesController::class);
+Route::get('/adminPWFS/donations',  [DonacionesController::class, 'index'])->name('index');
+
+Route::resource('adopciones', AdopcionesController::class);
+Route::get('/adminPWFS/adopciones',  [AdopcionesController::class, 'index'])->name('index');
+
+/* Route::resource('/FormularioAdopciones', FormularioAdopcionesController::class);
+/*Route::resource('/FormularioDonaciones', FormularioDonacionesController::class);
+Route::resource('/AdopcionesVermas', AdopcionesVermasController::class); */
+
+Route::resource('adopcion-donaciones', PrincipalController::class);
+Route::get('/donar/formulario',  [PrincipalController::class, 'indexDonations'])->name('indexDonations');
+Route::get('/adoptar/formulario',  [PrincipalController::class, 'indexAdoptions'])->name('indexAdoptions');
+
+Route::resource('historias', HistoriaController::class);
 //? FIN RUTAS MODULO 3
 
 //? RUTAS MODULO 4=========================================================================================
@@ -200,6 +237,6 @@ Route::controller(Categories_productController::class)->group(function(){
     Route::put('/adminPWFS/updateCategoryProduct/{id}', 'updateCategoryProduct')->name('updateCategoryProduct');
     Route::delete('/adminPWFS/destroyCategoryProduct/{id}', 'destroyCategoryProduct')->name('destroyCategoryProduct');
 
-});
-Auth::routes();*/
+});*/
+Auth::routes();
 
