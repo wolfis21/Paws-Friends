@@ -8,9 +8,18 @@
     <link rel="stylesheet" href="{{ asset('css/styleMain.css') }}" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="icon" type="image/x-icon" href="{{ asset('imagenes/icono.ico') }}">
+    <!--LINK DE CSS DE SERVICIO RESCATE MODULO 2-->
+    <link rel="stylesheet" href="{{ asset('css/servicio.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/stylehc.css') }}" type="text/css" />
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <!--FONT DE MODULO 2--> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <!--SCRIPTS FORMULARIO MODULO 2-->
+    @vite(['resources/js/formulario.js'])
+    @vite(['resources/js/script.js'])
+
     <title>Paws & Friends</title>
 </head>
 
@@ -109,8 +118,7 @@
     </script>
 
     <!--MODULO 2-->
-
-    {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script> --}}
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 </body>
 
 </html>
