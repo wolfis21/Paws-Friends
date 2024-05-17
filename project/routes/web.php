@@ -15,9 +15,7 @@ use App\Http\Controllers\moduloAdopcionDonacion\DonacionesController;
 use App\Http\Controllers\moduloAdopcionDonacion\AdopcionesController;
 use App\Http\Controllers\moduloAdopcionDonacion\PrincipalController;
 use App\Http\Controllers\moduloAdopcionDonacion\HistoriaController;
-
-
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -166,14 +164,6 @@ Route::get('/adminPWFS/adopciones',  [AdopcionesController::class, 'index'])->na
 /* Route::resource('/FormularioAdopciones', FormularioAdopcionesController::class);
 /*Route::resource('/FormularioDonaciones', FormularioDonacionesController::class);
 Route::resource('/AdopcionesVermas', AdopcionesVermasController::class); */
-
-Route::get('/FormularioAdopciones', function () {
-    return view('moduloAdopcionDonacion.FormularioAdopciones');
-}); /* esto no tiene mucho sentido con el tener la vista de un animal en show se podria solicitar ya y se registra en la pivote */
-
-Route::get('/FormularioDonaciones', function () {
-    return view('moduloAdopcionDonacion.FormularioDonaciones');
-}); /* no se usara ya hay uno hecho */
 
 Route::resource('adopcion-donaciones', PrincipalController::class);
 Route::get('/donar/formulario',  [PrincipalController::class, 'indexDonations'])->name('indexDonations');

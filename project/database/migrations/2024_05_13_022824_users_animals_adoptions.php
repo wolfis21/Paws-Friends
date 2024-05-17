@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //todo apunta al animal y usuario
         Schema::create('users_animals_adoptions', function (Blueprint $table) {
             $table->id();
             $table->string('date');
