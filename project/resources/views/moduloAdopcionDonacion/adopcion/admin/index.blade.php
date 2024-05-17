@@ -28,7 +28,9 @@
         <td>{{$animals_adoptions->sex_animal}}</td>
         <td>{{$animals_adoptions->age_animal}}</td>
         <td>{{$animals_adoptions->description_animals}}</td>
-        <td>{{$animals_adoptions->photo_animal}}</td>
+        <td>
+          <img style="    width: 15%;" src="/storage/moduloAdopcion/images/{{$animals_adoptions->photo_animal}}"/>
+      </td>
         <td>{{$animals_adoptions->location_address}}</td>
         <td>
 

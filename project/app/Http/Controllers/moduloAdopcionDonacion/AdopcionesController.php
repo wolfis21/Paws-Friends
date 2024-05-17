@@ -49,7 +49,7 @@ class AdopcionesController extends Controller
      */
     public function edit($id)
     {
-      $animals_adoptions=AnimalsAdoption::find($id);
+      $animals_adoptions=AnimalsAdoption::find($id); /* desarrollar mas */
       return view('moduloAdopcionDonacion.animals_adoption.edit')->with('animals_adoptions',$animals_adoptions);
     }
 

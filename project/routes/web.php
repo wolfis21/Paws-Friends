@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\FundationController;
+use App\Http\Controllers\Demand_animal_has_fundationController;
+use App\Http\Controllers\Historial_adminController;
 use App\Http\Controllers\Categories_productController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeServicesController;
@@ -14,6 +17,7 @@ use App\Http\Controllers\moduloAdopcionDonacion\DonacionesController;
 use App\Http\Controllers\moduloAdopcionDonacion\AdopcionesController;
 use App\Http\Controllers\moduloAdopcionDonacion\PrincipalController;
 use App\Http\Controllers\moduloAdopcionDonacion\HistoriaController;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\moduloCatalogo\StoreController;
 use App\Http\Controllers\moduloCatalogo\PostController;
 use App\Http\Controllers\moduloCatalogo\ProductController as ModuloCatalogoProductController;
@@ -107,6 +111,7 @@ Route::controller(DogGroomerController::class)->group(function(){
     Route::put('/DogGroomerComentario/{id}','enviarComentarioDogGroomer')->name('enviarComentarioDogGroomer');
 });
 //ver como integrar los comments
+
 
 Route::controller(CommentsController::class)->group(function(){
     //todo veterinarios
