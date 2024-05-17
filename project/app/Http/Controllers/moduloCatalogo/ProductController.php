@@ -13,7 +13,7 @@ class ProductController extends Controller
         // Recupera todos los productos de la base de datos
         $products = Product::all();
         // Retorna la vista 'index' con los productos
-        return view('store.products.admin.index', compact('products'));
+        return view('moduloCatalogo.products.admin.index', compact('products'));
     }
 
     /**
@@ -22,7 +22,7 @@ class ProductController extends Controller
     public function createProduct()
     {
         // Retorna la vista 'create' para crear un nuevo producto
-        return view('store.products.admin.create');
+        return view('moduloCatalogo.products.admin.create');
     }
 
     /**
@@ -52,7 +52,7 @@ class ProductController extends Controller
     {
         // Retorna la vista 'show' con el producto especificado
         $product = Product::find($id);
-        return view('store.products.admin.show', compact('product'));
+        return view('moduloCatalogo.products.admin.show', compact('product'));
     }
 
     /**
@@ -62,7 +62,7 @@ class ProductController extends Controller
     {
         // Retorna la vista 'edit' con el producto especificado
         $product = Product::find($id);
-        return view('store.products.admin.edit', compact('product'));
+        return view('moduloCatalogo.products.admin.edit', compact('product'));
     }
 
     /**
@@ -84,7 +84,7 @@ class ProductController extends Controller
         $product->update($request->all());
 
         // Redirige a la lista de productos con un mensaje de éxito
-        return redirect()->route('productAdmin')->with('success', 'Producto actualizado exitosamente.');
+        return redirect()->route('productAdmin');
     }
 
     /**
@@ -99,12 +99,12 @@ class ProductController extends Controller
         $product->delete();
 
         // Redirige a la lista de productos con un mensaje de éxito
-        return redirect()->route('productAdmin')->with('success', 'Producto eliminado exitosamente.');
+        return redirect()->route('productAdmin');
     }
 
     //funcion para mostrar index de usuario
     public function ProductUser()
     {
-        return view('store.products');
+        return view('moduloCatalogo.products');
     }
 }

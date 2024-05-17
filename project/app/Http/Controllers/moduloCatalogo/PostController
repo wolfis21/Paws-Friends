@@ -19,7 +19,7 @@ class PostController extends Controller
     {
         //
         $post = post::all();
-        return view('store.post.admin.index', compact('post') );
+        return view('moduloCatalogo.post.admin.index', compact('post') );
     }
 
     /**
@@ -29,7 +29,7 @@ class PostController extends Controller
     {
         //
         $post = new Post();
-        return view('store.post.admin.create');
+        return view('moduloCatalogo.post.admin.create');
     }
 
     /**
@@ -54,7 +54,7 @@ class PostController extends Controller
             $post->save();
         }
 
-        return redirect()->route('<store.post.admin.index');
+        return redirect()->route('<moduloCatalogo.post.admin.index');
 
     }
 
@@ -66,7 +66,7 @@ class PostController extends Controller
     {
         //
         $post = Post::find($id);
-        return view('store.post.admin.edit', compact('post'));
+        return view('moduloCatalogo.post.admin.edit', compact('post'));
     }
 
     /**
@@ -92,7 +92,7 @@ class PostController extends Controller
 
         $post->update($request->all());
 
-        return redirect()->route('store.post.admin.index');
+        return redirect()->route('moduloCatalogo.post.admin.index');
 
     }
 
@@ -104,13 +104,13 @@ class PostController extends Controller
         $post = Post::find($id);
         Storage::disk('public')->delete($post->image);
         $post->delete();
-        return redirect()->route('store.post.admin.index');
+        return redirect()->route('moduloCatalogo.post.admin.index');
     }
 
     //funcion para mostrar index de usuario
     public function PostUser()
     {
         $post = Post::all();
-        return view('store.post.user.index');
+        return view('moduloCatalogo.post.user.index');
     }
 }

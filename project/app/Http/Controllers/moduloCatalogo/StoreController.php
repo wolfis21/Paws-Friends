@@ -18,12 +18,12 @@ class StoreController extends Controller
      */
     public function main(Request $request)
     {
-        return view('store.main');
+        return view('moduloCatalogo.main');
     }
 
     public function products(Request $request)
     {
-        return view('store.products');
+        return view('moduloCatalogo.products');
     }
 
     public function products_details(Request $request, $product_id)
@@ -38,11 +38,11 @@ class StoreController extends Controller
         $product->category_id = 1;
         $product->img_ref =  asset('/css/moduloCatalogo/producto1.png');
         $product->quantity = 1;
-        return view('store.products_details')->with('product', $product);
+        return view('moduloCatalogo.products_details')->with('product', $product);
     }
 
     public function recommendations(Request $request)
     {
-        return view('store.recommendations');
+        return view('moduloCatalogo.recommendations');
     }
 }

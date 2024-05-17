@@ -17,7 +17,7 @@ class ShopController extends Controller
     {
         //
         $shop = Shop::all();
-        return view('store.shop.admin.index', compact('shop') );
+        return view('moduloCatalogo.shop.admin.index', compact('shop') );
     }
 
     /**
@@ -27,7 +27,7 @@ class ShopController extends Controller
     {
         //
         $shop = new Shop();
-        return view('store.shop.admin.create');
+        return view('moduloCatalogo.shop.admin.create');
     }
 
     /**
@@ -47,7 +47,7 @@ class ShopController extends Controller
 
         $shop = Shop::create($request->all());
 
-        return redirect()->route('<store.shop.admin.index');
+        return redirect()->route('<moduloCatalogo.shop.admin.index');
 
     }
 
@@ -59,7 +59,7 @@ class ShopController extends Controller
     {
         //
         $shop = Shop::find($id);
-        return view('store.shop.admin.edit', compact('shop'));
+        return view('moduloCatalogo.shop.admin.edit', compact('shop'));
     }
 
     /**
@@ -79,7 +79,7 @@ class ShopController extends Controller
 
         $shop->update($request->all());
 
-        return redirect()->route('store.shop.admin.index');
+        return redirect()->route('moduloCatalogo.shop.admin.index');
 
     }
 
@@ -90,12 +90,12 @@ class ShopController extends Controller
     {
         $shop = Shop::find($id);
         $shop->delete();
-        return redirect()->route('store.shop.admin.index');
+        return redirect()->route('moduloCatalogo.shop.admin.index');
     }
 
     public function ShopUser()
     {
-        return view('store.shop.user');
+        return view('moduloCatalogo.shop.user');
     }
 
   
