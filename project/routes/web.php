@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Demand_animal_has_fundationController;
+use App\Http\Controllers\FundationController;
+use App\Http\Controllers\Historial_adminController;
 use App\Http\Controllers\HomeServicesController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
@@ -127,8 +130,25 @@ Route::controller(SearchController::class)->group(function(){
     Route::post('/searchDogGroomers','searchDogGroomers')->name('searchDogGroomers');
 });
 
-//? FIN RUTAS MODULO 3
+//? FIN RUTAS MODULO 1
 
+//? RUTAS MODULO 2
+Route::get('/servicios', [App\Http\Controllers\ServiciosController::class, 'index'])->name('servicios');
+
+Route::get('/registrodemanda', [App\Http\Controllers\RegistroDemandaController::class, 'index'])->name('registrodemanda');
+
+Route::get('/historialcliente', [App\Http\Controllers\HistorialClienteController::class, 'index'])->name('historialcliente');
+
+/* admin */
+Route::resource('/adminPWFS/fundations', FundationController::class);
+
+Route::resource('/adminPWFS/contactarfundaciones', Demand_animal_has_fundationController::class);
+
+Route::resource('/adminPWFS/historial_admin', Historial_adminController::class);
+//? FIN RUTAS MODULO 2
+
+
+//? RUTAS MODULO 3
 
 Route::resource('donaciones', DonacionesController::class);
 Route::get('/adminPWFS/donations',  [DonacionesController::class, 'index'])->name('index');
@@ -145,6 +165,7 @@ Route::get('/donar/formulario',  [PrincipalController::class, 'indexDonations'])
 Route::get('/adoptar/formulario',  [PrincipalController::class, 'indexAdoptions'])->name('indexAdoptions');
 
 Route::resource('historias', HistoriaController::class);
+//? FIN RUTAS MODULO 3
 
 //? RUTAS MODULO 4=========================================================================================
 
