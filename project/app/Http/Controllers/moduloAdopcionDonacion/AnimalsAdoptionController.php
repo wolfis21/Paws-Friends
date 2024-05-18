@@ -4,6 +4,7 @@ namespace App\Http\Controllers\moduloAdopcionDonacion;
 use App\Http\Controllers\Controller;
 
 use App\Models\moduloAdopcionDonacion\animals_adoption;
+use App\Models\moduloAdopcionDonacion\AnimalsAdoption;
 use Illuminate\Http\Request;
 
 class AnimalsAdoptionController extends Controller
@@ -51,7 +52,7 @@ class AnimalsAdoptionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(animals_adoption $animals_adoption)
+    public function show(AnimalsAdoption $animals_adoption)
     {
         //
     }
@@ -61,7 +62,7 @@ class AnimalsAdoptionController extends Controller
      */
     public function edit($id)
     {
-      $animals_adoptions=animals_adoption::find($id);
+      $animals_adoptions=AnimalsAdoption::find($id);
       return view('moduloAdopcionDonacion.animals_adoption.edit')->with('animals_adoptions',$animals_adoptions);
     }
 
@@ -70,7 +71,7 @@ class AnimalsAdoptionController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $animals_adoption = animals_adoption::find($id);
+      $animals_adoption = AnimalsAdoption::find($id);
 
       
       
@@ -93,7 +94,7 @@ class AnimalsAdoptionController extends Controller
      */
     public function destroy($id)
     {
-      $animals_adoption = animals_adoption::find($id);
+      $animals_adoption = AnimalsAdoption::find($id);
       $animals_adoption->delete();
       return redirect('/AdminPP');
 

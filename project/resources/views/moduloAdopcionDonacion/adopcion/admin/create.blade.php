@@ -48,8 +48,8 @@
     <input type="text" class="form-control" id="location_address" placeholder="Ingrese locacion" name="location_address"required>
   </div>
 
-  <a href="{{ route('adopciones.index') }}" class="btn btn-primary" tabindex="6" >Volver</a>
-  <button type="submit" class="btn btn-success" tabindex="4">Guardar</button>
+  <a href="{{ route('adopciones.index') }}" class="btn btn-red" tabindex="6" >Volver</a>
+  <button type="submit" class="btn bg-purple" tabindex="4">Guardar</button>
   
 
 </form>
