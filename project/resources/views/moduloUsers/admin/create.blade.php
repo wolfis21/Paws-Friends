@@ -51,7 +51,7 @@
                             <input class="form-control" type="file" name="photo_rif" value="">
                     </div>
                     <div class="mb-3 btn-link">
-                        <button type="submit" class="btn bg-cyan">{{ __('Registrate') }}</button>
+                        <button type="submit" class="btn bg-blue">{{ __('Registrate') }}</button>
                     </div>
             </form>
 @endsection

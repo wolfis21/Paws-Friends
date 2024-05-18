@@ -27,7 +27,7 @@
                             <td>{{ $admin->address }}</td>
                             <td>{{ $admin->email }}</td>
                             <td>
-                                <button type="button" class="btn bg-cyan" data-bs-toggle="modal"
+                                <button type="button" class="btn bg-blue" data-bs-toggle="modal"
                                     data-bs-target="#viewProfile{{ $admin->id }}">
                                     Ver mas</button>
                                 <form action="{{ route('destroyAdmin',$admin->id) }}" method="POST">
@@ -37,6 +37,8 @@
                                 </form>
                             </td>
                         </tr>
+                        @include('moduloUsers.admin.ModalViewProfile')
+                        @include('moduloUsers.admin.ModalDeleteProfile')
                     @endforeach
                 </tbody>
             </table>

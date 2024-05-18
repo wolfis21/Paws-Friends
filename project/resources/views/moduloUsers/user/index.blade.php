@@ -25,12 +25,14 @@
                             <td>{{ $customer->address }}</td>
                             <td>{{ $customer->email }}</td>
                             <td>
-                                <button type="button" class="btn bg-cyan" data-bs-toggle="modal"
+                                <button type="button" class="btn bg-blue" data-bs-toggle="modal"
                                     data-bs-target="#viewProfile{{ $customer->id }}">
                                     Ver mas</button>
 
                             </td>
                         </tr>
+                        @include('moduloUsers.user.ModalViewProfile')
+                        @include('moduloUsers.user.ModalDeleteProfile')
                     @endforeach
                 </tbody>
             </table>
