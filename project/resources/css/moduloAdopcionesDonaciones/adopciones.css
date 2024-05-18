@@ -125,19 +125,17 @@ button{
 /* todo historial */
 .container-table{
     width: 70%;
+    border: 2px solid #6e569f;
+    border-radius: 13px;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    -ms-border-radius: 13px;
+    -o-border-radius: 13px;
 }
 
 .tablehistorial{
-
     width: 100%;
-    border: 2px solid #6e569f;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
 }
-
 thead{
 
     background-color: #6e569f;
@@ -169,3 +167,8 @@ th{
 td{
     padding: 15px;
 }
+
+.rounded-container {
+    border-radius: 10px; /* Ajusta este valor según tus preferencias */
+    overflow: hidden;
+  }
