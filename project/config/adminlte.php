@@ -324,6 +324,18 @@ return [
             'url' => '/',
             'icon' =>'fas fa-fw fa-handshake-angle',
         ],
+        ['header' => 'USUARIOS'],
+        [
+            'text' =>'Administradores',
+            'url' => '/adminPWFS/admin',
+            'icon' =>'fa fa-users',
+        ],
+        [
+            'text' => 'Clientes',
+            'url' => '/adminPWFS/user',
+            'icon' =>'fa-solid fa-user'
+        ],
+
 
         ['header' => 'SERVICIOS'],
         [
