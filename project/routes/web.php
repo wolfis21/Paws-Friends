@@ -18,7 +18,7 @@ use App\Http\Controllers\moduloAdopcionDonacion\HistoriaController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\moduloCatalogo\StoreController;
 use App\Http\Controllers\moduloCatalogo\PostController;
-use App\Http\Controllers\moduloCatalogo\ProductController as ModuloCatalogoProductController;
+use App\Http\Controllers\moduloCatalogo\ProductController;
 use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
 /*
@@ -190,7 +190,7 @@ Route::controller(StoreController::class)->group(function(){
 // });
 
 //rutas de ProductController
-Route::controller(ModuloCatalogoProductController::class)->group(function(){
+Route::controller(ProductController::class)->group(function(){
     //todo rutas admin
     
     Route::get('/adminPWFS/productAdmin', 'productAdmin')->name('productAdmin');
@@ -202,7 +202,7 @@ Route::controller(ModuloCatalogoProductController::class)->group(function(){
     Route::delete('/adminPWFS/destroyProduct/{id}', 'destroyProduct')->name('destroyProduct');
     
     //todo rutas user
-    Route::resource('/products', ModuloCatalogoProductController::class);
+    Route::resource('/products', ProductController::class);
     Route::get('/products', 'ProductUser')->name('ProductUser');
     Route::put('/ProductUpdatePuntuations/{id}','updateProductPuntuations')->name('updateProductPuntuations');
 });
