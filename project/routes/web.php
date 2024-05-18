@@ -171,9 +171,6 @@ Route::resource('historias', HistoriaController::class);
 
 Route::controller(StoreController::class)->group(function(){
     Route::get('/store', 'main')->name('store.main');
-    Route::get('/store/products', 'products')->name('store.products');
-    Route::get('/store/products/{product_id}', 'products_details')->name('store.products.details');
-    Route::get('/store/recommendations', 'recommendations')->name('store.recomendations');
 });
 
 //rutas de postController
