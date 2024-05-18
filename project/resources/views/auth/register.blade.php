@@ -28,16 +28,16 @@
                         <input name="name" class="user-info" placeholder="Nombre"/>
                     </div>
                     <div class="card-space">
-                        <label>Cedula</label>
-                        <input name="dni" class="user-info" placeholder="Cedula"/>
+                        <label>Apellido</label>
+                        <input  name="last_name"class="user-info" placeholder="Apellido"/>
                     </div>
                     <div class="card-space">
                         <label>Direccion</label>
                         <input name="address" class="user-info" placeholder="Direccion"/>
                     </div>
                     <div class="card-space">
-                    <label>Apellido</label>
-                    <input  name="last_name"class="user-info" placeholder="Apellido"/>
+                        <label>Cedula</label>
+                        <input name="dni" class="user-info" placeholder="Cedula"/>
                 </div>
                 <div class="card-space">
                     <label>Telefono Movil</label>
