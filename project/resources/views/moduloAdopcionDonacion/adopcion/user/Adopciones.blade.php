@@ -23,5 +23,35 @@
                 @endif
             @endforeach
         </section>
+        <section class="container-table">
+            <table class="tablehistorial">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Usuario</th>
+                        <th>Mascota</th>
+                        <th>Especie</th>
+                        <th>Raza</th>
+                        <th>Sexo</th>
+                        <th>Edad</th>
+                        <th>Estado adopcion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($adopciones as $adopcion)
+                        <tr>
+                            <td>{{ $adopcion->id }}</td>
+                            <td>{{$adopcion->users->name}}</td>
+                            <td><img class="img-historial" src="{{ asset('img/Perfiles/foto perfil 1.jpeg') }}"></td>
+                            <td>{{ $adopcion->species }}</td>
+                            <td>{{ $adopcion->animal_race }}</td>
+                            <td>{{ $adopcion->sex_animal }}</td> <!-- Movido al lado de Edad -->
+                            <td>{{ $adopcion->age_animal }}</td> <!-- Movido después de Motivo -->
+                            <td>{{ $adopcion->status }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </section>
     </div>
 @endsection
