@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\moduloAdopcionDonacion;
+
 use App\Http\Controllers\Controller;
 use App\Models\moduloAdopcionDonacion\AnimalsAdoption;
 use Illuminate\Http\Request;
@@ -13,27 +14,36 @@ class PrincipalController extends Controller
         return view('moduloAdopcionDonacion.principal');
     }
 
-    public function indexDonations(){
+    public function indexDonations()
+    {
 
 
         return view('moduloAdopcionDonacion.donations.user.Donaciones');
     }
 
-    
-    public function indexAdoptions(){
-        $adopciones = AnimalsAdoption::all(); // Ejemplo, reemplaza esto con tus datos
+
+    public function indexAdoptions()
+    {
+        $adopciones = AnimalsAdoption::all();
         return view('moduloAdopcionDonacion.adopcion.user.Adopciones', compact('adopciones'));
     }
-    
-    public function showAdoptions($id){
+
+    public function showAdoptions($id)
+    {
         $adopcion = AnimalsAdoption::find($id);
-        return view('moduloAdopcionDonacion.adopcion.user.show', compact('adopcion'));
+        if (Auth::check()) {
+
+            return view('moduloAdopcionDonacion.adopcion.user.show', compact('adopcion'));
+        } else {
+            return redirect()->route('login');
+        }
     }
 
-    public function solicitarAdopcion($id){
+    public function solicitarAdopcion($id)
+    {
         $adopcion = AnimalsAdoption::find($id);
         $adopcion->status = 'En proceso';
-        $adopcion->user_id = Auth::user()->id;
+        $adopcion->users_id = Auth::user()->id;
         $adopcion->update();
         return redirect()->route('indexAdoptions');
     }

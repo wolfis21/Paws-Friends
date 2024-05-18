@@ -1,3 +1,7 @@
+@php
+    $true = false
+@endphp
+
 @extends('layouts.headerNav')
 @section('title', 'Adopciones')
 @vite('resources/css/moduloAdopcionesDonaciones/adopciones.css')
@@ -19,10 +23,14 @@
                         <p class="textosin">Edad: {{ $adopcion->age_animal }}</p>
                     </a>
                 @else
+                @php
+                    $true = true
+                @endphp
                     <h2>No hay adopciones disponibles</h2>
                 @endif
             @endforeach
         </section>
+        @if ($true !== false)            
         <section class="container-table">
             <div class="rounded-container"> <!-- Contenedor con bordes redondeados -->
                 <table class="tablehistorial">
@@ -40,20 +48,24 @@
                     </thead>
                     <tbody>
                         @foreach ($adopciones as $adopcion)
-                            <tr>
-                                <td>{{ $adopcion->id }}</td>
-                                <td>{{$adopcion->users->name}}</td>
-                                <td><img class="img-historial" src="{{ asset('img/Perfiles/foto perfil 1.jpeg') }}"></td>
-                                <td>{{ $adopcion->species }}</td>
-                                <td>{{ $adopcion->animal_race }}</td>
-                                <td>{{ $adopcion->sex_animal }}</td> <!-- Movido al lado de Edad -->
-                                <td>{{ $adopcion->age_animal }}</td> <!-- Movido después de Motivo -->
-                                <td>{{ $adopcion->status }}</td>
-                            </tr>
+                            @if (($adopcion->status !== 'Sin solicitud / Sin adoptar') && ($adopcion->users_id !== null))
+                                <tr>
+                                    <td>{{ $adopcion->id }}</td>
+                                    <td>{{ $adopcion->users->name }}</td>
+                                    <td><img class="img-historial" src="{{ asset('img/Perfiles/foto perfil 1.jpeg') }}">
+                                    </td>
+                                    <td>{{ $adopcion->species }}</td>
+                                    <td>{{ $adopcion->animal_race }}</td>
+                                    <td>{{ $adopcion->sex_animal }}</td> <!-- Movido al lado de Edad -->
+                                    <td>{{ $adopcion->age_animal }}</td> <!-- Movido después de Motivo -->
+                                    <td>{{ $adopcion->status }}</td>
+                                </tr>
+                            @endif
                         @endforeach
                     </tbody>
                 </table>
-            </div> <!-- Fin del contenedor con bordes redondeados -->
+            </div> 
         </section>
+        @endif
     </div>
 @endsection
