@@ -19,12 +19,18 @@ class Product extends Model
         'name',
         'description', 
         'img_ref',
-        'product_category_animals_id', 
+        'product_category_animals_id',
+        'puntuation' 
     ];
-
 
     public function category_animal(){
         return $this->belongsTo(categoryProductsAnimals::class, 'product_category_animals_id','id');
+    }
+
+    public function puntuaciones()
+    {
+        return $this->belongsToMany(Puntuations::class, 'product_has_puntuations', 'products_id', 'puntuations_id')
+            ->withPivot('created_at', 'updated_at');
     }
 }
 

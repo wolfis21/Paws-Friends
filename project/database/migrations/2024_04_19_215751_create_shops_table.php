@@ -16,7 +16,8 @@ return new class extends Migration {
             $table->string('address');
             $table->string('phone');
             $table->string('mail');
-            $table->string('link_ref');
+            $table->string('link_ref')->nullable();
+            $table->string('puntuation')->nullable();
             $table->timestamps();
         });
     }

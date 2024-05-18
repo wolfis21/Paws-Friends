@@ -21,9 +21,15 @@ class Shop extends Model
         'address', 
         'phone', 
         'mail', 
-        'link_ref'
+        'link_ref',
+        'puntuation'
     ];
 
+    public function puntuaciones()
+    {
+        return $this->belongsToMany(Puntuations::class, 'shops_has_puntuations', 'shops_id', 'puntuations_id')
+            ->withPivot('created_at', 'updated_at');
+    }
    
 }
 

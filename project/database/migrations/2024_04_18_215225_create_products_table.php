@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->string('img_ref');
+            $table->string('img_ref')->nullable();
             $table->unsignedBigInteger('product_category_animals_id')->nullable();
             $table->foreign('product_category_animals_id')->references('id')->on('product_category_animals');
-            $table->unsignedInteger('phone'); // Nuevo atributo para la cantidad
+            $table->string('puntuation')->nullable();
             $table->timestamps();
         });
     }
