@@ -46,4 +46,12 @@ class UserController extends Controller
         return view('main');
     }
     
+    public function allAdmin(){
+        $admins = User::where('rols_id', 1)->get();
+        return view('moduloUsers.admin.index', compact('admins'));
+    }
+    public function allUser(){
+        $customers = User::where('rols_id', 2)->get();
+        return view('moduloUsers.user.index', compact('customers'));
+    }
 }

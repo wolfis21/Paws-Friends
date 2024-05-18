@@ -17,11 +17,8 @@ use App\Http\Controllers\moduloAdopcionDonacion\AdopcionesController;
 use App\Http\Controllers\moduloAdopcionDonacion\AnimalsAdoptionController;
 use App\Http\Controllers\moduloAdopcionDonacion\PrincipalController;
 use App\Http\Controllers\moduloAdopcionDonacion\HistoriaController;
-<<<<<<< Updated upstream
 use App\Models\moduloAdopcionDonacion\AnimalsAdoption;
-=======
 use App\Http\Controllers\RegistroDemandaController;
->>>>>>> Stashed changes
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 /*
@@ -39,7 +36,10 @@ Route::get('/', function () {
     return view('main');
 });
 
-Route::get('/adminPWFS', HomeController::class)->name('login_admin')->middleware('auth');;
+Route::get('/adminPWFS', HomeController::class)->name('login_admin')->middleware('auth');
+
+Route::get('/adminPWFS/admin', [UserController::class, 'allAdmin'])->name('allAdmin');
+Route::get('/adminPWFS/user', [UserController::class, 'allUser'])->name('allUser');
 // Rutas para el inicio de sesión específico que dirige a moduloServicios.dashboard
 
 
