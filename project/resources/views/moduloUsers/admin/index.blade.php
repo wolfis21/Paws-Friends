@@ -3,7 +3,7 @@
 @section('content')
 
     <h4 style="margin-top: 15px">Administradores</h4>
-    <a href="{{ route('create') }}" class="btn bg-cyan" style="margin-bottom: 15px;">Añadir
+    <a href="/adminPWFS/admin/create" class="btn bg-cyan" style="margin-bottom: 15px;">Añadir
         Administrador</a>
     <div class="card bg-dark">
         <div class="card-body">
@@ -30,8 +30,11 @@
                                 <button type="button" class="btn bg-cyan" data-bs-toggle="modal"
                                     data-bs-target="#viewProfile{{ $admin->id }}">
                                     Ver mas</button>
-                                <button type="button" class="btn bg-red" data-bs-toggle="modal"
-                                    data-bs-target="#deleteProfile{{ $admin->id }}">Eliminar</button>
+                                <form action="{{ route('destroyAdmin',$admin->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

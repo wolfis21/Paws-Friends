@@ -39,6 +39,9 @@ Route::get('/', function () {
 Route::get('/adminPWFS', HomeController::class)->name('login_admin')->middleware('auth');
 
 Route::get('/adminPWFS/admin', [UserController::class, 'allAdmin'])->name('allAdmin');
+Route::get('/adminPWFS/admin/create', [UserController::class, 'createAdmin'])->name('createAdmin');
+Route::post('/adminPWFS/admin/create', [UserController::class, 'createForm'])->name('createForm');
+Route::delete('/adminPWFS/admin/{id}', [UserController::class, 'destroyAdmin'] )->name('destroyAdmin');
 Route::get('/adminPWFS/user', [UserController::class, 'allUser'])->name('allUser');
 // Rutas para el inicio de sesión específico que dirige a moduloServicios.dashboard
 

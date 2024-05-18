@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 class UserController extends Controller
@@ -53,5 +54,44 @@ class UserController extends Controller
     public function allUser(){
         $customers = User::where('rols_id', 2)->get();
         return view('moduloUsers.user.index', compact('customers'));
+    }
+    public function createAdmin(){
+        return view('moduloUsers.admin.create');
+    }
+    public function createForm(Request $request)
+    {   
+        if ($request['photo_dni'] && $request['photo_rif']&& $request['photo_user']) {
+            $imgPhoto = $request['photo_user'];
+            $imgDni = $request['photo_dni'];
+            $imgRif = $request['photo_rif'];
+            $imgPhotoPath = $imgPhoto->store('docs', 'public');
+            $imgPhotoPathDni = $imgDni->store('docs', 'public');
+            $imgPhotoPathRif = $imgRif->store('docs', 'public');
+        } else {
+            $imgPhotoPath = null;
+            $imgPhotoPathDni = null;
+            $imgPhotoPathRif = null;
+        }
+
+        $user = User::create([
+            'name' => $request['name'],
+            'last_name' => $request['last_name'],
+            'dni' => $request['dni'],
+            'phone' => $request['phone'],
+            'address' => $request['address'],
+            'photo_user' => $imgPhotoPath,
+            'photo_dni' => $imgPhotoPathDni,
+            'photo_rif' => $imgPhotoPathRif,
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+            'rols_id' => $request['rols_id'],
+        ]);
+        return $this->allAdmin();
+
+    }
+    public function destroyAdmin(string $id)
+    {
+        User::find($id)->delete();
+        return $this->allAdmin();
     }
 }
