@@ -3,6 +3,7 @@
 use App\Http\Controllers\FundationController;
 use App\Http\Controllers\Demand_animal_has_fundationController;
 use App\Http\Controllers\Historial_adminController;
+use App\Http\Controllers\HistorialClienteController;
 use App\Http\Controllers\HomeServicesController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
@@ -16,7 +17,11 @@ use App\Http\Controllers\moduloAdopcionDonacion\AdopcionesController;
 use App\Http\Controllers\moduloAdopcionDonacion\AnimalsAdoptionController;
 use App\Http\Controllers\moduloAdopcionDonacion\PrincipalController;
 use App\Http\Controllers\moduloAdopcionDonacion\HistoriaController;
+<<<<<<< Updated upstream
 use App\Models\moduloAdopcionDonacion\AnimalsAdoption;
+=======
+use App\Http\Controllers\RegistroDemandaController;
+>>>>>>> Stashed changes
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 /*
@@ -142,9 +147,9 @@ Route::get('/registrodemanda', function () {
 
 Route::get('/servicios', [App\Http\Controllers\ServiciosController::class, 'index'])->name('servicios');
 
-Route::get('/registrodemanda', [App\Http\Controllers\RegistroDemandaController::class, 'index'])->name('registrodemanda');
+Route::resource('registrodemanda', RegistroDemandaController::class);
 
-Route::get('/historialcliente', [App\Http\Controllers\HistorialClienteController::class, 'index'])->name('historialcliente');
+Route::resource('historial_user', HistorialClienteController::class);
 
 /* admin */
 Route::resource('/adminPWFS/fundations', FundationController::class);

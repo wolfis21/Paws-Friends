@@ -42,8 +42,8 @@
                 <div class="boton">
                    <!--BOTONES-->
 
-                    <a class="btn btn-light " href="{{route('registrodemanda')}}">Crear denuncia</a> 
-                    <a class="btn btn-light " href="{{route('historialcliente')}}">Historial</a> 
+                    <a class="btn btn-light " href="{{route('registrodemanda.create')}}">Crear denuncia</a> 
+                    <a class="btn btn-light " href="{{route('historial_user.index')}}">Historial</a> 
                 </div>
                 
             </div>
