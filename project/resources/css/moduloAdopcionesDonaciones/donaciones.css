@@ -1,19 +1,23 @@
-.container-form{
+.container-formulario {
+    background-image: url('../../css/moduloAdopcionesDonaciones/imageFront/Modulo-donaciones.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     width: 100%;
-    height: 100vh;
+    position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
 }
-
+p{
+    margin-bottom: 0px !important;
+}
 .title-container{
     width: 100%;
     margin-top: 1rem;
     padding: 10px ;
     text-align: center;
-}
-.buscador{
-    margin-top: 1rem;
-    width: 50%;
 }
 .title{
     font-size: 50px;
@@ -22,7 +26,13 @@
     color: #6e569f;
     margin-bottom: 0 !important;
 }
-
+select{
+    background-color: #FFf !important;
+}
+.title-form{
+    margin: 1rem;
+text-align: center;
+}
 #nombreAdopcion{
     width: 100%;
     padding: 10px;
@@ -43,17 +53,76 @@
 }
 
 .content{
-    margin-top: 1rem;
+    position: relative;
+    margin: 2rem 0px !important;
     display: flex;
     flex-direction: row;
     width: 70%;
+    justify-content: space-evenly;
+    z-index: 2 !important;
 }
 
 .form{
-    width: 100%;
+    width: 50%;
     padding: 10px;
     border: none;
-    background-color: transparent;
+    background-color: #fff;
     border: 2px solid #6e569f;
     border-radius: 10px;
+}
+.form-group{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+#tipos ,#destino{
+    border: 2px solid #6e569f;
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.btn-finally{
+    border: none;
+    background-color: #6e569f;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+
+.btn-finally:hover{
+    background-color: #493c6f; /* Cambiar el color al pasar el ratón */
+    color: #fff;
+}
+
+input{
+    margin-top: 1rem;
+    border: none;
+    padding: 10px;
+    border: 2px solid #6e569f;
+    border-radius: 10px;
+    outline: none;
+}
+
+.donaciones{
+    background-color: #fff;
+    border: 2px solid #6e569f;
+    border-radius: 10px;
+    padding: 10px;
+    flex-grow: 0.6;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
