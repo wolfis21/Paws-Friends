@@ -6,12 +6,23 @@
 
     <!--BOTON VOLVER A PAGINA PRINCIPAL SERVICIOS VISTA CLIENTE-->
     <div class="boo">
-        <a class="vv-" href="{{route('servicios')}}">VOLVER</a>
+        <a class="vv-" href="{{route('moduloRescate.homeRescate')}}">VOLVER</a>
     </div>
     <main class="table" id="HISTORIAL">
         <section class="table__header">
             <h3>HISTORIAL DE DEMANDAS REALIZADAS</h3>
-            
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <img src="{{ URL::asset ('../imagenes/imghc/search.png')}}" alt="">
+            </div>
+            <div class="export__file">
+                <label for="export-file" class="export__file-btn" title="Export File"></label>
+                <input type="checkbox" id="export-file">
+                <div class="export__file-options">
+                    <label>Export As &nbsp; &#10140;</label>
+                    <label for="export-file" id="toPDF">PDF <img src="{{ URL::asset ('../imagenes/imghc/pdf.png')}}" alt=""></label>
+                </div>
+            </div>
         </section>
         <section class="table__body">
             <table>
@@ -55,8 +66,18 @@
     <main class="table" id="HISTORIAL">
         <section class="table__header">
             <h3>HISTORIAL DE DEMANDAS COMPLETADAS (RESCATES)</h3>
-            
-
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <img src="{{ URL::asset ('../imagenes/imghc/search.png')}}" alt="">
+            </div>
+            <div class="export__file">
+                <label for="export-file" class="export__file-btn" title="Export File"></label>
+                <input type="checkbox" id="export-file">
+                <div class="export__file-options">
+                    <label>Export As &nbsp; &#10140;</label>
+                    <label for="export-file" id="toPDF">PDF <img src="{{ URL::asset ('../imagenes/imghc/pdf.png')}}" alt=""></label>
+                </div>
+            </div>
         </section>
         <section class="table__body">
             <table>
