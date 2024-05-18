@@ -51,7 +51,7 @@ class DonacionesController extends Controller
           return view('moduloAdopcionDonacion.donations.admin.index')
           ->with('donations', $donations);
         }else{
-          return view('moduloAdopcionDonacion.Donaciones');
+          return view('moduloAdopcionDonacion.donations.user.Donaciones');
         }
     }
 }
