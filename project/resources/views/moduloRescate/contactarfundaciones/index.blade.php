@@ -10,6 +10,7 @@
             <th scope="col">Id</th>
             <th scope="col">Demanda</th>
             <th scope="col">Fundación</th>
+            <th scope="col">Email</th>
             <th scope="col">Descripción</th>
             <th scope="col">Status Fundación</th>
             <th scope="col">Acciones</th>
@@ -20,6 +21,7 @@
                     <td>{{ $demand_animal_has_fundation->id }}</td>
                     <td>{{ $demand_animal_has_fundation->demands_animalss->description_case }}</td>
                     <td>{{ $demand_animal_has_fundation->fundation->name }}</td>
+                    <td>{{ $demand_animal_has_fundation->fundation->email }}</td>
                     <td>{{ $demand_animal_has_fundation->description }}</td>
                     <td>{{ $demand_animal_has_fundation->demands_animalss->statusfund->name }}</td>
                     <td>

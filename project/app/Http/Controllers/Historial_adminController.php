@@ -24,6 +24,23 @@ class Historial_adminController extends Controller
         return view('moduloRescate.historial_admin.index')->with('demand', $demand)->with('completada', $completada);
     }
 
+   /*  public function search(Request $request){
+
+        $search = $request->search;
+        $query = Demands_animalss::query();
+
+        $query->whereAny(['id','description_case'], 'LIKE', "%$search%");
+
+        $query->orWhereHas('users', function($query) use($search){
+            $query->whereAny(['name','last_name','dni','email'], 'LIKE', "%$search%");
+        });
+
+        $demand = $query->get();
+
+        return view('moduloRescate.historial_admin.index')->with('demand', $demand);
+
+    } */
+
     /**
      * Show the form for creating a new resource.
      */
@@ -47,7 +64,7 @@ class Historial_adminController extends Controller
             'users_id' => 'required',
             'description_case' => 'required|string|min:3',
             'adress_animals' => 'required|string|min:3',
-            'photo_ref' => 'required|string|min:1',
+            'photo_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'motivo_id' => 'required',
             'urgencia_id' => 'required',
         ]);
@@ -87,7 +104,7 @@ class Historial_adminController extends Controller
             'users_id' => 'required',
             'description_case' => 'required|string|min:3',
             'adress_animals' => 'required|string|min:3',
-            'photo_ref' => 'required|string|min:1',
+            'photo_ref' => 'required',
             'motivo_id' => 'required',
             'urgencia_id' => 'required',
             'types_status_id' => 'required',

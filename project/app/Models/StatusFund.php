@@ -9,7 +9,7 @@ class StatusFund extends Model
 {
     use HasFactory;
     protected $table = 'Statusfund'; // Establece el nombre de la tabla
-    //Insertar en la tabla los campos en el siguiente orden: Asignada, No asignada, Completada
+    
     protected $fillable = [
         'name',
     ];

@@ -24,7 +24,7 @@
         </div>
 
         <div class="contenedorModulos">
-            {{-- <a href="{{ route('servicios') }}"> --}}
+                <a href="{{ route('servicios') }}"> 
                 <img class="iconosModulos" id="rescates" src="{{ URL::asset('imagenes/FRAMES/FRAME B/3.png') }}"
                     alt="Rescates">
             </a>

@@ -25,8 +25,9 @@
         placeholder="Descripción" value="{{ old('description') }}">
 </div>
 {{-- 
-Al registrar se coloca por defecto "en espera" id=1 --}}
-<input type="hidden" class="form-control" id="statusfund_id" name="statusfund_id" value="{{($demands_animals->statusfund->id)}}">
+Al registrar se coloca por defecto "no asignada" id=2 --}}
+<input type="hidden" class="form-control" id="statusfund_id" name="statusfund_id" value="2">
+
 
 
 <div class="mb-3">

@@ -31,11 +31,12 @@ class FundationController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|min:3', //no validaron email
-            'phone' => 'required|unique:fundation|alpha_num|min_digits:11',
-            'email' => 'required|string|min:3',
-            'description' => 'required|string|min:3',
+            'name' => ['required', 'unique:fundation', 'string', 'min:3' ],
+            'phone' => ['required', 'unique:fundation', 'alpha_num', 'min_digits:11'],
+            'email' => ['required', 'email', 'unique:fundation', 'string', 'min:3'],
+            'description' => ['required', 'string', 'min:3'],
         ]);
+
 
         Fundation::create($request->all());
 
@@ -65,10 +66,10 @@ class FundationController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'name' => 'required|string|min:3', //no validaron email
-            'phone' => 'required|alpha_num|min_digits:11',
-            'email' => 'required|string|min:3',
-            'description' => 'required|string|min:3',
+            'name' => ['required', 'string', 'min:3' ],
+            'phone' => ['required', 'alpha_num', 'min_digits:11'],
+            'email' => ['required', 'email', 'string', 'min:3'],
+            'description' => ['required', 'string', 'min:3'],
         ]);
         $fundation = Fundation::findOrFail($id);
         $fundation->update($request->all());
