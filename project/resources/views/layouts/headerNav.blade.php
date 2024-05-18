@@ -28,12 +28,12 @@
                 <li><a href="/">Inicio</a></li>
                 <li><a class="link-none">Modulos</a>
                     <ul class="mostrar-secciones">
-                        <li class="azul"><a href="{{ route('serviceModel') }}" class="link-modulos">Modulo de
-                                servicios</a></li>
-                        <li class="naranja"><a href="/servicios" class="link-modulos">Modulo de rescate</a></li>
-                        <li class="rojo"><a href="/adopcion-donaciones" class="link-modulos">Modulo de adopcion y
+                        <li class="azul"><a href="{{ route('serviceModel') }}" class="link-modulos">Módulo de
+                                Servicios</a></li>
+                        <li class="naranja"><a href="/servicios" class="link-modulos">Módulo de Rescate</a></li>
+                        <li class="rojo"><a href="/adopcion-donaciones" class="link-modulos">Módulo de Adopcion y
                                 donacion</a></li>
-                        <li class="verde"><a href="/" class="link-modulos">Tienda</a></li>
+                        <li class="verde"><a href="/store" class="link-modulos">Módulo de Cátalogo</a></li>
                     </ul>
                 </li>
                 <li><a href="#ShowcaseQuienes">Nosotros</a></li>

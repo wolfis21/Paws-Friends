@@ -9,7 +9,7 @@
     flex-wrap: nowrap;
     /* Add this property */
 
-    background-image: url("C:/laragon/www/Paws-Friends/project/resources/views/store/img/fondo.png");
+    background-image: url("C:/laragon/www/Paws-Friends/project/resources/views/moduloCatalogo/img/fondo.png");
     background-size: cover;
     background-position: center;    
 }
