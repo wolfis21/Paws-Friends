@@ -9,6 +9,7 @@ use App\Models\moduloCatalogo\Puntuations;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class ProductController extends Controller
 {
     public function productAdmin()
@@ -39,10 +40,21 @@ class ProductController extends Controller
             'description' => 'required',
             'img_ref' => 'nullable',
             'product_category_animals_id' => 'nullable',
+            'price'=>'nullable',
+            'puntuation'=>'nullable',
         ]);
 
+        $product = $request->all();
+
+        if ($image = $request->file('img_ref')) {
+            $path = 'storage/moduloCatalogo/images/products';
+            $imageName = date('YmdHis') . "_" . $image->getClientOriginalExtension();
+            $image->move($path, $imageName);
+            $product['img_ref'] = "$imageName";
+        }
+
         // Crea un nuevo producto con los datos validados
-        Product::create($request->all());
+        Product::create($product);
 
         // Redirige a la lista de productos con un mensaje de éxito
         return redirect()->route('productAdmin');
@@ -55,7 +67,7 @@ class ProductController extends Controller
     {
         // Retorna la vista 'show' con el producto especificado
         $product = Product::find($id);
-        return view('moduloCatalogo.products.admin.show', compact('product'));
+        return view('moduloCatalogo.products.admin.show')->with('product', $product);
     }
 
     /**
@@ -65,7 +77,7 @@ class ProductController extends Controller
     {
         // Retorna la vista 'edit' con el producto especificado
         $product = Product::find($id);
-        return view('moduloCatalogo.products.admin.edit', compact('product'));
+        return view('moduloCatalogo.products.admin.edit')->with('product', $product);
     }
 
     /**
@@ -77,14 +89,25 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required',
-            'img_ref' => 'required|string|max:255',
+            'img_ref' => 'nullable',
             'product_category_animals_id' => 'nullable',
+            'price'=>'nullable',
+            'puntuation'=>'nullable',
         ]);
 
-        $product = Product::find($id);
+        $product = Product::findOrFail($id);
+
+        $productReq = $request->all();
+
+        if ($image = $request->file('img_ref')) {
+            $path = 'storage/moduloCatalogo/images/products';
+            $imageName = date('YmdHis') . "_" . $image->getClientOriginalExtension();
+            $image->move($path, $imageName);
+            $productsReq['img_ref'] = "$imageName";
+        }
 
         // Actualiza el producto con los datos validados
-        $product->update($request->all());
+        $product->update($productReq);
 
         // Redirige a la lista de productos con un mensaje de éxito
         return redirect()->route('productAdmin');
@@ -97,7 +120,8 @@ class ProductController extends Controller
     {
 
         $product = Product::find($id);
-
+        $path = public_path() . '/storage/moduloCatalogo/images/products/' . $product->img_ref;
+        unlink($path);
         // Elimina el producto especificado
         $product->delete();
 
@@ -110,8 +134,11 @@ class ProductController extends Controller
     //funcion para mostrar index de usuario
     public function ProductUser()
     {
-        return view('moduloCatalogo.products');
+        $products = Product::all();
+        return view('moduloCatalogo.products.user.productuser')
+            ->with('products', $products);
     }
+
 
     //funcion verificar puntuaciones
     public function verificarPuntuacionProduct($id)
@@ -122,6 +149,18 @@ class ProductController extends Controller
         })
             ->first();
         return $puntuacionExistente;
+    }
+
+    public function showproductUser($id_product)
+    {
+        if (Auth::check()) {
+            $product = Product::find($id_product);
+            $verificarPuntajeUsuario = $this->verificarPuntuacionProduct($id_product);
+            return view('moduloCatalogo.products.user.showproduct')->with('product', $product)
+                ->with('verificarPuntajeUsuario', $verificarPuntajeUsuario);
+        } else {
+            return redirect()->route('login');
+        }
     }
 
     public function updateProductPuntuations(Request $request, $id_product)
