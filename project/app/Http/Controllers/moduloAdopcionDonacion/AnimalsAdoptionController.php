@@ -14,7 +14,7 @@ class AnimalsAdoptionController extends Controller
      */
     public function index()
     {
-      $animals_adoption=animals_adoption:: all();
+      $animals_adoption=AnimalsAdoption:: all();
       return view('moduloAdopcionDonacion.animals_adoption.index')->with('animals_adoption',$animals_adoption);
     }
 
@@ -32,19 +32,11 @@ class AnimalsAdoptionController extends Controller
      
     public function store(Request $request)
     {
-      $animals_adoption = new animals_adoption();
+      $animals_adoption = new AnimalsAdoption();
 
-      $animals_adoption->id = $request->get('id');
-      $animals_adoption->name= $request->get('name');
-      $animals_adoption->species = $request->get('species');
-      $animals_adoption->animal_race = $request->get('animal_race');
-      $animals_adoption->sex_animal = $request->get('sex_animal');
-      $animals_adoption->age_animal = $request->get('age_animal');
-      $animals_adoption->descriptions_animals = $request->get('descriptions_animals');
-      $animals_adoption->photo_animal = $request->get('photo_animal');
-      $animals_adoption->location_addres = $request->get('location_addres');
-
-      $animals_adoption->save();
+      $animalAdoption = $request->all();
+      $animals_adoption->status = 'En proceso';
+      $animals_adoption->save($animalAdoption);
 
       return redirect('/AdminPP');
     }
@@ -99,4 +91,18 @@ class AnimalsAdoptionController extends Controller
       return redirect('/AdminPP');
 
     }
+    
+    public function confirmarAdopcion($id){
+      $animals_adoption = AnimalsAdoption::find($id);
+      $animals_adoption->status = 'Aceptada';
+      $animals_adoption->update();
+      return redirect('/adminPWFS/adopciones');
+    }
+    public function denegarAdopcion($id){
+      $animals_adoption = AnimalsAdoption::find($id);
+      $animals_adoption->status = 'Rechazada';
+      $animals_adoption->update();
+      return redirect('/adminPWFS/adopciones');
+    }
+
 }

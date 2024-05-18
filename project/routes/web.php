@@ -16,6 +16,7 @@ use App\Http\Controllers\moduloAdopcionDonacion\AdopcionesController;
 use App\Http\Controllers\moduloAdopcionDonacion\AnimalsAdoptionController;
 use App\Http\Controllers\moduloAdopcionDonacion\PrincipalController;
 use App\Http\Controllers\moduloAdopcionDonacion\HistoriaController;
+use App\Models\moduloAdopcionDonacion\AnimalsAdoption;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 /*
@@ -173,6 +174,8 @@ Route::get('/showAdoptions/{id}',[PrincipalController::class, 'showAdoptions'])-
 
 
 Route::get('/adminPWFS/adopcionDestroy/{id}',[AnimalsAdoptionController::class, 'destroy'])->name('destroyAnimals');
+Route::put('/adminPWFS/ConfirmarAdopcion/{id}',[AnimalsAdoptionController::class,'confirmarAdopcion'])->name('confirmarAdopcion');
+Route::put('/adminPWFS/denegarAdopcion/{id}',[AnimalsAdoptionController::class,'denegarAdopcion'])->name('denegarAdopcion');
 
 Route::resource('historias', HistoriaController::class);
 

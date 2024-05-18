@@ -23,15 +23,13 @@ class AdopcionesController extends Controller
 
     public function store(Request $request)
     {
-        $adopcion = $request->all();
-
+      $adopcion = $request->all();
         if ($image = $request->file('photo_animal')) {
             $path = 'storage/moduloAdopcion/images/';
             $imageName = date('YmdHis') . "_" . $image->getClientOriginalExtension();
             $image->move($path, $imageName);
             $adopcion['photo_animal'] = "$imageName";
         }
-
         AnimalsAdoption::create($adopcion);
 
         return redirect('/adminPWFS/adopciones');

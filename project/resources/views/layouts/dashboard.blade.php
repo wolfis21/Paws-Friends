@@ -2,7 +2,10 @@
 
 @section('title', 'Dashboard')
 
-
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Last-Modified" content="0">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
 @section('content_header')
 
 @stop

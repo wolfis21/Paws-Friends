@@ -47,7 +47,7 @@
     <label for="location_addres" class="form-label">Locacion de animal:</label>
     <input type="text" class="form-control" id="location_address" placeholder="Ingrese locacion" name="location_address"required>
   </div>
-
+  <input type="hidden" name="status" id="status" value="En proceso">
   <a href="{{ route('adopciones.index') }}" class="btn btn-red" tabindex="6" >Volver</a>
   <button type="submit" class="btn bg-purple" tabindex="4">Guardar</button>
   

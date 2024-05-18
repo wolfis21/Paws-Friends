@@ -26,6 +26,7 @@ return new class extends Migration
             ->cascadeOnDelete()
             ->cascadeOnUpdate()
             ->references('id')->on('rescue');
+            $table->string('status');
             $table->timestamps();
         });
     }

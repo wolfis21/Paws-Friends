@@ -21,6 +21,7 @@ class AnimalsAdoption extends Model
         'photo_animal',
         'location_address',
         'rescues_id',
+        'status'
     ];
 
     /* relacion muchos a muchos con user-animals-adopcion */
