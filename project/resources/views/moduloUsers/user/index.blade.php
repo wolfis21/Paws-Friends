@@ -32,7 +32,6 @@
                             </td>
                         </tr>
                         @include('moduloUsers.user.ModalViewProfile')
-                        @include('moduloUsers.user.ModalDeleteProfile')
                     @endforeach
                 </tbody>
             </table>
