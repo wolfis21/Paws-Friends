@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Shop;
+use App\Models\moduloCatalogo\Shop;
+use App\Models\moduloCatalogo\shops_has_puntuation;
+use App\Models\moduloCatalogo\Puntuations;
 use Illuminate\Http\Request;
 use Illuminate\View\ViewServiceProvider;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class ShopController extends Controller
 {
@@ -93,10 +96,53 @@ class ShopController extends Controller
         return redirect()->route('moduloCatalogo.shop.admin.index');
     }
 
+    //funciones de user
+
     public function ShopUser()
     {
         return view('moduloCatalogo.shop.user');
     }
 
+    public function verificarPuntuacionShop($id)
+    {
+        $shop = Shop::find($id);
+        $puntuacionExistente = shops_has_puntuation::where('shops_id', $shop->id)->whereHas('puntuations', function ($query) {
+            $query->where('users_id', Auth::user()->id);
+        })
+            ->first();
+        return $puntuacionExistente;
+    }    
+
+    public function updateShopPuntuations(Request $request, $id_shop)
+    {
+        $shop = Shop::findOrFail($id_shop);
+        $shopReq = $request->all();
+        $puntuacionExistente = $this->verificarPuntuacionShop($id_shop);
+        if ($puntuacionExistente) {
+            $puntuacionExistente->puntuations()->updateOrCreate(
+                ['users_id' => Auth::user()->id],
+                ['puntuation' => $shopReq['puntuation']]
+            );
+        } else {
+            $puntuation = Puntuations::create([
+                'puntuation' => $shopReq['puntuation'],
+                'users_id' => Auth::user()->id,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+
+            $puntuacionShop = shops_has_puntuation::create([
+                'puntuations_id' => $puntuation->id,
+                'shops_id' => $shop->id,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+        }
+        $shop = Shop::withAvg('puntuaciones', 'puntuation')->find($id_shop);
+        $promedioRedondeado = round($shop->puntuaciones_avg_puntuation);
+        $shop->puntuation = $promedioRedondeado;
+        $shop->save();
+        return redirect()->route('showShopUser', $id_shop);
+    }
   
 }

@@ -11,7 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('products_has_puntuations', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('products_id');
+            $table->foreign('products_id')
+            ->cascadeOnDelete()
+            ->cascadeOnUpdate()
+            ->references('id')->on('products');
+            $table->unsignedBigInteger('puntuations_id');
+            $table->foreign('puntuations_id')
+            ->cascadeOnDelete()
+            ->cascadeOnUpdate()
+            ->references('id')->on('puntuations');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -19,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('products_has_puntuations');
     }
 };

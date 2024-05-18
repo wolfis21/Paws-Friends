@@ -207,6 +207,7 @@ Route::controller(ModuloCatalogoProductController::class)->group(function(){
     //todo rutas user
     Route::resource('/products', ModuloCatalogoProductController::class);
     Route::get('/products', 'ProductUser')->name('ProductUser');
+    Route::put('/ProductUpdatePuntuations/{id}','updateProductPuntuations')->name('updateProductPuntuations');
 });
 
 //rutas de shopController
@@ -223,6 +224,7 @@ Route::controller(ShopController::class)->group(function(){
         //todo rutas user
         Route::resource('/shops', ShopController::class);
         Route::get('/shops', 'ShopUser')->name('ShopUser');
+        Route::put('/ShopUpdatePuntuations/{id}','updateShopPuntuations')->name('updateShopPuntuations');
 
 });
 

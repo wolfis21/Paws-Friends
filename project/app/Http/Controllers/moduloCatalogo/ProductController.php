@@ -4,7 +4,10 @@ namespace App\Http\Controllers\moduloCatalogo;
 
 use App\Http\Controllers\Controller;
 use App\Models\moduloCatalogo\Product;
+use App\Models\moduloCatalogo\products_has_puntuation;
+use App\Models\moduloCatalogo\Puntuations;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -102,9 +105,55 @@ class ProductController extends Controller
         return redirect()->route('productAdmin');
     }
 
+    //funciones de user
+
     //funcion para mostrar index de usuario
     public function ProductUser()
     {
         return view('moduloCatalogo.products');
     }
+
+    //funcion verificar puntuaciones
+    public function verificarPuntuacionProduct($id)
+    {
+        $product = Product::find($id);
+        $puntuacionExistente = products_has_puntuation::where('products_id', $product->id)->whereHas('puntuations', function ($query) {
+            $query->where('users_id', Auth::user()->id);
+        })
+            ->first();
+        return $puntuacionExistente;
+    }
+
+    public function updateProductPuntuations(Request $request, $id_product)
+    {
+        $product = Product::findOrFail($id_product);
+        $productReq = $request->all();
+        $puntuacionExistente = $this->verificarPuntuacionProduct($id_product);
+        if ($puntuacionExistente) {
+            $puntuacionExistente->puntuations()->updateOrCreate(
+                ['users_id' => Auth::user()->id],
+                ['puntuation' => $productReq['puntuation']]
+            );
+        } else {
+            $puntuation = Puntuations::create([
+                'puntuation' => $productReq['puntuation'],
+                'users_id' => Auth::user()->id,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+
+            $puntuacionproduct = products_has_puntuation::create([
+                'puntuations_id' => $puntuation->id,
+                'products_id' => $product->id,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+        }
+        $product = Product::withAvg('puntuaciones', 'puntuation')->find($id_product);
+        $promedioRedondeado = round($product->puntuaciones_avg_puntuation);
+        $product->puntuation = $promedioRedondeado;
+        $product->save();
+        return redirect()->route('showProductUser', $id_product);
+    }
+
 }
