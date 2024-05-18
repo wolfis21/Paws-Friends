@@ -179,7 +179,7 @@ Route::resource('adopcion-donaciones', PrincipalController::class);
 Route::get('/donar/formulario',  [PrincipalController::class, 'indexDonations'])->name('indexDonations');
 Route::get('/adoptar/formulario',  [PrincipalController::class, 'indexAdoptions'])->name('indexAdoptions');
 Route::get('/showAdoptions/{id}',[PrincipalController::class, 'showAdoptions'])->name('showAdoptions');
-
+Route::put('/solicitarAdopcion/{id}', [PrincipalController::class, 'solicitarAdopcion'])->name('solicitarAdopcion');
 
 Route::get('/adminPWFS/adopcionDestroy/{id}',[AnimalsAdoptionController::class, 'destroy'])->name('destroyAnimals');
 Route::put('/adminPWFS/ConfirmarAdopcion/{id}',[AnimalsAdoptionController::class,'confirmarAdopcion'])->name('confirmarAdopcion');
@@ -188,7 +188,6 @@ Route::put('/adminPWFS/denegarAdopcion/{id}',[AnimalsAdoptionController::class,'
 Route::resource('historias', HistoriaController::class);
 
 //? FIN RUTAS MODULO 3
-
 
  Auth::routes();
 

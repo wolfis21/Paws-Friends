@@ -1,21 +1,25 @@
 {{-- @extends('layouts.example') --}}
-@extends('moduloRescate.dashboard')
+@extends('layouts.dashboard')
 @section('title', 'Fundaciones')
 @section('content')
 
-    <a href="{{ route('fundations.create') }}" class="btn btn-primary">Añadir Fundación</a>
-    <h1>Fundaciones</h1>
-    <table class=" table table-dark">
-        <thead>
-            <th scope="col">Id</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Teléfono</th>
-            <th scope="col">Email</th>
-            <th scope="col">Descripcion</th>
-            <th scope="col">Acciones</th>
-        </thead>
-        <tbody>
-            @foreach ($fundations as $fundation)
+    <h4 style="margin-top: 15px">Fundaciones</h4>
+    <a href="{{ route('fundations.create') }}" class="btn bg-cyan" style="margin-bottom: 15px;">Añadir Fundación</a>
+    <div class="card bg-dark">
+        <div class="card-body">
+
+
+            <table id="Veterinarios" class="table table-dark table-responsive-md" style="width:100%">
+                <thead>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Acciones</th>
+                </thead>
+                <tbody>
+                    @foreach ($fundations as $fundation)
                 <tr>
                     <td>{{ $fundation->id }}</td>
                     <td>{{ $fundation->name }}</td>
@@ -33,6 +37,8 @@
                     </td>
                 </tr>
             @endforeach
-        </tbody>
-    </table>
+                </tbody>
+            </table>
+        </div>
+    </div>
 @endsection

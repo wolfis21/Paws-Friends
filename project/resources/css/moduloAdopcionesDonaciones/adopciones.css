@@ -55,28 +55,30 @@
     -o-border-radius: 20px;
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .animal{
-    background-color: #Fff;
-    border-radius: 10px;
-    width: 15%;
-    height: 300px;
-    padding: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+    background-color: #f1eaff;
+    border-radius: 20px;
+    width: 200px;
+    margin: 30px;
+    padding: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -ms-transition: all 0.5s;
     -o-transition: all 0.5s;
     color: #000;
-    box-shadow: 0px 0px 20px #6e569f;
+    box-shadow: 0px 0px 10px #cccccc;
 }
 
 .animal:hover{
+    box-shadow: 0px 0px 10px #6e569f;
     background-color: #6e569f;
     color: #fff;
     transform: scale(1.10);
@@ -95,7 +97,16 @@
 .animal:hover .btn{
     color: #fff;
 }
+h5{
+    margin-top: 0.5rem !important;
+}
 
+.texto{
+    margin-bottom: 0.5rem !important;
+}
+.textosin{
+    margin-bottom: 0px !important;
+}
 button{
     border: none;
     background-color: transparent;
@@ -103,11 +114,11 @@ button{
 
 .img-adoption{
     width: 100%;
-    height: 150px;
-    border-radius: 10px;
+    height: 200px;
+    border-radius: 20px;
     object-fit: cover;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }

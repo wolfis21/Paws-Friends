@@ -1,5 +1,5 @@
 {{-- @extends('layouts.example') --}}
-@extends('moduloRescate.dashboard')
+@extends('layouts.dashboard')
 @section('title', 'Editar Status')
 @section('content')
     <h1>Editar Status</h1>
@@ -27,7 +27,8 @@
 
         <div class="mb-3">
             <label for="statusfund_id" class="form-label">Status Fundación</label>
-            <select name="statusfund_id" class="form-control">
+            <input type="text" class="form-control" id="statusfund_id" name="statusfund_id" value="{{ $demand_animal_has_fundation->statusfund->name }}" readonly>
+            <select name="statusfund_id" class="form-control" required>
                 <option value="">Selecciona un status fundación</option>
                 @foreach ($status as $statusfund)
                     <option value="{{ $statusfund->id }}">{{ $statusfund->name }}</option>

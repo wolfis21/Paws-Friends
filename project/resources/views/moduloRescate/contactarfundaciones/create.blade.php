@@ -1,4 +1,4 @@
-@extends('moduloRescate.dashboard')
+@extends('layouts.dashboard')
 @section('title', 'Contactar Fundaciones')
 @section('content')
 <h1>Contactar Fundaciones</h1>
@@ -22,4 +22,5 @@
         </ul>
     </div>
     @endif
+
 @endsection

@@ -56,7 +56,6 @@
         <section class="table__header">
             <h3>HISTORIAL DE DEMANDAS COMPLETADAS (RESCATES)</h3>
             
-
         </section>
         <section class="table__body">
             <table>
