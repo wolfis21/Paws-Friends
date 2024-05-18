@@ -35,18 +35,19 @@ class AnimalsAdoptionController extends Controller
       $animals_adoption = new AnimalsAdoption();
 
       $animalAdoption = $request->all();
-      $animals_adoption->status = 'En proceso';
+      $animals_adoption->status = 'Sin solicitud / Sin adoptar';
+      $animals_adoption->users->id = '';
       $animals_adoption->save($animalAdoption);
 
-      return redirect('/AdminPP');
+      return redirect('/AdminPP/adopciones');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(AnimalsAdoption $animals_adoption)
+    public function show($id)
     {
-        //
+
     }
 
     /**
@@ -64,21 +65,14 @@ class AnimalsAdoptionController extends Controller
     public function update(Request $request, $id)
     {
       $animals_adoption = AnimalsAdoption::find($id);
-
-      
-      
-      $animals_adoption->name= $request->get('name');
-      $animals_adoption->species = $request->get('species');
-      $animals_adoption->animal_race = $request->get('animal_race');
-      $animals_adoption->sex_animal = $request->get('sex_animal');
-      $animals_adoption->age_animal = $request->get('age_animal');
-      $animals_adoption->descriptions_animals = $request->get('descriptions_animals');
-      $animals_adoption->photo_animal = $request->get('photo_animal');
-      $animals_adoption->location_addres = $request->get('location_addres');
-
-      $animals_adoption->save();
-
-      return redirect('/AdminPP');
+      // if ($image = $request->file('photo_animal')) {
+      //   $path = 'storage/moduloAdopcion/images/';
+      //   $imageName = date('YmdHis') . "_" . $image->getClientOriginalExtension();
+      //   $image->move($path, $imageName);
+      //   $animals_adoption['photo_animal'] = "$imageName";
+      // }
+      $animals_adoption->update($request->all());
+      return redirect('/AdminPP/adopciones');
     }
 
     /**
@@ -88,7 +82,7 @@ class AnimalsAdoptionController extends Controller
     {
       $animals_adoption = AnimalsAdoption::find($id);
       $animals_adoption->delete();
-      return redirect('/AdminPP');
+      return redirect('/AdminPP/adopciones');
 
     }
     

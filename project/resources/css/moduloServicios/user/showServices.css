@@ -58,6 +58,7 @@ p{
     font-weight: 600;
 }
 .texto{
+    font-weight: bold;
     display: inline-block;
     font-weight: 600;
     margin-bottom: 0.5rem !important;

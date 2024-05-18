@@ -11,39 +11,41 @@
                     <img class="img-HD" src="{{ asset('storage/moduloServicios/images/dogGroomers/'. $dogGroomer->photo_animal) }}" alt="imagen.dogGroomer" />
                 </div> --}}
                 <div class="mb-3">
-                    <label for="Nombre" class="form-label">Nombre: </label>
+                    <label for="Nombre" class="form-label">Nombre </label>
                     <p>{{ $animals_adoptions->name }}</p>
                 </div>
                 <div class="mb-3">
-                    <label for="Direccion" class="form-label">Direccion: </label>
+                    <label for="Direccion" class="form-label">Direccion </label>
                     <p>{{ $animals_adoptions->species }}</p>
                 </div>
                 <div class="mb-3">
-                    <label for="phone" class="form-label">Numero: </label>
+                    <label for="phone" class="form-label">Numero </label>
                     <p>{{ $animals_adoptions->animal_race }}</p>
                 </div>
                 <div class="mb-3">
-                    <label for="link" class="form-label">Link: </label>
+                    <label for="link" class="form-label">Link </label>
                     <p>{{ $animals_adoptions->sex_animal }}</p>
                 </div>
                 <div class="mb-3">
-                    <label for="link" class="form-label">Link: </label>
+                    <label for="link" class="form-label">Link </label>
                     <p>{{ $animals_adoptions->age_animal }}</p>
                 </div>
                 <div class="mb-3">
-                    <label for="link" class="form-label">Link: </label>
+                    <label for="link" class="form-label">Link </label>
                     <p>{{ $animals_adoptions->description_animals }}</p>
                 </div>
-                {{-- <div class="mb-3">
-                    <label for="link" class="form-label">Link: </label>
-                    <p>{{ $animals_adoptions->photo_animal }}</p>
-                </div> --}}
                 <div class="mb-3">
-                    <label for="link" class="form-label">Link: </label>
+                    <label for="link" class="form-label">Link </label>
                     <p>{{ $animals_adoptions->location_address }}</p>
                 </div>
+                @if ($animals_adoptions->users_id !== null)
+                    <div class="mb-3">
+                        <label for="solicitante" class="form-label">Nombre del solicitante </label>
+                        <p>{{ $animals_adoptions->users->name }}</p>
+                    </div>
+                @endif
                 <div class="mb-3">
-                    <label for="estado" class="form-label">Estado: </label>
+                    <label for="estado" class="form-label">Estado </label>
                     <p>{{ $animals_adoptions->status }}</p>
                 </div>
             </div>

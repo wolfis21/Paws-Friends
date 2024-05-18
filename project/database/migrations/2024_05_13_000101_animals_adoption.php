@@ -27,6 +27,11 @@ return new class extends Migration
             ->cascadeOnUpdate()
             ->references('id')->on('rescue');
             $table->string('status');
+            $table->unsignedBigInteger('users_id')->unsigned()->nullable();
+            $table->foreign('users_id')
+            ->cascadeOnDelete()
+            ->cascadeOnUpdate()
+            ->references('id')->on('users');
             $table->timestamps();
         });
     }
