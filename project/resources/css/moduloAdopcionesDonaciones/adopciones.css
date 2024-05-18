@@ -127,15 +127,6 @@ button{
     width: 70%;
 }
 
-table{
-    
-    border-radius: 20px !important;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
-}
-
 .tablehistorial{
 
     width: 100%;
