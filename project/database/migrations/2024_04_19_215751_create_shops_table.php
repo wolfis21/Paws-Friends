@@ -15,8 +15,8 @@ return new class extends Migration {
             $table->string('name');
             $table->string('address');
             $table->string('phone');
-            $table->string('mail');
             $table->string('link_ref')->nullable();
+            $table->string('img_ref')->nullable();
             $table->string('puntuation')->nullable();
             $table->timestamps();
         });
