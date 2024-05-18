@@ -8,7 +8,7 @@
             <div class="modal-body">
                 <p>Deseas eliminar a {{ $admin->name }}</p>
             </div>
-            <form action="{{ route('destroy', $admin->id) }}" method="POST">
+            <form action="{{ route('destroyAdmin', $admin->id) }}" method="POST">
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 @method('DELETE')

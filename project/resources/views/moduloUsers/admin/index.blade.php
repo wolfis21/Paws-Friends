@@ -30,11 +30,9 @@
                                 <button type="button" class="btn bg-blue" data-bs-toggle="modal"
                                     data-bs-target="#viewProfile{{ $admin->id }}">
                                     Ver mas</button>
-                                <form action="{{ route('destroyAdmin',$admin->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
-                                </form>
+                                <button type="submit" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#deleteProfile{{ $admin->id }}"><i class="fa fa-fw fa-trash"></i>
+                                    Eliminar</button>
                             </td>
                         </tr>
                         @include('moduloUsers.admin.ModalViewProfile')
@@ -44,5 +42,5 @@
             </table>
         </div>
     </div>
-   
+
 @endsection
