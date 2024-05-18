@@ -1,14 +1,7 @@
 @extends('layouts.headerNav')
 @vite(['resources/css/moduloCatalogo/products.css'])
 @section('content')
-<!-- <div class="container">
-    <ul>
-        <li><a href="{{route('store.products.details', 1)}}"> 1 </a></li>
-        <li><a href="{{route('store.products.details', 2)}}"> 2 </a></li>
-        <li><a href="{{route('store.products.details', 3)}}"> 3 </a></li>
-        <li><a href="{{route('store.products.details', 4)}}"> 4 </a></li>
-    </ul>
-</div> -->
+
 <head>
 <link href="https://fonts.googleapis.com/css2?family=Itim&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
