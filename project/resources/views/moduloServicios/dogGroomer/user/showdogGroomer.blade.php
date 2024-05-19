@@ -18,7 +18,7 @@
             <div>
                 <p class="texto">Telefono:</p> {{ $dogGroomer->phone }}
             </div>
-            <a href="{{ $dogGroomer->link_ref }}">Link: {{ $dogGroomer->link_ref }}</a>
+            <p class="texto">Link: <a href="{{ $dogGroomer->link_ref }}">{{ $dogGroomer->link_ref }}</a></p> 
             @if (!$verificarPuntajeUsuario)
                 <div class="estrellas">
                     @include('layouts/stars/modeloServicios/starsDogGroomer')
