@@ -20,8 +20,8 @@ class Shop extends Model
         'name', 
         'address', 
         'phone', 
-        'mail', 
         'link_ref',
+        'img_ref',
         'puntuation'
     ];
 

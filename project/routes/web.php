@@ -196,7 +196,6 @@ Route::controller(ProductController::class)->group(function(){
     Route::get('/adminPWFS/productAdmin', 'productAdmin')->name('productAdmin');
     Route::get('/adminPWFS/createProduct', 'createProduct')->name('createProduct');
     Route::put('/adminPWFS/storeProduct', 'storeProduct')->name('storeProduct');
-    Route::get('/adminPWFS/showProduct/{id}', 'showProduct')->name('showProduct');
     Route::get('/adminPWFS/editProduct/{id}', 'editProduct')->name('editProduct');
     Route::put('/adminPWFS/updateProduct/{id}', 'updateProduct')->name('updateProduct');
     Route::delete('/adminPWFS/destroyProduct/{id}', 'destroyProduct')->name('destroyProduct');
@@ -204,8 +203,10 @@ Route::controller(ProductController::class)->group(function(){
     //todo rutas user
     Route::resource('/products', ProductController::class);
     Route::get('/products', 'ProductUser')->name('ProductUser');
+    Route::get('/Product/{id}', 'showproductUser')->name('showproductUser');
     Route::put('/ProductUpdatePuntuations/{id}','updateProductPuntuations')->name('updateProductPuntuations');
 });
+
 
 //rutas de shopController
 Route::controller(ShopController::class)->group(function(){
@@ -221,6 +222,7 @@ Route::controller(ShopController::class)->group(function(){
         //todo rutas user
         Route::resource('/shops', ShopController::class);
         Route::get('/shops', 'ShopUser')->name('ShopUser');
+        Route::get('/Shop/{id}', 'showshopUser')->name('showshopUser');
         Route::put('/ShopUpdatePuntuations/{id}','updateShopPuntuations')->name('updateShopPuntuations');
 
 });

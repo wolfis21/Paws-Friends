@@ -20,6 +20,7 @@ class Product extends Model
         'description', 
         'img_ref',
         'product_category_animals_id',
+        'price',
         'puntuation' 
     ];
 

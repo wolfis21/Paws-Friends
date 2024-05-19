@@ -19,8 +19,8 @@ class ShopController extends Controller
     public function shopAdmin()
     {
         //
-        $shop = Shop::all();
-        return view('moduloCatalogo.shop.admin.index', compact('shop') );
+        $shops = Shop::all();
+        return view('moduloCatalogo.shop.admin.index')->with('shops', $shops);
     }
 
     /**
@@ -41,17 +41,33 @@ class ShopController extends Controller
         $request->validate([
 
             'name'=> 'required|string|min:3',
-            'address'=> 'required|string',
-            'phone'=> 'required|min_digits:11',
-            'mail'=> 'required',
-            'link_ref'=> 'required',
+            'address'=> 'string',
+            'phone'=> 'required|alpha_num|min_digits:11',
+            'link_ref'=> 'nullable',
+            'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'puntuation' => 'nullable',
 
         ]);
 
-        $shop = Shop::create($request->all());
+        $shop =$request->all();
 
-        return redirect()->route('<moduloCatalogo.shop.admin.index');
+        if ($image = $request->file('img_ref')) {
+            $path = 'storage/moduloCatalogo/images/shops';
+            $imageName = date('YmdHis') . "_" . $image->getClientOriginalExtension();
+            $image->move($path, $imageName);
+            $shop['img_ref'] = "$imageName";
+        }
 
+        Shop::create($shop);
+
+        return redirect()->route('shopAdmin');
+
+    }
+
+    public function showShop(string $id)
+    {
+        $shop = Shop::find($id);
+        return view('moduloCatalogo.shop.admin.show')->with('shop', $shop);
     }
 
 
@@ -62,7 +78,7 @@ class ShopController extends Controller
     {
         //
         $shop = Shop::find($id);
-        return view('moduloCatalogo.shop.admin.edit', compact('shop'));
+        return view('moduloCatalogo.shop.admin.edit')->with('shop', $shop);
     }
 
     /**
@@ -72,17 +88,26 @@ class ShopController extends Controller
     {
         $request->validate([
             'name'=> 'required|string|min:3',
-            'address'=> 'required|string',
-            'phone'=> 'required|min_digits:11',
-            'mail'=> 'required',
-            'link_ref'=> 'required',
+            'address'=> 'string',
+            'phone'=> 'required|alpha_num|min_digits:11',
+            'link_ref'=> 'nullable',
+            'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'puntuation' => 'nullable',
         ]);
 
-        $shop = Shop::find($id);
+        $shop = Shop::findOrFail($id);
+        $shopReq = $request->all();
 
-        $shop->update($request->all());
+        if ($image = $request->file('img_ref')) {
+            $path = 'storage/modulCatalogo/images/shops';
+            $imageName = date('YmdHis') . "_" . $image->getClientOriginalExtension();
+            $image->move($path, $imageName);
+            $shopReq['img_ref'] = "$imageName";
+        }
 
-        return redirect()->route('moduloCatalogo.shop.admin.index');
+        $shop->update($shopReq);
+
+        return redirect()->route('shopAdmin');
 
     }
 
@@ -92,15 +117,18 @@ class ShopController extends Controller
     public function destroyShop(Shop $id)
     {
         $shop = Shop::find($id);
+        $path = public_path() . '/storage/moduloCatalogo/images/shops/' . $shop->img_ref;
+        unlink($path);
         $shop->delete();
-        return redirect()->route('moduloCatalogo.shop.admin.index');
+        return redirect()->route('shopAdmin');
     }
 
     //funciones de user
 
     public function ShopUser()
     {
-        return view('moduloCatalogo.shop.user');
+        $shops = Shop::all();
+        return view('moduloCatalogo.shop.user.shopuser')->with('shops', $shops);
     }
 
     public function verificarPuntuacionShop($id)
@@ -112,6 +140,18 @@ class ShopController extends Controller
             ->first();
         return $puntuacionExistente;
     }    
+
+    public function showshopUser($id_shop)
+    {
+        if (Auth::check()) {
+            $shop = Shop::find($id_shop);
+            $verificarPuntajeUsuario = $this->verificarPuntuacionShop($id_shop);
+            return view('moduloCatalogo.shop.user.showshop')->with('shop', $shop)
+                ->with('verificarPuntajeUsuario', $verificarPuntajeUsuario);
+        } else {
+            return redirect()->route('login');
+        }
+    }
 
     public function updateShopPuntuations(Request $request, $id_shop)
     {
