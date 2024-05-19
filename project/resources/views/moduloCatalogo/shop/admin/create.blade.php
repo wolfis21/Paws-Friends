@@ -21,14 +21,14 @@
                 name="phone" placeholder="Ingrese telefono" value="{{ old('phone') }}">
         </div>
         <div class="mb-3">
-            <label for="mail" class="form-label">Email</label>
-            <input type="text" class="form-control @error('mail') is-invalid @enderror" id="mail" name="mail"
-                placeholder="Ingrese email" value="{{ old('mail') }}">
-        </div>
-        <div class="mb-3">
-            <label for="link_ref" class="form-label">Redes sociales</label>
+            <label for="link_ref" class="form-label">Link_ref</label>
             <input type="text" class="form-control @error('link_ref') is-invalid @enderror" id="link_ref" name="link_ref"
                 placeholder="Ingrese link" value="{{ old('link_ref') }}">
+        </div>
+        <div class="mb-3">
+            <label for="Img" class="form-label">Img_ref</label>
+            <input type="file" class="form-control @error('img_ref') is-invalid @enderror" id="img_ref" name="img_ref"
+                value="{{ old('img_ref') }}" accept="image/*">
         </div>
         <div class="mb-3">
             <a class="btn bg-red" href="{{ route('shopAdmin') }}">Cancelar</a>
