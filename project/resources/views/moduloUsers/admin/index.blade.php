@@ -3,7 +3,7 @@
 @section('content')
 
     <h4 style="margin-top: 15px">Administradores</h4>
-    <a href="{{ route('create') }}" class="btn bg-cyan" style="margin-bottom: 15px;">Añadir
+    <a href="/adminPWFS/admin/create" class="btn bg-blue" style="margin-bottom: 15px;">Añadir
         Administrador</a>
     <div class="card bg-dark">
         <div class="card-body">
@@ -27,17 +27,20 @@
                             <td>{{ $admin->address }}</td>
                             <td>{{ $admin->email }}</td>
                             <td>
-                                <button type="button" class="btn bg-cyan" data-bs-toggle="modal"
+                                <button type="button" class="btn bg-blue" data-bs-toggle="modal"
                                     data-bs-target="#viewProfile{{ $admin->id }}">
                                     Ver mas</button>
-                                <button type="button" class="btn bg-red" data-bs-toggle="modal"
-                                    data-bs-target="#deleteProfile{{ $admin->id }}">Eliminar</button>
+                                <button type="submit" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#deleteProfile{{ $admin->id }}"><i class="fa fa-fw fa-trash"></i>
+                                    Eliminar</button>
                             </td>
                         </tr>
+                        @include('moduloUsers.admin.ModalViewProfile')
+                        @include('moduloUsers.admin.ModalDeleteProfile')
                     @endforeach
                 </tbody>
             </table>
         </div>
     </div>
-   
+
 @endsection

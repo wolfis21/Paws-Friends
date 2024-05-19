@@ -33,7 +33,7 @@
                 <p class="texto textosin">Dirección: </p>
                 {{ $adopcion->location_address }}
             </div>
-            <form class="container-button" action="{{route('solicitarAdopcion', $adopciones->id)}}" method="POST" role="form" enctype="multipart/form-data">
+            <form class="container-button" action="{{route('solicitarAdopcion', $adopcion->id)}}" method="POST" role="form" enctype="multipart/form-data">
                 {{ method_field('PUT') }}
                 @csrf
               <button class="btnS">Solicitar adopcion</button>
