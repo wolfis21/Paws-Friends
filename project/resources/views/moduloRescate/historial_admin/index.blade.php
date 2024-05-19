@@ -18,6 +18,7 @@
                     <th scope="col">Urgencia</th>
                     <th scope="col">Status Demanda</th>
                     <th scope="col">Status Fundación</th>
+                    <th scope="col">Fecha</th>
                     <th scope="col">Acciones</th>
                 </thead>
                 <tbody>
@@ -30,6 +31,7 @@
                     <td>{{ $demands_animalss->urgencia->name }}</td>
                     <td>{{ $demands_animalss->types_status->name }}</td>
                     <td>{{ $demands_animalss->statusfund->name }}</td>
+                    <td>{{ $demands_animalss->created_at->format('d/m/Y') }}</td>
 
                     <td>
                         <form action="{{ route('historial_admin.destroy', $demands_animalss->id) }}" method="POST">
@@ -61,6 +63,8 @@
                     <th scope="col">Urgencia</th>
                     <th scope="col">Fundación</th>
                     <th scope="col">Status</th>
+                    <th scope="col">Fecha</th>
+
                 </thead>
                 <tbody>
                     @foreach ($completada as $demand_animal_has_fundation)
@@ -72,7 +76,7 @@
                     <td>{{ $demand_animal_has_fundation->demands_animalss->urgencia->name }}</td>
                     <td>{{ $demand_animal_has_fundation->fundation->name }}</td>
                     <td>{{ $demand_animal_has_fundation->demands_animalss->statusfund->name }}</td>
-
+                    <td>{{ $demand_animal_has_fundation->updated_at->format('d/m/Y')}}</td>
                 </tr>
                     @endforeach
                 </tbody>

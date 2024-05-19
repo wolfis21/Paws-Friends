@@ -12,6 +12,7 @@
             <table id="Veterinarios" class="table table-dark table-responsive-md" style="width:100%">
                 <thead>
                     <th scope="col">Id</th>
+                    <th scope="col">Usuario</th>
                     <th scope="col">Demanda</th>
                     <th scope="col">Fundación</th>
                     <th scope="col">Email</th>
@@ -23,6 +24,7 @@
                     @foreach ($contacto as $demand_animal_has_fundation)
                 <tr>
                     <td>{{ $demand_animal_has_fundation->id }}</td>
+                    <td>{{ $demand_animal_has_fundation->demands_animalss->user->name }}</td>
                     <td>{{ $demand_animal_has_fundation->demands_animalss->description_case }}</td>
                     <td>{{ $demand_animal_has_fundation->fundation->name }}</td>
                     <td>{{ $demand_animal_has_fundation->fundation->email }}</td>

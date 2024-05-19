@@ -23,8 +23,10 @@
                         <th>Dirección <span class="icon-arrow">&UpArrow;</span></th>
                         <th>Motivo <span class="icon-arrow">&UpArrow;</span></th>
                         <th>Urgencia <span class="icon-arrow">&UpArrow;</span></th>
-                        <th>Status Demanda</th> <!-- Movido al lado de Edad -->
-                        <th>Status Fundación <span class="icon-arrow">&UpArrow;</span></th> 
+                        <th>Status Demanda</th> 
+                        <th>Status Fundación <span class="icon-arrow">&UpArrow;</span></th>
+                        <th>Fecha</th> 
+
                     </tr>
                 </thead>
                 <tbody>
@@ -38,7 +40,7 @@
                         <td>{{ $demands_animalss->urgencia->name }}</td>
                         <td>{{ $demands_animalss->types_status->name }}</td>
                         <td>{{ $demands_animalss->statusfund->name }}</td>
-
+                        <td>{{ $demands_animalss->created_at->format('d/m/Y') }}</td>
                     </tr>
                   @endforeach
                 </tbody>
@@ -68,6 +70,7 @@
                         <th>Urgencia <span class="icon-arrow">&UpArrow;</span></th>
                         <th>Fundación</th> <!-- Movido al lado de Edad -->
                         <th>Status<span class="icon-arrow">&UpArrow;</span></th> 
+                        <th>Fecha<span class="icon-arrow">&UpArrow;</span></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -80,6 +83,7 @@
                             <td>{{ $demand_animal_has_fundation->demands_animalss->urgencia->name }}</td>
                             <td>{{ $demand_animal_has_fundation->fundation->name }}</td>
                             <td>{{ $demand_animal_has_fundation->demands_animalss->statusfund->name }}</td>
+                            <td>{{ $demand_animal_has_fundation->updated_at->format('d/m/Y')}}</td>
 
                       </tr>
                    @endforeach
