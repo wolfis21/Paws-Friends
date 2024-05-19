@@ -1,7 +1,7 @@
 <div class="mb-3">
     <label for="Nombre" class="form-label">Nombre</label>
     <input type="text" class="form-control " id="name" name="name"
-        placeholder="Nombre" value="{{ old('name') }}" required>
+        placeholder="Nombre" value="{{ old('name') }}" required >
 </div>
 <div class="mb-3">
     <label for="Telefono" class="form-label">Telefono</label>
