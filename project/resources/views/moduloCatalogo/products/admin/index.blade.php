@@ -13,6 +13,7 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Descripcion</th>
                 <th scope="col">Categoria</th>
+                <th scope="col">Precio</th>
                 <th scope="col">Acciones</th>
             </thead>
             <tbody>
@@ -21,6 +22,7 @@
                         <td>{{ $product->name }}</td>
                         <td>{{ $product->description }}</td>
                         <td>{{ $product->category_animal->name }}</td>
+                        <td>{{ $product->price }}</td>
                         <td>
                             <button type="button" class="btn bg-green" data-bs-toggle="modal"
                                 data-bs-target="#viewProfile{{ $product->id }}">Ver
@@ -29,8 +31,8 @@
                                 data-bs-target="#deleteProfile{{ $product->id }}">Eliminar</button>
                         </td>
                     </tr>
-                    {{-- @include('moduloServicios.product.admin.ModalViewProfile') --}}
-                    {{-- @include('moduloServicios.product.admin.ModalDeleteProfile') --}} 
+                    @include('moduloCatalogo.products.admin.ModalViewProfile')
+                    @include('moduloCatalogo.products.admin.ModalDeleteProfile')
                 @endforeach
             </tbody>
         </table>

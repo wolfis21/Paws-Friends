@@ -31,8 +31,8 @@
                                 data-bs-target="#deleteProfile{{ $shop->id }}">Eliminar</button>
                         </td>
                     </tr>
-                    @include('moduloCatalogo.products.admin.ModalViewProfile')
-                    @include('moduloCatalogo.products.admin.ModalDeleteProfile')
+                    @include('moduloCatalogo.shop.admin.ModalViewProfile')
+                    @include('moduloCatalogo.shop.admin.ModalDeleteProfile')
                 @endforeach
             </tbody>
         </table>
