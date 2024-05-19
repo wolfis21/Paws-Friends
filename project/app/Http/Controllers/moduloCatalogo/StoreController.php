@@ -35,9 +35,11 @@ class StoreController extends Controller
         de todas las razas y tamaños   Grature Pavo es una receta elaborada 
         con ingredientes naturales para perros adultos de cualquier raza y 
         tamaño a partir de 1 año.";
-        $product->category_id = 1;
+        $product->product_category_animals_id = "Perro";
         $product->img_ref =  asset('/css/moduloCatalogo/producto1.png');
-        $product->quantity = 1;
+        $product->price = 10.77;
+        $product->ubication = " PetSmart: 123 Main St, Anytown, VZL";
+        $product->number = "0412-569843";
         return view('moduloCatalogo.products_details')->with('product', $product);
     }
 

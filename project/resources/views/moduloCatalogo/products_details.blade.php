@@ -23,27 +23,24 @@
 
     <div class="contenedor">
     <div class="rectangulo">
-      <p>$10.77</p>
+      <p>${{$product->price}}</p>
     </div>
     <div class="rectangulo">
-      <p>{{$product->quantity}}</p>
-    </div>
-    <div class="rectangulo">
-      <p>Perros</p>
+      <p>{{$product->product_category_animals_id}}</p>
 </div>
 
   <h3 class="title-ubi">Ubicación del Producto</h3>
   <div class="ubication">
   <div class="rectangulo2">
   <img src="{{ asset('/css/moduloCatalogo/ubi.png') }}" class="img3" alt="">
-      <g>PetSmart: 123 Main St, Anytown, VZL</g>
+      <g>{{$product->ubication}}</</g>
     </div>
 
     <h3 class="title-phone">Número de Contacto</h3>
   <div class="number">
   <div class="rectangulo3">
   <img src="{{ asset('/css/moduloCatalogo/phone.png') }}" class="img3" alt="">
-      <g>0412-569843</g>
+      <g>{{$product->number}}</g>
     </div>
 </section>
 @endsection
