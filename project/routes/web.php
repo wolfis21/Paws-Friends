@@ -227,17 +227,5 @@ Route::controller(ShopController::class)->group(function(){
 
 });
 
-/*//rutas de Categories_productController
-Route::controller(Categories_productController::class)->group(function(){
-    //todo rutas admin
-    
-    Route::get('/adminPWFS/categoriesProductAdmin', 'categoriesProductAdmin')->name('categoriesProductAdmin');
-    Route::get('/adminPWFS/createCategoryProduct', 'createCategoryProduct')->name('createCategoryProduct');
-    Route::put('/adminPWFS/storeCategoryProduct', 'storeCategoryProduct')->name('storeCategoryProduct');
-    Route::get('/adminPWFS/editCategoryProduct/{id}', 'editCategoryProduct')->name('editCategoryProduct');
-    Route::put('/adminPWFS/updateCategoryProduct/{id}', 'updateCategoryProduct')->name('updateCategoryProduct');
-    Route::delete('/adminPWFS/destroyCategoryProduct/{id}', 'destroyCategoryProduct')->name('destroyCategoryProduct');
-
-});*/
 Auth::routes();
 
