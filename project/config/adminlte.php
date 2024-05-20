@@ -365,7 +365,7 @@ return [
             'icon' =>'fas fa-fw fa-hand-holding-medical',
         ],
         [
-            'text' => 'Historial',
+            'text' => 'Historial Demandas',
             'url' => '/adminPWFS/historial_admin',
             'icon' =>'fas fa-fw fa-x',
         ],
