@@ -4,6 +4,7 @@ namespace App\Http\Controllers\moduloAdopcionDonacion;
 
 use App\Http\Controllers\Controller;
 use App\Models\moduloAdopcionDonacion\AnimalsAdoption;
+use App\Models\moduloAdopcionDonacion\Donations;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,9 +17,8 @@ class PrincipalController extends Controller
 
     public function indexDonations()
     {
-
-
-        return view('moduloAdopcionDonacion.donations.user.Donaciones');
+        $donations = Donations::latest()->take(4)->get();
+        return view('moduloAdopcionDonacion.donations.user.Donaciones', ['donations' => $donations]);
     }
 
 
