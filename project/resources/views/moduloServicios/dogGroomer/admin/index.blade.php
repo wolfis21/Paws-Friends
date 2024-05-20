@@ -1,4 +1,5 @@
 @extends('layouts.dashboard')
+@vite('resources/views/moduloServicios/admin.css')
 @section('title', 'Peluqueria')
 @section('content')
     <h4 style="margin-top: 15px">Peluqueria Admin</h4>

@@ -1,0 +1,87 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Demands_animalss;
+use App\Models\Motivo;
+use App\Models\Urgencia;
+use App\Models\User;
+
+
+
+class RegistroDemandaController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        $demand = Demands_animalss::all();
+        $motivos = Motivo::all();
+        $urgencias = Urgencia::all();
+        $users = User::all();
+
+        return view('moduloRescate.registrodemanda.create')->with('demand', $demand)
+        ->with('motivos', $motivos)->with('urgencias', $urgencias)->with('users', $users);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        $request->validate([
+            'users_id' => 'required',
+            'description_case' => 'required|string|min:3',
+            'adress_animals' => 'required|string|min:3',
+            'photo_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'motivo_id' => 'required',
+            'urgencia_id' => 'required',
+        ]);
+
+        Demands_animalss::create($request->all());
+
+        return redirect()->route('servicios');
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+       //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        //
+    }
+}

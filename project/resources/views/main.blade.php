@@ -17,14 +17,14 @@
         </div>
 
         <div class="contenedorModulos">
-            <a href="#">
+            <a href="/adopcion-donaciones">
                 <img class="iconosModulos" id="donaciones" src="{{ URL::asset('imagenes/FRAMES/FRAME B/2.png') }}"
                     alt="Donaciones y Adopciones">
             </a>
         </div>
 
         <div class="contenedorModulos">
-            {{-- <a href="{{ route('servicios') }}"> --}}
+                <a href="{{ route('servicios') }}"> 
                 <img class="iconosModulos" id="rescates" src="{{ URL::asset('imagenes/FRAMES/FRAME B/3.png') }}"
                     alt="Rescates">
             </a>

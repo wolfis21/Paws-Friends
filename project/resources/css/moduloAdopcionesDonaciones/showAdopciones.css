@@ -1,0 +1,126 @@
+.container-main{
+    background-image: url('../../css/moduloAdopcionesDonaciones/imageFront/Modulo-donaciones.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.title{
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Nunito';
+    color: #6e569f;
+    margin-bottom: 0 !important;
+}
+
+.container-content{
+    margin: 50px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.img-container{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 500px;
+    border-radius: 20px;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.link-botton{
+    width: fit-content;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    background-color: #6e569f;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+.link-botton:hover{
+    background-color: #5a4d86;
+}
+
+.view-container{
+    width: 30%;
+    margin: 50px;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 10px #6e41ff;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    justify-content: space-evenly;
+}
+
+.nombre{
+    margin: 0px !important;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Nunito';
+    background-color: #8b72e1;
+    color: #fff;
+    margin-bottom: 0 !important;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    margin-bottom: 0.5rem !important;
+}
+
+.texto{
+    font-weight: bold;
+    margin-right: .5rem !important;
+}
+
+.container-texto{
+    display: flex;
+}
+
+.container-button{
+    width: 100%;
+}
+.btnS{
+    width: 100%;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    color: #fff;
+    background-color: #6e569f;
+}
+
+.btnS:hover{
+    background-color: #5a4d86;
+}

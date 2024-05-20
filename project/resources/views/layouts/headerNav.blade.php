@@ -5,14 +5,25 @@
     <meta charset="UTF-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
     <link rel="stylesheet" href="{{ asset('css/styleMain.css') }}" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="icon" type="image/x-icon" href="{{ asset('imagenes/icono.ico') }}">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <!--FONT DE MODULO 2-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <!--SCRIPTS FORMULARIO MODULO 2-->
+    @vite(['resources/js/formulario.js'])
+    @vite(['resources/js/script.js'])
+
     <title>Paws & Friends</title>
 </head>
+
 
 <body>
     <nav class="container-nav">
@@ -30,9 +41,12 @@
                     <ul class="mostrar-secciones">
                         <li class="azul"><a href="{{ route('serviceModel') }}" class="link-modulos">Modulo de
                                 servicios</a></li>
+                        <li class="naranja"><a href="/servicios" class="link-modulos">Modulo de rescate</a></li>
+                        <li class="rojo"><a href="/adopcion-donaciones" class="link-modulos">Modulo de adopcion y
                         <li class="naranja"><a href="/" class="link-modulos">Modulo de rescate</a></li>
                         <li class="rojo"><a href="/" class="link-modulos">Modulo de adopcion y
                                 donacion</a></li>
+                        <li class="verde"><a href="/store" class="link-modulos">Tienda</a></li>
                         <li class="verde"><a href="/" class="link-modulos">Tienda</a></li>
                     </ul>
                 </li>
@@ -109,8 +123,7 @@
     </script>
 
     <!--MODULO 2-->
-
-    {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script> --}}
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 </body>
 
 </html>
