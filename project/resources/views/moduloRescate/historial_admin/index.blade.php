@@ -1,6 +1,6 @@
 {{-- @extends('layouts.example') --}}
 @extends('layouts.dashboard')
-@section('title', 'Historial Admin')
+@section('title', 'Historial Demandas')
 @section('content')
 
     <h4 style="margin-top: 15px">Historial Demandas</h4>
@@ -35,7 +35,7 @@
 
                     <td>
                         <form action="{{ route('historial_admin.destroy', $demands_animalss->id) }}" method="POST">
-                            <a class="btn btn-primary" href="{{ route('historial_admin.edit', $demands_animalss->id) }}">Editar</a>
+                            <a class="btn btn-primary" href="{{ route('historial_admin.edit', $demands_animalss->id) }}">Status</a>
                             @method('DELETE')
                             @csrf
                             <button type="submit" class="btn btn-danger">Eliminar</button>
