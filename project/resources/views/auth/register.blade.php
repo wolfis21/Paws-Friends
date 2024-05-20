@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="container-register">
-        <fieldset >
+        <fieldset class="flex" >
             <form class="box-registre" method="POST" action="{{route('register')}}">
                 {{ method_field('POST') }}
                 @csrf
