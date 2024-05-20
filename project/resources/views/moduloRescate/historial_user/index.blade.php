@@ -1,13 +1,13 @@
 @extends('layouts.headerNav')
 @section('content')
 
+ <!--BOTON VOLVER A PAGINA PRINCIPAL SERVICIOS VISTA CLIENTE-->
+    <div class="boo">
+      <a class="vv-" href="{{route('servicios')}}">VOLVER</a>
+    </div>
 
 <div class="body">
-
-    <!--BOTON VOLVER A PAGINA PRINCIPAL SERVICIOS VISTA CLIENTE-->
-    <div class="boo">
-        <a class="vv-" href="{{route('servicios')}}">VOLVER</a>
-    </div>
+    
     <main class="table" id="HISTORIAL">
         <section class="table__header">
             <h3>HISTORIAL DE DEMANDAS REALIZADAS</h3>
