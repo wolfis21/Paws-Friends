@@ -46,6 +46,7 @@
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 1rem;
 }
 .container-back{
     display: flex;
@@ -105,6 +106,12 @@ img {
     border-radius: 20px;
 }
 .title{
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Nunito';
+    color: #5CBADC;
+    margin-bottom: 0 !important;
+    padding: 10px !important;
     margin-bottom: 0px !important;
 }
 .info-container{

@@ -13,8 +13,7 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Direccion</th>
                 <th scope="col">Telefono</th>
-                <th scope="col">Mail</th>
-                <th scope="col">Redes sociales</th>
+                <th scope="col">Link_ref</th>
                 <th scope="col">Acciones</th>
             </thead>
             <tbody>
@@ -23,7 +22,6 @@
                         <td>{{ $shop->name }}</td>
                         <td>{{ $shop->address }}</td>
                         <td>{{ $shop->phone }}</td>
-                        <td>{{ $shop->mail }}</td>
                         <td>{{ $shop->link_ref }}</td>
                         <td>
                             <button type="button" class="btn bg-green" data-bs-toggle="modal"
@@ -33,8 +31,8 @@
                                 data-bs-target="#deleteProfile{{ $shop->id }}">Eliminar</button>
                         </td>
                     </tr>
-                    {{-- @include('moduloServicios.product.admin.ModalViewProfile') --}}
-                    {{-- @include('moduloServicios.product.admin.ModalDeleteProfile') --}} 
+                    @include('moduloCatalogo.shop.admin.ModalViewProfile')
+                    @include('moduloCatalogo.shop.admin.ModalDeleteProfile')
                 @endforeach
             </tbody>
         </table>

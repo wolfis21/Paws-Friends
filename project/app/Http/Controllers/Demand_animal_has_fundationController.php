@@ -51,9 +51,12 @@ class Demand_animal_has_fundationController extends Controller
             'description' => 'required|string|min:3',
         ]);
 
-        Demand_animal_has_fundation::create($request->all());
-
-        return redirect()->route('contactarfundaciones.index');
+        try {
+            Demand_animal_has_fundation::create($request->all());
+            return redirect()->route('contactarfundaciones.index');
+        } catch (\Exception $e) {
+            return redirect()->back()->withInput()->withErrors(['message' => $e->getMessage()]);
+        }
     }
 
     /**
