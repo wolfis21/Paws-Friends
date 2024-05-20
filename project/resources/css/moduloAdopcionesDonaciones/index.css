@@ -1,0 +1,68 @@
+.container-welcome{
+    background-image: url('../../css/moduloAdopcionesDonaciones/imageFront/Modulo-donaciones.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.img{
+    width: 500px;
+}
+
+img{
+    width: 100%;
+}
+
+.container-title-adop{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+.title{
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Nunito';
+}
+
+.container-text{
+    padding: 20px;
+    font-size: 25px;
+    font-family: 'League Spartan';
+    text-align: justify;
+}
+
+p{
+    margin-bottom: 0px ;
+}
+
+.link-button{
+    padding: 10px;
+    background-color: #B77CD7;
+    color: #fff;
+    border-radius: 10px;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.link-button:hover{
+    background-color: #7c5193;
+    color: #fff;
+}

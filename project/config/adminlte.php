@@ -324,6 +324,18 @@ return [
             'url' => '/',
             'icon' =>'fas fa-fw fa-handshake-angle',
         ],
+        ['header' => 'USUARIOS'],
+        [
+            'text' =>'Administradores',
+            'url' => '/adminPWFS/admin',
+            'icon' =>'fa fa-users',
+        ],
+        [
+            'text' => 'Clientes',
+            'url' => '/adminPWFS/user',
+            'icon' =>'fa-solid fa-user'
+        ],
+
 
         ['header' => 'SERVICIOS'],
         [
@@ -343,18 +355,18 @@ return [
         ],
         ['header' => 'RESCATE'],
         [
-            'text' =>'Reubicacion',
-            'url' => '#',
+            'text' =>'Fundaciones',
+            'url' => '/adminPWFS/fundations',
             'icon' =>'fas fa-fw fa-location',
         ],
         [
-            'text' => 'Situacion de calle',
-            'url' => '#',
+            'text' => 'Contactar Fundaciones',
+            'url' => '/adminPWFS/contactarfundaciones',
             'icon' =>'fas fa-fw fa-hand-holding-medical',
         ],
         [
-            'text' => 'Abandono',
-            'url' => '#',
+            'text' => 'Historial Demandas',
+            'url' => '/adminPWFS/historial_admin',
             'icon' =>'fas fa-fw fa-x',
         ],
         ['header' => 'DONACIONES / ADOPCIONES'],

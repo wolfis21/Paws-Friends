@@ -55,7 +55,7 @@ class RegisterController extends Controller
             'phone' => ['required', 'string', 'max:12'] ,
             'address' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:5'],
         ]);
     }
 
@@ -67,17 +67,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {   
-        $imgPhoto = $data['photo_user'];
-        // Guardar una foto de perfil
-        $imgPhotoPath = $imgPhoto->store('docs', 'public');
-
-
-        if ($data['photo_dni'] && $data['photo_rif']) {
+        if ($data['photo_dni'] && $data['photo_rif']&& $data['photo_user']) {
+            $imgPhoto = $data['photo_user'];
             $imgDni = $data['photo_dni'];
             $imgRif = $data['photo_rif'];
+            $imgPhotoPath = $imgPhoto->store('docs', 'public');
             $imgPhotoPathDni = $imgDni->store('docs', 'public');
             $imgPhotoPathRif = $imgRif->store('docs', 'public');
         } else {
+            $imgPhotoPath = null;
             $imgPhotoPathDni = null;
             $imgPhotoPathRif = null;
         }
@@ -93,8 +91,9 @@ class RegisterController extends Controller
             'photo_rif' => $imgPhotoPathRif,
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'rols_id' => '2',
+            'rols_id' => $data['rols_id'],
         ]);
+        
     }
 
     protected function show($id){

@@ -1,4 +1,5 @@
 @extends('layouts.dashboard')
+@vite('resources/views/moduloServicios/admin.css')
 @section('title', 'Veterinario')
 @section('content')
 

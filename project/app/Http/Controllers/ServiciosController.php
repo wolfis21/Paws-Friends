@@ -8,6 +8,6 @@ class ServiciosController extends Controller
 {
     public function index()
     {
-        return view('servicios');
+        return view('moduloRescate.servicios');
     }
 }

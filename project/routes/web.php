@@ -3,6 +3,7 @@
 use App\Http\Controllers\Demand_animal_has_fundationController;
 use App\Http\Controllers\FundationController;
 use App\Http\Controllers\Historial_adminController;
+use App\Http\Controllers\HistorialClienteController;
 use App\Http\Controllers\HomeServicesController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
@@ -13,8 +14,11 @@ use App\Http\Controllers\moduloServicios\SearchController;
 use App\Http\Controllers\moduloServicios\VeterinarianController;
 use App\Http\Controllers\moduloAdopcionDonacion\DonacionesController;
 use App\Http\Controllers\moduloAdopcionDonacion\AdopcionesController;
+use App\Http\Controllers\moduloAdopcionDonacion\AnimalsAdoptionController;
 use App\Http\Controllers\moduloAdopcionDonacion\PrincipalController;
 use App\Http\Controllers\moduloAdopcionDonacion\HistoriaController;
+use App\Models\moduloAdopcionDonacion\AnimalsAdoption;
+use App\Http\Controllers\RegistroDemandaController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\moduloCatalogo\StoreController;
 use App\Http\Controllers\moduloCatalogo\PostController;
@@ -36,7 +40,13 @@ Route::get('/', function () {
     return view('main');
 });
 
-Route::get('/adminPWFS', HomeController::class)->name('login_admin')->middleware('auth');;
+Route::get('/adminPWFS', HomeController::class)->name('login_admin')->middleware('auth');
+
+Route::get('/adminPWFS/admin', [UserController::class, 'allAdmin'])->name('allAdmin');
+Route::get('/adminPWFS/admin/create', [UserController::class, 'createAdmin'])->name('createAdmin');
+Route::post('/adminPWFS/admin/create', [UserController::class, 'createForm'])->name('createForm');
+Route::delete('/adminPWFS/admin/{id}', [UserController::class, 'destroyAdmin'] )->name('destroyAdmin');
+Route::get('/adminPWFS/user', [UserController::class, 'allUser'])->name('allUser');
 // Rutas para el inicio de sesión específico que dirige a moduloServicios.dashboard
 
 
@@ -135,9 +145,9 @@ Route::controller(SearchController::class)->group(function(){
 //? RUTAS MODULO 2
 Route::get('/servicios', [App\Http\Controllers\ServiciosController::class, 'index'])->name('servicios');
 
-Route::get('/registrodemanda', [App\Http\Controllers\RegistroDemandaController::class, 'index'])->name('registrodemanda');
+Route::resource('registrodemanda', RegistroDemandaController::class);
 
-Route::get('/historialcliente', [App\Http\Controllers\HistorialClienteController::class, 'index'])->name('historialcliente');
+Route::resource('historial_user', HistorialClienteController::class);
 
 /* admin */
 Route::resource('/adminPWFS/fundations', FundationController::class);
@@ -163,6 +173,12 @@ Route::resource('/AdopcionesVermas', AdopcionesVermasController::class); */
 Route::resource('adopcion-donaciones', PrincipalController::class);
 Route::get('/donar/formulario',  [PrincipalController::class, 'indexDonations'])->name('indexDonations');
 Route::get('/adoptar/formulario',  [PrincipalController::class, 'indexAdoptions'])->name('indexAdoptions');
+Route::get('/showAdoptions/{id}',[PrincipalController::class, 'showAdoptions'])->name('showAdoptions');
+Route::put('/solicitarAdopcion/{id}', [PrincipalController::class, 'solicitarAdopcion'])->name('solicitarAdopcion');
+
+Route::get('/adminPWFS/adopcionDestroy/{id}',[AnimalsAdoptionController::class, 'destroy'])->name('destroyAnimals');
+Route::put('/adminPWFS/ConfirmarAdopcion/{id}',[AnimalsAdoptionController::class,'confirmarAdopcion'])->name('confirmarAdopcion');
+Route::put('/adminPWFS/denegarAdopcion/{id}',[AnimalsAdoptionController::class,'denegarAdopcion'])->name('denegarAdopcion');
 
 Route::resource('historias', HistoriaController::class);
 //? FIN RUTAS MODULO 3
