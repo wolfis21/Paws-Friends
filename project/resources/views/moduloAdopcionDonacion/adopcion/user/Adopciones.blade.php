@@ -9,6 +9,7 @@
     <div class="container-main">
         <div class="title-container">
             <h1 class="title">Adopciones</h1>
+            <a class="link-hover" href="{{route('indexDonations')}}">Donaciones</a>
         </div>
         <div class="buscador">
             <input type="text" id="nombreMascota" placeholder="Buscar mascota..." />
