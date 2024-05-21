@@ -32,7 +32,7 @@
 
             <div class="cards">
                 
-                <a href="/store/products/1 style=">
+                <a href="/Product/1 style=">
                 <div class="card-img2">
                         <img src="https://static.miscota.com/media/1/photos/products/430600/Grature-adult-chicken-cat-6368e5845ef91_g.jpg"
                             alt="">
@@ -41,7 +41,7 @@
                 </div>
                 </a>
 
-                <a href="/store/products/2">
+                <a href="/Product/2">
                 <div class="card-img2">
                     
                         <img
@@ -51,7 +51,7 @@
                 </div>
                 </a>
 
-                <a href="/store/products/3">
+                <a href="/Product/3">
                 <div class="card-img2">
                         <img src="https://static.miscota.com/media/1/photos/products/126684/w2aayeehnkfsopiaz4pp-6368c7830ffd2_g.jpg">
                         <p class= 'product-desc'> Champú de Arbol de Té para Mascotas </p>

@@ -144,6 +144,9 @@ class ProductController extends Controller
     public function verificarPuntuacionProduct($id)
     {
         $product = Product::find($id);
+        if (!$product) {
+            return null; // esto es temporal el no deberia ni de entrar en esto ya que se supone que todo los productos que esten clikeados visibles es porque estan registrados en la BD
+        }
         $puntuacionExistente = products_has_puntuation::where('products_id', $product->id)->whereHas('puntuations', function ($query) {
             $query->where('users_id', Auth::user()->id);
         })

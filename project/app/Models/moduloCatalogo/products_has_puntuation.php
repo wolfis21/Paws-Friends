@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class products_has_puntuation extends Model
 {
-    protected $table = 'product_has_puntuations';
+    protected $table = 'products_has_puntuations';
 
     protected $fillable = [
         'puntuations_id',
