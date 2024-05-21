@@ -67,7 +67,7 @@
  
     <div class="mascotas">
         <div class="checkbox" alt="">   
-            <a href="/productCatagoryDog">
+            <a href="{{route('categoryDog')}}">
             <img src="https://static.miscota.com/media/1/assets/dog-icon.png">
             <t>Perros<t>
             </a>    

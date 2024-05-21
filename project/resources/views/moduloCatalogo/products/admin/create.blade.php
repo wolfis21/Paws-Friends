@@ -34,7 +34,7 @@
         <div class="mb-3">
             <label for="price" class="form-label">Precio</label>
             <input type="number" class="form-control @error('price') is-invalid @enderror" id="price" name="price" min="0" max="1000" step="0.01"
-                value="{{ $product->price }}">
+                value="{{old('prince')}}">
         </div>
         <div class="mb-3">
             <a class="btn bg-red" href="{{ route('productAdmin') }}">Cancelar</a>

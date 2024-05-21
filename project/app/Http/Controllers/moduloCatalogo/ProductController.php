@@ -199,8 +199,8 @@ class ProductController extends Controller
 
     //todo perro
     public function categoryDog(){
-        $products = Product::where('category_id',1)->get();
-        return view('moduloCatalogo.products.user.productuser')
+        $products = Product::where('product_category_animals_id',1)->get();
+        return view('moduloCatalogo.products.user.productCategory')
             ->with('products', $products);
     }
 }
