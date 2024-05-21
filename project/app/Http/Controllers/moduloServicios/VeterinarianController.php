@@ -21,7 +21,7 @@ class VeterinarianController extends Controller
     /** 
      * Display a listing of the r source.
      */
-    public function index()
+    public function indexVeterinarian()
     {
         $veterinarians = Veterinarian::all();
         $veterinariansComments = Veterinarians_has_comments::all();
