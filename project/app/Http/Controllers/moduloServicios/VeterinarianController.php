@@ -21,7 +21,7 @@ class VeterinarianController extends Controller
     /** 
      * Display a listing of the r source.
      */
-    public function index()
+    public function indexVeterinarians()
     {
         $veterinarians = Veterinarian::all();
         $veterinariansComments = Veterinarians_has_comments::all();
@@ -62,7 +62,8 @@ class VeterinarianController extends Controller
         }
 
         Veterinarian::create($veterinarian);
-        return redirect()->route('index');
+        session(['success' => 'Veterinario agregado correctamente']);
+        return redirect()->route('indexVeterinarians');
     }
 
     /**
@@ -112,7 +113,8 @@ class VeterinarianController extends Controller
         }
 
         $veterinarian->update($vet);
-        return redirect()->route('index');
+        session(['edit' => 'Veterinario editado correctamente']);
+        return redirect()->route('indexVeterinarians');
     }
 
     /**
@@ -124,7 +126,8 @@ class VeterinarianController extends Controller
         $path = public_path() . '/storage/moduloServicios/images/vets/' . $veterinarian->img_ref;
         unlink($path);
         $veterinarian->delete();
-        return redirect()->route('index');
+        session(['destroy' => 'Veterinario eliminado correctamente']);
+        return redirect()->route('indexVeterinarians');
     }
 
 
