@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
-
+use Illuminate\Support\Facades\Validator;
 class UserController extends Controller
 {
     public function show(string $id)
@@ -44,6 +44,25 @@ class UserController extends Controller
             $userData['photo_rif'] = null;
         }
 
+
+        if ($imgPhoto = $request->file('photo_user')) {
+            $imgPhotoPath = 'storage/userImg';
+            $img = date('YmdHis'). "_" . $imgPhoto->getClientOriginalExtension();
+            $imgPhoto->move($imgPhotoPath, $img);
+            $userData['photo_user'] = "$img";
+        }
+        if ($imgPhoto = $request->file('photo_dni')) {
+            $imgPhotoPath = 'storage/dniImg';
+            $img = date('YmdHis'). "_" . $imgPhoto->getClientOriginalExtension();
+            $imgPhoto->move($imgPhotoPath, $img);
+            $userData['photo_dni'] = "$img";
+        }
+        if ($imgPhoto = $request->file('photo_rif')) {
+            $imgPhotoPath = 'storage/rifImg';
+            $img = date('YmdHis'). "_" . $imgPhoto->getClientOriginalExtension();
+            $imgPhoto->move($imgPhotoPath, $img);
+            $userData['photo_rif'] = "$img";
+        }
         $user->update($userData);
 
         return view('main');
@@ -76,6 +95,25 @@ class UserController extends Controller
             $imgPhotoPath = null;
             $imgPhotoPathDni = null;
             $imgPhotoPathRif = null;
+        }
+
+        if ($imgPhoto = $request->file('photo_user')) {
+            $imgPhotoPath = 'storage/userImg';
+            $img = date('YmdHis'). "_" . $imgPhoto->getClientOriginalExtension();
+            $imgPhoto->move($imgPhotoPath, $img);
+            $userData['photo_user'] = "$img";
+        }
+        if ($imgPhoto = $request->file('photo_dni')) {
+            $imgPhotoPath = 'storage/dniImg';
+            $img = date('YmdHis'). "_" . $imgPhoto->getClientOriginalExtension();
+            $imgPhoto->move($imgPhotoPath, $img);
+            $userData['photo_dni'] = "$img";
+        }
+        if ($imgPhoto = $request->file('photo_rif')) {
+            $imgPhotoPath = 'storage/rifImg';
+            $img = date('YmdHis'). "_" . $imgPhoto->getClientOriginalExtension();
+            $imgPhoto->move($imgPhotoPath, $img);
+            $userData['photo_rif'] = "$img";
         }
 
         $user = User::create([
