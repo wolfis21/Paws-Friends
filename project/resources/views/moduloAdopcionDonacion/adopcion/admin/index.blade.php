@@ -1,10 +1,10 @@
 @extends('layouts.dashboard')
 @vite('resources/css/moduloAdopcionesDonaciones/crub.css')
-@section('title','Adopciones')
+@section('title', 'Adopciones')
 @section('content')
-    <h4 style="margin-top: 15px">Adopciones admin</h4>
-    <a href="{{ route('adopciones.create') }}" class="btn bg-purple" style="margin-bottom: 15px;">Crear adopcion</a>
+    <h4 style="margin-top: 15px">Adopciones en espera admin</h4>
     {{-- acomodar --}}
+    <a href="{{ route('adopciones.create') }}" class="btn bg-purple" style="margin-bottom: 15px;">Crear adopcion</a>
     <div class="card bg-dark">
         <div class="card-body">
             <table id='Adopciones' class="table table-dark table-responsive-md" style="width:100%">
@@ -40,6 +40,38 @@
                             @include('moduloAdopcionDonacion.adopcion.admin.modalVer')
                             @include('moduloAdopcionDonacion.adopcion.admin.modalRechazar')
                         @endif
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <h4 style="margin-top: 15px">Adopciones</h4>
+    <div class="card bg-dark">
+        <div class="card-body">
+            <table id='Adopciones' class="table table-dark table-responsive-md" style="width:100%">
+                <thead clase="table table-dark table-responsive-md" style="width:100%">
+                    <tr> {{-- evaluar contenido --}}
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Especiee</th>
+                        <th scope="col">Raza</th>
+                        <th scope="col">Sexo</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($adopcion as $animals_adoptions)
+                        <tr>
+                            <td>{{ $animals_adoptions->id }}</td>
+                            <td>{{ $animals_adoptions->name }}</td>
+                            <td>{{ $animals_adoptions->species }}</td>
+                            <td>{{ $animals_adoptions->animal_race }}</td>
+                            <td>{{ $animals_adoptions->sex_animal }}</td>
+                            <td>{{ $animals_adoptions->age_animal }}</td>
+                            <td>{{ $animals_adoptions->status }}</td>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>
