@@ -62,7 +62,7 @@ class VeterinarianController extends Controller
         }
 
         Veterinarian::create($veterinarian);
-        return redirect()->route('index');
+        return redirect()->route('indexVeterinarian');
     }
 
     /**
@@ -112,7 +112,7 @@ class VeterinarianController extends Controller
         }
 
         $veterinarian->update($vet);
-        return redirect()->route('index');
+        return redirect()->route('indexVeterinarian');
     }
 
     /**
@@ -124,7 +124,7 @@ class VeterinarianController extends Controller
         $path = public_path() . '/storage/moduloServicios/images/vets/' . $veterinarian->img_ref;
         unlink($path);
         $veterinarian->delete();
-        return redirect()->route('index');
+        return redirect()->route('indexVeterinarian');
     }
 
 
