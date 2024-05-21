@@ -11,76 +11,73 @@ Paletas de colores
     background: url("../../../public/imagenes/background-register.png");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 115vh;
 }
 
-.register-welcome{
+.register-welcome {
     display: flex;
     flex-direction: row;
-    justify-content: start;
-    align-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
-.welcome{
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.welcome {
     font-size: 20px;
-    margin-left: 10%;
-  }
-  
-.text-h3{
+}
+
+.text-h3 {
     font-size: 20px;
     width: 120px;
 }
-  
-.logo-register{
+
+.logo-register {
     width: 100px;
     height: 100px;
 }
 
-.title{
-    margin-left: 10%;
-}
-
-.register{
-    margin-left: 350px;
-    margin-right: 10%;
-}
-
-.box-registre{
-    width: 60%;
-    height: 85vh;
-    margin: auto;
-    margin-top: 100px;
+.box-registre {
+    display: flex;
+    width: 45%;
     background-color: #fff;
     box-shadow: 0px 0px 20px #ccc;
     border-radius: 40px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 20px;
 }
 
-.f-left{
+.f-left {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: space-evenly;
-    margin: 0 6%;
 }
 
-.f-right{
+.f-right {
     margin-right: 10%;
 }
 
-.card-space{
+.card-space {
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-content: center;
     margin-top: 10px;
 }
 
-.card-foot{
+.card-foot {
     display: flex;
     flex-direction: column;
-    margin: 15px 10%;
+    margin-top: 0.5rem;
 }
 
-.user-info{
+.user-info {
     padding: 10px;
     border: 2px solid #ccc;
     border-radius: 10px;
@@ -88,38 +85,61 @@ Paletas de colores
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    }
+}
+.user-info::-webkit-file-upload-button {
+    visibility: hidden;
+}
 
-.btn-link{
+.user-info::before {
+    content: "Seleccionar";
+    color: white;
+    background-color: #6e569f;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.btn-link {
     width: 80%;
     margin: auto;
-    background-color: #7660A5;
+    background-color: #7660a5;
     color: white;
     text-decoration: none;
     padding: 10px;
     text-align: center;
     text-decoration: none !important;
     border-radius: 10px;
-    transition: all .5s;
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    -ms-transition: all .5s;
-    -o-transition: all .5s;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
     margin-top: 25px;
-    
 }
 
-.btn-link:hover{
+.btn-link:hover {
     background-color: #3b2569;
     color: #fff;
 }
-    
-.btnE{
+
+.btnE {
     border: none;
     background: transparent;
     color: #fff;
 }
 
-.card-space btn-link{
+.card-space btn-link {
     margin-top: 10px;
 }
+
+input:focus {
+    border: 2px solid #6e569f;
+    outline: none;
+}
+
+/* Ocultar el botón predeterminado del navegador */
