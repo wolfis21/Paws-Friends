@@ -1,4 +1,5 @@
 @extends('layouts.headerNav')
+@vite('resources/css/moduloRescate/servicio.css')
 @section('content')
 
      <!--SECCION ACERCA DE NOSOTROS-->

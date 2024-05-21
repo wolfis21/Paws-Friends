@@ -1,4 +1,6 @@
 @extends('layouts.headerNav')
+@vite('resources/css/moduloRescate/stylehc.css')
+@vite('resources/css/moduloRescate/servicio.css')
 @section('content')
 
  <!--BOTON VOLVER A PAGINA PRINCIPAL SERVICIOS VISTA CLIENTE-->
