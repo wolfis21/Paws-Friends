@@ -12,12 +12,12 @@ class CommentsController extends Controller
         $comment = Comment::findOrFail($id);
         $comment->accepted = true;
         $comment->save();
-        return redirect()->route('index');
+        return redirect()->route('indexVeterinarian');
     }
     public function destroyVetsComment(string $id)
     {
         Comment::find($id)->delete();
-        return redirect()->route('index');
+        return redirect()->route('indexVeterinarian');
 
     }
 
