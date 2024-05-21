@@ -1,6 +1,6 @@
 @extends('layouts.headerNav')
 @section('title', 'Categoria de perros')
-@vite('css/moduloCatalogo/productCategory2.css')
+@vite('resources/css/moduloCatalogo/productCategory.css')
 @section('content')
 
 <head>
