@@ -41,7 +41,7 @@
                         <li class="azul"><a href="{{ route('serviceModel') }}" class="link-modulos">Módulo de
                                 Servicios</a></li>
                         <li class="naranja"><a href="/servicios" class="link-modulos">Módulo de Rescate</a></li>
-                        <li class="rojo"><a href="/adopcion-donaciones" class="link-modulos">Módulo de Adopcion y
+                        <li class="morado"><a href="/adopcion-donaciones" class="link-modulos">Módulo de Adopcion y
                                 donacion</a></li>
                         <li class="verde"><a href="/store" class="link-modulos">Módulo de Cátalogo</a></li>
                     </ul>

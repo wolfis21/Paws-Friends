@@ -195,4 +195,12 @@ class ProductController extends Controller
         return redirect()->route('showProductUser', $id_product);
     }
 
+    //todo categorias
+
+    //todo perro
+    public function categoryDog(){
+        $products = Product::where('category_id',1)->get();
+        return view('moduloCatalogo.products.user.productuser')
+            ->with('products', $products);
+    }
 }

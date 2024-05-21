@@ -67,37 +67,37 @@
  
     <div class="mascotas">
         <div class="checkbox" alt="">   
-            <a href="/products">
+            <a href="/productCatagoryDog">
             <img src="https://static.miscota.com/media/1/assets/dog-icon.png">
             <t>Perros<t>
             </a>    
         </div>
         <div class="checkbox" alt=""> 
-            <a href="/products">
+            <a href="/products/cat">
             <img src="https://static.miscota.com/media/1/assets/cat-icon.png">
             <t>Gatos<t>
             </a>
         </div>
         <div class="checkbox" alt="">
-            <a href="/products">
+            <a href="/products/roedores">
             <img src="https://static.miscota.com/media/1/assets/rodent-icon.png">
             <t>Roedores<t>
             </a>
         </div>
         <div class="checkbox" alt=""> 
-            <a href="/products">  
+            <a href="/products/birds">  
             <img src="https://static.miscota.com/media/1/assets/bird-icon.png">
             <t>Aves<t>
             </a>
         </div>
         <div class="checkbox" alt="">
-            <a href="/products">
+            <a href="/products.fishes">
             <img src="https://static.miscota.com/media/1/assets/fish-icon.png">
             <t>Peces<t>
             </a>
         </div>
         <div class="checkbox" alt=""> 
-            <a href="/products">
+            <a href="/products/riptile">
             <img src="https://static.miscota.com/media/1/assets/reptile-icon.png">
             <t>Reptiles<t>
             </a>

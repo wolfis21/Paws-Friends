@@ -221,6 +221,10 @@ Route::controller(ProductController::class)->group(function(){
     Route::get('/products', 'ProductUser')->name('ProductUser');
     Route::get('/Product/{id}', 'showproductUser')->name('showproductUser');
     Route::put('/ProductUpdatePuntuations/{id}','updateProductPuntuations')->name('updateProductPuntuations');
+
+    //todo rutas de categoria de productos
+    Route::get ('/productCatagoryDog','categoryDog')->name('categoryDog');
+
 });
 
 
