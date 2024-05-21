@@ -34,6 +34,9 @@ export default defineConfig({
                 'resources/css/moduloAdopcionesDonaciones/index.css',
                 'resources/css/moduloAdopcionesDonaciones/adopciones.css',
                 
+
+                //todo modulo 4
+                'css/moduloCatalogo/productCategory.css',
                 //todo js
                 '/project/public/js/moduloServicios/star.js',
                 "resources/js/app.js",
