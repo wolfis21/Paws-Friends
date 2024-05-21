@@ -206,4 +206,5 @@ class ProductController extends Controller
         return view('moduloCatalogo.products.user.productCategory')
             ->with('products', $products);
     }
+    
 }

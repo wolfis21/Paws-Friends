@@ -43,7 +43,6 @@
 
                 <a href="/Product/2">
                 <div class="card-img2">
-                    
                         <img
                             src="https://static.miscota.com/media/1/photos/products/430598/Grature-adult-turkey-dog-6368e5b15102c_g.jpg">
                             <p class= 'product-desc'> Pienso Light de Pavo para Perros por Grature </p>
