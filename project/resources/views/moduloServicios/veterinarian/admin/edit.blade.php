@@ -49,7 +49,7 @@
             </select>
           </div>
           <div class="mb-3">
-            <a class="btn bg-red" href="{{route('index')}}">Cancelar</a>
+            <a class="btn bg-red" href="{{route('indexVeterinarian')}}">Cancelar</a>
             <button class="btn bg-cyan">Guardar</button>
           </div>  
           
