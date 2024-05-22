@@ -67,9 +67,6 @@
                             {{ Auth::user()->name }}
                         </a>
                         <ul class="options" style="display: none">
-                            @if (Auth::user()->rols_id === 1)
-                                <li><a href="/adminPWFS">Dashboard</a></li>
-                            @endif
                             <li><a href="{{ route('user.profile', Auth::user()->id) }}">Ver perfil</a></li>
                             <li><a style="color: #fff">
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
