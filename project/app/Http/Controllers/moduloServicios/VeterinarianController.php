@@ -62,8 +62,7 @@ class VeterinarianController extends Controller
         }
 
         Veterinarian::create($veterinarian);
-        session(['success' => 'Veterinario agregado correctamente']);
-        return redirect()->route('indexVeterinarians');
+        return redirect()->route('indexVeterinarians')->with('success','Se creo el veterinario correctamente');
     }
 
     /**
@@ -113,8 +112,7 @@ class VeterinarianController extends Controller
         }
 
         $veterinarian->update($vet);
-        session(['edit' => 'Veterinario editado correctamente']);
-        return redirect()->route('indexVeterinarians');
+        return redirect()->route('indexVeterinarians')->with('info','Se edito el veterinario correctamente');
     }
 
     /**
@@ -126,8 +124,7 @@ class VeterinarianController extends Controller
         $path = public_path() . '/storage/moduloServicios/images/vets/' . $veterinarian->img_ref;
         unlink($path);
         $veterinarian->delete();
-        session(['destroy' => 'Veterinario eliminado correctamente']);
-        return redirect()->route('indexVeterinarians');
+        return redirect()->route('indexVeterinarians')->with('destroy','Se elimino el veterinario correctamente');
     }
 
 

@@ -59,7 +59,7 @@ class HousingsController extends Controller
             $housing['img_ref'] = "$imageName";
         }
         Housing::create($housing);
-        return redirect()->route('housingAdmin');
+        return redirect()->route('housingAdmin')->with('success','Se creo el alojamiento correctamente');
     }
     /**
      * Display the specified resource.
@@ -104,7 +104,7 @@ class HousingsController extends Controller
         }
 
         $housing->update($housingReq);
-        return redirect()->route('housingAdmin');
+        return redirect()->route('housingAdmin')->with('info','Se edito el alojamiento correctamente');
     }
     /**
      * Remove the specified resource from storage.
@@ -115,7 +115,7 @@ class HousingsController extends Controller
         $path = public_path() . '/storage/moduloServicios/images/housings/' . $housing->img_ref;
         unlink($path);
         $housing->delete();
-        return redirect()->route('housingAdmin');
+        return redirect()->route('housingAdmin')->with('destroy','Se elimino el alojamiento correctamente');
     }
     //todo funciones user
     public function housingUser()

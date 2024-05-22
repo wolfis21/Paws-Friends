@@ -2,42 +2,7 @@
 @vite('resources/views/moduloServicios/admin.css')
 @section('title', 'Veterinario')
 @section('content')
-{{-- @if (session('success'))
-    <div id="flashMessageSuccess" class="alert alert-success">
-        {{ session('success') }}
-    </div>
-@endif
-
-@if (session('edit'))
-    <div id="flashMessageEdit" class="alert alert-primary">
-        {{ session('edit') }}
-    </div>
-@endif
-
-@if(session('destroy'))
-    <div id="flashMessageDestroy" class="alert alert-danger">
-        {{ session('destroy') }}
-    </div>
-@endif
-
-<script>
-    $(document).ready(function() {
-        // Función para ocultar el mensaje de éxito
-        setTimeout(function() {
-            $('#flashMessageSuccess').fadeOut('slow');
-        }, 5000); // 5000 milisegundos = 5 segundos
-
-        // Función para ocultar el mensaje de edición
-        setTimeout(function() {
-            $('#flashMessageEdit').fadeOut('slow');
-        }, 5000); // 5000 milisegundos = 5 segundos
-
-        // Función para ocultar el mensaje de destrucción
-        setTimeout(function() {
-            $('#flashMessageDestroy').fadeOut('slow');
-        }, 5000); // 5000 milisegundos = 5 segundos
-    });
-</script> --}}
+    @include('../../../layouts/messageActions')
     <h4 style="margin-top: 15px">Veterinarios admin</h4>
     <a href="{{ route('create') }}" class="btn bg-cyan" style="margin-bottom: 15px;">Añadir
         Veterinario</a>
@@ -79,6 +44,7 @@
         </div>
     </div>
     {{-- TODO COMENTARIOS --}}
+    @include('../../../layouts/messageComments')
     <h4>Comentarios Veterinarios admin</h4>
     <div class="card bg-dark">
         <div class="card-body">
