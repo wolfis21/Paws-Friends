@@ -31,7 +31,7 @@
             </div>
             <div class="card-space">
                 <label for="photo_user" class="label">Foto</label>
-                    <input class="user-info" type="file" name="photo_user" value="{{ $user->photo_user }}">
+                    <input class="user-info" type="file" name="photo_user" value="/storage/userImg/{{ $user->photo_user }}">
             </div>
             <div class="card-space ae">
                 <label for="email" class="label">Correo</label>

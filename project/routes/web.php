@@ -64,7 +64,7 @@ Route::controller(HomeServicesController::class)->group(function () {
 
 Route::controller(VeterinarianController::class)->group(function(){
     //todo rutas admin
-    Route::get('/adminPWFS/Veterinarians', 'indexVeterinarian')->name('indexVeterinarian');
+    Route::get('/adminPWFS/Veterinarians', 'indexVeterinarians')->name('indexVeterinarians');
     Route::get('/adminPWFS/CreateVeterianarians','create')->name('create');
     Route::put('/adminPWFS/storeVeterinarias','store')->name('store');
     Route::get('/adminPWFS/editVeterinarians/{id}','edit')->name('edit');

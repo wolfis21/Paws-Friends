@@ -21,7 +21,7 @@ class VeterinarianController extends Controller
     /** 
      * Display a listing of the r source.
      */
-    public function indexVeterinarian()
+    public function indexVeterinarians()
     {
         $veterinarians = Veterinarian::all();
         $veterinariansComments = Veterinarians_has_comments::all();
@@ -43,12 +43,12 @@ class VeterinarianController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|min:3', 
+            'name' => 'required|string|min:3',
             'email' => 'required|string',
             'address' => 'string',
-            'phone' => 'required|unique:veterinarians|alpha_num|min:11', 
+            'phone' => 'required|unique:veterinarians|alpha_num|min:11',
             'link_ref' => 'nullable',
-            'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048', 
+            'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'puntuation' => 'nullable',
         ]);
 
@@ -62,7 +62,8 @@ class VeterinarianController extends Controller
         }
 
         Veterinarian::create($veterinarian);
-        return redirect()->route('indexVeterinarian');
+        session(['success' => 'Veterinario agregado correctamente']);
+        return redirect()->route('indexVeterinarians');
     }
 
     /**
@@ -112,7 +113,8 @@ class VeterinarianController extends Controller
         }
 
         $veterinarian->update($vet);
-        return redirect()->route('indexVeterinarian');
+        session(['edit' => 'Veterinario editado correctamente']);
+        return redirect()->route('indexVeterinarians');
     }
 
     /**
@@ -124,7 +126,8 @@ class VeterinarianController extends Controller
         $path = public_path() . '/storage/moduloServicios/images/vets/' . $veterinarian->img_ref;
         unlink($path);
         $veterinarian->delete();
-        return redirect()->route('indexVeterinarian');
+        session(['destroy' => 'Veterinario eliminado correctamente']);
+        return redirect()->route('indexVeterinarians');
     }
 
 
@@ -137,7 +140,8 @@ class VeterinarianController extends Controller
             ->with('veterinarians', $veterinarians)
             ->with('veterinariansComments', $veterinariansComments);
     }
-    public function verificarPuntuacion($id_vet){
+    public function verificarPuntuacion($id_vet)
+    {
         $veterinarian = Veterinarian::find($id_vet);
         // Verificar si el usuario ya ha dado una puntuación al veterinario
         $puntuacionExistente = Veterinarians_has_puntuation::where('veterinarians_id', $veterinarian->id)
@@ -152,14 +156,13 @@ class VeterinarianController extends Controller
     {
         if (Auth::check()) {
             $veterinarian = Veterinarian::find($id_vet);
-            $verificarPuntajeUsuario = $this->verificarPuntuacion($id_vet); 
+            $verificarPuntajeUsuario = $this->verificarPuntuacion($id_vet);
             $veterinariansComments = Veterinarians_has_comments::where('veterinarians_id', $id_vet)->get();
             return view('moduloServicios.veterinarian.user.showVeterinarian')
                 ->with('veterinarian', $veterinarian)
                 ->with('verificarPuntajeUsuario', $verificarPuntajeUsuario)
                 ->with('veterinariansComments', $veterinariansComments);
-        }
-        else {
+        } else {
             return redirect()->route('login');
         }
     }
@@ -184,7 +187,7 @@ class VeterinarianController extends Controller
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
-            
+
             $puntuacionVeterinario = Veterinarians_has_puntuation::create([
                 'puntuations_id' => $puntuation->id,
                 'veterinarians_id' => $veterinarian->id,
@@ -192,7 +195,7 @@ class VeterinarianController extends Controller
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
         }
-        
+
         // Obtener el veterinario por su ID y calcular el promedio de sus puntuaciones
         // Ahora puedes acceder al promedio de las puntuaciones a través de la propiedad puntuaciones_avg_puntuation
         $veterinarian = Veterinarian::withAvg('puntuaciones', 'puntuation')->find($id);
@@ -202,7 +205,8 @@ class VeterinarianController extends Controller
         return redirect()->route('Veterinario');
     }
 
-    public function enviarComentario(Request $request, string $id){
+    public function enviarComentario(Request $request, string $id)
+    {
         $veterinarian = Veterinarian::findOrFail($id);
         $comentarioUsuario = $request->all();
         $comment = Comment::create([

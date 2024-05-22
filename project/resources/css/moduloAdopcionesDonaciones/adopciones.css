@@ -138,8 +138,8 @@ button {
 .tablehistorial {
     width: 100%;
 }
-thead {
-    background-color: #6e569f;
+.containerMainNav #container-adopciones .container-table .rounded-container table thead {
+    background-color: #6e569f !important;
     color: #fff;
 }
 tr {
