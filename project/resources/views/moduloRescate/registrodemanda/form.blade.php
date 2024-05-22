@@ -32,7 +32,7 @@
                                     </div>
                                     
                                      {{-- DEBE GUARDAR EL USUARIO QUE YA INICIÓ SESIÓN PERO PARA PROBAR SE HIZO ESTO: Al registrar se coloca por defecto el usuario id=1 --}}
-                                     <input type="hidden" class="form-control" id="users_id" name="users_id" value="1"/>
+                                     <input type="hidden" class="form-control" id="users_id" name="users_id" value="{{Auth::user()->id}}"/>
                                   
                                     <label class="fieldlabels">Descripción situación: *</label> 
                                     <input type="text" class="form-control @error('description_case') is-invalid @enderror" id="description_case" name="description_case" placeholder="Redacta tu denuncia a presentar" value="{{ old('description_case') }}" required /> 

@@ -5,12 +5,13 @@ use App\Models\Demands_animalss;
 use App\Models\Demand_animal_has_fundation;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HistorialClienteController extends Controller
 {
     public function index()
     {
-        $userId = 1; // Reemplaza con el ID del usuario que deseas mostrar
+        $userId =  Auth::user()->id; 
 
         $demand = Demands_animalss::where('users_id', $userId)->get();
 

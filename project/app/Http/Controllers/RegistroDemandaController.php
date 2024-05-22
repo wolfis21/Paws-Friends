@@ -7,8 +7,7 @@ use App\Models\Demands_animalss;
 use App\Models\Motivo;
 use App\Models\Urgencia;
 use App\Models\User;
-
-
+use Illuminate\Support\Facades\Auth;
 
 class RegistroDemandaController extends Controller
 {
@@ -25,13 +24,17 @@ class RegistroDemandaController extends Controller
      */
     public function create()
     {
-        $demand = Demands_animalss::all();
-        $motivos = Motivo::all();
-        $urgencias = Urgencia::all();
-        $users = User::all();
-
-        return view('moduloRescate.registrodemanda.create')->with('demand', $demand)
-        ->with('motivos', $motivos)->with('urgencias', $urgencias)->with('users', $users);
+        if(Auth::check()){
+            $demand = Demands_animalss::all();
+            $motivos = Motivo::all();
+            $urgencias = Urgencia::all();
+            $users = User::all();
+    
+            return view('moduloRescate.registrodemanda.create')->with('demand', $demand)
+            ->with('motivos', $motivos)->with('urgencias', $urgencias)->with('users', $users);
+        } else {
+            return redirect()->route('login');
+        }
     }
 
     /**
