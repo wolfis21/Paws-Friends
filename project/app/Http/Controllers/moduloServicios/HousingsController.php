@@ -89,7 +89,7 @@ class HousingsController extends Controller
             'type_animals' => 'required',
             'food_offer' => 'required',
             'link_ref' => 'nullable',
-            'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'img_ref' => 'image|mimes:jpeg,png,jpg|max:2048',
             'puntuation' => 'nullable',
         ]);
         $housing = Housing::findOrFail($id);
@@ -99,9 +99,7 @@ class HousingsController extends Controller
             $imageName = date('YmdHis') . "_" . $image->getClientOriginalExtension();
             $image->move($path, $imageName);
             $housingReq['img_ref'] = "$imageName";
-        } else {
-            unset($housingReq['img_ref']);
-        }
+        } 
 
         $housing->update($housingReq);
         return redirect()->route('housingAdmin')->with('info','Se edito el alojamiento correctamente');

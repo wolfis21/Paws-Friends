@@ -95,7 +95,7 @@ class VeterinarianController extends Controller
             'phone' => 'required||alpha_num|min_digits:11',
             'email' => 'required|email',
             'link_ref' => 'nullable',
-            'img_ref' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'img_ref' => 'image|mimes:jpeg,png,jpg,webp|max:2048',
             'specialist_animals' => 'required|string',
             'puntuation' => 'nullable',
         ]);
@@ -107,9 +107,7 @@ class VeterinarianController extends Controller
             $imageName = date('YmdHis') . "_" . $image->getClientOriginalExtension();
             $image->move($path, $imageName);
             $vet['img_ref'] = "$imageName";
-        } else {
-            unset($vet['img_ref']);
-        }
+        } 
 
         $veterinarian->update($vet);
         return redirect()->route('indexVeterinarians')->with('info','Se edito el veterinario correctamente');
