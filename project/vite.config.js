@@ -31,6 +31,7 @@ export default defineConfig({
                 'resources/css/moduloServicios/user/index.css',
                 'resources/css/moduloServicios/user/indexServices.css',
                 'resources/css/moduloServicios/user/showServices.css',
+                'resources/js/messageAction.js',
 
                 //todo comentarios
                 'resources/css/moduloServicios/user/comments.css',

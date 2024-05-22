@@ -314,4 +314,5 @@
     <script src="https://cdn.datatables.net/responsive/3.0.2/js/dataTables.responsive.js"></script>
     <script src="https://cdn.datatables.net/responsive/3.0.2/js/responsive.bootstrap5.js"></script>
     <script src="{{ asset('js/moduloServicios/admin/dataTables/scriptDatatables.js') }}"></script>
+    <script src="{{ asset('js/messageAction.js') }}"></script>
 @stop

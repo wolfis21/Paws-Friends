@@ -12,12 +12,12 @@ class CommentsController extends Controller
         $comment = Comment::findOrFail($id);
         $comment->accepted = true;
         $comment->save();
-        return redirect()->route('indexVeterinarian');
+        return redirect()->route('indexVeterinarians')->with('successComment','Se acepto este comentario');
     }
     public function destroyVetsComment(string $id)
     {
         Comment::find($id)->delete();
-        return redirect()->route('indexVeterinarian');
+        return redirect()->route('indexVeterinarians')->with('denagateComment','Se denego este comentario');
 
     }
 
@@ -25,12 +25,12 @@ class CommentsController extends Controller
         $comment = Comment::findOrFail($id);
         $comment->accepted = true;
         $comment->save();
-        return redirect()->route('housingAdmin');
+        return redirect()->route('housingAdmin')->with('successComment','Se acepto este comentario');
     }
     public function destroyHousingsComment($id)
     {
         Comment::findOrFail($id)->delete();
-        return redirect()->route('housingAdmin');
+        return redirect()->route('housingAdmin')->with('denagateComment','Se denego este comentario');
 
     }
     
@@ -38,12 +38,12 @@ class CommentsController extends Controller
         $comment = Comment::findOrFail($id);
         $comment->accepted = true;
         $comment->save();
-        return redirect()->route('dogGroomerAdmin');
+        return redirect()->route('dogGroomerAdmin')->with('successComment','Se acepto este comentario');
     }
     public function destroyDogGroomersComment($id)
     {
         Comment::findOrFail($id)->delete();
-        return redirect()->route('dogGroomerAdmin');
+        return redirect()->route('dogGroomerAdmin')->with('denagateComment','Se denego este comentario');
 
     }
 }
