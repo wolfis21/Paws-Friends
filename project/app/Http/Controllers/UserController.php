@@ -28,37 +28,21 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
 
-        $userData = $request->except('photo_user', 'photo_dni', 'photo_rif');
-
-        if ($request->hasFile('photo_dni') && $request->hasFile('photo_rif') && $request->hasFile('photo_user')) {
-            $imgDni = $request->file('photo_dni')->store('docs', 'public');
-            $imgRif = $request->file('photo_rif')->store('docs', 'public');
-            $imgPhoto = $request->file('photo_user')->store('docs', 'public');
-
-            $userData['photo_user'] = $imgPhoto;
-            $userData['photo_dni'] = $imgDni;
-            $userData['photo_rif'] = $imgRif;
-        } else {
-            $userData['photo_user'] = null;
-            $userData['photo_dni'] = null;
-            $userData['photo_rif'] = null;
-        }
-
-
-        if ($imgPhoto = $request->file('photo_user')) {
-            $imgPhotoPath = 'storage/userImg';
+        if ($request->hasFile('photo_user')) {
+            $imgPhoto = $request->file('photo_user');
+            $imgPhotoPath = 'storage/users/userImg';
             $img = date('YmdHis'). "_" . $imgPhoto->getClientOriginalExtension();
             $imgPhoto->move($imgPhotoPath, $img);
             $userData['photo_user'] = "$img";
         }
         if ($imgPhoto = $request->file('photo_dni')) {
-            $imgPhotoPath = 'storage/dniImg';
+            $imgPhotoPath = 'storage/users/dniImg';
             $img = date('YmdHis'). "_" . $imgPhoto->getClientOriginalExtension();
             $imgPhoto->move($imgPhotoPath, $img);
             $userData['photo_dni'] = "$img";
         }
         if ($imgPhoto = $request->file('photo_rif')) {
-            $imgPhotoPath = 'storage/rifImg';
+            $imgPhotoPath = 'storage/users/rifImg';
             $img = date('YmdHis'). "_" . $imgPhoto->getClientOriginalExtension();
             $imgPhoto->move($imgPhotoPath, $img);
             $userData['photo_rif'] = "$img";
