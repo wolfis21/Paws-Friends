@@ -195,7 +195,6 @@ class VeterinarianController extends Controller
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
         }
-        
         // Obtener el veterinario por su ID y calcular el promedio de sus puntuaciones
         // Ahora puedes acceder al promedio de las puntuaciones a través de la propiedad puntuaciones_avg_puntuation
         $veterinarian = Veterinarian::withAvg('puntuaciones', 'puntuation')->find($id);
