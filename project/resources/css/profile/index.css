@@ -132,7 +132,14 @@ p {
   /* height: 200px; */
   border-radius: 50%;
 }
-
+.img-photoS{
+  height: 150px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
 .img-icon{
   width: 130px;
 

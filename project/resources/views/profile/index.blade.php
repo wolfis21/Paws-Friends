@@ -42,7 +42,7 @@
             <div class="card-space peque">
                 <label for="Foto" class="label">Cedula</label>
                 @if($user->photo_dni)
-                    <img class="img-photo" src="/storage/dniImg/{{ $user->photo_dni }}" alt="Imagen perfil">
+                    <img class="img-photoS" src="/storage/dniImg/{{ $user->photo_dni }}" alt="Imagen perfil">
                 @else
                     <p>No se adjuntó la cédula.</p>
                 @endif
@@ -51,7 +51,7 @@
             <div class="card-space peque">
                 <label for="Foto" class="label">Rif</label>
                 @if($user->photo_rif)
-                    <img class="img-photo" src="/storage/rifImg/{{ $user->photo_rif }}" alt="Imagen perfil">
+                    <img class="img-photoS" src="/storage/rifImg/{{ $user->photo_rif }}" alt="Imagen perfil">
                 @else
                     <p>No se adjuntó el RIF.</p>
                 @endif
