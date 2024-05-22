@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
+
 class UserController extends Controller
 {
     public function show(string $id)
@@ -28,29 +29,28 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
 
-        if ($request->hasFile('photo_user')) {
-            $imgPhoto = $request->file('photo_user');
-            $imgPhotoPath = 'storage/users/userImg';
-            $img = date('YmdHis'). "_" . $imgPhoto->getClientOriginalExtension();
-            $imgPhoto->move($imgPhotoPath, $img);
-            $userData['photo_user'] = "$img";
+        $userData = [];
+        $filesToUpload = [
+            ['field' => 'photo_user', 'path' => 'userImg'],
+            ['field' => 'photo_dni', 'path' => 'dniImg'],
+            ['field' => 'photo_rif', 'path' => 'rifImg']
+        ];
+
+        foreach ($filesToUpload as $fileInfo) {
+            $imgPhoto = $request->file($fileInfo['field']);
+            if ($imgPhoto) {
+                $imgPhotoPath = 'storage/users/' . $fileInfo['path'];
+                $img = date('YmdHis') . "_" . $imgPhoto->getClientOriginalExtension();
+                $imgPhoto->move($imgPhotoPath, $img);
+                $userData[$fileInfo['field']] = $img;
+            }
         }
-        if ($imgPhoto = $request->file('photo_dni')) {
-            $imgPhotoPath = 'storage/users/dniImg';
-            $img = date('YmdHis'). "_" . $imgPhoto->getClientOriginalExtension();
-            $imgPhoto->move($imgPhotoPath, $img);
-            $userData['photo_dni'] = "$img";
-        }
-        if ($imgPhoto = $request->file('photo_rif')) {
-            $imgPhotoPath = 'storage/users/rifImg';
-            $img = date('YmdHis'). "_" . $imgPhoto->getClientOriginalExtension();
-            $imgPhoto->move($imgPhotoPath, $img);
-            $userData['photo_rif'] = "$img";
-        }
+
         $user->update($userData);
 
-        return view('main');
+        return view('profile.index', compact('user'));
     }
+
 
     public function allAdmin()
     {
@@ -68,7 +68,7 @@ class UserController extends Controller
     }
     public function createForm(Request $request)
     {
-        if ($request['photo_dni'] && $request['photo_rif'] && $request['photo_user']) {
+        if ($request['photo_dni'] || $request['photo_rif'] || $request['photo_user']) {
             $imgPhoto = $request['photo_user'];
             $imgDni = $request['photo_dni'];
             $imgRif = $request['photo_rif'];
@@ -83,19 +83,19 @@ class UserController extends Controller
 
         if ($imgPhoto = $request->file('photo_user')) {
             $imgPhotoPath = 'storage/userImg';
-            $img = date('YmdHis'). "_" . $imgPhoto->getClientOriginalExtension();
+            $img = date('YmdHis') . "_" . $imgPhoto->getClientOriginalExtension();
             $imgPhoto->move($imgPhotoPath, $img);
             $userData['photo_user'] = "$img";
         }
         if ($imgPhoto = $request->file('photo_dni')) {
             $imgPhotoPath = 'storage/dniImg';
-            $img = date('YmdHis'). "_" . $imgPhoto->getClientOriginalExtension();
+            $img = date('YmdHis') . "_" . $imgPhoto->getClientOriginalExtension();
             $imgPhoto->move($imgPhotoPath, $img);
             $userData['photo_dni'] = "$img";
         }
         if ($imgPhoto = $request->file('photo_rif')) {
             $imgPhotoPath = 'storage/rifImg';
-            $img = date('YmdHis'). "_" . $imgPhoto->getClientOriginalExtension();
+            $img = date('YmdHis') . "_" . $imgPhoto->getClientOriginalExtension();
             $imgPhoto->move($imgPhotoPath, $img);
             $userData['photo_rif'] = "$img";
         }
@@ -119,7 +119,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         if (Auth::id() === $user->id) {
-            return redirect()->back(); 
+            return redirect()->back();
         } else {
             $user = User::findOrFail($id);
             $user->delete();
