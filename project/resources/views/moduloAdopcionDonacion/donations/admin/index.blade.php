@@ -4,8 +4,6 @@
 @section('content')
 
     <h4 style="margin-top: 15px">Donaciones admin</h4>
-    <a href="{{ route('donaciones.create') }}" class="btn bg-purple" style="margin-bottom: 15px;">Añadir
-        Donacion</a>
     <div class="card bg-dark">
         <div class="card-body">
             <table id="Donaciones" class="table table-dark table-responsive-md" style="width:100%">
