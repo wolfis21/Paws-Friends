@@ -11,6 +11,7 @@ class HistorialClienteController extends Controller
 {
     public function index()
     {
+     if(Auth::check()){
         $userId =  Auth::user()->id; 
 
         $demand = Demands_animalss::where('users_id', $userId)->get();
@@ -24,6 +25,9 @@ class HistorialClienteController extends Controller
 
         
         return view('moduloRescate.historial_user.index')->with('demand', $demand)->with('completada', $completada);
+    } else {
+        return redirect()->route('login');
+    }
 
     }
 
