@@ -46,7 +46,7 @@ class HousingsController extends Controller
             'type_animals' => 'required',
             'food_offer' => 'required',
             'link_ref' => 'nullable',
-            'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'img_ref' => 'image|mimes:jpeg,png,jpg|max:2048',
             'puntuation' => 'nullable',
         ]);
 

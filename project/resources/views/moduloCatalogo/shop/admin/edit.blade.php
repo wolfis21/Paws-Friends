@@ -33,7 +33,7 @@
         </div>
         <div class="mb-3">
             <a class="btn bg-red" href="{{route('shopAdmin')}}">Cancelar</a>
-            <button class="btn bg-cyan">Guardar</button>
+            <button class="btn bg-green">Guardar</button>
           </div>  
           
           @error('phone')

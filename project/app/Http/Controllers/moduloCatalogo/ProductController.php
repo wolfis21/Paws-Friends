@@ -83,7 +83,8 @@ class ProductController extends Controller
     {
         // Retorna la vista 'edit' con el producto especificado
         $product = Product::find($id);
-        return view('moduloCatalogo.products.admin.edit')->with('product', $product);
+        $categorys = categoryProductsAnimals::all();
+        return view('moduloCatalogo.products.admin.edit')->with('product', $product)->with('categorys',$categorys);
     }
 
     /**
@@ -110,6 +111,8 @@ class ProductController extends Controller
             $imageName = date('YmdHis') . "_" . $image->getClientOriginalExtension();
             $image->move($path, $imageName);
             $productsReq['img_ref'] = "$imageName";
+        }else {
+            unset($productReq['img_ref']);
         }
 
         // Actualiza el producto con los datos validados

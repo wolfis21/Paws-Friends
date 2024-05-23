@@ -95,7 +95,7 @@ class VeterinarianController extends Controller
             'phone' => 'required||alpha_num|min_digits:11',
             'email' => 'required|email',
             'link_ref' => 'nullable',
-            'img_ref' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'img_ref' => 'image|mimes:jpeg,png,jpg,webp|max:2048',
             'specialist_animals' => 'required|string',
             'puntuation' => 'nullable',
         ]);
