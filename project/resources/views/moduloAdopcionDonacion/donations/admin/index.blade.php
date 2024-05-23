@@ -4,6 +4,7 @@
 @section('content')
 
     <h4 style="margin-top: 15px">Donaciones admin</h4>
+
     <div class="card bg-dark">
         <div class="card-body">
             <table id="Donaciones" class="table table-dark table-responsive-md" style="width:100%">

@@ -2,6 +2,7 @@
 @vite('resources/css/moduloAdopcionesDonaciones/crub.css')
 @section('title', 'Adopciones')
 @section('content')
+    @include('../../../layouts/messageActions')
     <h4 style="margin-top: 15px">Adopciones en espera admin</h4>
     {{-- acomodar --}}
     <a href="{{ route('adopciones.create') }}" class="btn bg-purple" style="margin-bottom: 15px;">Crear adopcion</a>

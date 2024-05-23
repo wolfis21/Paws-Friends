@@ -32,20 +32,21 @@ class AdopcionesController extends Controller
         }
         AnimalsAdoption::create($adopcion);
 
-        return redirect('/adminPWFS/adopciones');
+        return redirect('/adminPWFS/adopciones')->with('success','Se creo la adopciono correctamente');
 
     }
     public function edit($id)
     {
       $animals_adoptions=AnimalsAdoption::find($id); /* desarrollar mas */
-      return view('moduloAdopcionDonacion.animals_adoption.edit')->with('animals_adoptions',$animals_adoptions);
+      return view('moduloAdopcionDonacion.animals_adoption.edit')->with('animals_adoptions',$animals_adoptions)
+      ->with('info','Se edito la adopcion correctamente');
     }
 
     public function destroy($id)
     {
       $animals_adoption = AnimalsAdoption::find($id);
       $animals_adoption->delete();
-      return redirect('/adminPWFS/adopciones');
+      return redirect('/adminPWFS/adopciones')->with('destroy','Se elimino la adopcion correctamente');
 
     }
 
