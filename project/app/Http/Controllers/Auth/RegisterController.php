@@ -67,28 +67,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {   
-        if ($data['photo_dni'] && $data['photo_rif']&& $data['photo_user']) {
-            $imgPhoto = $data['photo_user'];
-            $imgDni = $data['photo_dni'];
-            $imgRif = $data['photo_rif'];
-            $imgPhotoPath = $imgPhoto->store('docs', 'public');
-            $imgPhotoPathDni = $imgDni->store('docs', 'public');
-            $imgPhotoPathRif = $imgRif->store('docs', 'public');
-        } else {
-            $imgPhotoPath = null;
-            $imgPhotoPathDni = null;
-            $imgPhotoPathRif = null;
-        }
-
         return User::create([
             'name' => $data['name'],
             'last_name' => $data['last_name'],
             'dni' => $data['dni'],
             'phone' => $data['phone'],
             'address' => $data['address'],
-            'photo_user' => $imgPhotoPath,
-            'photo_dni' => $imgPhotoPathDni,
-            'photo_rif' => $imgPhotoPathRif,
+            'photo_user',
+            'photo_dni',
+            'photo_rif',
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'rols_id' => $data['rols_id'],

@@ -64,7 +64,6 @@ Paletas de colores
 }
 
 .card-space {
-    width: 300px;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -95,7 +94,7 @@ Paletas de colores
     color: white;
     background-color: #6e569f;
     border: none;
-    padding: 10px;
+    padding: 5px;
     border-radius: 10px;
     cursor: pointer;
     outline: none;
@@ -142,4 +141,6 @@ input:focus {
     outline: none;
 }
 
-/* Ocultar el botón predeterminado del navegador */
+.direction{
+    flex-grow: 0.9;
+}

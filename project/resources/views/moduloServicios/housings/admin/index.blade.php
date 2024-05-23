@@ -2,8 +2,10 @@
 @vite('resources/views/moduloServicios/admin.css')
 @section('title', 'Alojamiento')
 @section('content')
+    @include('../../../layouts/messageActions')
     <h4 style="margin-top: 15px;">Alojamiento Admin</h4>
-    <a style="margin-bottom: 15px;" href="{{route('createHousing')}}" class="btn bg-cyan" style="margin-top: 15px;">Añadir Alojamiento</a>
+    <a style="margin-bottom: 15px;" href="{{ route('createHousing') }}" class="btn bg-cyan" style="margin-top: 15px;">Añadir
+        Alojamiento</a>
     <div class="card bg-dark">
         <div class="card-body">
             <table id="Alojamiento" class="table table-responsive-md table-dark" style="width:100%">
@@ -18,15 +20,17 @@
                 <tbody>
                     @foreach ($housings as $housing)
                         <tr>
-                            <td>{{$housing->name}}</td>
-                            <td>{{$housing->address}}</td>
-                            <td>{{$housing->phone}}</td>
-                            <td>{{$housing->description_location}}</td>
-                            <td>{{$housing->type_animals}}</td>
+                            <td>{{ $housing->name }}</td>
+                            <td>{{ $housing->address }}</td>
+                            <td>{{ $housing->phone }}</td>
+                            <td>{{ $housing->description_location }}</td>
+                            <td>{{ $housing->type_animals }}</td>
                             {{-- <td><img src="images/housings/{{($housing->img_ref)}}"  alt="a" ></td> --}}
                             <td>
-                                <button type="button" class="btn bg-cyan" data-bs-toggle="modal" data-bs-target="#viewProfile{{$housing->id}}">Ver perfil</button>
-                                <button type="button" class="btn bg-red" data-bs-toggle="modal" data-bs-target="#deleteProfile{{$housing->id}}">Eliminar</button>
+                                <button type="button" class="btn bg-cyan" data-bs-toggle="modal"
+                                    data-bs-target="#viewProfile{{ $housing->id }}">Ver perfil</button>
+                                <button type="button" class="btn bg-red" data-bs-toggle="modal"
+                                    data-bs-target="#deleteProfile{{ $housing->id }}">Eliminar</button>
                             </td>
                         </tr>
                         @include('moduloServicios.housings.admin.ModalViewProfile')
@@ -36,6 +40,7 @@
             </table>
         </div>
     </div>
+    @include('../../../layouts/messageComments')
     <h4>Comentarios Alojamientos admin</h4>
     <div class="card bg-dark">
         <div class="card-body">

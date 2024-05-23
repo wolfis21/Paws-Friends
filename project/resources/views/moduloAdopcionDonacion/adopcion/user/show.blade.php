@@ -5,7 +5,7 @@
     <div class="container-main">
         <div class="img-container">
             <a class="link-botton" href="{{ route('indexAdoptions') }}">Volver</a>
-            <img src="{{ asset('img/Animales/gato1.jpeg') }}" alt="Adopciones" class="img-adopcion">
+            <img src="{{ asset('/storage/moduloAdopcion/images/'.$adopcion->photo_animal) }}" alt="Adopciones" class="img-adopcion">
         </div>
         <div class="view-container">
             <h1 class="nombre">{{ $adopcion->name }}</h1>

@@ -15,7 +15,7 @@
 }
 
 .body {
-    background: url('../imagenes/imghc/fondo.jpg.jpg');
+    background: url('../../css/moduloRescate/imghc/fondo.jpg.jpg');
     display: flex;
     justify-content: center;
     align-items: center;

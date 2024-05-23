@@ -79,7 +79,7 @@ class ShopController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function updateShop(Request $request, Shop $id)
+    public function updateShop(Request $request, $id)
     {
         $request->validate([
             'name'=> 'required|string|min:3',

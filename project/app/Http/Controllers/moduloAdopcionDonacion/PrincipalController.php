@@ -25,7 +25,7 @@ class PrincipalController extends Controller
     public function indexAdoptions()
     {
         $adopciones = AnimalsAdoption::all();
-        return view('moduloAdopcionDonacion.adopcion.user.Adopciones', compact('adopciones'));
+        return view('moduloAdopcionDonacion.adopcion.user.Adopciones', compact('adopciones'))->with('success','Solicitud de donacion realizada correctamente');
     }
 
     public function showAdoptions($id)
