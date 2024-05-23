@@ -51,7 +51,7 @@
     </div>  
     
 <section>
-    <h2 class="title-cat">Todos los Productos para Perros</h2>
+    <h2 class="title-cat">Productos</h2>
     <div class ="product-card-container">
         @foreach ($products as $product)
         <a href="/Product/{{$product->id}}" style="color: black;">

@@ -50,6 +50,7 @@
             </a>
         </div>
     </div>  
+        </section>
 
 <section>
     <h2 class="title-cat">Todos los Productos</h2>

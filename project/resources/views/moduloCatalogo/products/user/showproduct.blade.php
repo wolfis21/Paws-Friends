@@ -32,14 +32,14 @@
   <div class="ubication">
   <div class="rectangulo2">
   <img src="{{ asset('/css/moduloCatalogo/ubi.png') }}" class="img3" alt="">
-      <g>{{$product->ubication}}</</g>
+      <g>{{$product->shop->address}}</</g>
     </div>
 
     <h3 class="title-phone">Número de Contacto</h3>
   <div class="number">
   <div class="rectangulo3">
   <img src="{{ asset('/css/moduloCatalogo/phone.png') }}" class="img3" alt="">
-      <g>{{$product->number}}</g>
+      <g>{{$product->shop->phone}}</g>
     </div>
 </section>
 @endsection

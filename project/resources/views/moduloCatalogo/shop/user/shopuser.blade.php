@@ -1,5 +1,5 @@
 @extends('layouts.headerNav')
-@vite(['resources/css/moduloCatalogo/productuser.css'])
+@vite(['resources/css/moduloCatalogo/shopUser.css'])
 @section('content')
 
     <head>
@@ -8,13 +8,18 @@
         <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 
     </head>
-
-    <section class="welcome">
+<div class="contenedor">
+    <section>
+    <h2 class="title-shop">Tiendas</h2>
+    <div class ="shop-card-container">
         @foreach ($shops as $shop)
+        <a href="/Shop/{{$shop->shop_id}}" style="color: black;">
             <div class="product-card">
                 <img class="img-product" src="storage/moduloCatalogo/images/shops/{{ $shop->img_ref }}" />
-                <p>{{ $shop->name }}</p>
+                <p class = "name-shop">{{ $shop->name }}</p>
+                <p class = "address-shop">{{ $shop->address }}</p>
             </div>
         @endforeach
     </section>
+</div>
 @endsection
