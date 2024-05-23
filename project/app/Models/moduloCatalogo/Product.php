@@ -22,7 +22,7 @@ class Product extends Model
         'price',
         'puntuation', 
         'product_category_animals_id',
-        'shop_id'
+        'shop_id',
     ];
 
     public function category_animal(){

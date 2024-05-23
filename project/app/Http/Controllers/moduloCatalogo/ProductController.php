@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\moduloCatalogo;
 
 use App\Http\Controllers\Controller;
+use App\Models\moduloCatalogo\categoryProductsAnimals;
 use App\Models\moduloCatalogo\Product;
 use App\Models\moduloCatalogo\products_has_puntuation;
 use App\Models\moduloCatalogo\Puntuations;
+use App\Models\moduloCatalogo\Shop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,8 +27,11 @@ class ProductController extends Controller
      */
     public function createProduct()
     {
+        $shops = Shop::all();
+        $categorys = categoryProductsAnimals::all();
         // Retorna la vista 'create' para crear un nuevo producto
-        return view('moduloCatalogo.products.admin.create');
+        return view('moduloCatalogo.products.admin.create')->with('shops',$shops)
+        ->with('categorys',$categorys);
     }
 
     /**
@@ -40,6 +45,7 @@ class ProductController extends Controller
             'description' => 'required',
             'img_ref' => 'nullable',
             'product_category_animals_id' => 'nullable',
+            'shop_id' => 'required',
             'price'=>'nullable',
             'puntuation'=>'nullable',
         ]);

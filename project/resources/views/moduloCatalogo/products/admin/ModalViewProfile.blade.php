@@ -26,10 +26,14 @@
                     <label for="Precio" class="form-label">Precio: </label>
                     <p>{{ $product->price }}</p>
                 </div>
+                <div class="mb-3">
+                    <label for="Tienda" class="form-label">Tienda: </label>
+                    <p>{{ $product->shop->name }}</p>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <a href="{{ route('editProduct', $product->id) }}" class="btn bg-cyan">Editar</a>
+                <a href="{{ route('editProduct', $product->id) }}" class="btn bg-green">Editar</a>
             </div>
         </div>
     </div>
