@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('title', 'Donaciones')
-@vite('resources/css/moduloAdopcionesDonaciones/estilosCrub.css')
+@vite('resources/css/moduloAdopcionesDonaciones/crub.css')
 @section('content')
 
     <h4 style="margin-top: 15px">Donaciones admin</h4>
@@ -15,6 +15,7 @@
                     <th scope="col">Cantidad</th>
                     <th scope="col">Destino</th>
                     <th scope="col">Usuario</th>
+                    <th scope="col">Acciones</th>
                 </thead>
                 <tbody>
                     @foreach ($donations as $donation)
@@ -25,10 +26,13 @@
                             <td>{{ $donation->qty }}</td>
                             <td>{{ $donation->destino_fundacion }}</td>
                             <td>{{ $donation->user->name }} {{ $donation->user->last_name }}</td>
+                            <td>
+                                <button type="button" class="btn bg-purple" data-bs-toggle="modal"
+                                data-bs-target="#viewProfile{{ $donation->id }}">Ver
+                                donacion</button>
+                            </td>
                         </tr>
-                        {{-- <td>{{ $donation->img_ref }} 
-                            <img style="width: 5%;" src="{{ asset('storage/' . $donation->img_ref) }}" > -- provisional mejorar esto 
-                        </td> --}}
+                        @include('moduloAdopcionDonacion.donations.admin.ModalViewProfile')
                     @endforeach
                 </tbody>
             </table>

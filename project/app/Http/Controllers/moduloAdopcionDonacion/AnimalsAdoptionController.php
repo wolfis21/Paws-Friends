@@ -96,7 +96,7 @@ class AnimalsAdoptionController extends Controller
       $animals_adoption = AnimalsAdoption::find($id);
       $animals_adoption->status = 'Rechazada';
       $animals_adoption->update();
-      return redirect('/adminPWFS/adopciones')->with('destroy','Se confirmo la adopcion correctamente');
+      return redirect('/adminPWFS/adopciones')->with('destroy','Se rechazo la adopcion correctamente');
     }
 
 }
