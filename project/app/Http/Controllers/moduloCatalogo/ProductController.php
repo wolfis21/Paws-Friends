@@ -63,7 +63,7 @@ class ProductController extends Controller
     /**
      * Muestra un producto específico.
      */
-    public function showProduct(Product $id)
+    public function showProduct($id)
     {
         // Retorna la vista 'show' con el producto especificado
         $product = Product::find($id);
@@ -73,7 +73,7 @@ class ProductController extends Controller
     /**
      * Muestra el formulario para editar un producto específico.
      */
-    public function editProduct(Product $id)
+    public function editProduct($id)
     {
         // Retorna la vista 'edit' con el producto especificado
         $product = Product::find($id);
@@ -83,7 +83,7 @@ class ProductController extends Controller
     /**
      * Actualiza un producto específico en la base de datos.
      */
-    public function updateProduct(Request $request, Product $id)
+    public function updateProduct(Request $request, $id)
     {
         // Valida los datos del formulario
         $request->validate([
@@ -116,10 +116,10 @@ class ProductController extends Controller
     /**
      * Elimina un producto específico de la base de datos.
      */
-    public function destroyProduct(Product $id)
+    
+    public function destroyProduct($id)
     {
-
-        $product = Product::find($id);
+        $product = Product::findOrFail($id);
         $path = public_path() . '/storage/moduloCatalogo/images/products/' . $product->img_ref;
         unlink($path);
         // Elimina el producto especificado
@@ -129,7 +129,7 @@ class ProductController extends Controller
         return redirect()->route('productAdmin');
     }
 
-    //funciones de user
+    //todo funciones de user
 
     //funcion para mostrar index de usuario
     public function ProductUser()
@@ -159,7 +159,7 @@ class ProductController extends Controller
         if (Auth::check()) {
             $product = Product::find($id_product);
             $verificarPuntajeUsuario = $this->verificarPuntuacionProduct($id_product);
-            return view('moduloCatalogo.products.user.showproduct')->with('product', $product)
+            return view('moduloCatalogo.products.user.showProduct')->with('product', $product)
                 ->with('verificarPuntajeUsuario', $verificarPuntajeUsuario);
         } else {
             return redirect()->route('login');
@@ -206,5 +206,35 @@ class ProductController extends Controller
         return view('moduloCatalogo.products.user.productCategory')
             ->with('products', $products);
     }
-    
+
+    //todo gatos
+    public function categoryCat(){
+        $products = Product::where('product_category_animals_id',2)->get();
+        return view('moduloCatalogo.products.user.productCategory')
+            ->with('products', $products);
+    }
+    //todo roedores
+    public function categoryRodent(){
+        $products = Product::where('product_category_animals_id',3)->get();
+        return view('moduloCatalogo.products.user.productCategory')
+            ->with('products', $products);
+    }
+    //todo aves
+    public function categoryBirds(){
+        $products = Product::where('product_category_animals_id',4)->get();
+        return view('moduloCatalogo.products.user.productCategory')
+            ->with('products', $products);
+    }
+    //todo peces
+        public function categoryFish(){
+        $products = Product::where('product_category_animals_id',5)->get();
+        return view('moduloCatalogo.products.user.productCategory')
+            ->with('products', $products);
+    }
+    //todo reptiles
+    public function categoryReptile(){
+        $products = Product::where('product_category_animals_id',6)->get();
+        return view('moduloCatalogo.products.user.productCategory')
+            ->with('products', $products);
+    }
 }

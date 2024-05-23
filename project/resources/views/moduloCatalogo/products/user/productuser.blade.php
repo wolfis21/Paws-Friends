@@ -20,66 +20,66 @@
             </a>    
         </div>
         <div class="checkbox" alt=""> 
-            <a href="/products">
+            <a href="{{route('categoryCat')}}">
             <img src="https://static.miscota.com/media/1/assets/cat-icon.png">
             <t>Gatos<t>
             </a>
         </div>
         <div class="checkbox" alt="">
-            <a href="/products">
+            <a href="{{route('categoryRodent')}}">
             <img src="https://static.miscota.com/media/1/assets/rodent-icon.png">
             <t>Roedores<t>
             </a>
         </div>
         <div class="checkbox" alt=""> 
-            <a href="/products">  
+            <a href="{{route('categoryBirds')}}">  
             <img src="https://static.miscota.com/media/1/assets/bird-icon.png">
             <t>Aves<t>
             </a>
         </div>
         <div class="checkbox" alt="">
-            <a href="/products">
+            <a href="{{route('categoryFish')}}">
             <img src="https://static.miscota.com/media/1/assets/fish-icon.png">
             <t>Peces<t>
             </a>
         </div>
         <div class="checkbox" alt=""> 
-            <a href="/products">
+            <a href="{{route('categoryReptile')}}">
             <img src="https://static.miscota.com/media/1/assets/reptile-icon.png">
             <t>Reptiles<t>
             </a>
         </div>
     </div>  
-        </section>
-        <section class="module">
-            <h2 class="title-prod">Todos los Productos</h2>
-            
-            <div class="cards">
-                <a href="/products/{product_id} style="color: black;">
-                <div class="card-img2">
-                        <img src="https://static.miscota.com/media/1/photos/products/430600/Grature-adult-chicken-cat-6368e5845ef91_g.jpg"
-                            alt="">
-                            <p class= 'product-desc'> Pienso Light de Pavo para Gatos Adultos por Grature </p>
-                            <p class= 'product-prize'>$10.77 </p>
-                </div>
-                </a>
-                <a href="/products/{product_id}">
-                <div class="card-img2">
-                        <img
-                            src="https://static.miscota.com/media/1/photos/products/430598/Grature-adult-turkey-dog-6368e5b15102c_g.jpg">
-                            <p class= 'product-desc'> Pienso Light de Pavo para Perros por Grature </p>
-                            <p class= 'product-prize'>$10.77 </p>
-                </div>
-                </a>
-                <a href="/products/{product_id}">
-                <div class="card-img2">
-                        <img src="https://static.miscota.com/media/1/photos/products/126684/w2aayeehnkfsopiaz4pp-6368c7830ffd2_g.jpg">
-                        <p class= 'product-desc'> Champú de Arbol de Té para Mascotas </p>
-                        <p class= 'product-prize'>$9.77 </p>
-                </div>
-                </a>    
+
+<section>
+    <h2 class="title-cat">Todos los Productos</h2>
+    <div class ="product-card-container">
+        @foreach ($products as $product)
+        <a href="/Product/{{$product->id}}" style="color: black;">
+            <div class="product-card">
+                <img class="img-product" src="storage/moduloCatalogo/images/products/{{ $product->img_ref }}" />
+                <p class = "name-product">{{ $product->name }}</p>
+                <p class = "price-product">${{ $product->price }}</p>
             </div>
-        </section>
+        @endforeach
+    </div>
+</section>
+
+        <!-- <section class="module">
+            <h2 class="title-prod">Todos los Productos</h2>
+            <div class="cards">
+                @foreach($products as $product) 
+                    <a href="/Product/{{$product->id}}" style="color: black;">
+                    <div class="card-img2">
+                            <img src="storage/moduloCatalogo/images/products/{{ $product->img_ref }}"
+                                alt="">
+                                <p class= 'product-desc'> {{$product->name}} </p>
+                                <p class= 'product-prize'>${{$product->price}}</p>
+                    </div>
+                    </a>
+                @endforeach
+            </div>
+        </section> -->
 
     </div>
 </div>

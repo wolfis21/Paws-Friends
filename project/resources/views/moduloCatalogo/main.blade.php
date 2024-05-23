@@ -20,7 +20,7 @@
                 <h1 class="title-page">Módulo de Catálogo</h1>
                 <div>
                     <p class="text-welcome">Bienvenido a nuestro catálogo de productos para mascotas,
-                        acá podrá encontrar información sobre distintos productos 
+                        en este modulo podrá encontrar información sobre distintos productos 
                         para el cuidado de los pequeños de la casa.</p>
                 </div>
             </div>
@@ -32,7 +32,7 @@
 
             <div class="cards">
                 
-                <a href="/Product/1 style=">
+                <a href="/Product/1">
                 <div class="card-img2">
                         <img src="https://static.miscota.com/media/1/photos/products/430600/Grature-adult-chicken-cat-6368e5845ef91_g.jpg"
                             alt="">
@@ -64,7 +64,7 @@
         <section class="categorias">
         <h2 class="title-cat">Categorías</h2>
  
-    <div class="mascotas">
+        <div class="mascotas">
         <div class="checkbox" alt="">   
             <a href="{{route('categoryDog')}}">
             <img src="https://static.miscota.com/media/1/assets/dog-icon.png">
@@ -72,37 +72,41 @@
             </a>    
         </div>
         <div class="checkbox" alt=""> 
-            <a href="/products/cat">
+            <a href="{{route('categoryCat')}}">
             <img src="https://static.miscota.com/media/1/assets/cat-icon.png">
             <t>Gatos<t>
             </a>
         </div>
         <div class="checkbox" alt="">
-            <a href="/products/roedores">
+            <a href="{{route('categoryRodent')}}">
             <img src="https://static.miscota.com/media/1/assets/rodent-icon.png">
             <t>Roedores<t>
             </a>
         </div>
         <div class="checkbox" alt=""> 
-            <a href="/products/birds">  
+            <a href="{{route('categoryBirds')}}">  
             <img src="https://static.miscota.com/media/1/assets/bird-icon.png">
             <t>Aves<t>
             </a>
         </div>
         <div class="checkbox" alt="">
-            <a href="/products.fishes">
+            <a href="{{route('categoryFish')}}">
             <img src="https://static.miscota.com/media/1/assets/fish-icon.png">
             <t>Peces<t>
             </a>
         </div>
         <div class="checkbox" alt=""> 
-            <a href="/products/riptile">
+            <a href="{{route('categoryReptile')}}">
             <img src="https://static.miscota.com/media/1/assets/reptile-icon.png">
             <t>Reptiles<t>
             </a>
         </div>
     </div>  
         </section>
+
+        <div class = "ver-todo">
+            <a href="/products">Ver todos los productos</a>
+        </div>
 
         <section class="developer">
             <h2 class="titulo-des">Desarrolladores</h2>

@@ -224,7 +224,11 @@ Route::controller(ProductController::class)->group(function(){
 
     //todo rutas de categoria de productos
     Route::get ('/productCatagoryDog','categoryDog')->name('categoryDog');
-
+    Route::get ('/productCatagoryCat','categoryCat')->name('categoryCat');
+    Route::get ('/productCatagoryRodent','categoryRodent')->name('categoryRodent');
+    Route::get ('/productCatagoryBirds','categoryBirds')->name('categoryBirds');
+    Route::get ('/productCatagoryFish','categoryFish')->name('categoryFish');
+    Route::get ('/productCatagoryReptile','categoryReptile')->name('categoryReptile');
 });
 
 

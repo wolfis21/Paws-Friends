@@ -123,7 +123,7 @@ class ShopController extends Controller
         return redirect()->route('shopAdmin');
     }
 
-    //funciones de user
+    //todo funciones de user
 
     public function ShopUser()
     {

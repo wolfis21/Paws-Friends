@@ -265,23 +265,15 @@
                                 <div class="col-md-4 col-xl-4">
                                     <div class="card bg-c-green order-card">
                                         <div class="card-block">
-                                            <h5>Productos</h5>
-                                            {{-- @php
-                                                use App\Models\moduloServicios\Veterinarian;
-                                                $cant_Vets = Veterinarian::count();
-                                            @endphp
-                                            <h2 class="text-right"><i
-                                                    class="fas fa-fw fa-pump-soap f-left"></i><span>{{ $cant_Vets }}</span>
-                                            </h2>
-                                            <p class="m-b-0 text-right"><a href="/admin/Veterinarians"
-                                                    class="text-white">Ver más</a></p> --}}
+                                            <h5>Productos</h5><a href="/adminPWFS/productAdmin"
+                                                    class="text-white">Ver más</a></p> 
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-xl-4">
                                     <div class="card bg-green order-card">
                                         <div class="card-block">
-                                            <h5>Modulo de Tienda</h5>
+                                            <h5>Tiendas</h5>
                                         </div>
                                     </div>
                                 </div>
