@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\moduloCatalogo\StoreController;
 use App\Http\Controllers\moduloCatalogo\PostController;
 use App\Http\Controllers\moduloCatalogo\ProductController;
-use App\Http\Controllers\ShopController;
+use App\Http\Controllers\moduloCatalogo\ShopController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -244,7 +244,7 @@ Route::controller(ShopController::class)->group(function(){
     Route::delete('/adminPWFS/destroyShop/{id}', 'destroyShop')->name('destroyShop');
 
         //todo rutas user
-        Route::resource('/shops', ShopController::class);
+        // Route::resource('/shops', ShopController::class);
         Route::get('/shops', 'ShopUser')->name('ShopUser');
         Route::get('/Shop/{id}', 'showshopUser')->name('showshopUser');
         Route::put('/ShopUpdatePuntuations/{id}','updateShopPuntuations')->name('updateShopPuntuations');

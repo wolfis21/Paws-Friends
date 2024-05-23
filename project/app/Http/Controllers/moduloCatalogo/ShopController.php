@@ -1,21 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\moduloCatalogo;
 
+use App\Http\Controllers\Controller;
+use App\Models\moduloCatalogo\Puntuations;
 use App\Models\moduloCatalogo\Shop;
 use App\Models\moduloCatalogo\shops_has_puntuation;
-use App\Models\moduloCatalogo\Puntuations;
 use Illuminate\Http\Request;
-use Illuminate\View\ViewServiceProvider;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 
 class ShopController extends Controller
 {
-     /**
-     * Display a listing of the resource.
-     */
     public function shopAdmin()
     {
         //
@@ -184,5 +179,4 @@ class ShopController extends Controller
         $shop->save();
         return redirect()->route('showShopUser', $id_shop);
     }
-  
 }

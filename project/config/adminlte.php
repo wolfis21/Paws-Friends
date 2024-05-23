@@ -386,6 +386,11 @@ return [
             'url' => '/adminPWFS/productAdmin',
             'icon' =>'fas fa-fw fa-pump-soap',
         ],
+        [
+            'text' =>'Tiendas',
+            'url' => '/adminPWFS/shopAdmin',
+            'icon' =>'fas fa-fw fa-pump-soap',
+        ],
         // ['header' => 'account_settings'],
         // [
         //     'text' => 'profile',

@@ -1,8 +1,9 @@
 @extends('layouts.dashboard')
+@vite('resources/css/moduloCatalogo/crub.css')
 @section('title', 'Tienda')
 @section('content')
 <h4 style="margin-top: 15px">Tiendas admin</h4>
-<a href="{{route('createProduct')}}" class="btn bg-green" style="margin-bottom: 15px;">Añadir
+<a href="{{route('createShop')}}" class="btn bg-green" style="margin-bottom: 15px;">Añadir
     Tienda</a>
 <div class="card bg-dark">
     <div class="card-body">
