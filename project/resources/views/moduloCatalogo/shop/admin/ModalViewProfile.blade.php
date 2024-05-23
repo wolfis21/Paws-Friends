@@ -24,12 +24,12 @@
                 </div>
                 <div class="mb-3">
                     <label for="link_ref" class="form-label">Link de referencia: </label>
-                    <p>{{ $shop->Link_ref }}</p>
+                    <p>{{ $shop->link_ref }}</p>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <a href="{{ route('editShop', $shop->id) }}" class="btn bg-cyan">Editar</a>
+                <a href="{{ route('editShop', $shop->id) }}" class="btn bg-green">Editar</a>
             </div>
         </div>
     </div>

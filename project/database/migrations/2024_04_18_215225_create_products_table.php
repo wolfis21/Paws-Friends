@@ -17,9 +17,13 @@ return new class extends Migration
             $table->text('description');
             $table->string('img_ref')->nullable();
             $table->unsignedBigInteger('product_category_animals_id')->nullable();
-            $table->foreign('product_category_animals_id')->references('id')->on('product_category_animals');
+            $table->foreign('product_category_animals_id')->references('id')->on('product_category_animals')
+            ->cascadeOnDelete()
+            ->cascadeOnUpdate();
             $table->unsignedBigInteger('shop_id')->nullable();
-            $table->foreign('shop_id')->references('id')->on('shops');
+            $table->foreign('shop_id')->references('id')->on('shops')
+            ->cascadeOnDelete()
+            ->cascadeOnUpdate();
             $table->float('price');
             $table->string('puntuation')->nullable();
             $table->timestamps();

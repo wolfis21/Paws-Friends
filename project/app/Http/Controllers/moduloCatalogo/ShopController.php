@@ -86,7 +86,7 @@ class ShopController extends Controller
             'address'=> 'string',
             'phone'=> 'required|alpha_num|min_digits:11',
             'link_ref'=> 'nullable',
-            'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'img_ref' => 'image|mimes:jpeg,png,jpg|max:2048',
             'puntuation' => 'nullable',
         ]);
 
@@ -94,10 +94,12 @@ class ShopController extends Controller
         $shopReq = $request->all();
 
         if ($image = $request->file('img_ref')) {
-            $path = 'storage/modulCatalogo/images/shops';
+            $path = 'storage/moduloCatalogo/images/shops';
             $imageName = date('YmdHis') . "_" . $image->getClientOriginalExtension();
             $image->move($path, $imageName);
             $shopReq['img_ref'] = "$imageName";
+        } else {
+            unset($shopReq['img_ref']);
         }
 
         $shop->update($shopReq);

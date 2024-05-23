@@ -24,12 +24,19 @@
         <div class="mb-3">
             <label for="product_category_animals_id" class="form-label">Categoria del producto</label>
             <select id="product_category_animals_id" name="product_category_animals_id" class="form-select">
-                    <option value="1">Perros</option>
-                    <option value="2">Gatos</option>
-                    <option value="3">Roedores</option>
-                    <option value="4">Aves</option>
-                    <option value="5">Peces</option>
-                    <option value="6">Reptiles</option>
+                <option>Seleccione una categoria para el producto</option>
+                @foreach ($categorys as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="tienda">Tienda</label>
+            <select name="shop_id" class="form-control" class="form-select" required>
+                <option>Selecciona una tienda</option>
+                @foreach ($shops as $shop)
+                    <option value="{{ $shop->id }}">{{ $shop->name }}</option>
+                @endforeach
             </select>
         </div>
         <div class="mb-3">
@@ -39,7 +46,7 @@
         </div>
         <div class="mb-3">
             <a class="btn bg-red" href="{{route('productAdmin')}}">Cancelar</a>
-            <button class="btn bg-cyan">Guardar</button>
+            <button class="btn bg-green">Guardar</button>
           </div>  
           
         
