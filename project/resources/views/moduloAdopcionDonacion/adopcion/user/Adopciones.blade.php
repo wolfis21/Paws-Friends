@@ -23,15 +23,16 @@
                         <p class="texto">Raza: {{ $adopcion->animal_race }}</p>
                         <p class="textosin">Edad: {{ $adopcion->age_animal }}</p>
                     </a>
-                @else
                 @php
                     $true = true
                 @endphp
+                @endif
+                @endforeach
+                @if($true == false)
                     <h2>No hay adopciones disponibles</h2>
                 @endif
-            @endforeach
         </section>
-        @if ($true !== false)            
+        @if ($true !== true)
         <section class="container-table">
             <div class="rounded-container"> <!-- Contenedor con bordes redondeados -->
                 <table class="tablehistorial">
@@ -65,7 +66,7 @@
                         @endforeach
                     </tbody>
                 </table>
-            </div> 
+            </div>
         </section>
         @endif
     </div>
