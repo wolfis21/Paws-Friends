@@ -71,7 +71,7 @@ class DogGroomerController extends Controller
     public function editDogGroomer(string $id)
     {
         $dogGroomer = Dog_Groomer::find($id);
-        return view('moduloServicios.dogGroomer.admin.edit')->with('dogGroomer', $dogGroomer)->with('info','Se edito la peluqueria correctamente');
+        return view('moduloServicios.dogGroomer.admin.edit')->with('dogGroomer', $dogGroomer);
     }
     /**
      * Update the specified resource in storage.
@@ -96,7 +96,7 @@ class DogGroomerController extends Controller
         }
         $dogGroomer->update($dogGroomerReq);
 
-        return redirect()->route('dogGroomerAdmin');
+        return redirect()->route('dogGroomerAdmin')->with('info','Se edito la peluqueria correctamente');
     }
     /**
      * Remove the specified resource from storage.
