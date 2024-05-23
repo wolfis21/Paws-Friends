@@ -84,7 +84,8 @@ class ProductController extends Controller
         // Retorna la vista 'edit' con el producto especificado
         $product = Product::find($id);
         $categorys = categoryProductsAnimals::all();
-        return view('moduloCatalogo.products.admin.edit')->with('product', $product)->with('categorys',$categorys);
+        $shops = Shop::all();
+        return view('moduloCatalogo.products.admin.edit')->with('product', $product)->with('categorys',$categorys)->with('shops',$shops);
     }
 
     /**

@@ -94,7 +94,7 @@ class ShopController extends Controller
         $shopReq = $request->all();
 
         if ($image = $request->file('img_ref')) {
-            $path = 'storage/modulCatalogo/images/shops';
+            $path = 'storage/moduloCatalogo/images/shops';
             $imageName = date('YmdHis') . "_" . $image->getClientOriginalExtension();
             $image->move($path, $imageName);
             $shopReq['img_ref'] = "$imageName";
