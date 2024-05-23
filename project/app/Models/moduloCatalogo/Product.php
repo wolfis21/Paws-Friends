@@ -19,9 +19,10 @@ class Product extends Model
         'name',
         'description', 
         'img_ref',
-        'product_category_animals_id',
         'price',
-        'puntuation' 
+        'puntuation', 
+        'product_category_animals_id',
+        'shop_id'
     ];
 
     public function category_animal(){
@@ -32,6 +33,10 @@ class Product extends Model
     {
         return $this->belongsToMany(Puntuations::class, 'product_has_puntuations', 'products_id', 'puntuations_id')
             ->withPivot('created_at', 'updated_at');
+    }
+
+    public function shop(){
+        return $this->belongsTo(shop::class,'shop_id','id');
     }
 }
 
