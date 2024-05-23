@@ -55,7 +55,7 @@ class DogGroomerController extends Controller
             $dogGroomer['img_ref'] = "$imageName";
         }
         Dog_Groomer::create($dogGroomer);
-        return redirect()->route('dogGroomerAdmin');
+        return redirect()->route('dogGroomerAdmin')->with('success','Se agrego la peluqueria correctamente');
     }
     /**
      * Display the specified resource.
@@ -71,7 +71,7 @@ class DogGroomerController extends Controller
     public function editDogGroomer(string $id)
     {
         $dogGroomer = Dog_Groomer::find($id);
-        return view('moduloServicios.dogGroomer.admin.edit')->with('dogGroomer', $dogGroomer);
+        return view('moduloServicios.dogGroomer.admin.edit')->with('dogGroomer', $dogGroomer)->with('info','Se edito la peluqueria correctamente');
     }
     /**
      * Update the specified resource in storage.
@@ -107,7 +107,7 @@ class DogGroomerController extends Controller
         $path = public_path() . '/storage/moduloServicios/images/dogGroomers/' . $dogGroomer->img_ref;
         unlink($path);
         $dogGroomer->delete();
-        return redirect()->route('dogGroomerAdmin');
+        return redirect()->route('dogGroomerAdmin')->with('destroy','Se elimino la peluqueria correctamente');
     }
     //todo funciones user
     public function dogGroomerUser()

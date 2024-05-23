@@ -39,7 +39,7 @@ class AnimalsAdoptionController extends Controller
       $animals_adoption->users->id = '';
       $animals_adoption->save($animalAdoption);
 
-      return redirect('/AdminPP/adopciones');
+      return redirect('/AdminPP/adopciones')->with('info','Se edito la adopcion correctamente');
     }
 
     /**
@@ -90,13 +90,13 @@ class AnimalsAdoptionController extends Controller
       $animals_adoption = AnimalsAdoption::find($id);
       $animals_adoption->status = 'Aceptada';
       $animals_adoption->update();
-      return redirect('/adminPWFS/adopciones');
+      return redirect('/adminPWFS/adopciones')->with('success','Se confirmo la adopcion correctamente');
     }
     public function denegarAdopcion($id){
       $animals_adoption = AnimalsAdoption::find($id);
       $animals_adoption->status = 'Rechazada';
       $animals_adoption->update();
-      return redirect('/adminPWFS/adopciones');
+      return redirect('/adminPWFS/adopciones')->with('destroy','Se confirmo la adopcion correctamente');
     }
 
 }
