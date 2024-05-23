@@ -6,7 +6,7 @@
 @section('title', 'Adopciones')
 @vite('resources/css/moduloAdopcionesDonaciones/adopciones.css')
 @section('content')
-    <div class="container-main">
+    <div class="container-main" id="container-adopciones">
         <div class="title-container">
             <h1 class="title">Adopciones</h1>
             <a class="link-hover" href="{{route('indexDonations')}}">Donaciones</a>
@@ -18,7 +18,7 @@
             @foreach ($adopciones as $adopcion)
                 @if ($adopcion->status === 'Sin solicitud / Sin adoptar')
                     <a href="{{ route('showAdoptions', $adopcion->id) }}" class="animal">
-                        <img class="img-adoption" src="{{ asset('img/Animales/gato1.jpeg') }}" alt="Gato">
+                        <img class="img-adoption" src="{{ asset('/storage/moduloAdopcion/images/'.$adopcion->photo_animal) }}">
                         <h5>{{ $adopcion->name }}</h5>
                         <p class="texto">Raza: {{ $adopcion->animal_race }}</p>
                         <p class="textosin">Edad: {{ $adopcion->age_animal }}</p>
@@ -53,7 +53,7 @@
                                 <tr>
                                     <td>{{ $adopcion->id }}</td>
                                     <td>{{ $adopcion->users->name }}</td>
-                                    <td><img class="img-historial" src="{{ asset('img/Perfiles/foto perfil 1.jpeg') }}">
+                                    <td><img class="img-historial" src="{{ asset('/storage/moduloAdopcion/images/'.$adopcion->photo_animal) }}">
                                     </td>
                                     <td>{{ $adopcion->species }}</td>
                                     <td>{{ $adopcion->animal_race }}</td>

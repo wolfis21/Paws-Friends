@@ -1,0 +1,438 @@
+/*ESTILOS PRUEBA DE MDOULE 2*/
+
+.foto-altura{
+    height: 500px; 
+    border-radius: 50%;
+  
+  }
+  .foto-pequena{
+    height: 80vh; 
+    border-radius: 30%;
+    width: 100%;
+  
+  }
+  
+  
+  .bienvenido{
+      overflow-wrap: break-word;
+      font-weight: 100;
+      font-size: 56px;
+      letter-spacing: -2.9px;
+      line-height: 1.5;
+      background: linear-gradient(90deg, rgba(0, 0, 1, 0.81), #7e0297);
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      padding-top: 60px;
+  
+      margin-left: 5%;
+    }
+  
+    /*FONDO PAGINA PRINCIPAL SERVICIOS*/
+  
+  .b{
+    background: url('../../css/moduloRescate/imagenes/fondo3.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+  
+  }
+  /*FONDO SECCION DOS ACERCA DE NOSOTROS*/
+  .ba{
+    background: url('../../css/moduloRescate/imagenes/fondo.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    height: 100vh;
+    width: 100%;
+  
+  }
+  
+  p.letras{
+    color: white;
+    font-size: 44px; /* Tamaño grande */
+    padding: 25px; /* Espacio interno para resaltar el texto */
+    text-align: center; /* Centrado en la página */
+    font-weight: bold;
+    margin-right: 8%;
+    margin-bottom: 250px;
+  
+  }
+  .nosotros{
+    font-family: 'league spartan';
+    overflow-wrap: break-word;
+    font-weight: 100;
+    font-size: 46px;
+    letter-spacing: -2.9px;
+    line-height: 1.5;
+    background: linear-gradient(90deg, rgba(0, 0, 1, 0.81), #7e00d8);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  
+    margin-top: 20%;
+    letter-spacing: -0.9px;
+  
+  }
+  .informa{
+    font-family: 'league spartan';
+    font-size: 25px;
+  }
+  
+  .boton{
+    padding: 50px 50px; /* Espacio alrededor de los botones */
+    overflow: hidden; /* Para evitar problemas de flotación */
+  }
+  .boton a{
+    color: purple;
+    font-family: 'league spartan';
+    font-weight: bold;
+    padding: 10px 40px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px black;
+    font-size: 20px;
+    margin-right: 150px;
+  }
+  .boton-ir{ /*BOTON MAS INFO EN PAG PRINCIPAL SERVICIOS VISTA CLIENTE*/
+    background-color: #7e00d8;
+    color: white;
+    font-family: 'league spartan';
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px black;
+    font-size: 20px;
+    margin-left: 2%;
+    padding: 20px 30px;
+  
+  }
+  .vv-{ /*BOTON DE VOLVER A PAG PRINCIPAL DE HISTORIAL CLIENTE*/
+  
+    background-color: #7e00d8;
+    color: white;
+  
+    font-family: 'league spartan';
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px rgb(0, 0, 0);
+    font-size: 15px;
+    margin-left: 5%;
+    margin-top: 1%;
+    padding: 10px 30px ;
+  
+  
+  }
+  /*--------------------------------------REGISTRAR DEMANDA------------------------------------------*/
+  .ba-{
+    background: url('../../css/moduloRescate/imagenes/fondo.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+  }
+  .boo{
+    display: flex;
+  }
+  .vv{ /*BOTON DE VOLVER A PAG PRINCIPAL DE REGISTRAR DEMANDA*/
+    background-color: #7e00d8;
+    color: white;
+    font-family: 'league spartan';
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px rgb(0, 0, 0);
+    font-size: 15px;
+    margin-top: 3%;
+    margin-left: 5%;
+    padding: 10px 30px;
+    
+  }
+  
+  .tx-registro{
+  color: grey;
+  margin-left: 2%;
+  }
+  #heading{
+  text-transform: uppercase;
+  color: #673AB7;
+  font-weight: normal;
+  margin-left: 2%;
+  }
+  
+  #msform{
+  text-align: center;
+  position: relative;
+  margin-top: 20px;
+  }
+  
+  #msform fieldset{
+  border: 0 none;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding-bottom: 20px;
+  position: relative;
+  padding: 40px;
+  }
+  
+  .form-card{
+  text-align: center;
+  }
+  #msform fieldset:not(:first-of-type){
+  display: none;
+  }
+  
+  #motivo, #urgencia, #msform input, #msform textarea{
+  padding: 8px 15px 8px 15px;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  margin-bottom: 25px;
+  margin-top: 2px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'league spartan';
+  color: #2C3E50;
+  background-color: #ECEFF1;
+  font-size: 16px;
+  letter-spacing: 1px;
+  }
+  #msform input:focus, #msform textarea:focus{
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: px solid #673AB7;
+  outline-width: 0;
+  }
+  
+  #msform .action-button{
+  width: 100px;
+  background: #673AB7;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 0px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 0px 10px 5px;
+  float: right;
+  }
+  #msform .action-button:hover,
+  #msform .action-button:focus {
+  background-color: #311B92
+  }
+  
+  #msform .action-button-previous {
+  width: 100px;
+  background: #616161;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 0px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px 10px 0px;
+  float: right
+  }
+  
+  #msform .action-button-previous:hover,
+  #msform .action-button-previous:focus {
+  background-color: #000000
+  }
+  
+  .card {
+  z-index: 0;
+  border: none;
+  position: relative
+  }
+  
+  .fs-title {
+  font-size: 25px;
+  color: #673AB7;
+  margin-bottom: 15px;
+  font-weight: normal;
+  text-align: left
+  }
+  
+  .purple-text {
+  color: #673AB7;
+  font-weight: normal
+  }
+  
+  .steps {
+  font-size: 25px;
+  color: gray;
+  margin-bottom: 10px;
+  font-weight: normal;
+  text-align: right
+  }
+  
+  .fieldlabels {
+  color: gray;
+  text-align: left
+  }
+  
+  #progressbar {
+  margin-left: 180px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  color: lightgrey
+  }
+  
+  #progressbar .active {
+  color: #673AB7
+  }
+  
+  #progressbar li {
+  list-style-type: none;
+  font-size: 15px;
+  width: 25%;
+  float: left;
+  position: relative;
+  font-weight: 400
+  }
+  
+  #progressbar #account:before {
+  font-family: FontAwesome;
+  content: "\f13e"
+  }
+  
+  #progressbar #personal:before {
+  font-family: FontAwesome;
+  content: "\f007"
+  }
+  
+  #progressbar #payment:before {
+  font-family: FontAwesome;
+  content: "\f030"
+  }
+  
+  #progressbar #confirm:before {
+  font-family: FontAwesome;
+  content: "\f00c"
+  }
+  
+  #progressbar li:before {
+  width: 50px;
+  height: 50px;
+  line-height: 45px;
+  display: block;
+  font-size: 20px;
+  color: #ffffff;
+  background: lightgray;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+  padding: 2px
+  }
+  
+  #progressbar li:after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: lightgray;
+  position: absolute;
+  left: 0;
+  top: 25px;
+  z-index: -1
+  }
+  
+  #progressbar li.active:before,
+  #progressbar li.active:after {
+  background: #673AB7
+  }
+  
+  .progress {
+  height: 20px
+  }
+  
+  .progress-bar {
+  background-color: #673AB7
+  }
+  
+  .fit-image {
+  width: 100%;
+  object-fit: cover
+  }
+  /*--------------------------------------------------FUNDACION--------------------------------*/
+  .fun{
+  background: url('../../css/moduloRescate/imagenes/fondo.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0px;
+  height: 100vh;
+  width: 100%;
+  }
+  
+  .container-form{
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 50px;
+  background-color: #fff5;
+  backdrop-filter: blur(7px);
+  box-shadow: 0 .4rem .8rem #0005;
+  border-radius: .8rem;
+  padding: 15px;
+  
+  margin-top: 4%;
+  margin-left: 8%;
+  
+  }
+  
+  .container-form h2{ /*TITULO REGISTRO FUNDACIÓN */
+  font-family: 'league spartan';
+  letter-spacing: -0.9px;
+  line-height: 1.5;
+  background: linear-gradient(90deg, rgba(41, 26, 0, 0.809), #7e00d8);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  margin-bottom: 15px;
+  font-size: 35px
+  }
+  .container-form p{
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  }
+  .container-form a{
+  font-size: 17px;
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  margin-bottom: 15px;
+  color: black;
+  font-weight: 700;
+  }
+  .container-form a i{
+  color: orange;
+  margin-right: 10px;
+  }
+  .container-form form .campo, textarea{
+  width: 100%;
+  padding: 15px 10px;
+  font-size: 16px;
+  border: 1px solid #dbdbdb;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  outline: 0px;
+  }
+  .container-form form textarea{
+  max-width: 530px;
+  min-width: 530px;
+  min-height: 140px;
+  max-height: 150px;
+  }
+  .container-form .btn-enviar{
+  padding: 10px;
+  font-size: 15px;
+  border: none;
+  outline: 0px;
+  background: #673ab7;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 300ms ease;
+  }
+  .container-form .btn-enviar:hover{
+  background: #e39403;
+  }
