@@ -69,7 +69,7 @@ class ShopController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function editShop(Shop $id)
+    public function editShop($id)
     {
         //
         $shop = Shop::find($id);
@@ -109,7 +109,7 @@ class ShopController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroyShop(Shop $id)
+    public function destroyShop($id)
     {
         $shop = Shop::find($id);
         $path = public_path() . '/storage/moduloCatalogo/images/shops/' . $shop->img_ref;

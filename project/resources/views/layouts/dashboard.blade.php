@@ -273,7 +273,8 @@
                                 <div class="col-md-4 col-xl-4">
                                     <div class="card bg-green order-card">
                                         <div class="card-block">
-                                            <h5>Tiendas</h5>
+                                            <h5>Tiendas</h5><a href="/adminPWFS/shopAdmin"
+                                                    class="text-white">Ver más</a></p> 
                                         </div>
                                     </div>
                                 </div>
