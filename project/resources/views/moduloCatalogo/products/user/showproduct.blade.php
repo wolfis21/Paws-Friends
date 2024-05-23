@@ -26,8 +26,14 @@
     </div>
     <div class="rectangulo">
       <p>{{$product->product_category_animals_id}}</p>
-</div>
+    </div>
 
+  <h3 class="title-shop">Tienda</h3>
+  <div class="shop">
+  <div class="rectangulo2">
+  <img src="{{ asset('/css/moduloCatalogo/ubi.png') }}" class="img3" alt="">
+      <g>{{$product->shop->name}}</</g>
+    </div>
   <h3 class="title-ubi">Ubicación del Producto</h3>
   <div class="ubication">
   <div class="rectangulo2">

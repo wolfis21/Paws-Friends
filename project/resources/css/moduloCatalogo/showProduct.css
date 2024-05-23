@@ -34,16 +34,34 @@
 .caracteristics{
     padding-left: 20px;
 }
-.title-ubi{
+.title-shop{
     position: absolute;
     font-size: 28;
     padding-top: 70;
     padding-right: 0;
 }
-.ubication{
+.title-ubi{
+    position: absolute;
+    font-size: 28;
+    padding-top: 20;
+    padding-right: 0;
+}
+.title-shop{
+    position: absolute;
+    font-size: 28;
+    padding-top: 70;
+    padding-right: 0;
+}
+.shop{
     position: absolute;
     font-size: 20;
     padding-top: 110;
+    padding-right: 0;
+}
+.ubication{
+    position: absolute;
+    font-size: 20;
+    padding-top: 80;
     padding-right: 0;
 }
 .title-phone{
@@ -105,8 +123,24 @@
     border-style:groove;
     border-color: #6D569E;
     border-radius: 0%;
+    
   } 
   .rectangulo3 {
+    width: 200px; 
+    height: 50px; 
+    margin-right: 10px; 
+    background-color: white;
+    color: black;
+    text-align: left; 
+    padding-left: 10;
+    line-height: 50px; 
+    font-size: 18px; 
+    font-weight: 500;
+    border-style:groove;
+    border-color: #6D569E;
+    border-radius: 0%;
+  }
+  .rectangulo4{
     width: 200px; 
     height: 50px; 
     margin-right: 10px; 
