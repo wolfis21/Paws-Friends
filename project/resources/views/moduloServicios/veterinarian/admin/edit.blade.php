@@ -16,7 +16,7 @@
             </div>
             <div class="mb-3">
               <label for="Telefono" class="form-label">Telefono</label>
-              <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" placeholder="04141912013" value="{{($veterinarian->phone)}}">
+              <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" placeholder="Example: 04141912013" value="{{($veterinarian->phone)}}">
             </div>
           <div class="mb-3">
               <label for="email" class="form-label">Email</label>

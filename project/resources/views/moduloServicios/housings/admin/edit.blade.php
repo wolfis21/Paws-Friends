@@ -18,7 +18,7 @@
         </div>
         <div class="mb-3">
             <label for="phone" class="form-label">Telefono</label>
-            <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" placeholder="04141912013" value="{{$housing->phone}}">
+            <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" placeholder="Example: 04141912013" value="{{$housing->phone}}">
         </div>
         <div class="mb-3">
             <label for="description_location" class="form-label">Localizacion</label>
