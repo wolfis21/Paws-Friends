@@ -1,4 +1,5 @@
 @extends('layouts.dashboard')
+@vite('resources/css/moduloCatalogo/crub.css')
 @section('title', 'Producto')
 @section('content')
 <h4 style="margin-top: 15px">Productos admin</h4>
