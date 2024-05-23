@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('img_ref')->nullable();
             $table->unsignedBigInteger('product_category_animals_id')->nullable();
             $table->foreign('product_category_animals_id')->references('id')->on('product_category_animals');
+            $table->unsignedBigInteger('shop_id')->nullable();
+            $table->foreign('shop_id')->references('id')->on('shops');
             $table->float('price');
             $table->string('puntuation')->nullable();
             $table->timestamps();
