@@ -6,10 +6,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 </head>
 
-<section class="welcome">
-
+<section class="welcome"> 
 <div>
-    <img src="storage/moduloCatalogo/images/products/{{ $product->img_ref }}" class="img" alt="">
+    <img src="/storage/moduloCatalogo/images/products/{{ $product->img_ref }}" class="img" alt="">
     <img src="{{ asset('/css/moduloCatalogo/cosomorado.png') }}" class="img2" alt="">
 </div>
 

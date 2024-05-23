@@ -1,24 +1,36 @@
 .contenedor-product {
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    /* Add this property */
+
+    background-image: url("C:/laragon/www/Paws-Friends/project/resources/views/moduloCatalogo/img/fondo.png");
+    background-size: cover;
+    background-position: center;    
 }
 
 .img-product{
-    width: 90%;
-    height: 80%;
-    object-fit: cover;
+    width: 100%;
+    height: 70%;
+    object-fit: contain;
     border-radius: 20px;
+}
+.product-card-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
 }
 .product-card {
     height: 354px;
     width: 234px;
     border-radius: 20px;
-    text-align: center;
+    text-align: left;
     display: flex;
     flex-direction: column;
-    height: 150px;
-    width: 120px;
     background: #fff;
     margin: 40px;
     border-radius: 30px;
@@ -39,4 +51,77 @@
     -moz-transition: all 0.5s;
     -ms-transition: all 0.5s;
     -o-transition: all 0.5s;
+}
+.title-cat{
+
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    font-weight: 400;
+    font-size: 60px;
+    font-family: 'Itim';
+    font-weight: bold;
+}
+t{
+    color: black;
+    text-decoration: none;
+    justify-content: center;
+    font-size: 20;
+    font-weight: 600;
+}
+img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.mascotas{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.checkbox{
+    border-radius: 20px;        
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    width: 120px;
+    background: #fff;
+    margin: 40px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all.5s;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.checkbox:hover {
+    -webkit-box-shadow: 0px 0px 35px 3px rgb(24, 24, 24);
+    -moz-box-shadow: 0px 0px 35px 3px rgba(0, 0, 0, 0.804);
+    box-shadow: 0px 0px 35px 3px #000000af;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+.name-product{
+    color: black;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    text-align: justify;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.price-product{
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
 }

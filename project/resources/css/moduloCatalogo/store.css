@@ -198,7 +198,12 @@ t{
     font-size: 20;
     font-weight: 600;
 }
-
+.ver-todo{
+    font-size: 18px;
+    font-family: 'Itim';
+    font-weight: 30px;
+    padding-bottom: 30px;
+}
 /* Desarrolladores */
 .developer{
     background: #60cb40;  /* fallback for old browsers */
