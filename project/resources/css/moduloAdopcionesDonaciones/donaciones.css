@@ -146,6 +146,7 @@ input{
 .img-donations{
     border-radius: 10px;
     width: 200px;
+    height: 115px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;

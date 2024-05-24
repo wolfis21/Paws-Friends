@@ -3,6 +3,7 @@
 @section('content')
 <div class="content">
     <form class="info-User" method="POST" action="{{ route('login') }}" >
+        @include('../layouts/messageActions')
         @csrf
         <div class="register-welcome">
            <div class="welcome">

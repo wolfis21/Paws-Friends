@@ -25,7 +25,7 @@ class PrincipalController extends Controller
     public function indexAdoptions()
     {
         $adopciones = AnimalsAdoption::all();
-        return view('moduloAdopcionDonacion.adopcion.user.Adopciones', compact('adopciones'))->with('success','Solicitud de donacion realizada correctamente');
+        return view('moduloAdopcionDonacion.adopcion.user.Adopciones', compact('adopciones'));
     }
 
     public function showAdoptions($id)
@@ -35,7 +35,7 @@ class PrincipalController extends Controller
 
             return view('moduloAdopcionDonacion.adopcion.user.show', compact('adopcion'));
         } else {
-            return redirect()->route('login');
+            return redirect()->route('login')->with('info','Por favor necesita iniciar sesion para acceder a este apartado');
         }
     }
 
@@ -45,6 +45,6 @@ class PrincipalController extends Controller
         $adopcion->status = 'En proceso';
         $adopcion->users_id = Auth::user()->id;
         $adopcion->update();
-        return redirect()->route('indexAdoptions');
+        return redirect()->route('indexAdoptions')->with('success','Su solicitud de adopciones fue enviada exitosamente');
     }
 }
