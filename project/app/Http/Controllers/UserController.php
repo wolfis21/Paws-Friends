@@ -29,7 +29,7 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
 
-        $userData = [];
+        $userData = $request->all();
         $filesToUpload = [
             ['field' => 'photo_user', 'path' => 'userImg'],
             ['field' => 'photo_dni', 'path' => 'dniImg'],
@@ -47,8 +47,8 @@ class UserController extends Controller
         }
 
         $user->update($userData);
-
-        return view('profile.index', compact('user'));
+        $info = 'Perfil editado';
+        return view('profile.index', compact('user','info'));
     }
 
 
