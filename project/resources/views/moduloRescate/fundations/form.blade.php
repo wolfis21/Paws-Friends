@@ -6,7 +6,7 @@
 <div class="mb-3">
     <label for="Telefono" class="form-label">Telefono</label>
     <input type="text" class="form-control" id="phone" name="phone"
-        placeholder="Teléfono" value="{{ old('phone') }}" required>
+        placeholder="Example: 04141912013" value="{{ old('phone') }}" required>
 </div>
 <div class="mb-3">
     <label for="email" class="form-label">Email</label>

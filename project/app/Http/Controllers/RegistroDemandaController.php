@@ -53,7 +53,7 @@ class RegistroDemandaController extends Controller
 
         Demands_animalss::create($request->all());
 
-        return redirect()->route('servicios');
+        return redirect()->route('historial_user.index');
     }
 
     /**
