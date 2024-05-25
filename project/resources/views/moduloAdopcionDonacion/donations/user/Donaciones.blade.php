@@ -8,9 +8,11 @@
             <a class="link-hover" href="{{route('indexAdoptions')}}">Adopciones</a>
         </div>
         <div class="content">
+
             <form method="POST" action="{{ route('donaciones.store') }}" enctype="multipart/form-data">
                 {{ method_field('POST') }}
                 @csrf
+                @include('../../../layouts/messageActions')
                 <div class="title-form">
                     <h2 class="title-form-h2">Formulario de donaciones</h2>
                 </div>

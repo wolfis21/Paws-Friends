@@ -139,7 +139,7 @@ class DogGroomerController extends Controller
                 ->with('verificarPuntajeUsuario', $verificarPuntajeUsuario)
                 ->with('dogGroomersComments', $dogGroomersComments);
         } else {
-            return redirect()->route('login');
+            return redirect()->route('login')->with('info','Por favor necesita iniciar sesion para acceder a este apartado');
         }
     }
 
