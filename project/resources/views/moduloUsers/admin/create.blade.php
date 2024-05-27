@@ -11,40 +11,61 @@
                 
                     <div class="mb-3" >
                         <label class="form-label">Nombre</label>
-                        <input name="name" class="form-control" placeholder="Nombre"/>
+                        <input name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Nombre">
+                        @error('name')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Apellido</label>
-                        <input  name="last_name"class="form-control" placeholder="Apellido"/>
+                        <input  name="last_name"class="form-control @error('last_name') is-invalid @enderror" placeholder="Apellido"  />
+                        @error('last_name')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Direccion</label>
-                        <input name="address" class="form-control" placeholder="Direccion"/>
+                        <input name="address" class="form-control @error('address') is-invalid @enderror" max="100" placeholder="Direccion"  />
+                        @error('address')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Cedula</label>
-                        <input name="dni" class="form-control" placeholder="Cedula"/>
+                        <input name="dni" type="number"  min='100000' max="99999999" class="form-control @error('dni') is-invalid @enderror" placeholder="Cedula"  />
+                        @error('dni')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Telefono Movil</label>
-                        <input name="phone" class="form-control" placeholder="Telefono Movil"/>
+                        <input name="phone" type="number" class="form-control @error('dni') is-invalid @enderror" placeholder="Telefono Movil"  />
+                        @error('phone')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Foto</label>
-                        <input type="file" name="photo_user" class="form-control" placeholder="Foto de Perfil"/>
+                        <input type="file" name="photo_user" class="form-control" placeholder="Foto de Perfil"  />
                     </div>
                 
                     <div class="mb-3">
                         <label class="form-label">Ingresa correo electronico</label>
-                        <input class="form-control" name="email" placeholder="Correo Electronico"/>
+                        <input class="form-control @error('email') is-invalid @enderror" type="email" name="email" placeholder="Correo Electronico"  />
+                        @error('email')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Ingresa tu contrasena</label>
-                        <input class="form-control" name="password" placeholder="Contrasena de la Cuenta"/>
+                        <input class="form-control @error('password') is-invalid @enderror"  type="password" name="password" placeholder="Contrasena de la Cuenta"  />
+                        @error('password')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                     </div>
                     <div class="mb-3">
                         <label for="photo_user" class="form-label">Foto Cedula</label>
-                            <input class="form-control" type="file" name="photo_dni" value="">
+                            <input class="form-control" type="file" name="photo_dni" value="" >
                     </div>
                     <div class="mb-3">
                         <label for="photo_user" class="form-label">Foto Rif</label>

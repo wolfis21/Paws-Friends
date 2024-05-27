@@ -20,15 +20,15 @@
                 <input type="hidden" name="users_id" value="{{ Auth::user()->id }}">
                 <div class="fecha-entrega form-group">
                     <label for="fecha-entrega">Fecha de entrega</label>
-                    <input type="date" name="date" id="fecha-entrega">
+                    <input type="date" name="date" id="fecha-entrega" required>
                 </div>
                 <div class="subir-fotos form-group">
                     <label for="fotos-donacion">Subir fotos de la donación </label>
-                    <input type="file" id="fotos-donacion" name="photo_ref" accept="image/*" />
+                    <input type="file" id="fotos-donacion" name="photo_ref" accept="image/*" required/>
                 </div>
                 <div class="donacion-destino form-group">
                     <p>¿Para quién va dirigido?</p>
-                    <select id="destino" name="destino_fundacion">
+                    <select id="destino" name="destino_fundacion" required>
                         <option value="refugio">Refugio de animales</option>
                         <option value="centro-adopcion">Centro de adopción</option>
                         <option value="otro">Otros</option>
@@ -36,7 +36,7 @@
                 </div>
                 <div class="tipos-donacion form-group">
                     <p>Tipo de Donaciones</p>
-                    <select id="tipos" name="type_donation">
+                    <select id="tipos" name="type_donation" required>
                         <option value="alimentos">Donaciones de alimentos y suministros</option>
                         <option value="Medicina">Donaciones de medicamentos:</option>
                         <option value="otro">Otros</option>
@@ -44,11 +44,11 @@
                 </div>
                 <div class="form-group">
                     <label for="description_ref">Descripcion</label>
-                    <input type="text" name="description_ref" id="description_ref" placeholder="Juguete de plastico">
+                    <input type="text" name="description_ref" id="description_ref" placeholder="Juguete de plastico" required>
                 </div>
                 <div class="form-group">
                     <label for="cantidad-donar">Cantidad a donar</label>
-                    <input type="number" name="qty" id="cantidad-donar" placeholder="12">
+                    <input type="number" name="qty" id="cantidad-donar" placeholder="12" required>
                 </div>
                 <div class="form-group">
                     <button class="btn-finally">Finalizar</button>

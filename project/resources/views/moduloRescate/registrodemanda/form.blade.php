@@ -35,30 +35,44 @@
                                      <input type="hidden" class="form-control" id="users_id" name="users_id" value="{{Auth::user()->id}}"/>
                                   
                                     <label class="fieldlabels">Descripción situación:</label> 
-                                    <input type="text" class="form-control @error('description_case') is-invalid @enderror" id="description_case" name="description_case" placeholder="Redacta tu denuncia a presentar" value="{{ old('description_case') }}" required /> 
+                                    <input type="text" class="form-control @error('description_case') is-invalid @enderror" id="description_case" name="description_case" placeholder="Redacta tu denuncia a presentar" value="{{ old('description_case') }}"  /> 
+                                    @error('description_case')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror  
 
                                     <label class="fieldlabels">Dirección:</label> 
-                                    <input type="text" class="form-control @error('adress_animals') is-invalid @enderror" id="adress_animals" name="adress_animals" placeholder="Lugar del suceso" value="{{ old('adress_animals') }}" required/>
+                                    <input type="text" class="form-control @error('adress_animals') is-invalid @enderror" id="adress_animals" name="adress_animals" placeholder="Lugar del suceso" value="{{ old('adress_animals') }}" />
+                                    @error('adress_animals')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror  
 
                                     <label for="imagen"  class="fieldlabels">Imagen del animal encontrado:</label> 
-                                     <input type="file" id="photo_ref" name="photo_ref" accept="image/*" required/>
+                                     <input type="file" class="form-control @error('adress_animals') is-invalid @enderror" id="photo_ref" name="photo_ref" accept="image/*" />
+                                     @error('photo_ref')
+                                     <small class="text-danger">{{ $message }}</small>
+                                 @enderror  
 
                                     <label class="fieldlabels">Motivo denuncia:</label> 
-                                    <select name="motivo_id" id="motivo" class="form-control" required>
+                                    <select name="motivo_id" id="motivo" class="form-control @error('motivo_id') is-invalid @enderror" >
                                         <option value="">Selecciona un motivo</option>
                                         @foreach ($motivos as $motivo)
                                             <option value="{{ $motivo->id }}">{{ $motivo->name }}</option>
                                         @endforeach
                                     </select>
+                                    @error('motivo_id')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror  
                                             
                                     <label class="fieldlabels">Urgencia denuncia:</label>
-                                    <select name="urgencia_id" id="urgencia" class="form-control" required>
+                                    <select name="urgencia_id" id="urgencia" class="form-control  @error('motivo_id') is-invalid @enderror" >
                                         <option value="">Selecciona una urgencia</option>
                                         @foreach ($urgencias as $urgencia)
                                             <option value="{{ $urgencia->id }}">{{ $urgencia->name }}</option>
                                         @endforeach
                                     </select>
-                                     
+                                    @error('urgencia_id')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror  
                                 </div> 
                                <!--BOTON ENVIAR-->
                                <button type="submit"  class="next action-button">Enviar</button>
