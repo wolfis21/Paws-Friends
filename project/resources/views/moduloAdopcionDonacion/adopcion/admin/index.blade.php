@@ -5,7 +5,7 @@
     @include('../../../layouts/messageActions')
     <h4 style="margin-top: 15px">Adopciones en espera admin</h4>
     {{-- acomodar --}}
-    <a href="{{ route('adopciones.create') }}" class="btn bg-purple" style="margin-bottom: 15px;">Crear adopcion</a>
+    <a href="{{ route('adopciones.create') }}" class="btn bg-purple" style="margin-bottom: 15px;">Crear Animal</a>
     <div class="card bg-dark">
         <div class="card-body">
             <table id='Adopciones' class="table table-dark table-responsive-md" style="width:100%">
