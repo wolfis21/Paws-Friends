@@ -62,5 +62,40 @@
         </div>
         <!--FIN SECCION-->
     </div>
+    <section class="developer">
+        <h2 class="texto texto-program">Desarrolladores</h2>
+        <div class="cartas">
+            <div class="carta">
+                <img class="img-dev" src="{{ asset('css/moduloRescate/gus.jpg') }}" alt="">
+                <div class="contenido-texto-card">
+                    <h4 class="nombre-Program">Gustavo Arocha</h4>
+                    <p><b>BACK-END</b></p>
+                </div>
+            </div>
+            <div class="carta">
+                <img class="img-dev" src="{{ asset('css/moduloRescate/manee.jpg') }}" alt="">
+                <div class="contenido-texto-card">
+                    <h4 class="nombre-Program">Luis Maneiro</h4>
+                    <p><b>BACK-END</b></p>
+                </div>
+            </div>
+            <div class="carta">
+                <img class="img-dev" src="{{ asset('css/moduloRescate/aly.jpg') }}" alt="">
+                <div class="contenido-texto-card">
+                    <h4 class="nombre-Program">Alyuska Maestre</h4>
+                    <p><b>FRONT-END</b></p>
+                </div>
+            </div>
+            <div class="carta">
+                <img class="img-dev" src="{{ asset('css/moduloRescate/luci.jpg') }}" alt="">
+                <div class="contenido-texto-card">
+                    <h4 class="nombre-Program">Lucianni Romero</h4>
+                    <p><b>FRONT-END</b></p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
 
 @endsection

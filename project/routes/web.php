@@ -180,7 +180,7 @@ Route::get('/adminPWFS/adopcionDestroy/{id}',[AnimalsAdoptionController::class, 
 Route::put('/adminPWFS/ConfirmarAdopcion/{id}',[AnimalsAdoptionController::class,'confirmarAdopcion'])->name('confirmarAdopcion');
 Route::put('/adminPWFS/denegarAdopcion/{id}',[AnimalsAdoptionController::class,'denegarAdopcion'])->name('denegarAdopcion');
 
-Route::resource('historias', HistoriaController::class);
+
 //? FIN RUTAS MODULO 3
 
 //? RUTAS MODULO 4=========================================================================================

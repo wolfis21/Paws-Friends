@@ -32,7 +32,7 @@ class AdopcionesController extends Controller
         }
         AnimalsAdoption::create($adopcion);
 
-        return redirect('/adminPWFS/adopciones')->with('success','Se creo la adopciono correctamente');
+        return redirect('/adminPWFS/adopciones')->with('success','Se creo la adopcion correctamente');
 
     }
     public function edit($id)

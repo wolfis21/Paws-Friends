@@ -31,19 +31,19 @@
                                         </div>
                                     </div>
                                     
-                                     {{-- DEBE GUARDAR EL USUARIO QUE YA INICIÓ SESIÓN PERO PARA PROBAR SE HIZO ESTO: Al registrar se coloca por defecto el usuario id=1 --}}
+                                    
                                      <input type="hidden" class="form-control" id="users_id" name="users_id" value="{{Auth::user()->id}}"/>
                                   
-                                    <label class="fieldlabels">Descripción situación: *</label> 
+                                    <label class="fieldlabels">Descripción situación:</label> 
                                     <input type="text" class="form-control @error('description_case') is-invalid @enderror" id="description_case" name="description_case" placeholder="Redacta tu denuncia a presentar" value="{{ old('description_case') }}" required /> 
 
-                                    <label class="fieldlabels">Dirección: *</label> 
+                                    <label class="fieldlabels">Dirección:</label> 
                                     <input type="text" class="form-control @error('adress_animals') is-invalid @enderror" id="adress_animals" name="adress_animals" placeholder="Lugar del suceso" value="{{ old('adress_animals') }}" required/>
 
                                     <label for="imagen"  class="fieldlabels">Imagen del animal encontrado:</label> 
                                      <input type="file" id="photo_ref" name="photo_ref" accept="image/*" required/>
 
-                                    <label class="fieldlabels">Motivo denuncia: *</label> 
+                                    <label class="fieldlabels">Motivo denuncia:</label> 
                                     <select name="motivo_id" id="motivo" class="form-control" required>
                                         <option value="">Selecciona un motivo</option>
                                         @foreach ($motivos as $motivo)
@@ -51,7 +51,7 @@
                                         @endforeach
                                     </select>
                                             
-                                    <label class="fieldlabels">Urgencia denuncia: *</label>
+                                    <label class="fieldlabels">Urgencia denuncia:</label>
                                     <select name="urgencia_id" id="urgencia" class="form-control" required>
                                         <option value="">Selecciona una urgencia</option>
                                         @foreach ($urgencias as $urgencia)

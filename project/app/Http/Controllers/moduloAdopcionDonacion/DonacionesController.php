@@ -24,16 +24,6 @@ class DonacionesController extends Controller
 
     public function store(Request $request)
     {
-/*         $request->validate([
-            'date' => 'required|date', 
-            'type_donation' => 'required|string',
-            'description_ref' => 'string',
-            'qty' => 'min:1', 
-            'photo_ref' => 'nullable|string',
-            'destino_fundacion' => 'required|string',
-            'users_id' => 'required',
-        ]); */
-
         $donations = $request->all();
 
         if ($image = $request->file('photo_ref')) {
@@ -51,7 +41,7 @@ class DonacionesController extends Controller
           return view('moduloAdopcionDonacion.donations.admin.index')
           ->with('donations', $donations);
         }else{
-          return redirect()->route('indexDonations');
+          return redirect()->route('indexDonations')->with('success','Su donacion fue enviada exitosamente');
         }
     }
 }

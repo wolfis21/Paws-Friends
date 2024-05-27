@@ -364,3 +364,7 @@ a.btn-main:hover{
     color: #fff;
   }
 
+.alert{
+    margin-top: 1rem;
+    margin-bottom: 0px !important;
+}

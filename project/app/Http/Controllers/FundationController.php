@@ -32,7 +32,7 @@ class FundationController extends Controller
     {
         $request->validate([
             'name' => ['required', 'unique:fundation', 'string', 'min:3' ],
-            'phone' => ['required', 'unique:fundation', 'alpha_num', 'min_digits:11'],
+            'phone' => ['required', 'unique:fundation', 'numeric', 'min_digits:11', 'max_digits:15'],
             'email' => ['required', 'email', 'unique:fundation', 'string', 'min:3'],
             'description' => ['required', 'string', 'min:3'],
         ]);
