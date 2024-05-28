@@ -33,7 +33,7 @@ class RegistroDemandaController extends Controller
             return view('moduloRescate.registrodemanda.create')->with('demand', $demand)
             ->with('motivos', $motivos)->with('urgencias', $urgencias)->with('users', $users);
         } else {
-            return redirect()->route('login');
+            return redirect()->route('login')->withErrors(['login' => 'Tienes que iniciar sesion para estar aca.']);
         }
     }
 
