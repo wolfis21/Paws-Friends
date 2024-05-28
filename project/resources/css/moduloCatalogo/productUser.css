@@ -206,3 +206,12 @@ t{
     -ms-transition: all .5s;
     -o-transition: all .5s;
 }
+/* .promo{
+    color: yellow;
+    background-color: red;
+    padding: 1px;
+    border-radius: 100%;
+    bottom: 180px;
+    position: absolute;
+
+} */

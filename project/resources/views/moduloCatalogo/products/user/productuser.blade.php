@@ -59,6 +59,7 @@
         <a href="/Product/{{$product->id}}" style="color: black;">
             <div class="product-card">
                 <img class="img-product" src="storage/moduloCatalogo/images/products/{{ $product->img_ref }}" />
+                <!-- <p class="promo">50%</p> -->
                 <p class = "name-product">{{ $product->name }}</p>
                 <p class = "price-product">${{ $product->price }}</p>
             </div>

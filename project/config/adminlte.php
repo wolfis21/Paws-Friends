@@ -389,7 +389,7 @@ return [
         [
             'text' =>'Tiendas',
             'url' => '/adminPWFS/shopAdmin',
-            'icon' =>'fas fa-fw fa-pump-soap',
+            'icon' =>'fas fa-store',
         ],
     ],
 
