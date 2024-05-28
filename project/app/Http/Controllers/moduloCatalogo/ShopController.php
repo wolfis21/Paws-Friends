@@ -41,7 +41,6 @@ class ShopController extends Controller
             'link_ref'=> 'nullable',
             'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'puntuation' => 'nullable',
-
         ]);
 
         $shop =$request->all();
@@ -179,6 +178,6 @@ class ShopController extends Controller
         $promedioRedondeado = round($shop->puntuaciones_avg_puntuation);
         $shop->puntuation = $promedioRedondeado;
         $shop->save();
-        return redirect()->route('showShopUser', $id_shop);
+        return redirect()->route('showshopUser', $id_shop);
     }
 }

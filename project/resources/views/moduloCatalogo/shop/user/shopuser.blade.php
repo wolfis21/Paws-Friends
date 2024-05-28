@@ -18,6 +18,14 @@
                 <img class="img-product" src="storage/moduloCatalogo/images/shops/{{ $shop->img_ref }}" />
                 <p class = "name-shop">{{ $shop->name }}</p>
                 <p class = "address-shop">{{ $shop->address }}</p>
+                <div class="rating">
+                    @for ($i = 0; $i < $shop->puntuation; $i++)
+                        <i class="bi bi-star-fill star"></i>
+                    @endfor
+                    @for ($i = 0; $i < 5 - $shop->puntuation; $i++)
+                        <i class="bi bi-star-fill star-o"></i>
+                    @endfor
+                </div>
             </div>
         @endforeach
     </section>
