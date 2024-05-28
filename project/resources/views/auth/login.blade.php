@@ -16,6 +16,9 @@
                         Registrate</a>
                 </div>
             </div>
+            @error('login')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
             @error('email')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror

@@ -19,7 +19,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Id <span class="icon-arrow">&UpArrow;</span></th>
+                        <th>Referencia <span class="icon-arrow">&UpArrow;</span></th>
                         <th>Usuario <span class="icon-arrow">&UpArrow;</span></th>
                         <th>Demanda <span class="icon-arrow">&UpArrow;</span></th>
                         <th>Dirección <span class="icon-arrow">&UpArrow;</span></th>
@@ -34,7 +34,7 @@
                 <tbody>
                     @foreach ($demand as $demands_animalss)
                     <tr>
-                        <td>{{ $demands_animalss->id }}</td>
+                        <td><img class="img-vets" src="{{ asset('storage/moduloRescate/images/'.$demands_animalss->photo_ref) }}" /></td>
                         <td>{{ $demands_animalss->user->name }}</td>
                         <td>{{ $demands_animalss->description_case }}</td>
                         <td>{{ $demands_animalss->adress_animals }}</td>
@@ -65,7 +65,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Id <span class="icon-arrow">&UpArrow;</span></th>
+                        <th>Referencia <span class="icon-arrow">&UpArrow;</span></th>
                         <th>Usuario <span class="icon-arrow">&UpArrow;</span></th>
                         <th>Demanda <span class="icon-arrow">&UpArrow;</span></th>
                         <th>Motivo <span class="icon-arrow">&UpArrow;</span></th>
@@ -78,7 +78,7 @@
                 <tbody>
                     @foreach ($completada as $demand_animal_has_fundation)
                         <tr>
-                            <td>{{ $demand_animal_has_fundation->demands_animalss->id }}</td>
+                            <td><img class="img-vets" src="{{ asset('storage/moduloRescate/images/'. $demand_animal_has_fundation->$demands_animalss->photo_ref) }}"/></td>
                             <td>{{ $demand_animal_has_fundation->demands_animalss->user->name }}</td>
                             <td>{{ $demand_animal_has_fundation->demands_animalss->description_case }}</td>
                             <td>{{ $demand_animal_has_fundation->demands_animalss->motivo->name }}</td>

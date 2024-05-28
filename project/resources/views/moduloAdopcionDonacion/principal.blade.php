@@ -1,6 +1,7 @@
 @extends('layouts.headerNav')
 @section('title', 'Adopciones & Donaciones')
 @vite('resources/css/moduloAdopcionesDonaciones/index.css')
+@vite(['resources/css/theme.css'])
 @section('content')
     <div class="container-welcome">
         <div class="img">
@@ -19,4 +20,39 @@
             </div>
         </div>
     </div>
+    <section class="developer">
+        <h2 class="texto texto-program">Desarrolladores</h2>
+        <div class="cartas">
+            <div class="carta">
+                <img class="img-dev" src="{{ asset('img/devs/des-defaulf.jpg') }}" alt="">
+                <div class="contenido-texto-card">
+                    <h4 class="nombre-Program">Maria Romero</h4>
+                    <p><b>Lider</b></p>
+                </div>
+            </div>
+            <div class="carta">
+                <img class="img-dev" src="{{ asset('img/devs/des-defaulf.jpg') }}" alt="">
+                <div class="contenido-texto-card">
+                    <h4 class="nombre-Program">Henry Barreto</h4>
+                    <p><b>FRONT-END</b></p>
+                </div>
+            </div>
+            <div class="carta">
+                <img class="img-dev" src="{{ asset('img/devs/des-defaulf.jpg') }}" alt="">
+                <div class="contenido-texto-card">
+                    <h4 class="nombre-Program">Orlando Guerra</h4>
+                    <p><b>BACK-END</b></p>
+                </div>
+            </div>
+            <div class="carta">
+                <img class="img-dev" src="{{ asset('img/devs/des-defaulf.jpg') }}" alt="">
+                <div class="contenido-texto-card">
+                    <h4 class="nombre-Program">Anthony Mansilla</h4>
+                    <p><b>FRONT-END</b></p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
 @endsection

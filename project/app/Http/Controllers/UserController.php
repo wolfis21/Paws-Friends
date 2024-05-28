@@ -68,7 +68,18 @@ class UserController extends Controller
     }
     public function createForm(Request $request)
     {
-        if ($request['photo_dni'] || $request['photo_rif'] || $request['photo_user']) {
+
+        $request->validate([
+            'name' => 'required', 'string', 'max:255',
+            'last_name' => 'required', 'string', 'max:255',
+            'dni' => 'required', 'string', 'max:20',
+            'phone' => 'required', 'string', 'max:12' ,
+            'address' => 'required', 'string', 'max:255',
+            'email' => 'required', 'string', 'email', 'max:255', 'unique:users',
+            'password' => 'required', 'string', 'min:5',
+        ]);
+
+/*         if ($request['photo_dni'] || $request['photo_rif'] || $request['photo_user']) {
             $imgPhoto = $request['photo_user'];
             $imgDni = $request['photo_dni'];
             $imgRif = $request['photo_rif'];
@@ -79,7 +90,7 @@ class UserController extends Controller
             $imgPhotoPath = null;
             $imgPhotoPathDni = null;
             $imgPhotoPathRif = null;
-        }
+        } */
 
         if ($imgPhoto = $request->file('photo_user')) {
             $imgPhotoPath = 'storage/userImg';
@@ -106,9 +117,9 @@ class UserController extends Controller
             'dni' => $request['dni'],
             'phone' => $request['phone'],
             'address' => $request['address'],
-            'photo_user' => $imgPhotoPath,
+/*             'photo_user' => $imgPhotoPath,
             'photo_dni' => $imgPhotoPathDni,
-            'photo_rif' => $imgPhotoPathRif,
+            'photo_rif' => $imgPhotoPathRif, */
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
             'rols_id' => $request['rols_id'],

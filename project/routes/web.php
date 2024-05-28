@@ -42,17 +42,17 @@ Route::get('/', function () {
 
 Route::get('/adminPWFS', HomeController::class)->name('login_admin')->middleware('auth');
 
-Route::get('/adminPWFS/admin', [UserController::class, 'allAdmin'])->name('allAdmin');
-Route::get('/adminPWFS/admin/create', [UserController::class, 'createAdmin'])->name('createAdmin');
-Route::post('/adminPWFS/admin/create', [UserController::class, 'createForm'])->name('createForm');
-Route::delete('/adminPWFS/admin/{id}', [UserController::class, 'destroyAdmin'] )->name('destroyAdmin');
-Route::get('/adminPWFS/user', [UserController::class, 'allUser'])->name('allUser');
+Route::get('/adminPWFS/admin', [UserController::class, 'allAdmin'])->name('allAdmin')->middleware('auth');
+Route::get('/adminPWFS/admin/create', [UserController::class, 'createAdmin'])->name('createAdmin')->middleware('auth');
+Route::post('/adminPWFS/admin/create', [UserController::class, 'createForm'])->name('createForm')->middleware('auth');
+Route::delete('/adminPWFS/admin/{id}', [UserController::class, 'destroyAdmin'] )->name('destroyAdmin')->middleware('auth');
+Route::get('/adminPWFS/user', [UserController::class, 'allUser'])->name('allUser')->middleware('auth');
 // Rutas para el inicio de sesión específico que dirige a moduloServicios.dashboard
 
 
 /* perfil no desarrollado */
-Route::get('/user/profile/{id}', [UserController::class, 'show'])->name('user.profile');
-Route::get('/user/profile/edit/{id}', [UserController::class, 'edit'])->name('userEdit');
+Route::get('/user/profile/{id}', [UserController::class, 'show'])->name('user.profile')->middleware('auth');
+Route::get('/user/profile/edit/{id}', [UserController::class, 'edit'])->name('userEdit')->middleware('auth');
 Route::put('/userUpdate/{id}',[UserController::class, 'updateUser'])->name('updateUser');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
@@ -68,10 +68,10 @@ Route::controller(HomeServicesController::class)->group(function () {
 
 Route::controller(VeterinarianController::class)->group(function(){
     //todo rutas admin
-    Route::get('/adminPWFS/Veterinarians', 'indexVeterinarians')->name('indexVeterinarians');
-    Route::get('/adminPWFS/CreateVeterianarians','create')->name('create');
+    Route::get('/adminPWFS/Veterinarians', 'indexVeterinarians')->name('indexVeterinarians')->middleware('auth');
+    Route::get('/adminPWFS/CreateVeterianarians','create')->name('create')->middleware('auth');
     Route::put('/adminPWFS/storeVeterinarias','store')->name('store');
-    Route::get('/adminPWFS/editVeterinarians/{id}','edit')->name('edit');
+    Route::get('/adminPWFS/editVeterinarians/{id}','edit')->name('edit')->middleware('auth');
     Route::put('/adminPWFS/updateVeterinarians/{id}', 'update')->name('update');
     Route::delete('/adminPWFS/destroyVeterinarians/{id}', 'destroy')->name('destroy');
 
@@ -87,10 +87,10 @@ Route::controller(VeterinarianController::class)->group(function(){
 Route::controller(HousingsController::class)->group(function(){
     //todo rutas admin
     
-    Route::get('/adminPWFS/housingsAdmin', 'housingAdmin')->name('housingAdmin');
-    Route::get('/adminPWFS/createHousing', 'createHousing')->name('createHousing');
+    Route::get('/adminPWFS/housingsAdmin', 'housingAdmin')->name('housingAdmin')->middleware('auth');
+    Route::get('/adminPWFS/createHousing', 'createHousing')->name('createHousing')->middleware('auth');
     Route::put('/adminPWFS/storeHousings', 'storeHousing')->name('storeHousing');
-    Route::get('/adminPWFS/editHousing/{id}', 'editHousing')->name('editHousing');
+    Route::get('/adminPWFS/editHousing/{id}', 'editHousing')->name('editHousing')->middleware('auth');
     Route::put('/adminPWFS/updateHousing/{id}', 'updateHousing')->name('updateHousing');
     Route::delete('/adminPWFS/destroyHousing/{id}', 'destroyHousing')->name('destroyHousing');
     
@@ -104,10 +104,10 @@ Route::controller(HousingsController::class)->group(function(){
 // todo: rutas de dog_groomer
 Route::controller(DogGroomerController::class)->group(function(){
     //todo rutas admin
-    Route::get('/adminPWFS/DogGroomersAdmin', 'dogGroomerAdmin')->name('dogGroomerAdmin');
-    Route::get('/adminPWFS/createDogGroomer', 'createDogGroomer')->name('createDogGroomer');
+    Route::get('/adminPWFS/DogGroomersAdmin', 'dogGroomerAdmin')->name('dogGroomerAdmin')->middleware('auth');
+    Route::get('/adminPWFS/createDogGroomer', 'createDogGroomer')->name('createDogGroomer')->middleware('auth');
     Route::put('/adminPWFS/storeDogGroomers', 'storeDogGroomer')->name('storeDogGroomer');
-    Route::get('/adminPWFS/editDogGroomer/{id}', 'editDogGroomer')->name('editDogGroomer');
+    Route::get('/adminPWFS/editDogGroomer/{id}', 'editDogGroomer')->name('editDogGroomer')->middleware('auth');
     Route::put('/adminPWFS/updateDogGroomer/{id}', 'updateDogGroomer')->name('updateDogGroomer');
     Route::delete('/adminPWFS/destroyDogGroomer/{id}', 'destroyDogGroomer')->name('destroyDogGroomer');
     //todo rutas user
@@ -122,14 +122,14 @@ Route::controller(DogGroomerController::class)->group(function(){
 
 Route::controller(CommentsController::class)->group(function(){
     //todo veterinarios
-    Route::get('/adminPWFS/CommentAccepted/{id}','configComment')->name('configComment');
-    Route::delete('/adminPWFS/CommentDestroy/{id}','destroyVetsComment')->name('destroyVetsComment');
+    Route::get('/adminPWFS/CommentAccepted/{id}','configComment')->name('configComment')->middleware('auth');
+    Route::delete('/adminPWFS/CommentDestroy/{id}','destroyVetsComment')->name('destroyVetsComment')->middleware('auth');
     //todo alojamiento
-    Route::get('/adminPWFS/CommentAcceptedHousing/{id}','acceptHousingsComment')->name('acceptHousingsComment');
-    Route::delete('/adminPWFS/CommentDestroyHousing/{id}','destroyHousingsComment')->name('destroyHousingsComment');
+    Route::get('/adminPWFS/CommentAcceptedHousing/{id}','acceptHousingsComment')->name('acceptHousingsComment')->middleware('auth');
+    Route::delete('/adminPWFS/CommentDestroyHousing/{id}','destroyHousingsComment')->name('destroyHousingsComment')->middleware('auth');
     //todo peluquerias
-    Route::get('/adminPWFS/CommentAcceptedDogGroomer/{id}','acceptDogGroomersComment')->name('acceptDogGroomersComment');
-    Route::delete('/adminPWFS/CommentDestroyDogGroomer/{id}','destroyDogGroomersComment')->name('destroyDogGroomersComment');
+    Route::get('/adminPWFS/CommentAcceptedDogGroomer/{id}','acceptDogGroomersComment')->name('acceptDogGroomersComment')->middleware('auth');
+    Route::delete('/adminPWFS/CommentDestroyDogGroomer/{id}','destroyDogGroomersComment')->name('destroyDogGroomersComment')->middleware('auth');
 });
 
     //TODO BUSQUEDAs
@@ -150,21 +150,22 @@ Route::resource('registrodemanda', RegistroDemandaController::class);
 Route::resource('historial_user', HistorialClienteController::class);
 
 /* admin */
-Route::resource('/adminPWFS/fundations', FundationController::class);
+Route::resource('/adminPWFS/fundations', FundationController::class)->middleware('auth');
 
-Route::resource('/adminPWFS/contactarfundaciones', Demand_animal_has_fundationController::class);
+Route::resource('/adminPWFS/contactarfundaciones', Demand_animal_has_fundationController::class)->middleware('auth');
 
-Route::resource('/adminPWFS/historial_admin', Historial_adminController::class);
+Route::resource('/adminPWFS/historial_admin', Historial_adminController::class)->middleware('auth');
+
 //? FIN RUTAS MODULO 2
 
 
 //? RUTAS MODULO 3
 
 Route::resource('donaciones', DonacionesController::class);
-Route::get('/adminPWFS/donations',  [DonacionesController::class, 'index'])->name('index');
+Route::get('/adminPWFS/donations',  [DonacionesController::class, 'index'])->name('index')->middleware('auth');
 
 Route::resource('adopciones', AdopcionesController::class);
-Route::get('/adminPWFS/adopciones',  [AdopcionesController::class, 'index'])->name('index');
+Route::get('/adminPWFS/adopciones',  [AdopcionesController::class, 'index'])->name('index')->middleware('auth');
 
 /* Route::resource('/FormularioAdopciones', FormularioAdopcionesController::class);
 /*Route::resource('/FormularioDonaciones', FormularioDonacionesController::class);
@@ -176,9 +177,9 @@ Route::get('/adoptar/formulario',  [PrincipalController::class, 'indexAdoptions'
 Route::get('/showAdoptions/{id}',[PrincipalController::class, 'showAdoptions'])->name('showAdoptions');
 Route::put('/solicitarAdopcion/{id}', [PrincipalController::class, 'solicitarAdopcion'])->name('solicitarAdopcion');
 
-Route::get('/adminPWFS/adopcionDestroy/{id}',[AnimalsAdoptionController::class, 'destroy'])->name('destroyAnimals');
-Route::put('/adminPWFS/ConfirmarAdopcion/{id}',[AnimalsAdoptionController::class,'confirmarAdopcion'])->name('confirmarAdopcion');
-Route::put('/adminPWFS/denegarAdopcion/{id}',[AnimalsAdoptionController::class,'denegarAdopcion'])->name('denegarAdopcion');
+Route::get('/adminPWFS/adopcionDestroy/{id}',[AnimalsAdoptionController::class, 'destroy'])->name('destroyAnimals')->middleware('auth');
+Route::put('/adminPWFS/ConfirmarAdopcion/{id}',[AnimalsAdoptionController::class,'confirmarAdopcion'])->name('confirmarAdopcion')->middleware('auth');
+Route::put('/adminPWFS/denegarAdopcion/{id}',[AnimalsAdoptionController::class,'denegarAdopcion'])->name('denegarAdopcion')->middleware('auth');
 
 
 //? FIN RUTAS MODULO 3

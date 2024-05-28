@@ -69,7 +69,16 @@ class Historial_adminController extends Controller
             'urgencia_id' => 'required',
         ]);
 
-        Demands_animalss::create($request->all());
+        $demands = $request->all();
+
+        if ($image = $request->file('photo_ref')) {
+            $path = 'storage/moduloRescate/images/';
+            $imageName = date('YmdHis') . "_" . $image->getClientOriginalExtension();
+            $image->move($path, $imageName);
+            $demands['photo_ref'] = "$imageName";
+        }
+
+        Demands_animalss::create($demands);
 
         return redirect()->route('historial_admin.index');
     }

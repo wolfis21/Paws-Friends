@@ -18,7 +18,11 @@ class PrincipalController extends Controller
     public function indexDonations()
     {
         $donations = Donations::latest()->take(4)->get();
-        return view('moduloAdopcionDonacion.donations.user.Donaciones', ['donations' => $donations]);
+        if(Auth::check()){
+            return view('moduloAdopcionDonacion.donations.user.Donaciones', ['donations' => $donations]);
+        }else{
+            return redirect()->route('login')->withErrors(['login' => 'Tienes que iniciar sesion para estar aca.']);
+        }
     }
 
 
@@ -35,7 +39,7 @@ class PrincipalController extends Controller
 
             return view('moduloAdopcionDonacion.adopcion.user.show', compact('adopcion'));
         } else {
-            return redirect()->route('login')->with('info','Por favor necesita iniciar sesion para acceder a este apartado');
+            return redirect()->route('login')->withErrors(['login' => 'Por favor necesita iniciar sesion para acceder a este apartado.']);
         }
     }
 
