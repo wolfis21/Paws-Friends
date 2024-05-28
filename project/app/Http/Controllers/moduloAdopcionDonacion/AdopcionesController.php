@@ -23,7 +23,21 @@ class AdopcionesController extends Controller
 
     public function store(Request $request)
     {
+      $request->validate([
+        'name' => 'required|string|min:3',
+        'species' => 'required|string',
+        'animal_race' => 'required|string',
+        'sex_animal' => 'required|string',
+        'age_animal' => 'required|integer',
+        'description_animals' => 'required|string',
+        'photo_animal' =>'required',
+        'location_address' =>'required|string',
+        'status' => 'required',
+        'users_id' => 'required',
+    ]);
+
       $adopcion = $request->all();
+
         if ($image = $request->file('photo_animal')) {
             $path = 'storage/moduloAdopcion/images/';
             $imageName = date('YmdHis') . "_" . $image->getClientOriginalExtension();

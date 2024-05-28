@@ -20,35 +20,53 @@
                 <input type="hidden" name="users_id" value="{{ Auth::user()->id }}">
                 <div class="fecha-entrega form-group">
                     <label for="fecha-entrega">Fecha de entrega</label>
-                    <input type="date" name="date" id="fecha-entrega" required>
+                    <input type="date" name="date" id="fecha-entrega" class="@error('date') is-invalid @enderror" >
+                    @error('date')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
                 </div>
                 <div class="subir-fotos form-group">
                     <label for="fotos-donacion">Subir fotos de la donación </label>
-                    <input type="file" id="fotos-donacion" name="photo_ref" accept="image/*" required/>
+                    <input type="file" id="fotos-donacion" name="photo_ref" accept="image/*" class="@error('photo_ref') is-invalid @enderror"/>
+                    @error('photo_ref')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
                 </div>
                 <div class="donacion-destino form-group">
                     <p>¿Para quién va dirigido?</p>
-                    <select id="destino" name="destino_fundacion" required>
+                    <select id="destino" name="destino_fundacion" class="@error('destino_fundacion') is-invalid @enderror">
                         <option value="refugio">Refugio de animales</option>
                         <option value="centro-adopcion">Centro de adopción</option>
                         <option value="otro">Otros</option>
                     </select>
+                    @error('destino_fundacion')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
                 </div>
                 <div class="tipos-donacion form-group">
                     <p>Tipo de Donaciones</p>
-                    <select id="tipos" name="type_donation" required>
+                    <select id="tipos" name="type_donation"class="@error('type_donation') is-invalid @enderror" >
                         <option value="alimentos">Donaciones de alimentos y suministros</option>
                         <option value="Medicina">Donaciones de medicamentos:</option>
                         <option value="otro">Otros</option>
                     </select>
+                    @error('type_donation')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
                 </div>
                 <div class="form-group">
                     <label for="description_ref">Descripcion</label>
-                    <input type="text" name="description_ref" id="description_ref" placeholder="Juguete de plastico" required>
+                    <input type="text" name="description_ref" id="description_ref" placeholder="Juguete de plastico" class="@error('description_ref') is-invalid @enderror">
+                    @error('description_ref')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
                 </div>
                 <div class="form-group">
                     <label for="cantidad-donar">Cantidad a donar</label>
-                    <input type="number" name="qty" id="cantidad-donar" placeholder="12" required>
+                    <input type="number" name="qty" id="cantidad-donar" placeholder="12" class="@error('qty') is-invalid @enderror">
+                    @error('qty')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
                 </div>
                 <div class="form-group">
                     <button class="btn-finally">Finalizar</button>

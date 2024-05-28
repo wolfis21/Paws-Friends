@@ -24,6 +24,16 @@ class DonacionesController extends Controller
 
     public function store(Request $request)
     {
+      $request->validate([
+        'date' =>'required',
+        'type_donation' =>'required',
+        'description_ref' =>'required',
+        'qty' =>'required',
+        'photo_ref' =>'required',
+        'destino_fundacion' =>'required',
+        'users_id' =>'required',
+    ]);
+
         $donations = $request->all();
 
         if ($image = $request->file('photo_ref')) {
