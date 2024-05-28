@@ -27,6 +27,9 @@
                     <div class="rectangulo">
                         <p>{{ $shop->link_ref }}</p>
                     </div>
+                    <div class="rectangulo">
+                        <p>{{ $shop->puntation }}</p>
+                    </div>
                 </div>
             </div>
         </div>

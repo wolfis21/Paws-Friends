@@ -13,7 +13,7 @@
     <h2 class="title-shop">Tiendas</h2>
     <div class ="shop-card-container">
         @foreach ($shops as $shop)
-        <a href="/Shop/{{$shop->shop_id}}" style="color: black;">
+        <a href="/Shop/{{$shop->id}}" style="color: black;">
             <div class="product-card">
                 <img class="img-product" src="storage/moduloCatalogo/images/shops/{{ $shop->img_ref }}" />
                 <p class = "name-shop">{{ $shop->name }}</p>
