@@ -44,9 +44,9 @@ class ProductController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'required',
             'img_ref' => 'nullable',
-            'product_category_animals_id' => 'nullable',
+            'product_category_animals_id' => 'required',
             'shop_id' => 'required',
-            'price'=>'nullable',
+            'price'=>'required',
             'puntuation'=>'nullable',
         ]);
 
@@ -98,8 +98,8 @@ class ProductController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'required',
             'img_ref' => 'nullable',
-            'product_category_animals_id' => 'nullable',
-            'price'=>'nullable',
+            'product_category_animals_id' => 'required',
+            'price'=>'required',
             'puntuation'=>'nullable',
         ]);
 

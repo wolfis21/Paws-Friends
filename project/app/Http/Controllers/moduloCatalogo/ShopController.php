@@ -34,11 +34,10 @@ class ShopController extends Controller
     public function storeShop(Request $request)
     {
         $request->validate([
-
             'name'=> 'required|string|min:3',
-            'address'=> 'string',
+            'address'=> 'required|string',
             'phone'=> 'required|alpha_num|min_digits:11',
-            'link_ref'=> 'nullable',
+            'link_ref'=> 'required',
             'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'puntuation' => 'nullable',
         ]);
@@ -82,10 +81,10 @@ class ShopController extends Controller
     {
         $request->validate([
             'name'=> 'required|string|min:3',
-            'address'=> 'string',
+            'address'=> 'required|string',
             'phone'=> 'required|alpha_num|min_digits:11',
-            'link_ref'=> 'nullable',
-            'img_ref' => 'image|mimes:jpeg,png,jpg|max:2048',
+            'link_ref'=> 'required',
+            'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'puntuation' => 'nullable',
         ]);
 

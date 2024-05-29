@@ -391,6 +391,11 @@ return [
             'url' => '/adminPWFS/shopAdmin',
             'icon' =>'fas fa-store',
         ],
+        [
+            'text' => 'Categorias de productos',
+            'url' => '/categoryProducts',
+            'icon' =>'fas fa-fw fa-box-open',
+        ]
     ],
 
     /*

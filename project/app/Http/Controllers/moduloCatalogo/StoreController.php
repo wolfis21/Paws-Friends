@@ -5,20 +5,18 @@ namespace App\Http\Controllers\moduloCatalogo;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\moduloCatalogo\Product;
+use Illuminate\Support\Facades\Auth;
 
 class StoreController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
-    /**
-     * Handle the incoming request.
-     */
-    public function main(Request $request)
+    public function index()
     {
-        return view('moduloCatalogo.main');
+        if (Auth::check()) {
+            return view('moduloCatalogo.main');
+        } else {
+            return redirect()->route('login')->with('login', 'Por favor necesita iniciar sesion para acceder a este apartado.');
+        } 
     }
 
     public function products(Request $request)

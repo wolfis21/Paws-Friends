@@ -17,6 +17,7 @@ use App\Http\Controllers\moduloAdopcionDonacion\AdopcionesController;
 use App\Http\Controllers\moduloAdopcionDonacion\AnimalsAdoptionController;
 use App\Http\Controllers\moduloAdopcionDonacion\PrincipalController;
 use App\Http\Controllers\moduloAdopcionDonacion\HistoriaController;
+use App\Http\Controllers\moduloCatalogo\CategoryProduct;
 use App\Models\moduloAdopcionDonacion\AnimalsAdoption;
 use App\Http\Controllers\RegistroDemandaController;
 use Illuminate\Support\Facades\Auth;
@@ -187,7 +188,7 @@ Route::put('/adminPWFS/denegarAdopcion/{id}',[AnimalsAdoptionController::class,'
 //? RUTAS MODULO 4=========================================================================================
 
 Route::controller(StoreController::class)->group(function(){
-    Route::get('/store', 'main')->name('store.main');
+    Route::get('/store', 'index')->name('index');
 });
 
 //rutas de postController
@@ -210,10 +211,10 @@ Route::controller(StoreController::class)->group(function(){
 Route::controller(ProductController::class)->group(function(){
     //todo rutas admin
     
-    Route::get('/adminPWFS/productAdmin', 'productAdmin')->name('productAdmin');
-    Route::get('/adminPWFS/createProduct', 'createProduct')->name('createProduct');
+    Route::get('/adminPWFS/productAdmin', 'productAdmin')->name('productAdmin')->middleware('auth');
+    Route::get('/adminPWFS/createProduct', 'createProduct')->name('createProduct')->middleware('auth');
     Route::put('/adminPWFS/storeProduct', 'storeProduct')->name('storeProduct');
-    Route::get('/adminPWFS/editProduct/{id}', 'editProduct')->name('editProduct');
+    Route::get('/adminPWFS/editProduct/{id}', 'editProduct')->name('editProduct')->middleware('auth');
     Route::put('/adminPWFS/updateProduct/{id}', 'updateProduct')->name('updateProduct');
     Route::delete('/adminPWFS/destroyProduct/{id}', 'destroyProduct')->name('destroyProduct');
     
@@ -234,13 +235,13 @@ Route::controller(ProductController::class)->group(function(){
 
 
 //rutas de shopController
-Route::controller(ShopController::class)->group(function(){
+Route::controller(ShopController::class)->group(function() {
     //todo rutas admin
     
-    Route::get('/adminPWFS/shopAdmin', 'shopAdmin')->name('shopAdmin');
-    Route::get('/adminPWFS/createShop', 'createShop')->name('createShop');
+    Route::get('/adminPWFS/shopAdmin', 'shopAdmin')->name('shopAdmin')->middleware('auth');
+    Route::get('/adminPWFS/createShop', 'createShop')->name('createShop')->middleware('auth');
     Route::put('/adminPWFS/storeShop', 'storeShop')->name('storeShop');
-    Route::get('/adminPWFS/editShop/{id}', 'editShop')->name('editShop');
+    Route::get('/adminPWFS/editShop/{id}', 'editShop')->name('editShop')->middleware('auth');
     Route::put('/adminPWFS/updateShop/{id}', 'updateShop')->name('updateShop');
     Route::delete('/adminPWFS/destroyShop/{id}', 'destroyShop')->name('destroyShop');
 
@@ -252,5 +253,7 @@ Route::controller(ShopController::class)->group(function(){
 
 });
 
+//todo rutas categorias produt
+Route::resource('categoryProducts', CategoryProduct::class)->middleware('auth');
 Auth::routes();
 
