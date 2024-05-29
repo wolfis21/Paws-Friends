@@ -26,7 +26,7 @@ class HistorialClienteController extends Controller
         
         return view('moduloRescate.historial_user.index')->with('demand', $demand)->with('completada', $completada);
     } else {
-        return redirect()->route('login');
+        return redirect()->route('login')->withErrors(['login' => 'Tienes que iniciar sesion para estar aca.']);
     }
 
     }
