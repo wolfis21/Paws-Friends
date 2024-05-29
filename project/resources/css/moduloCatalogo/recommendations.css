@@ -11,6 +11,7 @@
     background-image: url("C:/laragon/www/Paws-Friends/project/resources/views/moduloCatalogo/img/fondo.png");
     background-size: cover;
     background-position: center;    
+    background-attachment: fixed;
 }
 
 /* Bienvenida al Modulo */
