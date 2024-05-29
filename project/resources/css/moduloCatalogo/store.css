@@ -246,10 +246,14 @@ t{
     flex-direction: column;
     align-items: center;
     margin-top: 5px;
+
 }
 h4{
     text-align: center;
-    font-family: 'Times New Roman';
+    font-family: 'League Spartan';
+}
+b{
+    font-family: 'League Spartan';
 }
 j{
     font-weight: 300;
