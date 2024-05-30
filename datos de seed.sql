@@ -1,3 +1,21 @@
+//modulo 0
+
+INSERT INTO `permissions` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'vetsadmin', '2024-05-29 07:42:15', '2024-05-29 07:42:15');
+
+
+INSERT INTO `permissions_rols` (`id`, `permission_id`, `rol_id`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, '2024-05-29 07:42:15', '2024-05-29 07:42:15');
+
+INSERT INTO `rols` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'admin', '2024-05-29 07:42:15', '2024-05-29 07:42:15'),
+(2, 'customer', '2024-05-29 07:42:15', '2024-05-29 07:42:15');
+
+
+INSERT INTO `users` (`id`, `name`, `last_name`, `dni`, `phone`, `address`, `photo_user`, `photo_dni`, `photo_rif`, `email`, `email_verified_at`, `password`, `rols_id`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'admin', 'global', '12345', '12345', 'Sin direccion', 'null', NULL, NULL, 'admin@admin.com', '2024-05-29 07:42:15', '$2y$10$zVDCdKUOSz16vx82tl0Ff.AyLvTYTNFDXOabI1vaoMy7O0iCuEptm', 1, 'Ny1TVoWYqK', '2024-05-29 07:42:15', '2024-05-29 07:42:15'),
+(2, 'user', 'global', 'global', 'global', 'global', 'global', NULL, NULL, 'user@user.com', '2024-05-29 07:42:15', '$2y$10$M/vE8I7trtD94lOADFiKMev0NbrOx73OTLprhSgamCKNc18Skbw6K', 2, 'NI6bPHK9mn', '2024-05-29 07:42:15', '2024-05-29 07:42:15');
+
 //modulo 1
 
 //Tabla de veterinarios
@@ -30,7 +48,29 @@ INSERT INTO `dog_groomer` (`id`, `name`, `address`, `phone`, `link_ref`, `img_re
 
 //modulo 2
 
+INSERT INTO `fundation` (`id`, `name`, `phone`, `email`, `description`, `created_at`, `updated_at`) VALUES
+(1, 'Asociación Civil Defensa Animal Venezuela (ACDAVE)', '02861836729', 'acdave@gmail.com', 'Asociación que rescata y rehabilita animales en situación de abandono o maltrato.', '2024-05-30 05:43:06', '2024-05-30 05:43:06'),
+(2, 'Fundación Amigos de los Animales (FUNDAAMIGOS)', '02862651827', 'fundaamigos@gmail.com', 'Fundación que promueve la adopción de mascotas y brinda atención veterinaria.', '2024-05-30 05:43:37', '2024-05-30 05:43:37'),
+(3, 'Asociación Civil Animales en Peligro (ACAP)', '04142276498', 'acap@gmail.com', 'Asociación que rescata animales en peligro y los cuida hasta encontrarles un hogar.', '2024-05-30 05:44:03', '2024-05-30 05:44:03'),
+(4, 'Fundación Tierra de Animales', '04161182740', 'fundtierra@gmail.com', 'Brinda refugio y atención a animales abandonados.', '2024-05-30 05:44:34', '2024-05-30 05:44:34'),
+(5, 'Asociación Civil Protectora de Animales (ACPA)', '04241825900', 'acpa@gmail.com', 'Asociación que defiende los derechos de los animales y realiza campañas de adopción.', '2024-05-30 05:45:22', '2024-05-30 05:45:22');
+
+INSERT INTO `demands_animals` (`id`, `users_id`, `description_case`, `adress_animals`, `photo_ref`, `motivo_id`, `urgencia_id`, `types_status_id`, `statusfund_id`, `created_at`, `updated_at`) VALUES
+(2, 1, 'Perro enfermo con sarna en la calle', 'Unare, cerca del santotome', '20240530015136_jpeg', 2, 2, 2, 3, '2024-05-30 05:51:36', '2024-05-30 05:52:58'),
+(3, 1, 'Perro enfermo y con heridas', 'Unare, por la redoma de la pina', '20240530021248_jpeg', 1, 1, 1, 2, '2024-05-30 06:12:48', '2024-05-30 06:12:48');
+
+INSERT INTO `demand_animal_has_fundation` (`id`, `demands_animals_id`, `fundation_id`, `description`, `statusfund_id`, `created_at`, `updated_at`) VALUES
+(1, 2, 3, 'atender el caso con urgencia', 3, '2024-05-30 05:52:42', '2024-05-30 05:52:58');
+
 //modulo 3
+
+INSERT INTO `animals_adoptions` (`id`, `name`, `species`, `animal_race`, `sex_animal`, `age_animal`, `description_animals`, `photo_animal`, `location_address`, `rescues_id`, `status`, `users_id`, `created_at`, `updated_at`) VALUES
+(1, 'Stuart', 'Cochino', 'Cochino Rosado', 'Macho', '1', 'Es bonito y gordito', '20240530021505_jpg', 'Via Upata', NULL, 'Aceptada', 2, '2024-05-30 06:15:05', '2024-05-30 06:20:47'),
+(2, 'alondra', 'gata', 'gata 3 colores', 'hembra', '2', 'es juguetona y traviesa', '20240530021731_webp', 'Altavista', NULL, 'Sin solicitud / Sin adoptar', 1, '2024-05-30 06:17:31', '2024-05-30 06:17:31');
+
+INSERT INTO `donations` (`id`, `date`, `type_donation`, `description_ref`, `qty`, `photo_ref`, `destino_fundacion`, `users_id`, `created_at`, `updated_at`) VALUES
+(1, '2024-05-30', 'otro', 'Pelota de juguete para perros', '5', '20240530021942_jpeg', 'refugio', 1, '2024-05-30 06:19:42', '2024-05-30 06:19:42');
+
 
 //modulo 4
 
