@@ -83,10 +83,12 @@ justify-content: space-evenly;
 align-content: center;
 margin: 15px 0px;
 }
+
 .texto {
 margin-bottom: 0px;
 margin-left: 10px;
 }
+
 .input-remeber{
 display: flex;
 flex-direction: row;
@@ -107,7 +109,6 @@ transition: all .5s;
 -moz-transition: all .5s;
 -ms-transition: all .5s;
 -o-transition: all .5s;
-
 }
 
 .btn-link:hover{
