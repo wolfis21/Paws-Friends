@@ -40,26 +40,6 @@ Paletas de colores
     height: 100px;
 }
 
-<<<<<<< HEAD
-.title{
-    margin-left: 10%;
-}
-
-.register{
-    margin-left: 350px;
-    margin-right: 10%;
-}
-
-.box-registre{
-    width: 60%;
-    height: 100vh;
-    margin: auto;
-    margin-top: 50px;
-    background-color: #fff;
-    box-shadow: 0px 0px 20px #ccc;
-    border-radius: 40px;
-    padding: 15px;
-=======
 .box-registre {
     display: flex;
     width: 45%;
@@ -70,7 +50,6 @@ Paletas de colores
     flex-wrap: wrap;
     padding: 20px;
     margin: 20px;
->>>>>>> a84987d1a96fa4aec0f29b110e5f00f302afc737
 }
 
 .f-left {
@@ -78,12 +57,6 @@ Paletas de colores
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
-<<<<<<< HEAD
-    width: 100%;
-    align-content: center;
-    align-items: center;
-=======
->>>>>>> a84987d1a96fa4aec0f29b110e5f00f302afc737
 }
 
 .f-right {
@@ -98,20 +71,10 @@ Paletas de colores
     margin: 6px;
 }
 
-<<<<<<< HEAD
-.card-foot{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-content: stretch;
-    align-items: stretch;
-=======
 .card-foot {
     display: flex;
     flex-direction: column;
     margin-top: 0.5rem;
->>>>>>> a84987d1a96fa4aec0f29b110e5f00f302afc737
 }
 
 .user-info {
@@ -157,10 +120,6 @@ Paletas de colores
     -ms-transition: all 0.5s;
     -o-transition: all 0.5s;
     margin-top: 25px;
-<<<<<<< HEAD
-
-=======
->>>>>>> a84987d1a96fa4aec0f29b110e5f00f302afc737
 }
 
 .btn-link:hover {
