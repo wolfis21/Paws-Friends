@@ -55,7 +55,7 @@ class DogGroomerController extends Controller
             $dogGroomer['img_ref'] = "$imageName";
         }
         Dog_Groomer::create($dogGroomer);
-        return redirect()->route('dogGroomerAdmin');
+        return redirect()->route('dogGroomerAdmin')->with('success','Se agrego la peluqueria correctamente');
     }
     /**
      * Display the specified resource.
@@ -83,7 +83,7 @@ class DogGroomerController extends Controller
             'address' => 'string',
             'phone' => 'required|alpha_num|min_digits:11',
             'link_ref' => 'nullable',
-            'img_ref' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'img_ref' => 'image|mimes:jpeg,png,jpg|max:2048',
             'puntuation' => 'nullable',
         ]);
         $dogGroomer = Dog_groomer::findOrFail($id);
@@ -96,7 +96,7 @@ class DogGroomerController extends Controller
         }
         $dogGroomer->update($dogGroomerReq);
 
-        return redirect()->route('dogGroomerAdmin');
+        return redirect()->route('dogGroomerAdmin')->with('info','Se edito la peluqueria correctamente');
     }
     /**
      * Remove the specified resource from storage.
@@ -107,7 +107,7 @@ class DogGroomerController extends Controller
         $path = public_path() . '/storage/moduloServicios/images/dogGroomers/' . $dogGroomer->img_ref;
         unlink($path);
         $dogGroomer->delete();
-        return redirect()->route('dogGroomerAdmin');
+        return redirect()->route('dogGroomerAdmin')->with('destroy','Se elimino la peluqueria correctamente');
     }
     //todo funciones user
     public function dogGroomerUser()
@@ -139,7 +139,7 @@ class DogGroomerController extends Controller
                 ->with('verificarPuntajeUsuario', $verificarPuntajeUsuario)
                 ->with('dogGroomersComments', $dogGroomersComments);
         } else {
-            return redirect()->route('login');
+            return redirect()->route('login')->with('info','Por favor necesita iniciar sesion para acceder a este apartado');
         }
     }
 

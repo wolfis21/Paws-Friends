@@ -1,0 +1,293 @@
+
+/* Background */
+.contenedor {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    /* Add this property */
+
+    background-image: url("C:/laragon/www/Paws-Friends/project/resources/views/moduloCatalogo/img/fondo.png");
+    background-size: cover;
+    background-position: center;    
+    background-attachment: fixed;
+}
+
+/* Bienvenida al Modulo */
+.title-page {
+    position: relative;
+    bottom: 60px;
+    font-weight: bold;
+    font-family: 'Itim';
+    font-size: 60px;
+    padding-left: 0px;
+    padding-right: 230px;
+    margin: 0;
+}
+
+
+/*todo  primera vista bienvenida */
+.welcome {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    
+}
+/* Camaleon */
+.img{
+    position: relative;
+    width: 150%;
+    height: 100%;
+    padding-left: 0px;
+    object-fit: cover ;
+    border-radius: 20px;
+}
+
+
+.main-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-grow: 0.45;
+    border-radius: 25px;
+    margin-top: 8rem;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+}
+ /* Titulo de Productos */
+.title-prod{
+    padding-top: 200px;
+    margin: 0px;
+    font-weight: 400;
+    font-size: 60px;
+    font-family: 'Itim';
+    font-weight: bold;
+}
+/* Parrafo de Bienvenida */
+.text-welcome{
+    padding-left: 5px;
+    padding-right: 200px;
+    position: relative;
+    bottom: 40px;
+    font-size: 30px;
+    text-align: justify;
+    font-family: 'League Spartan';
+}
+/* Modulo Productos destacados */
+.module{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+}
+
+/* Titulo Desarrolladores */
+.title-des {
+    padding: 0px;
+    margin: 0px;
+    font-weight: 400;
+    font-size: 60px;
+    font-family: 'Itim';
+    font-weight: bold;
+}
+
+/* Cartas de Productos */
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    border-radius: 20px;
+    padding-bottom: 100px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    height: 100vh;
+}
+
+/* Productos Destacados Cuadros */
+.card-img2 {
+    display: flex;
+    flex-direction: column;
+    height: 354px;
+    width: 234px;
+    background: #fff;
+    margin: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all.5s;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+
+}
+/* Sombra cuadros */
+.card-img2:hover {
+    -webkit-box-shadow: 0px 0px 35px 3px rgb(24, 24, 24);
+    -moz-box-shadow: 0px 0px 35px 3px rgba(0, 0, 0, 0.804);
+    box-shadow: 0px 0px 35px 3px #000000af;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+
+/* Descripción de Productos */
+.product-desc{
+    color: black;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    text-align: justify;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/* Precio de Productos */
+.product-prize{
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/* Tamaño de Imagenes */
+img {
+    width: 90%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* Categorias */
+.title-cat{
+
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    font-weight: 400;
+    font-size: 60px;
+    font-family: 'Itim';
+    font-weight: bold;
+}
+.mascotas{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+/* Nombre Categorias */
+t{
+    color: black;
+    text-decoration: none;
+    justify-content: center;
+    font-size: 20;
+    font-weight: 600;
+}
+.ver-todo{
+    font-size: 18px;
+    font-family: 'Itim';
+    font-weight: 30px;
+    padding-bottom: 30px;
+}
+/* Desarrolladores */
+.developer{
+    background: #60cb40;  /* fallback for old browsers */
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 315px;
+}
+.cartas{
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+}
+
+.carta{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    border-radius: 30px;
+    transition: all .5s;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+/* Imagen de desarrolladores*/
+.img-dev{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+/* Descripción de los Desarrolladores */
+.contenido-texto-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+
+}
+h4{
+    text-align: center;
+    font-family: 'League Spartan';
+}
+b{
+    font-family: 'League Spartan';
+}
+j{
+    font-weight: 300;
+}
+.texto-program{
+    margin: 10px 0px;
+}
+
+.checkbox{
+    border-radius: 20px;        
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    width: 120px;
+    background: #fff;
+    margin: 40px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all.5s;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.checkbox:hover {
+    -webkit-box-shadow: 0px 0px 35px 3px rgb(24, 24, 24);
+    -moz-box-shadow: 0px 0px 35px 3px rgba(0, 0, 0, 0.804);
+    box-shadow: 0px 0px 35px 3px #000000af;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}

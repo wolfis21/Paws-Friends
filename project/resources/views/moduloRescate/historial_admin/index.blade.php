@@ -1,6 +1,6 @@
 {{-- @extends('layouts.example') --}}
 @extends('layouts.dashboard')
-@section('title', 'Historial Admin')
+@section('title', 'Historial Demandas')
 @section('content')
 
     <h4 style="margin-top: 15px">Historial Demandas</h4>
@@ -11,7 +11,7 @@
 
             <table id="Veterinarios" class="table table-dark table-responsive-md" style="width:100%">
                 <thead>
-                    <th scope="col">Id</th>
+                    <th scope="col">Referencia</th>
                     <th scope="col">Usuario</th>
                     <th scope="col">Demanda</th>
                     <th scope="col">Motivo</th>
@@ -24,7 +24,7 @@
                 <tbody>
                     @foreach ($demand as $demands_animalss)
                 <tr>
-                    <td>{{ $demands_animalss->id }}</td>
+                    <td><img style="width: 80%;" class="img-vets" src="{{ asset('storage/moduloRescate/images/'.$demands_animalss->photo_ref) }}" /></td>
                     <td>{{ $demands_animalss->user->name }}</td>
                     <td>{{ $demands_animalss->description_case }}</td>
                     <td>{{ $demands_animalss->motivo->name }}</td>
@@ -35,7 +35,7 @@
 
                     <td>
                         <form action="{{ route('historial_admin.destroy', $demands_animalss->id) }}" method="POST">
-                            <a class="btn btn-primary" href="{{ route('historial_admin.edit', $demands_animalss->id) }}">Editar</a>
+                            <a class="btn btn-primary" href="{{ route('historial_admin.edit', $demands_animalss->id) }}">Status</a>
                             @method('DELETE')
                             @csrf
                             <button type="submit" class="btn btn-danger">Eliminar</button>
@@ -56,7 +56,7 @@
 
             <table id="Veterinarios" class="table table-dark table-responsive-md" style="width:100%">
                 <thead>
-                    <th scope="col">Id</th>
+                    <th scope="col">Referencia</th>
                     <th scope="col">Usuario</th>
                     <th scope="col">Demanda</th>
                     <th scope="col">Motivo</th>
@@ -69,7 +69,7 @@
                 <tbody>
                     @foreach ($completada as $demand_animal_has_fundation)
                 <tr>
-                    <td>{{ $demand_animal_has_fundation->demands_animalss->id }}</td>
+                    <td><img style="width: 80%;" class="img-vets" src="{{ asset('storage/moduloRescate/images/'.$demand_animal_has_fundation->demands_animalss->photo_ref) }}" /></td>
                     <td>{{ $demand_animal_has_fundation->demands_animalss->user->name }}</td>
                     <td>{{ $demand_animal_has_fundation->demands_animalss->description_case }}</td>
                     <td>{{ $demand_animal_has_fundation->demands_animalss->motivo->name }}</td>

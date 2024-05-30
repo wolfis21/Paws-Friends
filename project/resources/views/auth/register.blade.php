@@ -3,8 +3,8 @@
 
 @section('content')
     <div class="container-register">
-        <fieldset >
-            <form class="box-registre" method="POST" action="{{route('register')}}">
+        <fieldset class="flex">
+            <form class="box-registre" method="POST" action="{{ route('register') }}">
                 {{ method_field('POST') }}
                 @csrf
                 <div class="register-welcome">
@@ -17,55 +17,63 @@
                     <div class="register">
                         <span>¿Ya tienes una cuenta?</span><a href="#">Inicia sesion</a>
                     </div>
-                </div>    
+                </div>
                 <div class="title">
                     <h2>Registrate</h2>
                 </div>
-                    <input type="hidden" name="rols_id" value="2">
+                <input type="hidden" name="rols_id" value="2">
                 <div class="f-left">
-                    <div class="card-space" >
+                    <div class="card-space">
                         <label>Nombre</label>
-                        <input name="name" class="user-info" placeholder="Nombre"/>
+                        <input name="name" class="user-info" placeholder="Nombre" />
+                        @error('name')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="card-space">
                         <label>Apellido</label>
-                        <input  name="last_name"class="user-info" placeholder="Apellido"/>
-                    </div>
-                    <div class="card-space">
-                        <label>Direccion</label>
-                        <input name="address" class="user-info" placeholder="Direccion"/>
+                        <input name="last_name" class="user-info" placeholder="Apellido" />
+                        @error('last_name')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="card-space">
                         <label>Cedula</label>
-                        <input name="dni" class="user-info" placeholder="Cedula"/>
+                        <input name="dni" class="user-info" placeholder="Cedula" />
+                        @error('dni')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="card-space direction">
+                        <label>Direccion</label>
+                        <input name="address" class="user-info" placeholder="Direccion" />
+                        @error('address')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="card-space">
+                        <label>Telefono Movil</label>
+                        <input name="phone" class="user-info" placeholder="Telefono Movil" />
+                        @error('phone')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
                 </div>
-                <div class="card-space">
-                    <label>Telefono Movil</label>
-                    <input name="phone" class="user-info" placeholder="Telefono Movil"/>
-                </div>
-                <div class="card-space">
-                    <label>Foto</label>
-                    <input type="file" name="photo_user" class="user-info" placeholder="Foto de Perfil"/>
-                </div>
-                </div>
-                
-                
                 <div class="card-foot">
                     <label>Ingresa correo electronico</label>
-                    <input class="user-info" name="email" placeholder="Correo Electronico"/>
+                    <input class="user-info" name="email" placeholder="Correo Electronico" />
+                    @error('email')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="card-foot">
                     <label>Ingresa tu contrasena</label>
-                    <input class="user-info" name="password" placeholder="Contrasena de la Cuenta"/>
+                    <input class="user-info" name="password" placeholder="Contrasena de la Cuenta" />
+                    @error('password')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
-                <div class="card-foot">
-                    <label for="photo_user" class="label">Foto Cedula</label>
-                        <input class="user-info" type="file" name="photo_dni" value="">
-                </div>
-                <div class="card-foot">
-                    <label for="photo_user" class="label">Foto Rif</label>
-                        <input class="user-info" type="file" name="photo_rif" value="">
-                </div>
+
                 <div class="card-space btn-link">
                     <button type="submit" class="btnE">{{ __('Registrate') }}</button>
                 </div>

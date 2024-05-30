@@ -11,32 +11,36 @@ Paletas de colores
     background: url("../../../public/imagenes/background-register.png");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 115vh;
 }
 
-.register-welcome{
+.register-welcome {
     display: flex;
     flex-direction: row;
-    justify-content: start;
-    align-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
-.welcome{
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.welcome {
     font-size: 20px;
-    margin-left: 10%;
-  }
-  
-.text-h3{
+}
+
+.text-h3 {
     font-size: 20px;
     width: 120px;
 }
-  
-.logo-register{
+
+.logo-register {
     width: 100px;
     height: 100px;
 }
 
+<<<<<<< HEAD
 .title{
     margin-left: 10%;
 }
@@ -55,22 +59,38 @@ Paletas de colores
     box-shadow: 0px 0px 20px #ccc;
     border-radius: 40px;
     padding: 15px;
+=======
+.box-registre {
+    display: flex;
+    width: 45%;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px #ccc;
+    border-radius: 40px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 20px;
+>>>>>>> a84987d1a96fa4aec0f29b110e5f00f302afc737
 }
 
-.f-left{
+.f-left {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: space-evenly;
+<<<<<<< HEAD
     width: 100%;
     align-content: center;
     align-items: center;
+=======
+>>>>>>> a84987d1a96fa4aec0f29b110e5f00f302afc737
 }
 
-.f-right{
+.f-right {
     margin-right: 10%;
 }
 
-.card-space{
+.card-space {
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -78,6 +98,7 @@ Paletas de colores
     margin: 6px;
 }
 
+<<<<<<< HEAD
 .card-foot{
     width: 100%;
     display: flex;
@@ -85,9 +106,15 @@ Paletas de colores
     justify-content: space-evenly;
     align-content: stretch;
     align-items: stretch;
+=======
+.card-foot {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+>>>>>>> a84987d1a96fa4aec0f29b110e5f00f302afc737
 }
 
-.user-info{
+.user-info {
     padding: 10px;
     border: 2px solid #ccc;
     border-radius: 10px;
@@ -95,38 +122,67 @@ Paletas de colores
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    }
+}
+.user-info::-webkit-file-upload-button {
+    visibility: hidden;
+}
 
-.btn-link{
+.user-info::before {
+    content: "Seleccionar";
+    color: white;
+    background-color: #6e569f;
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.btn-link {
     width: 80%;
     margin: auto;
-    background-color: #7660A5;
+    background-color: #7660a5;
     color: white;
     text-decoration: none;
     padding: 10px;
     text-align: center;
     text-decoration: none !important;
     border-radius: 10px;
-    transition: all .5s;
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    -ms-transition: all .5s;
-    -o-transition: all .5s;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
     margin-top: 25px;
+<<<<<<< HEAD
 
+=======
+>>>>>>> a84987d1a96fa4aec0f29b110e5f00f302afc737
 }
 
-.btn-link:hover{
+.btn-link:hover {
     background-color: #3b2569;
     color: #fff;
 }
-    
-.btnE{
+
+.btnE {
     border: none;
     background: transparent;
     color: #fff;
 }
 
-.card-space btn-link{
+.card-space btn-link {
     margin-top: 10px;
+}
+
+input:focus {
+    border: 2px solid #6e569f;
+    outline: none;
+}
+
+.direction{
+    flex-grow: 0.9;
 }

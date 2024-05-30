@@ -1,8 +1,8 @@
 {{-- @extends('layouts.example') --}}
 @extends('layouts.dashboard')
-@section('title', 'Editar Demanda')
+@section('title', 'Editar Status')
 @section('content')
-    <h1>Editar Demanda</h1>
+    <h1>Editar Status</h1>
     <form method="POST" action="{{ route('historial_admin.update',  $demand->id) }}"  role="form" enctype="multipart/form-data">
         {{ method_field('PUT') }}      
         @csrf

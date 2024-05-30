@@ -6,6 +6,7 @@
 <meta http-equiv="Last-Modified" content="0">
 <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 @section('content_header')
 
 @stop
@@ -266,22 +267,34 @@
                                     <div class="card bg-c-green order-card">
                                         <div class="card-block">
                                             <h5>Productos</h5>
-                                            {{-- @php
-                                                use App\Models\moduloServicios\Veterinarian;
-                                                $cant_Vets = Veterinarian::count();
-                                            @endphp
-                                            <h2 class="text-right"><i
-                                                    class="fas fa-fw fa-pump-soap f-left"></i><span>{{ $cant_Vets }}</span>
-                                            </h2>
-                                            <p class="m-b-0 text-right"><a href="/admin/Veterinarians"
-                                                    class="text-white">Ver más</a></p> --}}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-xl-4">
-                                    <div class="card bg-green order-card">
-                                        <div class="card-block">
-                                            <h5>Modulo de Tienda</h5>
+                                                    @php
+                                                        use App\Models\moduloCatalogo\Product;
+                                                        $cant_Prod = Product::count();
+                                                    @endphp
+                                                    <h2 class="text-right"><i
+                                                            class="fas fa-fw fa-pump-soap f-left"></i><span>{{ $cant_Prod }}</span>
+                                                    </h2>
+                                                    <p class="m-b-0 text-right"><a href="/adminPWFS/productAdmin"
+                                                            class="text-white">Ver más</a></p>
+                                                        </div>
+                                                        </div>
+                                                </div>
+                                            <div class="col-md-4 col-xl-4">
+                                                <div class="card bg-c-pink order-card">
+                                                    <div class="card-block">
+                                                        <h5>Tiendas</h5>
+                                                        @php
+                                                            use App\Models\moduloCatalogo\Shop;
+                                                            $cant_Shop = Shop::count();
+                                                        @endphp
+                                                        <h2 class="text-right"><i
+                                                                class="fas fa-store f-left"></i><span>{{ $cant_Shop }}</span>
+                                                        </h2>
+                                                        <p class="m-b-0 text-right"><a href="/adminPWFS/shopAdmin"
+                                                                class="text-white">Ver más</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -313,4 +326,5 @@
     <script src="https://cdn.datatables.net/responsive/3.0.2/js/dataTables.responsive.js"></script>
     <script src="https://cdn.datatables.net/responsive/3.0.2/js/responsive.bootstrap5.js"></script>
     <script src="{{ asset('js/moduloServicios/admin/dataTables/scriptDatatables.js') }}"></script>
+    <script src="{{ asset('js/messageAction.js') }}"></script>
 @stop

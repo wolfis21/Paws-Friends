@@ -365,7 +365,7 @@ return [
             'icon' =>'fas fa-fw fa-hand-holding-medical',
         ],
         [
-            'text' => 'Historial',
+            'text' => 'Historial Demandas',
             'url' => '/adminPWFS/historial_admin',
             'icon' =>'fas fa-fw fa-x',
         ],
@@ -383,20 +383,19 @@ return [
         ['header' => 'TIENDA'],
         [
             'text' =>'Productos',
-            'url' => '#',
+            'url' => '/adminPWFS/productAdmin',
             'icon' =>'fas fa-fw fa-pump-soap',
         ],
-        // ['header' => 'account_settings'],
-        // [
-        //     'text' => 'profile',
-        //     'url' => 'admin/settings',
-        //     'icon' => 'fas fa-fw fa-user',
-        // ],
-        // [
-        //     'text' => 'change_password',
-        //     'url' => 'admin/settings',
-        //     'icon' => 'fas fa-fw fa-lock',
-        // ],
+        [
+            'text' =>'Tiendas',
+            'url' => '/adminPWFS/shopAdmin',
+            'icon' =>'fas fa-store',
+        ],
+        [
+            'text' => 'Categorias de productos',
+            'url' => '/categoryProducts',
+            'icon' =>'fas fa-fw fa-box-open',
+        ]
     ],
 
     /*

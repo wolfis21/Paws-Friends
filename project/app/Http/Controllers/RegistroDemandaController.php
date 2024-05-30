@@ -7,8 +7,7 @@ use App\Models\Demands_animalss;
 use App\Models\Motivo;
 use App\Models\Urgencia;
 use App\Models\User;
-
-
+use Illuminate\Support\Facades\Auth;
 
 class RegistroDemandaController extends Controller
 {
@@ -25,13 +24,17 @@ class RegistroDemandaController extends Controller
      */
     public function create()
     {
-        $demand = Demands_animalss::all();
-        $motivos = Motivo::all();
-        $urgencias = Urgencia::all();
-        $users = User::all();
-
-        return view('moduloRescate.registrodemanda.create')->with('demand', $demand)
-        ->with('motivos', $motivos)->with('urgencias', $urgencias)->with('users', $users);
+        if(Auth::check()){
+            $demand = Demands_animalss::all();
+            $motivos = Motivo::all();
+            $urgencias = Urgencia::all();
+            $users = User::all();
+    
+            return view('moduloRescate.registrodemanda.create')->with('demand', $demand)
+            ->with('motivos', $motivos)->with('urgencias', $urgencias)->with('users', $users);
+        } else {
+            return redirect()->route('login')->withErrors(['login' => 'Tienes que iniciar sesion para estar aca.']);
+        }
     }
 
     /**
@@ -48,9 +51,18 @@ class RegistroDemandaController extends Controller
             'urgencia_id' => 'required',
         ]);
 
-        Demands_animalss::create($request->all());
+        $demands = $request->all();
 
-        return redirect()->route('servicios');
+        if ($image = $request->file('photo_ref')) {
+            $path = 'storage/moduloRescate/images/';
+            $imageName = date('YmdHis') . "_" . $image->getClientOriginalExtension();
+            $image->move($path, $imageName);
+            $demands['photo_ref'] = "$imageName";
+        }
+
+        Demands_animalss::create($demands);
+
+        return redirect()->route('historial_user.index');
     }
 
     /**

@@ -2,7 +2,7 @@
 @vite('resources/views/moduloServicios/admin.css')
 @section('title', 'Veterinario')
 @section('content')
-
+    @include('../../../layouts/messageActions')
     <h4 style="margin-top: 15px">Veterinarios admin</h4>
     <a href="{{ route('create') }}" class="btn bg-cyan" style="margin-bottom: 15px;">Añadir
         Veterinario</a>
@@ -44,6 +44,7 @@
         </div>
     </div>
     {{-- TODO COMENTARIOS --}}
+    @include('../../../layouts/messageComments')
     <h4>Comentarios Veterinarios admin</h4>
     <div class="card bg-dark">
         <div class="card-body">

@@ -9,6 +9,11 @@ export default defineConfig({
                 'resources/css/moduloServicios/admin/index.css',
                 // todo css de navMenu
 
+                
+                //style modulo 2
+                'resources/css/moduloRescate/stylehc.css',
+                'resources/css/moduloRescate/servicio.css',
+
                 //todo css de mainView
                 'resources/css/moduloServicios/user/index.css',
                 'resources/css/moduloServicios/admin/index.css',
@@ -26,6 +31,7 @@ export default defineConfig({
                 'resources/css/moduloServicios/user/index.css',
                 'resources/css/moduloServicios/user/indexServices.css',
                 'resources/css/moduloServicios/user/showServices.css',
+                'resources/js/messageAction.js',
 
                 //todo comentarios
                 'resources/css/moduloServicios/user/comments.css',
@@ -34,11 +40,15 @@ export default defineConfig({
                 'resources/css/moduloAdopcionesDonaciones/index.css',
                 'resources/css/moduloAdopcionesDonaciones/adopciones.css',
                 
+
+                //todo modulo 4
+                'css/moduloCatalogo/productCategory.css',
                 //todo js
                 '/project/public/js/moduloServicios/star.js',
                 "resources/js/app.js",
 
                 'resources/js/app.js',
+
             ],
             refresh: true,
         }),

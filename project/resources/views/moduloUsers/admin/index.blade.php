@@ -21,7 +21,7 @@
                 <tbody>
                     @foreach ($admins as $admin)
                         <tr>
-                            <td>{{ $admin->name }}{{ $admin->last_name }}</td>
+                            <td>{{ $admin->name }} {{ $admin->last_name }}</td>
                             <td>{{ $admin->dni }}</td>
                             <td>{{ $admin->phone }}</td>
                             <td>{{ $admin->address }}</td>

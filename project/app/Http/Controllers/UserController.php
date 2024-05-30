@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -28,26 +29,28 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
 
-        $userData = $request->except('photo_user', 'photo_dni', 'photo_rif');
+        $userData = $request->all();
+        $filesToUpload = [
+            ['field' => 'photo_user', 'path' => 'userImg'],
+            ['field' => 'photo_dni', 'path' => 'dniImg'],
+            ['field' => 'photo_rif', 'path' => 'rifImg']
+        ];
 
-        if ($request->hasFile('photo_dni') && $request->hasFile('photo_rif') && $request->hasFile('photo_user')) {
-            $imgDni = $request->file('photo_dni')->store('docs', 'public');
-            $imgRif = $request->file('photo_rif')->store('docs', 'public');
-            $imgPhoto = $request->file('photo_user')->store('docs', 'public');
-
-            $userData['photo_user'] = $imgPhoto;
-            $userData['photo_dni'] = $imgDni;
-            $userData['photo_rif'] = $imgRif;
-        } else {
-            $userData['photo_user'] = null;
-            $userData['photo_dni'] = null;
-            $userData['photo_rif'] = null;
+        foreach ($filesToUpload as $fileInfo) {
+            $imgPhoto = $request->file($fileInfo['field']);
+            if ($imgPhoto) {
+                $imgPhotoPath = 'storage/users/' . $fileInfo['path'];
+                $img = date('YmdHis') . "_" . $imgPhoto->getClientOriginalExtension();
+                $imgPhoto->move($imgPhotoPath, $img);
+                $userData[$fileInfo['field']] = $img;
+            }
         }
 
         $user->update($userData);
-
-        return view('main');
+        $info = 'Perfil editado';
+        return view('profile.index', compact('user','info'));
     }
+
 
     public function allAdmin()
     {
@@ -65,7 +68,18 @@ class UserController extends Controller
     }
     public function createForm(Request $request)
     {
-        if ($request['photo_dni'] && $request['photo_rif'] && $request['photo_user']) {
+
+        $request->validate([
+            'name' => 'required', 'string', 'max:255',
+            'last_name' => 'required', 'string', 'max:255',
+            'dni' => 'required', 'string', 'max:20',
+            'phone' => 'required', 'string', 'max:12' ,
+            'address' => 'required', 'string', 'max:255',
+            'email' => 'required', 'string', 'email', 'max:255', 'unique:users',
+            'password' => 'required', 'string', 'min:5',
+        ]);
+
+/*         if ($request['photo_dni'] || $request['photo_rif'] || $request['photo_user']) {
             $imgPhoto = $request['photo_user'];
             $imgDni = $request['photo_dni'];
             $imgRif = $request['photo_rif'];
@@ -76,6 +90,25 @@ class UserController extends Controller
             $imgPhotoPath = null;
             $imgPhotoPathDni = null;
             $imgPhotoPathRif = null;
+        } */
+
+        if ($imgPhoto = $request->file('photo_user')) {
+            $imgPhotoPath = 'storage/userImg';
+            $img = date('YmdHis') . "_" . $imgPhoto->getClientOriginalExtension();
+            $imgPhoto->move($imgPhotoPath, $img);
+            $userData['photo_user'] = "$img";
+        }
+        if ($imgPhoto = $request->file('photo_dni')) {
+            $imgPhotoPath = 'storage/dniImg';
+            $img = date('YmdHis') . "_" . $imgPhoto->getClientOriginalExtension();
+            $imgPhoto->move($imgPhotoPath, $img);
+            $userData['photo_dni'] = "$img";
+        }
+        if ($imgPhoto = $request->file('photo_rif')) {
+            $imgPhotoPath = 'storage/rifImg';
+            $img = date('YmdHis') . "_" . $imgPhoto->getClientOriginalExtension();
+            $imgPhoto->move($imgPhotoPath, $img);
+            $userData['photo_rif'] = "$img";
         }
 
         $user = User::create([
@@ -84,9 +117,9 @@ class UserController extends Controller
             'dni' => $request['dni'],
             'phone' => $request['phone'],
             'address' => $request['address'],
-            'photo_user' => $imgPhotoPath,
+/*             'photo_user' => $imgPhotoPath,
             'photo_dni' => $imgPhotoPathDni,
-            'photo_rif' => $imgPhotoPathRif,
+            'photo_rif' => $imgPhotoPathRif, */
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
             'rols_id' => $request['rols_id'],
@@ -97,7 +130,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         if (Auth::id() === $user->id) {
-            return redirect()->back(); 
+            return redirect()->back();
         } else {
             $user = User::findOrFail($id);
             $user->delete();

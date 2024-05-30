@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('users_id'); // Clave foránea
             $table->text('description_case');
             $table->string('adress_animals', 45);
-            $table->string('photo_ref', 45);
+            $table->string('photo_ref');
 
             $table->unsignedBigInteger('motivo_id'); // Clave foránea
             $table->unsignedBigInteger('urgencia_id'); // Clave foránea
