@@ -69,7 +69,7 @@
                 <tbody>
                     @foreach ($completada as $demand_animal_has_fundation)
                 <tr>
-                    <td><img style="width: 80%;" class="img-vets" src="{{ asset('storage/moduloRescate/images/'.$demand_animal_has_fundation->$demands_animalss->photo_ref) }}" /></td>
+                    <td><img style="width: 80%;" class="img-vets" src="{{ asset('storage/moduloRescate/images/'.$demand_animal_has_fundation->demands_animalss->photo_ref) }}" /></td>
                     <td>{{ $demand_animal_has_fundation->demands_animalss->user->name }}</td>
                     <td>{{ $demand_animal_has_fundation->demands_animalss->description_case }}</td>
                     <td>{{ $demand_animal_has_fundation->demands_animalss->motivo->name }}</td>
