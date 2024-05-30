@@ -47,6 +47,11 @@
     border-radius: 20px;
 }
 
+.atras{
+position: relative;
+top: 30px;
+right: 600px;
+}
 .main-view {
     display: flex;
     flex-direction: column;

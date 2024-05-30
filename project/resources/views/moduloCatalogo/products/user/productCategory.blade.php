@@ -8,6 +8,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 </head>
 <div class="contenedor-product">
+
+    <div class="atras">  
+    <a href="/products">atras</a>
+    </div>
+    
 <section class="categorias">
         <h2 class="title-cat">Categorías</h2>
  

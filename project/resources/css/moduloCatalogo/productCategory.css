@@ -11,7 +11,11 @@
     background-size: cover;
     background-position: center;    
 }
-
+.atras{ 
+    position: relative; 
+    top: 30px; 
+    right: 600px; }
+    
 .img-product{
     width: 100%;
     height: 70%;

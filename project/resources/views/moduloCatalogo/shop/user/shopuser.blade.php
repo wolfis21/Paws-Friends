@@ -13,6 +13,10 @@
 
     </head>
     <div class="contenedor">
+    <div class="atras">  
+    <a href="/store">atras</a>
+    </div>
+    
         <section>
             <h2 class="title-shop">Tiendas</h2>
             <div class ="shop-card-container">

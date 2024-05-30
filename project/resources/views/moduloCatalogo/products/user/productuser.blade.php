@@ -9,6 +9,11 @@
 </head>
 
 <div class="contenedor">
+    
+    <div class="atras">  
+    <a href="/store">atras</a>
+    </div>
+    
 <section class="categorias">
         <h2 class="title-cat">Categorías</h2>
  
